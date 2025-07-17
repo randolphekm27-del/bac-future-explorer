@@ -1,6 +1,7 @@
 import { GraduationCap, Search, BookOpen, Users, Briefcase } from "lucide-react"
 import { useState } from "react"
 import { Navigation } from "@/components/ui/navigation"
+import { Footer } from "@/components/ui/footer"
 import { navigationLinks } from "@/lib/navigation"
 import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
@@ -160,13 +161,7 @@ export default function Programs() {
         </div>
       </main>
 
-      <footer className="border-t py-8">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-muted-foreground">
-            © 2025 Après mon Bac. Tous droits réservés.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }
