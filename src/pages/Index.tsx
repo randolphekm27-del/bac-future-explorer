@@ -4,105 +4,178 @@ import { SectionTitle } from "@/components/ui/section-title"
 import { FeatureCard } from "@/components/ui/feature-card"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
+import { ScrollReveal } from "@/components/ui/scroll-reveal"
+import { FloatingParticles } from "@/components/ui/floating-particles"
+import { TestimonialsCarousel } from "@/components/ui/testimonials-carousel"
+import { InteractiveTimeline } from "@/components/ui/interactive-timeline"
+import { NewsletterPopup } from "@/components/ui/newsletter-popup"
+import { SmartSearch } from "@/components/ui/smart-search"
+import { StatsSection } from "@/components/ui/stats-section"
 import { navigationLinks } from "@/lib/navigation"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png"
 
 const Index = () => {
+  const navigate = useNavigate()
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navigation links={navigationLinks} />
+      <NewsletterPopup />
       
       <main className="flex-1 pt-16">
-        {/* Hero Section */}
+        {/* Hero Section with Particles */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 py-20 md:py-32">
-          <div className="container mx-auto px-4">
+          <FloatingParticles />
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-              <div className="space-y-8 animate-fade-in">
-                <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                  Trouvez votre voie après le{" "}
-                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Bac</span>
-                </h1>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Explorez les universités, filières et opportunités pour construire votre avenir. 
-                  Guide complet pour les nouveaux bacheliers du Bénin.
-                </p>
-                <div className="space-y-6">
-                  <Link to="/universities">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                      Commencer l'exploration
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Link>
-                  <p className="text-muted-foreground">
-                    Plus de 1000 étudiants nous font déjà confiance
+              <ScrollReveal>
+                <div className="space-y-8">
+                  <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+                    Trouvez votre voie après le{" "}
+                    <span className="gradient-text animate-bounce-in">Bac</span>
+                  </h1>
+                  <p className="text-xl text-muted-foreground leading-relaxed">
+                    Explorez les universités, filières et opportunités pour construire votre avenir. 
+                    Guide complet pour les nouveaux bacheliers du Bénin.
                   </p>
+                  
+                  {/* Smart Search */}
+                  <div className="my-8">
+                    <SmartSearch 
+                      placeholder="Que voulez-vous étudier ?" 
+                      className="max-w-full"
+                      onSearch={(query) => navigate(`/universities?search=${query}`)}
+                    />
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <Link to="/universities">
+                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
+                        Commencer l'exploration
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                      </Button>
+                    </Link>
+                    <p className="text-muted-foreground">
+                      Plus de 1000 étudiants nous font déjà confiance
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="relative animate-scale-in flex justify-center">
-                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-12 shadow-2xl">
-                  <img
-                    src={logoImage}
-                    alt="Après mon Bac - Logo officiel"
-                    className="w-80 h-80 object-contain"
-                  />
+              </ScrollReveal>
+              
+              <ScrollReveal delay={300}>
+                <div className="relative flex justify-center">
+                  <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-12 shadow-2xl hover-lift">
+                    <img
+                      src={logoImage}
+                      alt="Après mon Bac - Logo officiel"
+                      className="w-80 h-80 object-contain"
+                    />
+                  </div>
+                  {/* Enhanced decorative elements */}
+                  <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-accent/30 rounded-full animate-bounce"></div>
+                  <div className="absolute top-10 -right-6 w-12 h-12 bg-primary/40 rounded-full animate-pulse"></div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
 
+        {/* Stats Section */}
+        <StatsSection />
+
         {/* Features Section */}
         <section className="py-20 bg-gradient-to-b from-accent/5 to-primary/5">
           <div className="container mx-auto px-4">
-            <SectionTitle 
-              title="Votre réussite commence ici" 
-              description="Découvrez toutes les ressources dont vous avez besoin pour votre avenir"
-              className="mb-16"
-            />
+            <ScrollReveal>
+              <SectionTitle 
+                title="Votre réussite commence ici" 
+                description="Découvrez toutes les ressources dont vous avez besoin pour votre avenir"
+                className="mb-16"
+              />
+            </ScrollReveal>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <FeatureCard
-                icon={<Building2 className="h-8 w-8" />}
-                title="Universités"
-                description="Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission"
-                href="/universities"
-                className="hover:scale-105 transition-transform duration-200"
+              <ScrollReveal delay={100}>
+                <FeatureCard
+                  icon={<Building2 className="h-8 w-8" />}
+                  title="Universités"
+                  description="Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission"
+                  href="/universities"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={200}>
+                <FeatureCard
+                  icon={<GraduationCap className="h-8 w-8" />}
+                  title="Filières & Débouchés"
+                  description="Découvrez les formations disponibles et leurs perspectives d'emploi"
+                  href="/programs"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={300}>
+                <FeatureCard
+                  icon={<Briefcase className="h-8 w-8" />}
+                  title="Stages & Opportunités"
+                  description="Trouvez des stages et développez votre expérience professionnelle"
+                  href="/internships"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={400}>
+                <FeatureCard
+                  icon={<Trophy className="h-8 w-8" />}
+                  title="Concours & Hackathons"
+                  description="Participez aux concours et challenges pour vous démarquer"
+                  href="/competitions"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={500}>
+                <FeatureCard
+                  icon={<PlayCircle className="h-8 w-8" />}
+                  title="Formations Pratiques"
+                  description="Développez vos compétences avec nos formations spécialisées"
+                  href="/courses"
+                />
+              </ScrollReveal>
+              <ScrollReveal delay={600}>
+                <FeatureCard
+                  icon={<Users className="h-8 w-8" />}
+                  title="Communauté"
+                  description="Rejoignez une communauté d'étudiants motivés et ambitieux"
+                />
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Interactive Timeline */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <ScrollReveal>
+              <SectionTitle 
+                title="Votre parcours en 5 étapes" 
+                description="Suivez notre méthode éprouvée pour réussir votre orientation"
+                className="mb-16"
               />
-              <FeatureCard
-                icon={<GraduationCap className="h-8 w-8" />}
-                title="Filières & Débouchés"
-                description="Découvrez les formations disponibles et leurs perspectives d'emploi"
-                href="/programs"
-                className="hover:scale-105 transition-transform duration-200"
+            </ScrollReveal>
+            <div className="mt-16">
+              <InteractiveTimeline />
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-20 bg-gradient-to-r from-primary/5 to-accent/5">
+          <div className="container mx-auto px-4">
+            <ScrollReveal>
+              <SectionTitle 
+                title="Ils nous font confiance" 
+                description="Découvrez les témoignages de nos étudiants"
+                className="mb-16"
               />
-              <FeatureCard
-                icon={<Briefcase className="h-8 w-8" />}
-                title="Stages & Opportunités"
-                description="Trouvez des stages et développez votre expérience professionnelle"
-                href="/internships"
-                className="hover:scale-105 transition-transform duration-200"
-              />
-              <FeatureCard
-                icon={<Trophy className="h-8 w-8" />}
-                title="Concours & Hackathons"
-                description="Participez aux concours et challenges pour vous démarquer"
-                href="/competitions"
-                className="hover:scale-105 transition-transform duration-200"
-              />
-              <FeatureCard
-                icon={<PlayCircle className="h-8 w-8" />}
-                title="Formations Pratiques"
-                description="Développez vos compétences avec nos formations spécialisées"
-                href="/courses"
-                className="hover:scale-105 transition-transform duration-200"
-              />
-              <FeatureCard
-                icon={<Users className="h-8 w-8" />}
-                title="Communauté"
-                description="Rejoignez une communauté d'étudiants motivés et ambitieux"
-                className="hover:scale-105 transition-transform duration-200"
-              />
+            </ScrollReveal>
+            <div className="mt-16">
+              <TestimonialsCarousel />
             </div>
           </div>
         </section>
