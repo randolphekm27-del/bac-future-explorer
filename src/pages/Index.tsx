@@ -15,7 +15,7 @@ const Index = () => {
       
       <main className="flex-1 pt-16">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background to-accent/20 py-20 md:py-32">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 py-20 md:py-32">
           <div className="container mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <div className="space-y-8 animate-fade-in">
@@ -53,7 +53,7 @@ const Index = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-20 bg-accent/30">
+        <section className="py-20 bg-gradient-to-b from-accent/5 to-primary/5">
           <div className="container mx-auto px-4">
             <SectionTitle 
               title="Votre réussite commence ici" 

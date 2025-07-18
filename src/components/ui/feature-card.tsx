@@ -21,7 +21,7 @@ export function FeatureCard({ icon, title, description, href, className }: Featu
         className
       )}
     >
-      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
+      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center text-primary mb-4">
         {icon}
       </div>
       <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">{title}</h3>
