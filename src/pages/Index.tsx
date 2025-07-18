@@ -6,7 +6,7 @@ import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { navigationLinks } from "@/lib/navigation"
 import { Link } from "react-router-dom"
-import heroImage from "@/assets/hero.png"
+const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png"
 
 const Index = () => {
   return (
@@ -19,11 +19,11 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <div className="space-y-8 animate-fade-in">
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+                <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
                   Trouvez votre voie après le{" "}
-                  <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">Bac</span>
+                  <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Bac</span>
                 </h1>
-                <p className="text-lg text-muted-foreground">
+                <p className="text-xl text-muted-foreground leading-relaxed">
                   Explorez les universités, filières et opportunités pour construire votre avenir. 
                   Guide complet pour les nouveaux bacheliers du Bénin.
                 </p>
@@ -39,12 +39,14 @@ const Index = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative animate-scale-in">
-                <img
-                  src={heroImage}
-                  alt="Illustration éducative - Après mon Bac"
-                  className="w-full rounded-lg shadow-xl"
-                />
+              <div className="relative animate-scale-in flex justify-center">
+                <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-12 shadow-2xl">
+                  <img
+                    src={logoImage}
+                    alt="Après mon Bac - Logo officiel"
+                    className="w-80 h-80 object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>

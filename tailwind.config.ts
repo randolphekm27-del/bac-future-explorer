@@ -18,6 +18,21 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+			},
+			fontSize: {
+				'xs': '0.8rem',
+				'sm': '0.95rem',
+				'base': '1.1rem',
+				'lg': '1.25rem',
+				'xl': '1.4rem',
+				'2xl': '1.6rem',
+				'3xl': '2rem',
+				'4xl': '2.5rem',
+				'5xl': '3.2rem',
+				'6xl': '4rem',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
