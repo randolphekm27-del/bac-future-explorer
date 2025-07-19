@@ -16,7 +16,6 @@ const courses = [
     duration: "30 heures",
     level: "Débutant",
     price: 25000,
-    available: true,
     description:
       "Apprenez les bases du développement web avec HTML, CSS et JavaScript.",
     highlights: [
@@ -34,7 +33,6 @@ const courses = [
     duration: "20 heures",
     level: "Débutant",
     price: 20000,
-    available: false,
     description:
       "Maîtrisez les fondamentaux du marketing digital pour promouvoir efficacement en ligne.",
     highlights: [
@@ -52,7 +50,6 @@ const courses = [
     duration: "15 heures",
     level: "Intermédiaire",
     price: 15000,
-    available: true,
     description:
       "Devenez un expert Excel pour l'analyse de données et la business intelligence.",
     highlights: [
@@ -70,7 +67,6 @@ const courses = [
     duration: "25 heures",
     level: "Tous niveaux",
     price: 30000,
-    available: false,
     description:
       "Apprenez à innover et résoudre des problèmes avec la méthode Design Thinking.",
     highlights: [
@@ -88,7 +84,6 @@ const courses = [
     duration: "10 heures",
     level: "Tous niveaux",
     price: 12000,
-    available: true,
     description:
       "Améliorez vos compétences en communication pour réussir professionnellement.",
     highlights: [
@@ -204,21 +199,9 @@ export default function Courses() {
                     </div>
                   </div>
 
-                  <Button 
-                    className={`mt-6 w-full transition-all duration-300 ${
-                      course.available 
-                        ? "hover:scale-[1.02] hover:shadow-lg" 
-                        : "opacity-50 blur-sm cursor-not-allowed"
-                    }`}
-                    disabled={!course.available}
-                    onClick={() => {
-                      if (course.available) {
-                        alert(`Redirection vers le paiement pour "${course.title}" - ${course.price} FCFA`)
-                      }
-                    }}
-                  >
+                  <Button className="mt-6 w-full">
                     <Book className="mr-2 h-4 w-4" />
-                    {course.available ? "Acheter la formation" : "Bientôt disponible"}
+                    Acheter la formation
                   </Button>
 
                   <div className="mt-4 pt-4 border-t">
