@@ -170,8 +170,14 @@ export default function Universities() {
                   <p className="mt-2 text-sm text-muted-foreground">
                     {university.description}
                   </p>
-                  <button className="mt-4 text-sm font-medium text-primary hover:underline">
-                    Voir les détails
+                  <button 
+                    className="mt-4 text-sm font-medium text-primary hover:underline transition-all duration-200 hover:translate-x-1"
+                    onClick={() => {
+                      // Navigation vers la page des écoles de cette université
+                      window.location.href = `/universities/${university.id}/schools`
+                    }}
+                  >
+                    Voir les écoles →
                   </button>
                 </div>
               </div>

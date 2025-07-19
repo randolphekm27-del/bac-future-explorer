@@ -4,14 +4,16 @@ import { ArrowRight } from "lucide-react"
 
 interface FeatureCardProps {
   icon: React.ReactNode
-  title: string
+  title: string | React.ReactNode
   description: string
   href?: string
   className?: string
   onClick?: () => void
+  showPartnerButton?: boolean
+  isInternship?: boolean
 }
 
-export function FeatureCard({ icon, title, description, href, className, onClick }: FeatureCardProps) {
+export function FeatureCard({ icon, title, description, href, className, onClick, showPartnerButton, isInternship }: FeatureCardProps) {
   const CardComponent = href ? Link : "div"
 
   return (
@@ -33,6 +35,25 @@ export function FeatureCard({ icon, title, description, href, className, onClick
         </div>
         <h3 className="text-2xl font-semibold mb-4 group-hover:text-primary transition-colors">{title}</h3>
         <p className="text-lg text-muted-foreground leading-relaxed mb-6">{description}</p>
+        
+        {showPartnerButton && (
+          <div className="mb-4">
+            <button 
+              className="w-full px-4 py-2 text-sm bg-gradient-to-r from-accent to-primary text-white rounded-lg hover:from-accent/90 hover:to-primary/90 transition-all duration-300 transform hover:scale-[1.02]"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                if (isInternship) {
+                  alert("Contactez notre équipe technique à contact@apresmombac.com pour discuter de votre proposition de stage.")
+                } else {
+                  alert("Inscription requise. Veuillez créer un compte pour proposer vos formations.")
+                }
+              }}
+            >
+              {isInternship ? "Proposer un stage" : "Proposer une formation"}
+            </button>
+          </div>
+        )}
         
         {/* Arrow that appears on hover */}
         <div className="flex items-center text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0">

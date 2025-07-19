@@ -32,9 +32,11 @@ const Index = () => {
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <ScrollReveal>
                 <div className="space-y-8">
-                  <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                    Trouvez votre voie après le{" "}
-                    <span className="gradient-text animate-bounce-in">Bac</span>
+                  <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl text-primary animate-fade-in">
+                    Après mon <span className="relative inline-block">
+                      Bac
+                      <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent to-primary animate-pulse rounded-full"></div>
+                    </span>
                   </h1>
                   <p className="text-xl text-muted-foreground leading-relaxed">
                     Explorez les universités, filières et opportunités pour construire votre avenir. 
@@ -98,12 +100,20 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <ScrollReveal delay={100}>
-                <FeatureCard
-                  icon={<Building2 className="h-8 w-8" />}
-                  title="Universités"
-                  description="Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission"
-                  href="/universities"
-                />
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <FeatureCard
+                    icon={<Building2 className="h-8 w-8" />}
+                    title={
+                      <span className="relative">
+                        Universités
+                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></div>
+                      </span>
+                    }
+                    description="Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission"
+                    href="/universities"
+                  />
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={200}>
                 <FeatureCard
@@ -114,12 +124,22 @@ const Index = () => {
                 />
               </ScrollReveal>
               <ScrollReveal delay={300}>
-                <FeatureCard
-                  icon={<Briefcase className="h-8 w-8" />}
-                  title="Stages & Opportunités"
-                  description="Trouvez des stages et développez votre expérience professionnelle"
-                  href="/internships"
-                />
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <FeatureCard
+                    icon={<Briefcase className="h-8 w-8" />}
+                    title={
+                      <span className="relative">
+                        Stages & Opportunités
+                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></div>
+                      </span>
+                    }
+                    description="Trouvez des stages et développez votre expérience professionnelle"
+                    href="/internships"
+                    showPartnerButton
+                    isInternship
+                  />
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={400}>
                 <FeatureCard
@@ -130,12 +150,21 @@ const Index = () => {
                 />
               </ScrollReveal>
               <ScrollReveal delay={500}>
-                <FeatureCard
-                  icon={<PlayCircle className="h-8 w-8" />}
-                  title="Formations Pratiques"
-                  description="Développez vos compétences avec nos formations spécialisées"
-                  href="/courses"
-                />
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <FeatureCard
+                    icon={<PlayCircle className="h-8 w-8" />}
+                    title={
+                      <span className="relative">
+                        Formations Pratiques
+                        <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
+                      </span>
+                    }
+                    description="Développez vos compétences avec nos formations spécialisées"
+                    href="/courses"
+                    showPartnerButton
+                  />
+                </div>
               </ScrollReveal>
               <ScrollReveal delay={600}>
                 <FeatureCard
