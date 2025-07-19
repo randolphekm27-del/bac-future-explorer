@@ -37,7 +37,7 @@ export function Navigation({ links }: NavigationProps) {
   }, [location.pathname])
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b shadow-sm">
+    <nav className="fixed top-0 w-full glass-nav z-50 shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
@@ -46,7 +46,7 @@ export function Navigation({ links }: NavigationProps) {
               alt="Après mon Bac Logo" 
               className="h-10 w-10"
             />
-            <span className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span className="text-xl font-bold gradient-text text-shadow">
               Après mon Bac
             </span>
           </Link>
@@ -58,10 +58,10 @@ export function Navigation({ links }: NavigationProps) {
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "flex items-center space-x-2 text-sm font-medium transition-all duration-200 px-3 py-2 rounded-md hover:bg-accent",
+                  "flex items-center space-x-2 text-sm font-semibold transition-all duration-300 px-4 py-2 rounded-xl hover:scale-105",
                   location.pathname === link.href 
-                    ? "text-primary bg-accent" 
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "gradient-primary text-primary-foreground shadow-md" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                 )}
               >
                 {link.icon}

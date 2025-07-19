@@ -24,20 +24,21 @@ const Index = () => {
       <NewsletterPopup />
       
       <main className="flex-1 pt-16">
-        {/* Hero Section with Particles */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-primary/5 to-accent/10 py-20 md:py-32">
+        {/* Premium Hero Section */}
+        <section className="relative overflow-hidden gradient-hero py-24 md:py-40">
           <FloatingParticles />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <ScrollReveal>
                 <div className="space-y-8">
-                  <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
-                    Trouvez votre voie après le{" "}
-                    <span className="gradient-text animate-bounce-in">Bac</span>
+                  <h1 className="text-6xl font-black tracking-tight sm:text-7xl lg:text-8xl leading-none">
+                    <span className="text-shadow">Trouvez votre voie</span><br />
+                    <span className="text-shadow">après le </span>
+                    <span className="gradient-text animate-bounce-in text-glow">Bac</span>
                   </h1>
-                  <p className="text-xl text-muted-foreground leading-relaxed">
-                    Explorez les universités, filières et opportunités pour construire votre avenir. 
+                  <p className="text-2xl text-foreground/80 leading-relaxed font-medium">
+                    <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                     Guide complet pour les nouveaux bacheliers du Bénin.
                   </p>
                   
@@ -52,9 +53,9 @@ const Index = () => {
                   
                   <div className="space-y-6">
                     <Link to="/universities">
-                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground hover-lift">
+                      <Button variant="premium" size="xl" className="animate-glow">
                         Commencer l'exploration
-                        <ArrowRight className="ml-2 h-5 w-5" />
+                        <ArrowRight className="ml-2 h-6 w-6" />
                       </Button>
                     </Link>
                     <p className="text-muted-foreground">
@@ -66,16 +67,18 @@ const Index = () => {
               
               <ScrollReveal delay={300}>
                 <div className="relative flex justify-center">
-                  <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl p-12 shadow-2xl hover-lift">
+                  <div className="glass-card rounded-3xl p-16 shadow-2xl hover-lift border-gradient animate-float">
                     <img
                       src={logoImage}
                       alt="Après mon Bac - Logo officiel"
-                      className="w-80 h-80 object-contain"
+                      className="w-96 h-96 object-contain animate-glow"
                     />
                   </div>
-                  {/* Enhanced decorative elements */}
-                  <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-accent/30 rounded-full animate-bounce"></div>
-                  <div className="absolute top-10 -right-6 w-12 h-12 bg-primary/40 rounded-full animate-pulse"></div>
+                  {/* Premium decorative elements */}
+                  <div className="absolute -bottom-6 -left-6 w-24 h-24 gradient-accent rounded-full animate-float opacity-80"></div>
+                  <div className="absolute top-12 -right-8 w-16 h-16 gradient-primary rounded-full animate-bounce opacity-70"></div>
+                  <div className="absolute top-1/2 -left-12 w-6 h-6 bg-accent rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-1/4 -right-4 w-8 h-8 bg-primary/60 rounded-full animate-bounce delay-1000"></div>
                 </div>
               </ScrollReveal>
             </div>
@@ -85,8 +88,8 @@ const Index = () => {
         {/* Stats Section */}
         <StatsSection />
 
-        {/* Features Section */}
-        <section className="py-20 bg-gradient-to-b from-accent/5 to-primary/5">
+        {/* Premium Features Section */}
+        <section className="py-24 gradient-hero">
           <div className="container mx-auto px-4">
             <ScrollReveal>
               <SectionTitle 
@@ -148,8 +151,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Interactive Timeline */}
-        <section className="py-20 bg-background">
+        {/* Premium Interactive Timeline */}
+        <section className="py-24 gradient-card">
           <div className="container mx-auto px-4">
             <ScrollReveal>
               <SectionTitle 
@@ -164,8 +167,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-20 bg-gradient-to-r from-primary/5 to-accent/5">
+        {/* Premium Testimonials */}
+        <section className="py-24 gradient-hero">
           <div className="container mx-auto px-4">
             <ScrollReveal>
               <SectionTitle 

@@ -156,12 +156,13 @@ export default function Courses() {
             {filteredCourses.map((course) => (
               <div
                 key={course.id}
-                className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-colors animate-scale-in"
+                className="group glass-card rounded-3xl border-gradient overflow-hidden hover-lift animate-scale-in shadow-xl"
               >
-                <div className="aspect-video w-full bg-accent/50 p-8 flex items-center justify-center">
-                  <PlayCircle className="w-16 h-16 text-primary opacity-75 group-hover:opacity-100 transition-opacity" />
+                <div className="aspect-video w-full gradient-hero p-8 flex items-center justify-center relative overflow-hidden">
+                  <div className="absolute inset-0 gradient-primary opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <PlayCircle className="w-20 h-20 text-primary-foreground opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 relative z-10 hover-glow" />
                 </div>
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="secondary">{course.category}</Badge>
                     <div className="flex items-center text-sm text-muted-foreground">
@@ -169,7 +170,7 @@ export default function Courses() {
                       {course.duration}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold group-hover:gradient-text transition-all duration-300 text-shadow">
                     {course.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">
@@ -199,8 +200,8 @@ export default function Courses() {
                     </div>
                   </div>
 
-                  <Button className="mt-6 w-full">
-                    <Book className="mr-2 h-4 w-4" />
+                  <Button variant="premium" size="lg" className="mt-8 w-full">
+                    <Book className="mr-2 h-5 w-5" />
                     Acheter la formation
                   </Button>
 
