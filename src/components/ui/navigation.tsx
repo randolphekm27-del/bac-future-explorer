@@ -38,34 +38,34 @@ export function Navigation({ links }: NavigationProps) {
 
   return (
     <nav className="fixed top-0 w-full glass-nav z-50 shadow-lg">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
             <img 
               src="/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png" 
               alt="Après mon Bac Logo" 
-              className="h-10 w-10"
+              className="h-8 w-8 sm:h-10 sm:w-10"
             />
-            <span className="text-xl font-bold gradient-text text-shadow">
+            <span className="text-lg sm:text-xl font-bold gradient-text text-shadow hidden xs:block">
               Après mon Bac
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-6">
             {links.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "flex items-center space-x-2 text-sm font-semibold transition-all duration-300 px-4 py-2 rounded-xl hover:scale-105",
+                  "flex items-center space-x-1 lg:space-x-2 text-xs lg:text-sm font-semibold transition-all duration-300 px-2 lg:px-4 py-2 rounded-xl hover:scale-105",
                   location.pathname === link.href 
                     ? "gradient-primary text-primary-foreground shadow-md" 
                     : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
                 )}
               >
                 {link.icon}
-                <span>{link.title}</span>
+                <span className="hidden lg:block">{link.title}</span>
               </Link>
             ))}
           </div>
