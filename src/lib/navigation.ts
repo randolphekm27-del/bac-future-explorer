@@ -1,4 +1,4 @@
-import { GraduationCap, BookOpen, Briefcase, Trophy, PlayCircle, Building2 } from "lucide-react"
+import { GraduationCap, BookOpen, Briefcase, Trophy, PlayCircle, Building2, Lightbulb } from "lucide-react"
 import React from "react"
 
 export const navigationLinks = [
@@ -26,5 +26,10 @@ export const navigationLinks = [
     title: "Formations",
     href: "/courses",
     icon: React.createElement(PlayCircle, { className: "h-4 w-4" }),
+  },
+  {
+    title: "Conseils",
+    href: "/conseils",
+    icon: React.createElement(Lightbulb, { className: "h-4 w-4" }),
   },
 ]

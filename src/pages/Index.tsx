@@ -11,6 +11,8 @@ import { InteractiveTimeline } from "@/components/ui/interactive-timeline"
 import { NewsletterPopup } from "@/components/ui/newsletter-popup"
 import { SmartSearch } from "@/components/ui/smart-search"
 import { StatsSection } from "@/components/ui/stats-section"
+import { FloatingAccessibility } from "@/components/ui/floating-accessibility"
+import { PremiumFeatures } from "@/components/ui/premium-features"
 import { navigationLinks } from "@/lib/navigation"
 import { Link, useNavigate } from "react-router-dom"
 const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png"
@@ -151,6 +153,9 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Premium Features Section */}
+        <PremiumFeatures />
+
         {/* Premium Interactive Timeline */}
         <section className="py-24 gradient-card">
           <div className="container mx-auto px-4">
@@ -184,6 +189,7 @@ const Index = () => {
         </section>
       </main>
 
+      <FloatingAccessibility />
       <Footer />
     </div>
   )
