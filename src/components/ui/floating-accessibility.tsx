@@ -27,9 +27,10 @@ export function FloatingAccessibility({ className }: FloatingAccessibilityProps)
 
   const handleTestComplete = (results: TestResults) => {
     setTestResults(results)
-    
-    // Créer un message de bienvenue personnalisé basé sur les résultats
-    const welcomeMessage = `Parfait ! J'ai analysé vos résultats de test :
+  }
+
+  const createWelcomeMessage = (results: TestResults) => {
+    return `Parfait ! J'ai analysé vos résultats de test :
 
 🎯 **Domaine principal :** ${results.primaryField}
 📊 **Compatibilité :** ${results.recommendations[0]?.match}%
@@ -41,8 +42,6 @@ ${results.recommendations.slice(0, 3).map((rec, i) =>
 ).join('\n')}
 
 Je peux maintenant vous donner des conseils ultra-personnalisés ! Que souhaitez-vous explorer ?`
-
-    return welcomeMessage
   }
 
   return (
@@ -50,7 +49,7 @@ Je peux maintenant vous donner des conseils ultra-personnalisés ! Que souhaitez
       <OrientationTest onComplete={handleTestComplete} />
       <AIChat 
         testResults={testResults}
-        initialMessage={testResults ? handleTestComplete(testResults) : undefined}
+        initialMessage={testResults ? createWelcomeMessage(testResults) : undefined}
       />
     </div>
   )
