@@ -265,6 +265,49 @@
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
   }
 
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      @apply px-3;
+    }
+    
+    .text-6xl {
+      @apply text-3xl;
+    }
+    
+    .text-5xl {
+      @apply text-2xl;
+    }
+    
+    .text-4xl {
+      @apply text-xl;
+    }
+    
+    .text-3xl {
+      @apply text-lg;
+    }
+    
+    .text-2xl {
+      @apply text-base;
+    }
+    
+    .p-8 {
+      @apply p-4;
+    }
+    
+    .p-6 {
+      @apply p-3;
+    }
+    
+    .gap-8 {
+      @apply gap-4;
+    }
+    
+    .gap-6 {
+      @apply gap-3;
+    }
+  }
+
   /* Responsive Breakpoints */
   .xs\:block {
     display: none;

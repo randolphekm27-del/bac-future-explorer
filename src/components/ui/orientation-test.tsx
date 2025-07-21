@@ -263,15 +263,15 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="h-14 w-14 rounded-full gradient-accent shadow-lg hover-lift animate-glow group"
+        className="h-12 w-12 sm:h-14 sm:w-14 rounded-full gradient-accent shadow-lg hover-lift animate-glow group"
         size="icon"
       >
-        <HelpCircle className="h-6 w-6 transition-transform group-hover:scale-110" />
+        <HelpCircle className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:scale-110" />
         <span className="sr-only">Test d'orientation</span>
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="glass-card max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="glass-card max-w-2xl max-h-[90vh] overflow-y-auto w-[95vw] sm:w-full p-4 sm:p-6">
           <DialogHeader>
             <DialogTitle className="gradient-text text-2xl">
               Test d'Orientation Personnalisé
@@ -322,7 +322,7 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
                 </CardHeader>
                 <CardContent>
                   {currentQ?.type === 'multiple' ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 gap-3">
                       {currentQ.options.map((option) => (
                         <div
                           key={option.id}
@@ -384,21 +384,21 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
               </Card>
 
               {/* Navigation */}
-              <div className="flex justify-between">
+              <div className="flex flex-col sm:flex-row justify-between gap-3">
                 <Button
                   variant="outline"
                   onClick={prevQuestion}
                   disabled={currentQuestion === 0}
-                  className="min-w-24"
+                  className="w-full sm:w-auto sm:min-w-24"
                 >
                   Précédent
                 </Button>
                 
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <Button
                     variant="ghost"
                     onClick={resetTest}
-                    className="min-w-24"
+                    className="w-full sm:w-auto sm:min-w-24"
                   >
                     <RotateCcw className="h-4 w-4 mr-2" />
                     Recommencer
@@ -407,7 +407,7 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
                   <Button
                     onClick={nextQuestion}
                     disabled={!canProceed()}
-                    className="gradient-primary min-w-24"
+                    className="gradient-primary w-full sm:w-auto sm:min-w-24"
                   >
                     {currentQuestion === QUESTIONS.length - 1 ? "Terminer" : "Suivant"}
                     <ChevronRight className="h-4 w-4 ml-2" />

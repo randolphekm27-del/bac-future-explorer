@@ -33,12 +33,12 @@ const Index = () => {
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <ScrollReveal>
                 <div className="space-y-6 sm:space-y-8">
-                  <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none">
+                   <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-tight">
                     <span className="text-shadow">Trouvez votre voie</span><br />
                     <span className="text-shadow">après le </span>
                     <span className="gradient-text animate-bounce-in text-glow">Bac</span>
                   </h1>
-                  <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 leading-relaxed font-medium">
+                  <p className="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed font-medium">
                     <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                     Guide complet pour les nouveaux bacheliers du Bénin.
                   </p>
@@ -68,11 +68,11 @@ const Index = () => {
               
               <ScrollReveal delay={300}>
                 <div className="relative flex justify-center mt-8 lg:mt-0">
-                  <div className="glass-card rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl hover-lift border-gradient animate-float">
+                  <div className="glass-card rounded-xl sm:rounded-2xl md:rounded-3xl p-4 sm:p-8 md:p-12 shadow-2xl hover-lift border-gradient animate-float">
                     <img
                       src={logoImage}
                       alt="Après mon Bac - Logo officiel"
-                      className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain animate-glow"
+                      className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain animate-glow"
                     />
                   </div>
                   {/* Premium decorative elements */}
