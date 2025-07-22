@@ -9,6 +9,20 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { programs } from "@/data/programs"
 
+// Images pour les filières
+const programImages: Record<string, string> = {
+  "informatique": "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "gestion": "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "medecine": "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "droit": "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "agronomie": "https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "communication": "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "genie-civil": "https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "mathematiques": "https://images.pexels.com/photos/6256/mathematics-computation-mathe-algebra.jpg?auto=compress&cs=tinysrgb&w=400",
+  "finance": "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400",
+  "marketing": "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=400"
+};
+
 const getIcon = (iconName: string) => {
   const icons = {
     BookOpen: <BookOpen className="h-8 w-8 text-primary" />,
@@ -107,37 +121,48 @@ export default function Programs() {
                 id={program.slug}
                 className="group rounded-lg border bg-background p-6 hover:border-primary/50 transition-all duration-300 animate-scale-in w-full max-w-full"
               >
-                <div className="mb-4 flex items-center justify-between w-full">
-                  {getIcon(program.icon)}
-                  <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary-foreground flex-shrink-0">
-                    {program.duration}
-                  </span>
+                {/* Image de la filière */}
+                <div className="aspect-video w-full overflow-hidden bg-muted max-w-full">
+                  <img
+                    src={programImages[program.slug] || "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"}
+                    alt={program.name}
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105 max-w-full"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors break-words">
-                  {program.name}
-                </h3>
-                <p className="mt-1 text-xs text-muted-foreground break-words">
-                  {program.category}
-                </p>
-                <p className="mt-4 text-sm text-muted-foreground break-words">
-                  {program.description}
-                </p>
-                <div className="mt-6">
-                  <h4 className="text-sm font-medium mb-2">Débouchés:</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1 w-full">
-                    {program.careers.map((career, i) => (
-                      <li key={i} className="flex items-start w-full">
-                        <GraduationCap className="mr-2 h-3 w-3 text-primary" />
-                        <span className="break-words flex-1">{career}</span>
-                      </li>
-                    ))}
-                  </ul>
+                
+                <div className="p-6 w-full">
+                  <div className="mb-4 flex items-center justify-between w-full">
+                    {getIcon(program.icon)}
+                    <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary-foreground flex-shrink-0">
+                      {program.duration}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors break-words">
+                    {program.name}
+                  </h3>
+                  <p className="mt-1 text-xs text-muted-foreground break-words">
+                    {program.category}
+                  </p>
+                  <p className="mt-4 text-sm text-muted-foreground break-words">
+                    {program.description}
+                  </p>
+                  <div className="mt-6">
+                    <h4 className="text-sm font-medium mb-2">Débouchés:</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1 w-full">
+                      {program.careers.map((career, i) => (
+                        <li key={i} className="flex items-start w-full">
+                          <GraduationCap className="mr-2 h-3 w-3 text-primary" />
+                          <span className="break-words flex-1">{career}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <Link to={`/programs/${program.slug}/schools`}>
+                    <Button variant="outline" className="mt-6 w-full text-sm">
+                      Où suivre cette filière ?
+                    </Button>
+                  </Link>
                 </div>
-                <Link to={`/programs/${program.slug}/schools`}>
-                  <Button variant="outline" className="mt-6 w-full text-sm">
-                    Où suivre cette filière ?
-                  </Button>
-                </Link>
               </div>
             ))}
           </div>

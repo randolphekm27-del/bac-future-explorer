@@ -16,6 +16,21 @@ Deno.serve(async (req: Request) => {
   try {
     const { type, email, data }: EmailRequest = await req.json()
 
+    // Validation des données
+    if (!email || !email.trim()) {
+      throw new Error('Email requis')
+    }
+    
+    // Validation format email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email.trim())) {
+      throw new Error('Format email invalide')
+    }
+    
+    if (!type) {
+      throw new Error('Type de demande requis')
+    }
+
     // Configuration Resend (vous devrez ajouter votre clé API)
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') || 'your-resend-api-key'
 
@@ -110,6 +125,11 @@ Deno.serve(async (req: Request) => {
         break
 
       case 'company':
+        // Validation spécifique entreprise
+        if (!data.companyName || !data.sector || !data.contactPerson || !data.message) {
+          throw new Error('Informations entreprise incomplètes')
+        }
+        
         emailData = {
           from: 'noreply@apresmonbac.bj',
           to: ADMIN_EMAIL,
@@ -141,6 +161,11 @@ Deno.serve(async (req: Request) => {
         break
 
       case 'trainer':
+        // Validation spécifique formateur
+        if (!data.companyName || !data.sector || !data.contactPerson || !data.message) {
+          throw new Error('Informations formateur incomplètes')
+        }
+        
         emailData = {
           from: 'noreply@apresmonbac.bj',
           to: ADMIN_EMAIL,
@@ -173,6 +198,11 @@ Deno.serve(async (req: Request) => {
         break
 
       case 'contact':
+        // Validation spécifique contact
+        if (!data.message) {
+          throw new Error('Message requis')
+        }
+        
         emailData = {
           from: 'noreply@apresmonbac.bj',
           to: ADMIN_EMAIL,

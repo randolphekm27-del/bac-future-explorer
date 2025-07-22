@@ -258,7 +258,15 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
   }
 
   const handleSendMessage = async () => {
-    if (!currentMessage.trim()) return
+    if (!currentMessage.trim()) {
+      toast.error("Veuillez saisir votre message");
+      return;
+    }
+    
+    if (currentMessage.trim().length < 3) {
+      toast.error("Votre message doit contenir au moins 3 caractères");
+      return;
+    }
 
     const userMessage: Message = {
       id: Date.now().toString(),

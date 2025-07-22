@@ -34,6 +34,45 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validation côté client
+    if (!formData.companyName.trim()) {
+      toast.error("Le nom de l'entreprise/organisation est requis");
+      return;
+    }
+    
+    if (!formData.sector.trim()) {
+      toast.error("Le secteur d'activité/domaine est requis");
+      return;
+    }
+    
+    if (!formData.contactPerson.trim()) {
+      toast.error("Le nom du contact est requis");
+      return;
+    }
+    
+    if (!formData.email.trim()) {
+      toast.error("L'email est requis");
+      return;
+    }
+    
+    // Validation email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Veuillez saisir un email valide");
+      return;
+    }
+    
+    if (!formData.message.trim()) {
+      toast.error("Le message est requis");
+      return;
+    }
+    
+    if (formData.message.trim().length < 20) {
+      toast.error("Le message doit contenir au moins 20 caractères");
+      return;
+    }
+    
     setIsSubmitting(true);
 
     try {

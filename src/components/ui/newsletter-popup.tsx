@@ -28,7 +28,19 @@ export function NewsletterPopup() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    
+    // Validation côté client
+    if (!email.trim()) {
+      toast.error("Veuillez saisir votre adresse email");
+      return;
+    }
+    
+    // Validation format email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.trim())) {
+      toast.error("Veuillez saisir un email valide");
+      return;
+    }
 
     setIsSubmitting(true);
 

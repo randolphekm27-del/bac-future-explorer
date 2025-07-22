@@ -30,7 +30,7 @@ export const universities: University[] = [
     name: "Université d'Abomey-Calavi (UAC)",
     location: "Abomey-Calavi",
     type: "Public",
-    image: "https://via.placeholder.com/200",
+    image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UAC est la plus grande université du Bénin, offrant une large gamme de programmes dans diverses disciplines.",
     slug: "universite-abomey-calavi",
     schools: [
@@ -125,7 +125,7 @@ export const universities: University[] = [
     name: "Université de Parakou (UP)",
     location: "Parakou",
     type: "Public",
-    image: "https://via.placeholder.com/200",
+    image: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UP est une université publique située dans le nord du Bénin, spécialisée dans l'agriculture et les sciences de la santé.",
     slug: "universite-parakou",
     schools: [
@@ -220,7 +220,7 @@ export const universities: University[] = [
     name: "Université Nationale des Sciences, Technologies, Ingénierie et Mathématiques (UNSTIM)",
     location: "Abomey",
     type: "Public",
-    image: "https://via.placeholder.com/200",
+    image: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UNSTIM est spécialisée dans les sciences, technologies, ingénierie et mathématiques.",
     slug: "universite-unstim",
     schools: [
@@ -315,7 +315,7 @@ export const universities: University[] = [
     name: "Université Nationale d'Agriculture (UNA)",
     location: "Porto-Novo",
     type: "Public",
-    image: "https://via.placeholder.com/200",
+    image: "https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UNA est dédiée à l'enseignement et à la recherche dans le domaine de l'agriculture.",
     slug: "universite-agriculture",
     schools: [
@@ -410,7 +410,7 @@ export const universities: University[] = [
     name: "Institut de Mathématiques et de Sciences Physiques (IMSP)",
     location: "Dangbo",
     type: "Public",
-    image: "https://via.placeholder.com/200",
+    image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'IMSP est un institut de recherche et d'enseignement en mathématiques et sciences physiques.",
     slug: "institut-imsp",
     schools: [
@@ -505,7 +505,7 @@ export const universities: University[] = [
     name: "Université Africaine de Technologie et de Management (UATM)",
     location: "Cotonou",
     type: "Privé",
-    image: "https://via.placeholder.com/200",
+    image: "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UATM est une université privée offrant des formations en gestion et technologie.",
     slug: "universite-uatm",
     schools: [
