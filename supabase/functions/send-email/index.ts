@@ -74,7 +74,7 @@ Deno.serve(async (req: Request) => {
                 </div>
                 
                 <div style="text-align: center; margin: 30px 0;">
-                  <a href="https://drive.google.com/file/d/exemple/guide-orientation-benin-2025.pdf" 
+                  <a href="https://docs.google.com/document/d/1RaCYVOqpV5yMBMzSMzS9F4X4uPF2JtWX8J5irOHWrks/edit?usp=drive_link" 
                      style="background: linear-gradient(135deg, #3B82F6, #F97316); color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold;">
                     📥 Télécharger votre guide (PDF)
                   </a>
