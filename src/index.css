@@ -35,6 +35,9 @@
     --accent-dark: 25 95% 45%;
     --accent-foreground: 0 0% 100%;
     
+    /* Footer Blue */
+    --footer-blue: 211 100% 50%;
+    
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 98%;
     
@@ -103,6 +106,8 @@
     --accent-light: 25 95% 70%;
     --accent-dark: 25 95% 50%;
     --accent-foreground: 0 0% 100%;
+    
+    --footer-blue: 211 100% 50%;
 
     --destructive: 0 85% 65%;
     --destructive-foreground: 0 0% 98%;

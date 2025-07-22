@@ -100,73 +100,127 @@ const Index = () => {
               />
             </ScrollReveal>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              <ScrollReveal delay={100}>
-                <FeatureCard
-                  icon={<Building2 className="h-8 w-8" />}
-                  title="Universités"
-                  description="Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission"
-                  href="/universities"
-                />
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <FeatureCard
-                  icon={<GraduationCap className="h-8 w-8" />}
-                  title="Filières & Débouchés"
-                  description="Découvrez les formations disponibles et leurs perspectives d'emploi"
-                  href="/programs"
-                />
-              </ScrollReveal>
-              <ScrollReveal delay={300}>
-                <FeatureCard
-                  icon={<Briefcase className="h-8 w-8" />}
-                  title="Stages & Opportunités"
-                  description="Trouvez des stages et développez votre expérience professionnelle"
-                  href="/internships"
-                />
-              </ScrollReveal>
-              <ScrollReveal delay={400}>
-                <FeatureCard
-                  icon={<Trophy className="h-8 w-8" />}
-                  title="Concours & Hackathons"
-                  description="Participez aux concours et challenges pour vous démarquer"
-                  href="/competitions"
-                />
-              </ScrollReveal>
-              <ScrollReveal delay={500}>
-                <FeatureCard
-                  icon={<PlayCircle className="h-8 w-8" />}
-                  title="Formations Pratiques"
-                  description="Développez vos compétences avec nos formations spécialisées"
-                  href="/courses"
-                />
-              </ScrollReveal>
-              <ScrollReveal delay={600}>
-                <FeatureCard
-                  icon={<Users className="h-8 w-8" />}
-                  title="Communauté"
-                  description="Rejoignez une communauté d'étudiants motivés et ambitieux"
-                />
-              </ScrollReveal>
+            <div className="relative max-w-4xl mx-auto">
+              <div className="overflow-hidden rounded-2xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                  <ScrollReveal delay={100}>
+                    <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
+                          <Building2 className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">Universités</h3>
+                        <p className="text-muted-foreground mb-4">
+                          Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission
+                        </p>
+                        <Link to="/universities">
+                          <Button variant="outline" className="w-full">
+                            Explorer
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={200}>
+                    <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
+                          <GraduationCap className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">Filières & Débouchés</h3>
+                        <p className="text-muted-foreground mb-4">
+                          Découvrez les formations disponibles et leurs perspectives d'emploi
+                        </p>
+                        <Link to="/programs">
+                          <Button variant="outline" className="w-full">
+                            Découvrir
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={300}>
+                    <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
+                          <Briefcase className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">Stages & Opportunités</h3>
+                        <p className="text-muted-foreground mb-4">
+                          Trouvez des stages et développez votre expérience professionnelle
+                        </p>
+                        <Link to="/internships">
+                          <Button variant="outline" className="w-full">
+                            Voir les stages
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={400}>
+                    <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
+                          <Trophy className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">Concours & Hackathons</h3>
+                        <p className="text-muted-foreground mb-4">
+                          Participez aux concours et challenges pour vous démarquer
+                        </p>
+                        <Link to="/competitions">
+                          <Button variant="outline" className="w-full">
+                            Participer
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={500}>
+                    <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
+                          <PlayCircle className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">Formations Pratiques</h3>
+                        <p className="text-muted-foreground mb-4">
+                          Développez vos compétences avec nos formations spécialisées
+                        </p>
+                        <Link to="/courses">
+                          <Button variant="outline" className="w-full">
+                            Se former
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={600}>
+                    <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
+                          <Users className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3">Communauté</h3>
+                        <p className="text-muted-foreground mb-4">
+                          Rejoignez une communauté d'étudiants motivés et ambitieux
+                        </p>
+                        <Button variant="outline" className="w-full">
+                          Rejoindre
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Premium Interactive Timeline */}
-        <section className="py-16 sm:py-20 md:py-24 gradient-card">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <ScrollReveal>
-              <SectionTitle 
-                title="Votre parcours en 5 étapes" 
-                description="Suivez notre méthode éprouvée pour réussir votre orientation"
-                className="mb-12 sm:mb-16"
-              />
-            </ScrollReveal>
-            <div className="mt-12 sm:mt-16">
-              <InteractiveTimeline />
-            </div>
-          </div>
-        </section>
 
         {/* Premium Testimonials */}
         <section className="py-16 sm:py-20 md:py-24 gradient-hero">

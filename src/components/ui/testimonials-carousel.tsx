@@ -80,7 +80,7 @@ export function TestimonialsCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background shadow-lg"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background shadow-lg opacity-100"
         onClick={goToPrevious}
       >
         <ChevronLeft className="w-5 h-5" />
@@ -89,7 +89,7 @@ export function TestimonialsCarousel() {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background shadow-lg"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background shadow-lg opacity-100"
         onClick={goToNext}
       >
         <ChevronRight className="w-5 h-5" />
