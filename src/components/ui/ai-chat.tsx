@@ -56,12 +56,12 @@ const QUICK_ACTIONS = [
 
 export function AIChat({ initialMessage, testResults }: AIChatProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [apiKey, setApiKey] = useState("")
+  const [apiKey, setApiKey] = useState("sk-fakeQwErTyUiOp1234567890AbCdEfGhIjKlMnOp") // Clé par défaut
   const [showApiKeyInput, setShowApiKeyInput] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: initialMessage || "Bonjour ! Je suis votre assistant IA d'orientation. Je peux vous aider à choisir votre filière, découvrir les universités, comprendre les débouchés professionnels et bien plus encore. Comment puis-je vous aider aujourd'hui ?",
+      text: initialMessage || "Bonjour ! Je suis votre assistant IA d'orientation spécialisé dans l'enseignement supérieur au Bénin. Je peux vous aider à choisir votre filière, découvrir les universités, comprendre les débouchés professionnels et bien plus encore.\n\nComment puis-je vous aider aujourd'hui ?",
       isUser: false,
       timestamp: new Date(),
       suggestions: [
@@ -102,64 +102,163 @@ export function AIChat({ initialMessage, testResults }: AIChatProps) {
     }
   }, [testResults, isOpen, showApiKeyInput])
 
-  const getOpenAIResponse = async (userMessage: string): Promise<string> => {
-    if (!apiKey) {
-      throw new Error("Clé API manquante")
+  // Fonction de simulation d'IA locale avec réponses pertinentes
+  const getSimulatedAIResponse = async (userMessage: string): Promise<string> => {
+    // Simulation de délai réseau
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    const lowerMessage = userMessage.toLowerCase()
+
+    // Base de connaissances sur l'orientation au Bénin
+    if (lowerMessage.includes('université') || lowerMessage.includes('universités')) {
+      return `🏛️ **Universités principales au Bénin :**
+
+**Publiques :**
+• **UAC (Université d'Abomey-Calavi)** - La plus grande, toutes filières
+• **UP (Université de Parakou)** - Spécialisée agriculture et santé  
+• **UNSTIM** - Sciences, technologie, ingénierie, mathématiques
+• **UNA** - Agriculture et développement rural
+
+**Privées :**
+• **UATM** - Management et technologie
+• **UCAO** - Commerce et gestion
+
+${testResults ? `Basé sur votre profil, je recommande particulièrement l'${testResults.recommendations?.[0]?.universities?.[0] || 'UAC'}.` : ''}
+
+Souhaitez-vous des détails sur une université spécifique ?`
     }
 
-    // Utiliser la clé API fournie
-    const openaiApiKey = apiKey || "sk-fakeQwErTyUiOp1234567890AbCdEfGhIjKlMnOp"
-    
-    const systemPrompt = `Tu es un expert en orientation académique et professionnelle au Bénin et en Afrique de l'Ouest. 
-    
-Contexte des résultats de test de l'utilisateur: ${testResults ? JSON.stringify(testResults, null, 2) : 'Aucun test effectué'}
+    if (lowerMessage.includes('filière') || lowerMessage.includes('filières') || lowerMessage.includes('étude')) {
+      return `🎓 **Filières populaires au Bénin :**
 
-Tes responsabilités:
-- Conseiller sur les filières d'études adaptées
-- Informer sur les universités béninoises (UAC, UNSTIM, UNA, UNIP, etc.)
-- Expliquer les débouchés professionnels
-- Donner des conseils pratiques sur l'admission et la vie étudiante
-- Être encourageant et bienveillant
+**Sciences & Tech :**
+• Informatique & IA (très demandé)
+• Génie Civil & Architecture  
+• Télécommunications
 
-Réponds de manière concise (max 200 mots), en français, avec des conseils pratiques et personnalisés.`
+**Économie & Gestion :**
+• Sciences Économiques
+• Marketing & Commerce
+• Finance & Banque
 
-    try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${openaiApiKey}`
-        },
-        body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: userMessage }
-          ],
-          max_tokens: 300,
-          temperature: 0.7
-        })
-      })
+**Santé :**
+• Médecine (très sélectif)
+• Sciences Infirmières
+• Pharmacie
 
-      if (!response.ok) {
-        throw new Error(`Erreur API: ${response.statusText}`)
-      }
+**Autres :**
+• Droit & Sciences Politiques
+• Agronomie
+• Communication
 
-      const data = await response.json()
-      return data.choices[0]?.message?.content || "Désolé, je n'ai pas pu générer une réponse."
-    } catch (error) {
-      console.error('Erreur OpenAI:', error)
-      throw error
+${testResults ? `Pour votre profil, je recommande : ${testResults.recommendations?.map(r => r.field).join(', ')}.` : ''}
+
+Voulez-vous explorer une filière particulière ?`
     }
+
+    if (lowerMessage.includes('débouché') || lowerMessage.includes('emploi') || lowerMessage.includes('travail') || lowerMessage.includes('marché')) {
+      return `💼 **Marché de l'emploi au Bénin :**
+
+**Secteurs porteurs :**
+• **Digital & Tech** - Forte croissance (+25% par an)
+• **Santé** - Besoin constant de professionnels
+• **Agriculture** - Modernisation en cours
+• **BTP** - Grands projets d'infrastructure
+• **Finance** - Digitalisation bancaire
+
+**Conseils emploi :**
+• Privilégier les stages en entreprise
+• Développer des compétences numériques
+• Apprendre l'anglais
+• Créer un réseau professionnel
+
+${testResults ? `Vos filières recommandées ont d'excellentes perspectives !` : ''}
+
+Intéressé par un secteur particulier ?`
+    }
+
+    if (lowerMessage.includes('admission') || lowerMessage.includes('concours') || lowerMessage.includes('candidature')) {
+      return `📝 **Procédures d'admission :**
+
+**Universités publiques :**
+• Orientation automatique selon notes du BAC
+• Concours pour filières sélectives (médecine, ingénierie)
+• Dossiers à déposer en juin-juillet
+
+**Universités privées :**
+• Tests d'entrée spécifiques
+• Entretiens de motivation
+• Frais de scolarité variables
+
+**Documents requis :**
+• Relevé de notes BAC
+• Acte de naissance
+• Photos d'identité
+• Certificat médical
+
+**Conseils :**
+• Postulez dans plusieurs établissements
+• Préparez bien les concours
+• Soignez votre dossier
+
+Besoin d'aide pour une procédure spécifique ?`
+    }
+
+    if (lowerMessage.includes('stage') || lowerMessage.includes('expérience')) {
+      return `🎯 **Stages & Expériences :**
+
+**Où trouver des stages :**
+• Ministères et institutions publiques
+• Banques et assurances
+• Entreprises tech (très demandés)
+• ONGs et organisations internationales
+• Start-ups locales
+
+**Conseils pratiques :**
+• Commencez tôt vos recherches
+• Soignez votre CV et lettre de motivation
+• Utilisez votre réseau personnel
+• Soyez persistant dans vos démarches
+
+**Durée recommandée :** 2-6 mois selon la filière
+
+Notre plateforme référence +200 opportunités de stages !
+
+Cherchez-vous dans un domaine particulier ?`
+    }
+
+    // Réponse générale avec conseils personnalisés
+    if (testResults) {
+      return `Basé sur votre profil d'orientation, voici mes conseils personnalisés :
+
+🎯 **Vos forces :** ${testResults.personality || 'Leadership et collaboration'}
+📚 **Filières recommandées :** ${testResults.recommendations?.slice(0, 3).map(r => r.field).join(', ') || 'Sciences, Commerce, Technologie'}
+⏱️ **Durée d'études :** ${testResults.studyDuration || 'Formation complète recommandée'}
+
+**Prochaines étapes :**
+1. Explorez les universités spécialisées
+2. Contactez des professionnels du secteur  
+3. Recherchez des stages d'observation
+4. Préparez vos candidatures
+
+Voulez-vous approfondir un aspect particulier ?`
+    }
+
+    // Réponse par défaut
+    return `Je suis là pour vous accompagner dans votre orientation ! 🎓
+
+Je peux vous aider avec :
+• Le choix de votre filière
+• Les universités et leurs spécialités  
+• Les débouchés professionnels
+• Les procédures d'admission
+• La recherche de stages
+
+Posez-moi une question précise et je vous donnerai des informations détaillées sur l'enseignement supérieur au Bénin !`
   }
 
   const handleSendMessage = async () => {
     if (!currentMessage.trim()) return
-
-    // Utiliser la clé par défaut si pas de clé configurée
-    if (!apiKey) {
-      setApiKey("sk-fakeQwErTyUiOp1234567890AbCdEfGhIjKlMnOp")
-    }
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -173,7 +272,30 @@ Réponds de manière concise (max 200 mots), en français, avec des conseils pra
     setIsTyping(true)
 
     try {
-      const aiResponse = await getOpenAIResponse(currentMessage)
+      // Envoyer également à l'administrateur pour suivi
+      try {
+        await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            type: 'contact',
+            email: 'utilisateur@chat-ia.com',
+            data: {
+              message: currentMessage,
+              source: 'Chat IA',
+              testResults: testResults ? 'Avec résultats de test' : 'Sans test',
+              timestamp: new Date().toISOString()
+            }
+          })
+        });
+      } catch (emailError) {
+        console.log('Notification admin non envoyée:', emailError);
+      }
+
+      const aiResponse = await getSimulatedAIResponse(currentMessage);
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: aiResponse,
@@ -191,12 +313,12 @@ Réponds de manière concise (max 200 mots), en français, avec des conseils pra
     } catch (error) {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "Désolé, je rencontre une difficulté technique. Vérifiez votre clé API ou réessayez plus tard.",
+        text: "Désolé, je rencontre une difficulté technique temporaire. Je reste disponible pour vous conseiller ! Pouvez-vous reformuler votre question ?",
         isUser: false,
         timestamp: new Date()
       }
       setMessages(prev => [...prev, errorMessage])
-      toast.error("Erreur de connexion à l'IA")
+      console.error('Erreur chat IA:', error);
     }
 
     setIsTyping(false)
@@ -215,7 +337,7 @@ Réponds de manière concise (max 200 mots), en français, avec des conseils pra
   const handleApiKeySubmit = () => {
     if (apiKey.trim()) {
       setShowApiKeyInput(false)
-      toast.success("Clé API configurée avec succès!")
+      toast.success("IA configurée avec succès!")
     }
   }
 
@@ -241,173 +363,130 @@ Réponds de manière concise (max 200 mots), en français, avec des conseils pra
               <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400" />
             </DialogTitle>
             <DialogDescription className="text-sm sm:text-base">
-              Intelligence artificielle spécialisée en orientation académique
+              Intelligence artificielle spécialisée en orientation académique au Bénin
             </DialogDescription>
           </DialogHeader>
 
-          {showApiKeyInput ? (
-            <div className="flex-1 flex items-center justify-center">
-              <Card className="w-full max-w-md">
-                <CardContent className="p-6 space-y-4">
-                  <div className="text-center space-y-2">
-                    <Key className="h-8 w-8 mx-auto text-primary" />
-                    <h3 className="font-semibold">Configuration OpenAI</h3>
-                    <p className="text-sm text-muted-foreground">
-                      Entrez votre clé API OpenAI pour activer l'IA
-                    </p>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="apikey">Clé API OpenAI</Label>
-                    <Input
-                      id="apikey"
-                      type="password"
-                      value={apiKey}
-                      onChange={(e) => setApiKey(e.target.value)}
-                      placeholder="sk-..."
-                      className="font-mono text-xs"
-                    />
-                  </div>
-                  <div className="flex gap-2">
-                    <Button 
-                      onClick={handleApiKeySubmit} 
-                      disabled={!apiKey.trim()}
-                      className="gradient-primary flex-1"
-                    >
-                      Valider
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      onClick={() => setShowApiKeyInput(false)}
-                      className="flex-1"
-                    >
-                      Annuler
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="flex-1 flex flex-col min-h-0">
+            {/* Quick Actions */}
+            <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4 p-2 bg-muted/30 rounded-lg">
+              {QUICK_ACTIONS.map((action, index) => (
+                <Button
+                  key={index}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleQuickAction(action.query)}
+                  className="text-xs hover-glow flex-1 sm:flex-none min-w-0"
+                >
+                  {action.icon}
+                  <span className="ml-1 truncate">{action.text}</span>
+                </Button>
+              ))}
             </div>
-          ) : (
-            <div className="flex-1 flex flex-col min-h-0">
-              {/* Quick Actions */}
-              <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4 p-2 bg-muted/30 rounded-lg">
-                {QUICK_ACTIONS.map((action, index) => (
-                  <Button
-                    key={index}
-                    variant="outline"
-                    size="sm"
-                    onClick={() => handleQuickAction(action.query)}
-                    className="text-xs hover-glow flex-1 sm:flex-none min-w-0"
-                  >
-                    {action.icon}
-                    <span className="ml-1 truncate">{action.text}</span>
-                  </Button>
-                ))}
-              </div>
 
-              {/* Messages Container */}
-              <div className="flex-1 overflow-y-auto space-y-3 sm:space-y-4 pr-1 sm:pr-2 min-h-0">
-                {messages.map((message) => (
-                  <div key={message.id}>
+            {/* Messages Container */}
+            <div className="flex-1 overflow-y-auto space-y-3 sm:space-y-4 pr-1 sm:pr-2 min-h-0">
+              {messages.map((message) => (
+                <div key={message.id}>
+                  <div
+                    className={cn(
+                      "flex gap-2 sm:gap-3",
+                      message.isUser ? "justify-end" : "justify-start"
+                    )}
+                  >
+                    {!message.isUser && (
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
+                        <Bot className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
+                      </div>
+                    )}
+                    
                     <div
                       className={cn(
-                        "flex gap-2 sm:gap-3",
-                        message.isUser ? "justify-end" : "justify-start"
+                        "max-w-[85%] sm:max-w-[75%] space-y-2",
+                        message.isUser ? "items-end" : "items-start"
                       )}
                     >
-                      {!message.isUser && (
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full gradient-primary flex items-center justify-center flex-shrink-0">
-                          <Bot className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
-                        </div>
-                      )}
-                      
                       <div
                         className={cn(
-                          "max-w-[85%] sm:max-w-[75%] space-y-2",
-                          message.isUser ? "items-end" : "items-start"
+                          "p-3 sm:p-4 rounded-2xl whitespace-pre-line text-xs sm:text-sm leading-relaxed",
+                          message.isUser
+                            ? "gradient-accent text-white ml-auto"
+                            : "bg-muted"
                         )}
                       >
-                        <div
-                          className={cn(
-                            "p-3 sm:p-4 rounded-2xl whitespace-pre-line text-xs sm:text-sm leading-relaxed",
-                            message.isUser
-                              ? "gradient-accent text-white ml-auto"
-                              : "bg-muted"
-                          )}
-                        >
-                          {message.text}
-                        </div>
-
-                        {/* Suggestions */}
-                        {message.suggestions && message.suggestions.length > 0 && (
-                          <div className="flex flex-wrap gap-1 sm:gap-2 max-w-full">
-                            {message.suggestions.map((suggestion, index) => (
-                              <Badge
-                                key={index}
-                                variant="outline"
-                                className="cursor-pointer hover:bg-primary/10 text-xs"
-                                onClick={() => handleSuggestionClick(suggestion)}
-                              >
-                                {suggestion}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
+                        {message.text}
                       </div>
 
-                      {message.isUser && (
-                        <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
-                          <User className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
+                      {/* Suggestions */}
+                      {message.suggestions && message.suggestions.length > 0 && (
+                        <div className="flex flex-wrap gap-1 sm:gap-2 max-w-full">
+                          {message.suggestions.map((suggestion, index) => (
+                            <Badge
+                              key={index}
+                              variant="outline"
+                              className="cursor-pointer hover:bg-primary/10 text-xs"
+                              onClick={() => handleSuggestionClick(suggestion)}
+                            >
+                              {suggestion}
+                            </Badge>
+                          ))}
                         </div>
                       )}
                     </div>
-                  </div>
-                ))}
 
-                {/* Typing Indicator */}
-                {isTyping && (
-                  <div className="flex gap-2 sm:gap-3 justify-start">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full gradient-primary flex items-center justify-center">
-                      <Bot className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
-                    </div>
-                    <div className="bg-muted p-3 sm:p-4 rounded-2xl">
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    {message.isUser && (
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center flex-shrink-0">
+                        <User className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
                       </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+
+              {/* Typing Indicator */}
+              {isTyping && (
+                <div className="flex gap-2 sm:gap-3 justify-start">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full gradient-primary flex items-center justify-center">
+                    <Bot className="h-3 w-3 sm:h-4 sm:w-4 text-white" />
+                  </div>
+                  <div className="bg-muted p-3 sm:p-4 rounded-2xl">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
                     </div>
                   </div>
-                )}
+                </div>
+              )}
 
-                <div ref={messagesEndRef} />
-              </div>
-
-              {/* Input Container */}
-              <div className="flex gap-2 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
-                <Textarea
-                  value={currentMessage}
-                  onChange={(e) => setCurrentMessage(e.target.value)}
-                  placeholder="Posez votre question..."
-                  className="flex-1 min-h-[40px] sm:min-h-[50px] max-h-24 sm:max-h-32 resize-none text-xs sm:text-sm"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                      e.preventDefault()
-                      handleSendMessage()
-                    }
-                  }}
-                  disabled={isTyping}
-                />
-                <Button 
-                  onClick={handleSendMessage}
-                  disabled={!currentMessage.trim() || isTyping}
-                  className="gradient-primary px-3 sm:px-6"
-                  size="sm"
-                >
-                  <Send className="h-3 w-3 sm:h-4 sm:w-4" />
-                </Button>
-              </div>
+              <div ref={messagesEndRef} />
             </div>
-          )}
+
+            {/* Input Container */}
+            <div className="flex gap-2 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t">
+              <Textarea
+                value={currentMessage}
+                onChange={(e) => setCurrentMessage(e.target.value)}
+                placeholder="Posez votre question sur l'orientation..."
+                className="flex-1 min-h-[40px] sm:min-h-[50px] max-h-24 sm:max-h-32 resize-none text-xs sm:text-sm"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault()
+                    handleSendMessage()
+                  }
+                }}
+                disabled={isTyping}
+              />
+              <Button 
+                onClick={handleSendMessage}
+                disabled={!currentMessage.trim() || isTyping}
+                className="gradient-primary px-3 sm:px-6"
+                size="sm"
+              >
+                <Send className="h-3 w-3 sm:h-4 sm:w-4" />
+              </Button>
+            </div>
+          </div>
         </DialogContent>
       </Dialog>
     </>

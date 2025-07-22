@@ -3,7 +3,7 @@ import { Button } from "./button";
 import { Input } from "./input";
 import { Textarea } from "./textarea";
 import { Label } from "./label";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
@@ -31,20 +31,36 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
     experience: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      // Simulation d'envoi - En production, connecter à une API
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Demande envoyée avec succès !",
-        description: "Notre équipe vous contactera dans les plus brefs délais.",
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: type,
+          email: formData.email,
+          data: {
+            ...formData,
+            formType: type,
+            submissionDate: new Date().toISOString()
+          }
+        })
       });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Erreur lors de l\'envoi');
+      }
+      
+      toast.success("Demande envoyée avec succès ! Notre équipe vous contactera dans les plus brefs délais. 📧");
       
       setFormData({
         companyName: "",
@@ -57,11 +73,8 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
       });
       onClose();
     } catch (error) {
-      toast({
-        title: "Erreur",
-        description: "Une erreur s'est produite. Veuillez réessayer.",
-        variant: "destructive",
-      });
+      console.error('Erreur formulaire:', error);
+      toast.error("Une erreur s'est produite. Veuillez réessayer ou nous contacter directement.");
     } finally {
       setIsSubmitting(false);
     }
@@ -80,14 +93,14 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>{title}</DialogTitle>
-          <DialogDescription>{description}</DialogDescription>
+          <DialogTitle className="text-2xl gradient-text">{title}</DialogTitle>
+          <DialogDescription className="text-base">{description}</DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-6 mt-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="companyName">
+              <Label htmlFor="companyName" className="text-sm font-medium">
                 {type === "company" ? "Nom de l'entreprise" : "Nom de l'organisation"} *
               </Label>
               <Input
@@ -96,11 +109,12 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
                 value={formData.companyName}
                 onChange={handleInputChange}
                 required
+                placeholder={type === "company" ? "Ex: TechCorp SARL" : "Ex: Formation Pro"}
               />
             </div>
 
             <div>
-              <Label htmlFor="sector">
+              <Label htmlFor="sector" className="text-sm font-medium">
                 {type === "company" ? "Secteur d'activité" : "Domaine de formation"} *
               </Label>
               <Input
@@ -109,24 +123,26 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
                 value={formData.sector}
                 onChange={handleInputChange}
                 required
+                placeholder={type === "company" ? "Ex: Technologies, Santé..." : "Ex: Informatique, Marketing..."}
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="contactPerson">Nom du contact *</Label>
+              <Label htmlFor="contactPerson" className="text-sm font-medium">Nom du contact *</Label>
               <Input
                 id="contactPerson"
                 name="contactPerson"
                 value={formData.contactPerson}
                 onChange={handleInputChange}
                 required
+                placeholder="Nom et prénom"
               />
             </div>
 
             <div>
-              <Label htmlFor="email">Email professionnel *</Label>
+              <Label htmlFor="email" className="text-sm font-medium">Email professionnel *</Label>
               <Input
                 id="email"
                 name="email"
@@ -134,25 +150,27 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
                 value={formData.email}
                 onChange={handleInputChange}
                 required
+                placeholder="contact@entreprise.com"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="phone">Téléphone</Label>
+              <Label htmlFor="phone" className="text-sm font-medium">Téléphone</Label>
               <Input
                 id="phone"
                 name="phone"
                 type="tel"
                 value={formData.phone}
                 onChange={handleInputChange}
+                placeholder="+229 XX XX XX XX"
               />
             </div>
 
             {type === "trainer" && (
               <div>
-                <Label htmlFor="experience">Années d'expérience</Label>
+                <Label htmlFor="experience" className="text-sm font-medium">Années d'expérience</Label>
                 <Input
                   id="experience"
                   name="experience"
@@ -165,7 +183,7 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
           </div>
 
           <div>
-            <Label htmlFor="message">
+            <Label htmlFor="message" className="text-sm font-medium">
               {type === "company" 
                 ? "Décrivez votre entreprise et vos besoins" 
                 : "Décrivez votre expertise et les formations que vous proposez"
@@ -176,14 +194,26 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
               name="message"
               value={formData.message}
               onChange={handleInputChange}
-              rows={4}
+              rows={6}
               required
               placeholder={
                 type === "company" 
-                  ? "Parlez-nous de votre entreprise, vos offres de stage/emploi, et comment nous pouvons collaborer..."
-                  : "Décrivez votre expertise, les formations que vous souhaitez proposer, votre public cible..."
+                  ? "Présentez votre entreprise, vos offres de stage/emploi, et comment nous pouvons collaborer pour accompagner nos étudiants..."
+                  : "Décrivez votre expertise, les formations que vous souhaitez proposer, votre public cible, vos méthodes pédagogiques..."
               }
+              className="resize-none"
             />
+          </div>
+
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+            <p className="text-sm text-primary font-medium mb-2">
+              📧 Après validation de votre demande :
+            </p>
+            <ul className="text-xs space-y-1 text-muted-foreground">
+              <li>• Notre équipe vous contactera sous 48h</li>
+              <li>• Nous étudierons ensemble les modalités de partenariat</li>
+              <li>• Nous mettrons en avant votre {type === "company" ? "entreprise" : "formation"} sur la plateforme</li>
+            </ul>
           </div>
 
           <div className="flex gap-3 pt-4">
@@ -192,15 +222,23 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
               variant="outline"
               onClick={onClose}
               className="flex-1"
+              disabled={isSubmitting}
             >
               Annuler
             </Button>
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1"
+              className="flex-1 gradient-primary"
             >
-              {isSubmitting ? "Envoi en cours..." : "Envoyer la demande"}
+              {isSubmitting ? (
+                <div className="flex items-center">
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
+                  Envoi en cours...
+                </div>
+              ) : (
+                'Envoyer la demande'
+              )}
             </Button>
           </div>
         </form>
