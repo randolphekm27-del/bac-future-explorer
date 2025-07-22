@@ -1,68 +1,22 @@
 import { GraduationCap, Search, BookOpen, Users, Briefcase } from "lucide-react"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { navigationLinks } from "@/lib/navigation"
 import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { programs } from "@/data/programs"
 
-const programs = [
-  {
-    id: 1,
-    name: "Informatique",
-    category: "Sciences et Technologie",
-    duration: "3-5 ans",
-    description: "Formation en programmation, bases de données, réseaux et intelligence artificielle.",
-    careers: ["Développeur logiciel", "Administrateur système", "Data Scientist", "Expert en cybersécurité"],
-    icon: <BookOpen className="h-8 w-8 text-primary" />,
-  },
-  {
-    id: 2,
-    name: "Gestion",
-    category: "Sciences Économiques",
-    duration: "3-5 ans",
-    description: "Formation en comptabilité, marketing, ressources humaines et management.",
-    careers: ["Comptable", "Manager", "Responsable marketing", "Consultant en entreprise"],
-    icon: <Briefcase className="h-8 w-8 text-primary" />,
-  },
-  {
-    id: 3,
-    name: "Médecine",
-    category: "Sciences de la Santé",
-    duration: "7-8 ans",
-    description: "Formation en anatomie, physiologie, pathologie et pratique clinique.",
-    careers: ["Médecin généraliste", "Chirurgien", "Pédiatre", "Cardiologue"],
-    icon: <Users className="h-8 w-8 text-primary" />,
-  },
-  {
-    id: 4,
-    name: "Droit",
-    category: "Sciences Juridiques",
-    duration: "3-5 ans",
-    description: "Formation en droit civil, pénal, administratif et international.",
-    careers: ["Avocat", "Magistrat", "Juriste d'entreprise", "Notaire"],
-    icon: <BookOpen className="h-8 w-8 text-primary" />,
-  },
-  {
-    id: 5,
-    name: "Agronomie",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en production végétale, élevage, gestion des ressources naturelles.",
-    careers: ["Ingénieur agronome", "Conseiller agricole", "Chercheur en agronomie"],
-    icon: <Briefcase className="h-8 w-8 text-primary" />,
-  },
-  {
-    id: 6,
-    name: "Communication",
-    category: "Sciences Humaines",
-    duration: "3-5 ans",
-    description: "Formation en journalisme, relations publiques, médias numériques.",
-    careers: ["Journaliste", "Chargé de communication", "Community manager", "Attaché de presse"],
-    icon: <Users className="h-8 w-8 text-primary" />,
-  },
-]
+const getIcon = (iconName: string) => {
+  const icons = {
+    BookOpen: <BookOpen className="h-8 w-8 text-primary" />,
+    Briefcase: <Briefcase className="h-8 w-8 text-primary" />,
+    Users: <Users className="h-8 w-8 text-primary" />,
+  };
+  return icons[iconName as keyof typeof icons] || <BookOpen className="h-8 w-8 text-primary" />;
+};
 
 export default function Programs() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -127,7 +81,7 @@ export default function Programs() {
                 className="group rounded-lg border bg-background p-6 hover:border-primary/50 transition-colors animate-scale-in"
               >
                 <div className="mb-4 flex items-center justify-between">
-                  {program.icon}
+                  {getIcon(program.icon)}
                   <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary-foreground">
                     {program.duration}
                   </span>
@@ -152,9 +106,11 @@ export default function Programs() {
                     ))}
                   </ul>
                 </div>
-                <Button variant="outline" className="mt-6 w-full">
-                  Où suivre cette filière
-                </Button>
+                <Link to={`/programs/${program.slug}/schools`}>
+                  <Button variant="outline" className="mt-6 w-full">
+                    Où suivre cette filière ?
+                  </Button>
+                </Link>
               </div>
             ))}
           </div>

@@ -1,4 +1,4 @@
-import { Briefcase, Search, Calendar, MapPin, Building } from "lucide-react"
+import { Briefcase, Search, Calendar, MapPin, Building, Plus } from "lucide-react"
 import { useState } from "react"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
@@ -7,6 +7,7 @@ import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { ContactForm } from "@/components/ui/contact-form"
 
 const internships = [
   {
@@ -103,6 +104,7 @@ const resources = [
 export default function Internships() {
   const [searchTerm, setSearchTerm] = useState("")
   const [typeFilter, setTypeFilter] = useState("all")
+  const [showContactForm, setShowContactForm] = useState(false)
 
   const types = ["all", ...new Set(internships.map((internship) => internship.type))]
 
@@ -125,10 +127,16 @@ export default function Internships() {
 
       <main className="flex-1 pt-24 pb-12">
         <div className="container mx-auto px-4">
-          <SectionTitle
-            title="Stages & Opportunités"
-            description="Trouvez des stages dans votre domaine et accédez à des ressources pour postuler efficacement."
-          />
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+            <SectionTitle
+              title="Stages & Opportunités"
+              description="Trouvez des stages dans votre domaine et accédez à des ressources pour postuler efficacement."
+            />
+            <Button onClick={() => setShowContactForm(true)} className="shrink-0">
+              <Plus className="mr-2 h-4 w-4" />
+              Mettre en avant mon entreprise
+            </Button>
+          </div>
 
           <Tabs defaultValue="opportunities" className="mb-8">
             <TabsList className="grid w-full grid-cols-2">
@@ -251,6 +259,14 @@ export default function Internships() {
               </div>
             </TabsContent>
           </Tabs>
+
+          <ContactForm
+            isOpen={showContactForm}
+            onClose={() => setShowContactForm(false)}
+            type="company"
+            title="Mettre en avant votre entreprise"
+            description="Proposez des stages et opportunités aux étudiants. Notre équipe vous contactera pour discuter de votre collaboration."
+          />
         </div>
       </main>
 
