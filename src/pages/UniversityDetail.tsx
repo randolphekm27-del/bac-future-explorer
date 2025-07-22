@@ -21,25 +21,25 @@ export default function UniversityDetail() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
 
-      <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4">
+      <main className="flex-1 pt-24 pb-12 w-full">
+        <div className="container mx-auto px-4 max-w-full">
           {/* En-tête de l'université */}
-          <div className="mb-12 text-center">
-            <div className="aspect-video w-full max-w-4xl mx-auto overflow-hidden bg-muted rounded-2xl mb-8">
+          <div className="mb-12 text-center w-full">
+            <div className="aspect-video w-full max-w-4xl mx-auto overflow-hidden bg-muted rounded-2xl mb-8 max-w-full">
               <img
                 src={university.image}
                 alt={university.name}
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover max-w-full"
               />
             </div>
             
-            <div className="max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="max-w-3xl mx-auto w-full">
+              <div className="flex items-center justify-center gap-4 mb-4 flex-wrap">
                 <span
-                  className={`text-sm px-3 py-1 rounded-full ${
+                  className={`text-sm px-3 py-1 rounded-full flex-shrink-0 ${
                     university.type === "Public"
                       ? "bg-blue-100 text-blue-800"
                       : "bg-emerald-100 text-emerald-800"
@@ -47,7 +47,7 @@ export default function UniversityDetail() {
                 >
                   {university.type}
                 </span>
-                <span className="flex items-center text-sm text-muted-foreground">
+                <span className="flex items-center text-sm text-muted-foreground flex-shrink-0">
                   <MapPin className="mr-1 h-4 w-4" />
                   {university.location}
                 </span>
@@ -57,12 +57,12 @@ export default function UniversityDetail() {
                 {university.name}
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg text-muted-foreground mb-6 break-words">
                 {university.description}
               </p>
 
               {/* Statistiques rapides */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
                   <BookOpen className="h-5 w-5 text-primary" />
                   <div className="text-center">
@@ -96,7 +96,7 @@ export default function UniversityDetail() {
             description="Découvrez toutes les écoles de cette université et leurs spécialisations."
           />
 
-          <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
+          <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 w-full">
             {university.schools.map((school) => (
               <SchoolCard
                 key={school.id}

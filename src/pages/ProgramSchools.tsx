@@ -24,11 +24,11 @@ export default function ProgramSchools() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
 
-      <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4">
+      <main className="flex-1 pt-24 pb-12 w-full">
+        <div className="container mx-auto px-4 max-w-full">
           {/* Navigation de retour */}
           <div className="mb-8">
             <Link to="/programs">
@@ -40,9 +40,9 @@ export default function ProgramSchools() {
           </div>
 
           {/* En-tête de la filière */}
-          <div className="mb-12 text-center">
-            <div className="max-w-3xl mx-auto">
-              <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="mb-12 text-center w-full">
+            <div className="max-w-3xl mx-auto w-full">
+              <div className="flex items-center justify-center gap-4 mb-4 flex-wrap">
                 <span className="text-sm px-3 py-1 rounded-full bg-accent text-primary">
                   {program.category}
                 </span>
@@ -55,21 +55,21 @@ export default function ProgramSchools() {
                 Où étudier {program.name} ?
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-lg text-muted-foreground mb-6 break-words">
                 {program.description}
               </p>
 
               {/* Débouchés */}
-              <div className="mb-8 p-6 rounded-lg bg-secondary/30">
+              <div className="mb-8 p-6 rounded-lg bg-secondary/30 w-full">
                 <h3 className="text-lg font-semibold mb-4 flex items-center justify-center">
                   <GraduationCap className="mr-2 h-5 w-5 text-primary" />
                   Débouchés professionnels
                 </h3>
-                <div className="flex flex-wrap gap-2 justify-center">
+                <div className="flex flex-wrap gap-2 justify-center w-full">
                   {program.careers.map((career, i) => (
                     <span
                       key={i}
-                      className="text-sm px-3 py-1 rounded-full bg-primary/10 text-primary"
+                      className="text-sm px-3 py-1 rounded-full bg-primary/10 text-primary break-words"
                     >
                       {career}
                     </span>
@@ -78,7 +78,7 @@ export default function ProgramSchools() {
               </div>
 
               {/* Statistiques rapides */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 w-full">
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
                   <Users className="h-5 w-5 text-primary" />
                   <div className="text-center">
@@ -124,7 +124,7 @@ export default function ProgramSchools() {
               </Link>
             </div>
           ) : (
-            <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
+            <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 w-full">
               {schools.map(({ school, university }) => (
                 <SchoolCard
                   key={school.id}

@@ -26,30 +26,30 @@ export default function Universities() {
   })
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
 
-      <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4">
+      <main className="flex-1 pt-24 pb-12 w-full">
+        <div className="container mx-auto px-4 max-w-full">
           <SectionTitle
             title="Universités"
             description="Découvrez les universités du Bénin, leurs spécialités et conditions d'admission."
           />
 
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+          <div className="mb-8 flex flex-col gap-4 sm:flex-row w-full">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder="Rechercher une université..."
-                className="pl-10"
+                className="pl-10 w-full"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide">
               <button
                 onClick={() => setFilter("all")}
-                className={`px-4 py-2 rounded-md text-sm ${
+                className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
                   filter === "all"
                     ? "bg-primary text-white"
                     : "bg-secondary text-secondary-foreground"
@@ -59,7 +59,7 @@ export default function Universities() {
               </button>
               <button
                 onClick={() => setFilter("public")}
-                className={`px-4 py-2 rounded-md text-sm ${
+                className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
                   filter === "public"
                     ? "bg-primary text-white"
                     : "bg-secondary text-secondary-foreground"
@@ -69,7 +69,7 @@ export default function Universities() {
               </button>
               <button
                 onClick={() => setFilter("private")}
-                className={`px-4 py-2 rounded-md text-sm ${
+                className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
                   filter === "private"
                     ? "bg-primary text-white"
                     : "bg-secondary text-secondary-foreground"
@@ -80,7 +80,7 @@ export default function Universities() {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
             {filteredUniversities.map((university) => (
               <UniversityCard key={university.id} university={university} />
             ))}

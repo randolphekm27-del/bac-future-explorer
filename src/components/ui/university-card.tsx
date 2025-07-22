@@ -9,18 +9,18 @@ interface UniversityCardProps {
 export function UniversityCard({ university }: UniversityCardProps) {
   return (
     <Link to={`/universities/${university.slug}`}>
-      <div className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-colors animate-scale-in">
-        <div className="aspect-video w-full overflow-hidden bg-muted">
+      <div className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-colors animate-scale-in w-full max-w-full">
+        <div className="aspect-video w-full overflow-hidden bg-muted max-w-full">
           <img
             src={university.image}
             alt={university.name}
-            className="h-full w-full object-cover transition-transform group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform group-hover:scale-105 max-w-full"
           />
         </div>
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-2">
+        <div className="p-6 w-full">
+          <div className="flex items-center justify-between mb-2 w-full">
             <span
-              className={`text-xs px-2 py-1 rounded-full ${
+              className={`text-xs px-2 py-1 rounded-full flex-shrink-0 ${
                 university.type === "Public"
                   ? "bg-blue-100 text-blue-800"
                   : "bg-emerald-100 text-emerald-800"
@@ -28,15 +28,15 @@ export function UniversityCard({ university }: UniversityCardProps) {
             >
               {university.type}
             </span>
-            <span className="flex items-center text-xs text-muted-foreground">
+            <span className="flex items-center text-xs text-muted-foreground flex-shrink-0">
               <MapPin className="mr-1 h-3 w-3" />
               {university.location}
             </span>
           </div>
-          <h3 className="font-semibold group-hover:text-primary transition-colors">
+          <h3 className="font-semibold group-hover:text-primary transition-colors break-words">
             {university.name}
           </h3>
-          <p className="mt-2 text-sm text-muted-foreground">
+          <p className="mt-2 text-sm text-muted-foreground break-words">
             {university.description}
           </p>
           <button className="mt-4 text-sm font-medium text-primary hover:underline">

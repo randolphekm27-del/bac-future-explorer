@@ -125,6 +125,23 @@ export const programs: Program[] = [
   }
 ];
 
+// Fonction utilitaire pour créer un slug propre
+export const createProgramSlug = (programName: string): string => {
+  return programName
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[àáâãäå]/g, 'a')
+    .replace(/[èéêë]/g, 'e')
+    .replace(/[ìíîï]/g, 'i')
+    .replace(/[òóôõö]/g, 'o')
+    .replace(/[ùúûü]/g, 'u')
+    .replace(/[ç]/g, 'c')
+    .replace(/[&]/g, 'et')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+};
+
 export const getProgramBySlug = (slug: string): Program | undefined => {
   return programs.find(program => program.slug === slug);
 };
