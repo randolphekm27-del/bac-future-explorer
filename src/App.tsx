@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FloatingAccessibility } from "@/components/ui/floating-accessibility";
 import Index from "./pages/Index";
 import Universities from "./pages/Universities";
 import UniversityDetail from "./pages/UniversityDetail";
@@ -35,6 +36,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <FloatingAccessibility />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

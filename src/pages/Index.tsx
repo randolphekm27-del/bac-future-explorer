@@ -11,7 +11,7 @@ import { InteractiveTimeline } from "@/components/ui/interactive-timeline"
 import { NewsletterPopup } from "@/components/ui/newsletter-popup"
 import { SmartSearch } from "@/components/ui/smart-search"
 import { StatsSection } from "@/components/ui/stats-section"
-import { FloatingAccessibility } from "@/components/ui/floating-accessibility"
+
 import { AnimatedTextCycle } from "@/components/ui/animated-text-cycle"
 import { navigationLinks } from "@/lib/navigation"
 import { Link, useNavigate } from "react-router-dom"
@@ -208,7 +208,6 @@ const Index = () => {
       </section>
 
       <Footer />
-      <FloatingAccessibility />
     </div>
   )
 }
