@@ -208,7 +208,6 @@ const Index = () => {
       </section>
 
       <Footer />
-      <FloatingAccessibility />
     </div>
   )
 }
