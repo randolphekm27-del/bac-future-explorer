@@ -20,13 +20,13 @@ const Index = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="min-h-screen">
       <Navigation links={navigationLinks} />
       <NewsletterPopup />
       
-      <main className="flex-1 pt-16">
+      <main className="pt-16">
         {/* Premium Hero Section */}
-        <section className="relative overflow-hidden gradient-hero py-16 sm:py-24 md:py-40">
+        <section className="relative gradient-hero py-16 sm:py-24 md:py-40">
           <FloatingParticles />
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -101,7 +101,7 @@ const Index = () => {
             </ScrollReveal>
             
             <div className="relative max-w-4xl mx-auto">
-              <div className="overflow-hidden rounded-2xl">
+              <div className="rounded-2xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                   <ScrollReveal delay={100}>
                     <div className="glass-card rounded-xl p-6 hover-lift border-gradient">
