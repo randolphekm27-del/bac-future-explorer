@@ -28,11 +28,11 @@ export default function UniversityDetail() {
         <div className="container mx-auto px-4 max-w-full">
           {/* En-tête de l'université */}
           <div className="mb-12 text-center w-full">
-            <div className="aspect-video w-full max-w-4xl mx-auto overflow-hidden bg-muted rounded-2xl mb-8 max-w-full">
+            <div className="aspect-video w-full max-w-4xl mx-auto overflow-hidden bg-muted rounded-2xl mb-8">
               <img
                 src={university.image}
                 alt={university.name}
-                className="h-full w-full object-cover max-w-full"
+                className="h-full w-full object-cover"
               />
             </div>
             
@@ -67,7 +67,9 @@ export default function UniversityDetail() {
                   <BookOpen className="h-5 w-5 text-primary" />
                   <div className="text-center">
                     <div className="font-semibold">{university.schools.length}</div>
-                    <div className="text-sm text-muted-foreground">Écoles</div>
+                    <div className="text-sm text-muted-foreground">
+                      {university.schools.length > 1 ? 'Écoles' : 'École'}
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
@@ -76,7 +78,9 @@ export default function UniversityDetail() {
                     <div className="font-semibold">
                       {university.schools.reduce((acc, school) => acc + school.programs.length, 0)}
                     </div>
-                    <div className="text-sm text-muted-foreground">Filières</div>
+                    <div className="text-sm text-muted-foreground">
+                      {university.schools.reduce((acc, school) => acc + school.programs.length, 0) > 1 ? 'Filières' : 'Filière'}
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
@@ -102,6 +106,7 @@ export default function UniversityDetail() {
                 key={school.id}
                 school={school}
                 university={university}
+                expandable={true}
               />
             ))}
           </div>

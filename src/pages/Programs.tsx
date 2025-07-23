@@ -119,14 +119,14 @@ export default function Programs() {
               <div
                 key={program.id}
                 id={program.slug}
-                className="group rounded-lg border bg-background p-6 hover:border-primary/50 transition-all duration-300 animate-scale-in w-full max-w-full"
+                className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift"
               >
                 {/* Image de la filière */}
-                <div className="aspect-video w-full overflow-hidden bg-muted max-w-full">
+                <div className="aspect-video w-full overflow-hidden bg-muted">
                   <img
                     src={programImages[program.slug] || "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"}
                     alt={program.name}
-                    className="h-full w-full object-cover transition-transform group-hover:scale-105 max-w-full"
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 
@@ -137,7 +137,7 @@ export default function Programs() {
                       {program.duration}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors break-words">
+                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors break-words mb-2">
                     {program.name}
                   </h3>
                   <p className="mt-1 text-xs text-muted-foreground break-words">
@@ -166,6 +166,24 @@ export default function Programs() {
               </div>
             ))}
           </div>
+
+          {filteredPrograms.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">
+                Aucune filière trouvée pour votre recherche.
+              </p>
+              <Button 
+                variant="outline" 
+                className="mt-4"
+                onClick={() => {
+                  setSearchTerm("");
+                  setCategoryFilter("all");
+                }}
+              >
+                Réinitialiser les filtres
+              </Button>
+            </div>
+          )}
         </div>
       </main>
 

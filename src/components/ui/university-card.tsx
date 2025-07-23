@@ -8,13 +8,13 @@ interface UniversityCardProps {
 
 export function UniversityCard({ university }: UniversityCardProps) {
   return (
-    <Link to={`/universities/${university.slug}`}>
-      <div className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-colors animate-scale-in w-full max-w-full">
-        <div className="aspect-video w-full overflow-hidden bg-muted max-w-full">
+    <Link to={`/universities/${university.slug}`} className="block w-full">
+      <div className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift">
+        <div className="aspect-video w-full overflow-hidden bg-muted">
           <img
             src={university.image}
             alt={university.name}
-            className="h-full w-full object-cover transition-transform group-hover:scale-105 max-w-full"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>
         <div className="p-6 w-full">
@@ -33,15 +33,21 @@ export function UniversityCard({ university }: UniversityCardProps) {
               {university.location}
             </span>
           </div>
-          <h3 className="font-semibold group-hover:text-primary transition-colors break-words">
+          <h3 className="text-lg font-semibold group-hover:text-primary transition-colors break-words mb-2">
             {university.name}
           </h3>
           <p className="mt-2 text-sm text-muted-foreground break-words">
             {university.description}
           </p>
-          <button className="mt-4 text-sm font-medium text-primary hover:underline">
-            Voir les détails
-          </button>
+          
+          <div className="mt-4 flex items-center justify-between">
+            <div className="text-xs text-muted-foreground">
+              {university.schools.length} école{university.schools.length > 1 ? 's' : ''}
+            </div>
+            <span className="text-sm font-medium text-primary group-hover:underline">
+              Voir les détails →
+            </span>
+          </div>
         </div>
       </div>
     </Link>

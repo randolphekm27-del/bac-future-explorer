@@ -31,17 +31,17 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
           </p>
         </div>
         {expandable && (
-          <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-            <CollapsibleTrigger asChild>
-              <Button variant="ghost" size="sm">
-                {isOpen ? (
-                  <ChevronUp className="h-4 w-4" />
-                ) : (
-                  <ChevronDown className="h-4 w-4" />
-                )}
-              </Button>
-            </CollapsibleTrigger>
-          </Collapsible>
+          <Button 
+            variant="ghost" 
+            size="sm"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <ChevronUp className="h-4 w-4" />
+            ) : (
+              <ChevronDown className="h-4 w-4" />
+            )}
+          </Button>
         )}
       </div>
 
@@ -65,53 +65,54 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
         </div>
       </div>
 
-      {expandable && (
-        <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-          <CollapsibleContent className="space-y-4">
-            {/* Conditions d'admission */}
-            <div>
-              <h4 className="text-sm font-medium mb-2">Conditions d'admission:</h4>
-              <ul className="text-sm text-muted-foreground space-y-1 w-full">
-                {school.admissionRequirements.map((requirement, i) => (
-                  <li key={i} className="flex items-start w-full">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
-                    <span className="break-words flex-1">{requirement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* Conditions d'admission - toujours visibles */}
+      <div className="mb-4">
+        <h4 className="text-sm font-medium mb-2">Conditions d'admission:</h4>
+        <ul className="text-sm text-muted-foreground space-y-1 w-full">
+          {school.admissionRequirements.slice(0, isOpen ? undefined : 2).map((requirement, i) => (
+            <li key={i} className="flex items-start w-full">
+              <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-2 flex-shrink-0" />
+              <span className="break-words flex-1">{requirement}</span>
+            </li>
+          ))}
+          {!isOpen && school.admissionRequirements.length > 2 && (
+            <li className="text-xs text-primary cursor-pointer" onClick={() => setIsOpen(true)}>
+              ... et {school.admissionRequirements.length - 2} autres conditions
+            </li>
+          )}
+        </ul>
+      </div>
 
-            {/* Contact */}
-            <div className="pt-4 border-t w-full">
-              <h4 className="text-sm font-medium mb-2">Contact:</h4>
-              <div className="space-y-2 text-sm text-muted-foreground w-full">
-                <div className="flex items-center flex-wrap">
-                  <Mail className="mr-2 h-4 w-4 text-primary" />
-                  <a href={`mailto:${school.contact.email}`} className="hover:text-primary break-all">
-                    {school.contact.email}
-                  </a>
-                </div>
-                <div className="flex items-center flex-wrap">
-                  <Phone className="mr-2 h-4 w-4 text-primary" />
-                  <a href={`tel:${school.contact.phone}`} className="hover:text-primary break-all">
-                    {school.contact.phone}
-                  </a>
-                </div>
-                <div className="flex items-center flex-wrap">
-                  <Globe className="mr-2 h-4 w-4 text-primary" />
-                  <a 
-                    href={`https://${school.contact.website}`} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="hover:text-primary break-all"
-                  >
-                    {school.contact.website}
-                  </a>
-                </div>
-              </div>
+      {/* Contact - affiché selon l'état */}
+      {isOpen && (
+        <div className="pt-4 border-t w-full animate-fade-in">
+          <h4 className="text-sm font-medium mb-2">Contact:</h4>
+          <div className="space-y-2 text-sm text-muted-foreground w-full">
+            <div className="flex items-center flex-wrap">
+              <Mail className="mr-2 h-4 w-4 text-primary" />
+              <a href={`mailto:${school.contact.email}`} className="hover:text-primary break-all">
+                {school.contact.email}
+              </a>
             </div>
-          </CollapsibleContent>
-        </Collapsible>
+            <div className="flex items-center flex-wrap">
+              <Phone className="mr-2 h-4 w-4 text-primary" />
+              <a href={`tel:${school.contact.phone}`} className="hover:text-primary break-all">
+                {school.contact.phone}
+              </a>
+            </div>
+            <div className="flex items-center flex-wrap">
+              <Globe className="mr-2 h-4 w-4 text-primary" />
+              <a 
+                href={`https://${school.contact.website}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-primary break-all"
+              >
+                {school.contact.website}
+              </a>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

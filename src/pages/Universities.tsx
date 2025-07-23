@@ -82,9 +82,29 @@ export default function Universities() {
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
             {filteredUniversities.map((university) => (
-              <UniversityCard key={university.id} university={university} />
+              <div key={university.id} className="w-full">
+                <UniversityCard university={university} />
+              </div>
             ))}
           </div>
+
+          {filteredUniversities.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">
+                Aucune université trouvée pour votre recherche.
+              </p>
+              <Button 
+                variant="outline" 
+                className="mt-4"
+                onClick={() => {
+                  setSearchTerm("");
+                  setFilter("all");
+                }}
+              >
+                Réinitialiser les filtres
+              </Button>
+            </div>
+          )}
         </div>
       </main>
 
