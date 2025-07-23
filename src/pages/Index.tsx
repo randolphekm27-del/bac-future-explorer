@@ -31,39 +31,39 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight animate-fade-in">
                 <span className="text-shadow">Trouvez votre voie</span><br />
                 <span className="text-shadow">après le </span>
                 <span className="gradient-text">Bac</span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-medium animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                 Guide complet pour les nouveaux bacheliers du Bénin.
               </p>
               
-              <div className="my-8">
+              <div className="my-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 <SmartSearch 
                   placeholder="Que voulez-vous étudier ?" 
-                  className="max-w-full"
+                  className="w-full max-w-none"
                   onSearch={(query) => navigate(`/universities?search=${query}`)}
                 />
               </div>
               
-              <div className="space-y-6">
-                <Link to="/universities">
-                  <Button variant="premium" size="xl" className="w-full sm:w-auto">
+              <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+                <Link to="/universities" className="block">
+                  <Button variant="premium" size="xl" className="w-full">
                     Commencer l'exploration
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-center sm:text-left animate-fade-in" style={{ animationDelay: "0.8s" }}>
                   Plus de 1000 étudiants nous font déjà confiance
                 </p>
               </div>
             </div>
             
-            <div className="relative flex justify-center">
-              <div className="glass-card rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="relative flex justify-center animate-fade-in" style={{ animationDelay: "0.3s" }}>
+              <div className="glass-card rounded-3xl p-8 md:p-12 shadow-2xl hover-scale">
                 <img
                   src={logoImage}
                   alt="Après mon Bac - Logo officiel"
@@ -83,13 +83,14 @@ const Index = () => {
       {/* Features Section */}
       <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Votre réussite commence ici</h2>
             <p className="text-xl text-muted-foreground">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="glass-card rounded-xl p-6 text-center">
+            {/* Feature cards with staggered animations */}
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in" style={{ animationDelay: "0.1s" }}>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Building2 className="h-8 w-8 text-white" />
               </div>
@@ -105,7 +106,7 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-6 text-center">
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <GraduationCap className="h-8 w-8 text-white" />
               </div>
@@ -121,7 +122,7 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-6 text-center">
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in" style={{ animationDelay: "0.3s" }}>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Briefcase className="h-8 w-8 text-white" />
               </div>
@@ -137,7 +138,7 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-6 text-center">
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in" style={{ animationDelay: "0.4s" }}>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Trophy className="h-8 w-8 text-white" />
               </div>
@@ -153,7 +154,7 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-6 text-center">
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in" style={{ animationDelay: "0.5s" }}>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <PlayCircle className="h-8 w-8 text-white" />
               </div>
@@ -169,7 +170,7 @@ const Index = () => {
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-6 text-center">
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in" style={{ animationDelay: "0.6s" }}>
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Users className="h-8 w-8 text-white" />
               </div>
@@ -189,11 +190,13 @@ const Index = () => {
       {/* Testimonials Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ils nous font confiance</h2>
             <p className="text-xl text-muted-foreground">Découvrez les témoignages de nos étudiants</p>
           </div>
-          <TestimonialsCarousel />
+          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <TestimonialsCarousel />
+          </div>
         </div>
       </section>
 
