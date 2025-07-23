@@ -162,16 +162,25 @@
   display: none;
 }
 
-/* Prévention du débordement horizontal global */
+/* Prévention du débordement horizontal global et scroll fluide */
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
+  scroll-behavior: smooth;
+  height: auto !important;
+  min-height: 100vh;
 }
 
 /* Amélioration responsive pour les conteneurs */
 .container {
   max-width: 100%;
   overflow-x: hidden;
+}
+
+/* Éviter les conflits de scroll */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
 }
 
 @layer utilities {
