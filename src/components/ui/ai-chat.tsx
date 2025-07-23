@@ -309,7 +309,8 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
       }
       
       try {
-        await fetch(`${supabaseUrl}/functions/v1/send-email`, {
+        // Temporarily disable email function
+        /* await fetch(`${supabaseUrl}/functions/v1/send-email`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${supabaseKey}`,
@@ -325,7 +326,8 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
               timestamp: new Date().toISOString()
             }
           })
-        });
+        }); */
+        console.log('Email would be sent:', { message: currentMessage, testResults })
       } catch (emailError) {
         console.log('Notification admin non envoyée:', emailError);
       }

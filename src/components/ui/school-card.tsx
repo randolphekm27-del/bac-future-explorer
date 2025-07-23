@@ -3,8 +3,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./button";
 import type { School, University } from "@/data/universities";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./collapsible";
-import { createProgramSlug } from "@/data/programs";
 
 interface SchoolCardProps {
   school: School;
@@ -55,13 +53,12 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
         <h4 className="text-xs sm:text-sm font-medium mb-2">Filières proposées:</h4>
         <div className="flex flex-wrap gap-1 sm:gap-2 w-full">
           {school.programs.map((program, i) => (
-            <Link
+            <span
               key={i}
-              to={`/programs?program=${createProgramSlug(program)}`}
-              className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
+              className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary break-words flex-shrink-0 max-w-full truncate"
             >
               {program}
-            </Link>
+            </span>
           ))}
         </div>
       </div>
