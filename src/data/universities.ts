@@ -121,195 +121,222 @@ export const universities: University[] = [
     ]
   },
   {
-    id: "2",
-    name: "Université de Parakou (UP)",
-    location: "Parakou",
-    type: "Public",
-    image: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "L'UP est une université publique située dans le nord du Bénin, spécialisée dans l'agriculture et les sciences de la santé.",
-    slug: "universite-parakou",
-    schools: [
-      {
-        id: "up-1",
-        name: "Faculté d'Agronomie",
-        admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée", "Connaissance en sciences naturelles"],
-        location: "Parakou",
-        country: "Bénin",
-        programs: ["Agronomie", "Zootechnie", "Sciences du Sol", "Économie Rurale"],
-        contact: {
-          email: "agro@up.bj",
-          phone: "+229 23 61 01 23",
-          website: "www.agro.up.bj"
-        },
-        description: "Excellence en formation agricole et développement rural."
+  id: "2",
+  name: "Université de Parakou (UP)",
+  location: "Parakou",
+  type: "Public",
+  image: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=800",
+  description: "L'Université de Parakou est un pôle académique majeur du nord du Bénin, reconnue pour ses formations de qualité en agriculture, santé, droit et sciences économiques.",
+  slug: "universite-parakou",
+  schools: [
+    {
+      id: "up-1",
+      name: "Faculté d'Agronomie (FA)",
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée ou classement sur dossier"],
+      location: "Parakou",
+      country: "Bénin",
+      programs: [
+        "Sciences et Techniques de Production Végétale : Prépare aux métiers de conseiller agricole, entrepreneur en agriculture ou spécialiste de la production végétale.",
+        "Sciences et Techniques de Production Animale et Halieutique : Mène vers des carrières de technicien d’élevage, pisciculteur ou responsable de projets halieutiques.",
+        "Aménagement et Gestion des Ressources Naturelles : Ouvre la voie aux professions d’agent forestier, gestionnaire des ressources naturelles et consultant en environnement.",
+        "Sociologie et Économie Rurales : Conduit à des métiers de développement rural, gestion de coopératives et consultance en économie rurale.",
+        "Nutrition et Sciences Agroalimentaires : Forme des techniciens et ingénieurs en sécurité alimentaire, qualité agroalimentaire et nutrition."
+      ],
+      contact: {
+        email: "fa@up.bj",
+        phone: "+229 23 61 01 23",
+        website: "www.fa.up.bj"
       },
-      {
-        id: "up-2",
-        name: "Faculté de Médecine",
-        admissionRequirements: ["Baccalauréat série C ou D", "Concours très sélectif", "Excellence scolaire"],
-        location: "Parakou",
-        country: "Bénin",
-        programs: ["Médecine", "Médecine Vétérinaire", "Sciences Biomédicales", "Santé Publique"],
-        contact: {
-          email: "medecine@up.bj",
-          phone: "+229 23 61 02 45",
-          website: "www.medecine.up.bj"
-        },
-        description: "Formation médicale adaptée aux réalités du Nord Bénin."
+      description: "Une formation complète et pratique pour préparer les étudiants aux métiers de l’agriculture moderne et durable."
+    },
+    {
+      id: "up-2",
+      name: "Faculté de Médecine (FM)",
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours sélectif"],
+      location: "Parakou",
+      country: "Bénin",
+      programs: [
+        "Médecine humaine : Prépare à devenir médecin généraliste ou spécialiste au sein des hôpitaux et cliniques."
+      ],
+      contact: {
+        email: "fm@up.bj",
+        phone: "+229 23 61 02 45",
+        website: "www.fm.up.bj"
       },
-      {
-        id: "up-3",
-        name: "École Normale Supérieure de Parakou",
-        admissionRequirements: ["Baccalauréat toutes séries", "Concours de la fonction publique", "Vocation pédagogique"],
-        location: "Parakou",
-        country: "Bénin",
-        programs: ["Formation des Enseignants", "Pédagogie", "Sciences de l'Éducation", "Psychologie"],
-        contact: {
-          email: "ens@up.bj",
-          phone: "+229 23 61 03 67",
-          website: "www.ens.up.bj"
-        },
-        description: "Formation des enseignants du secondaire."
+      description: "Une formation médicale complète qui prépare des praticiens compétents au service de la santé publique."
+    },
+    {
+      id: "up-3",
+      name: "Institut de Formation en Soins Infirmiers et Obstétricaux (IFSIO)",
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours d’entrée"],
+      location: "Parakou",
+      country: "Bénin",
+      programs: [
+        "Soins infirmiers : Pour former des infirmiers diplômés et compétents dans divers domaines de la santé.",
+        "Soins obstétricaux : Pour devenir sage-femme ou technicien spécialisé en santé maternelle et infantile."
+      ],
+      contact: {
+        email: "ifsio@up.bj",
+        phone: "+229 23 61 03 67",
+        website: "www.ifsio.up.bj"
       },
-      {
-        id: "up-4",
-        name: "Institut de Recherche pour le Développement",
-        admissionRequirements: ["Master ou équivalent", "Projet de recherche", "Partenariat institutionnel"],
-        location: "Parakou",
-        country: "Bénin",
-        programs: ["Recherche Agricole", "Développement Durable", "Innovation Technologique", "Sciences Sociales"],
-        contact: {
-          email: "ird@up.bj",
-          phone: "+229 23 61 04 89",
-          website: "www.ird.up.bj"
-        },
-        description: "Recherche appliquée pour le développement."
+      description: "Une école dédiée à la formation de professionnels de santé hautement qualifiés."
+    },
+    {
+      id: "up-4",
+      name: "Institut Universitaire de Technologie (IUT)",
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours d’entrée"],
+      location: "Parakou",
+      country: "Bénin",
+      programs: [
+        "Informatique de Gestion : Prépare aux métiers de développeur, administrateur systèmes et data analyst.",
+        "Gestion des Transports et Logistique : Pour des postes dans le fret, transit, et la supply chain.",
+        "Maintenance Industrielle : Ouvre les portes des métiers de technicien de maintenance et d’ingénieur industriel.",
+        "Énergies Renouvelables : Prépare des experts en installation et gestion des systèmes énergétiques solaires ou verts."
+      ],
+      contact: {
+        email: "iut@up.bj",
+        phone: "+229 23 61 04 89",
+        website: "www.iut.up.bj"
       },
-      {
-        id: "up-5",
-        name: "Faculté des Sciences Économiques et Sociales",
-        admissionRequirements: ["Baccalauréat série A, B, C ou D", "Dossier d'inscription", "Test d'aptitude"],
-        location: "Parakou",
-        country: "Bénin",
-        programs: ["Économie", "Sociologie", "Gestion", "Développement Local"],
-        contact: {
-          email: "fses@up.bj",
-          phone: "+229 23 61 05 12",
-          website: "www.fses.up.bj"
-        },
-        description: "Formation en sciences économiques et sociales."
+      description: "Une formation technique et professionnelle orientée vers les besoins du marché et l’innovation."
+    },
+    {
+      id: "up-5",
+      name: "Faculté des Sciences Économiques et de Gestion (FASEG)",
+      admissionRequirements: ["Baccalauréat série A, B, C ou D", "Sélection sur dossier ou concours"],
+      location: "Parakou",
+      country: "Bénin",
+      programs: [
+        "Entrepreneuriat et Gestion des Entreprises : Prépare des entrepreneurs, gestionnaires et chefs de projet.",
+        "Finance et Comptabilité : Forme des analystes financiers, auditeurs et experts-comptables.",
+        "Marketing et Management des Organisations : Prépare aux métiers de chef de produit, responsable marketing et consultant en stratégie."
+      ],
+      contact: {
+        email: "faseg@up.bj",
+        phone: "+229 23 61 05 12",
+        website: "www.faseg.up.bj"
       },
-      {
-        id: "up-6",
-        name: "Institut Universitaire de Technologie",
-        admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée", "Orientation technique"],
-        location: "Parakou",
-        country: "Bénin",
-        programs: ["Génie Rural", "Maintenance Industrielle", "Informatique Appliquée", "Énergies Renouvelables"],
-        contact: {
-          email: "iut@up.bj",
-          phone: "+229 23 61 06 34",
-          website: "www.iut.up.bj"
-        },
-        description: "Formation technique et professionnelle."
-      }
-    ]
-  },
+      description: "Un centre d’excellence en sciences économiques et gestion pour former les leaders de demain."
+    },
+    {
+      id: "up-6",
+      name: "Faculté de Droit et de Sciences Politiques (FDSP)",
+      admissionRequirements: ["Baccalauréat toutes séries", "Sélection sur dossier ou entretien"],
+      location: "Parakou",
+      country: "Bénin",
+      programs: [
+        "Droit public et privé : Forme des juristes, avocats, greffiers et magistrats.",
+        "Sciences Politiques et Relations Internationales : Prépare aux carrières de diplomate, consultant politique ou attaché culturel."
+      ],
+      contact: {
+        email: "fdsp@up.bj",
+        phone: "+229 23 61 06 34",
+        website: "www.fdsp.up.bj"
+      },
+      description: "Une faculté pour les futurs juristes, politiciens et experts en relations internationales."
+    }
+  ]
+},
   {
-    id: "3",
-    name: "Université Nationale des Sciences, Technologies, Ingénierie et Mathématiques (UNSTIM)",
-    location: "Abomey",
-    type: "Public",
-    image: "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "L'UNSTIM est spécialisée dans les sciences, technologies, ingénierie et mathématiques.",
-    slug: "universite-unstim",
-    schools: [
-      {
-        id: "unstim-1",
-        name: "École d'Ingénierie",
-        admissionRequirements: ["Baccalauréat série C ou D", "Concours très sélectif", "Excellence en sciences"],
-        location: "Abomey",
-        country: "Bénin",
-        programs: ["Génie Civil", "Génie Électrique", "Génie Industriel", "Génie Informatique"],
-        contact: {
-          email: "ingenierie@unstim.bj",
-          phone: "+229 22 50 01 23",
-          website: "www.ingenierie.unstim.bj"
-        },
-        description: "Formation d'ingénieurs de classe mondiale."
+  id: "3",
+  name: "Université Nationale des Sciences, Technologies, Ingénierie et Mathématiques (UNSTIM)",
+  location: "Abomey",
+  type: "Public",
+  image: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800",
+  description: "L’UNSTIM est une université de pointe au Bénin, dédiée aux formations technologiques, scientifiques et d’ingénierie, avec un fort accent sur l’innovation et les solutions pratiques aux défis du développement.",
+  slug: "universite-unstim",
+  schools: [
+    {
+      id: "unstim-1",
+      name: "Institut Universitaire de Technologie (IUT Lokossa)",
+      admissionRequirements: ["Baccalauréat série C, D, E, F", "Concours d’entrée"],
+      location: "Lokossa",
+      country: "Bénin",
+      programs: [
+        "Génie Électrique et Informatique Industrielle : Forme des techniciens supérieurs et ingénieurs capables de concevoir et maintenir des systèmes électriques et automatisés.",
+        "Génie Mécanique et Productique : Prépare aux métiers de technicien de maintenance, concepteur de systèmes mécaniques et chef d’atelier.",
+        "Génie Civil : Ouvre la voie aux postes de conducteur de travaux, chef de chantier ou ingénieur BTP.",
+        "Informatique Appliquée : Prépare à devenir développeur logiciel, administrateur réseau ou data analyst."
+      ],
+      contact: {
+        email: "iutlokossa@unstim.bj",
+        phone: "+229 23 41 02 34",
+        website: "www.iutlokossa.unstim.bj"
       },
-      {
-        id: "unstim-2",
-        name: "Institut de Mathématiques Appliquées",
-        admissionRequirements: ["Baccalauréat série C", "Test de mathématiques avancé", "Passion pour les mathématiques"],
-        location: "Abomey",
-        country: "Bénin",
-        programs: ["Mathématiques", "Statistiques", "Recherche Opérationnelle", "Actuariat"],
-        contact: {
-          email: "maths@unstim.bj",
-          phone: "+229 22 50 02 45",
-          website: "www.maths.unstim.bj"
-        },
-        description: "Excellence en mathématiques appliquées."
+      description: "Un centre de formation technique et professionnelle pour les métiers de l’ingénierie et de l’informatique."
+    },
+    {
+      id: "unstim-2",
+      name: "École Nationale Supérieure des Biosciences et Biotechnologies Appliquées (ENSBBA)",
+      admissionRequirements: ["Baccalauréat série D ou C", "Sélection sur dossier ou concours"],
+      location: "Abomey",
+      country: "Bénin",
+      programs: [
+        "Biotechnologies : Prépare des spécialistes en recherche, bio-industrie et production pharmaceutique.",
+        "Agro-industrie : Forme des cadres pour les industries agroalimentaires et la gestion de la qualité.",
+        "Santé et Biosciences : Offre des débouchés dans les laboratoires, centres de recherche et industries médicales."
+      ],
+      contact: {
+        email: "ensbba@unstim.bj",
+        phone: "+229 23 41 03 21",
+        website: "www.ensbba.unstim.bj"
       },
-      {
-        id: "unstim-3",
-        name: "Faculté des Sciences Exactes",
-        admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée", "Solides bases scientifiques"],
-        location: "Abomey",
-        country: "Bénin",
-        programs: ["Physique", "Chimie", "Biologie", "Sciences de la Terre"],
-        contact: {
-          email: "sciences@unstim.bj",
-          phone: "+229 22 50 03 67",
-          website: "www.sciences.unstim.bj"
-        },
-        description: "Formation scientifique d'excellence."
+      description: "Une école qui associe science et technologie pour développer des solutions innovantes en santé et en agroalimentaire."
+    },
+    {
+      id: "unstim-3",
+      name: "École Nationale Supérieure de Génie Électrique et Informatique (ENSGEI)",
+      admissionRequirements: ["Baccalauréat série C, D ou E", "Concours très sélectif"],
+      location: "Abomey",
+      country: "Bénin",
+      programs: [
+        "Génie Électrique : Prépare des ingénieurs en réseaux électriques, systèmes d’énergie et automatismes.",
+        "Informatique Industrielle : Forme des experts en automatisation, robotique et systèmes embarqués."
+      ],
+      contact: {
+        email: "ensgei@unstim.bj",
+        phone: "+229 23 41 04 56",
+        website: "www.ensgei.unstim.bj"
       },
-      {
-        id: "unstim-4",
-        name: "École de Technologie",
-        admissionRequirements: ["Baccalauréat série C, D ou F", "Test technique", "Aptitude manuelle"],
-        location: "Abomey",
-        country: "Bénin",
-        programs: ["Technologies Industrielles", "Maintenance", "Automatisme", "Robotique"],
-        contact: {
-          email: "techno@unstim.bj",
-          phone: "+229 22 50 04 89",
-          website: "www.techno.unstim.bj"
-        },
-        description: "Innovation technologique et industrielle."
+      description: "Une formation d’ingénieurs alliant électricité, informatique et technologies industrielles."
+    },
+    {
+      id: "unstim-4",
+      name: "École Nationale Supérieure de Génie Mécanique et Énergétique (ENSGME)",
+      admissionRequirements: ["Baccalauréat série C, D ou F", "Concours d’entrée"],
+      location: "Abomey",
+      country: "Bénin",
+      programs: [
+        "Génie Mécanique : Prépare des ingénieurs en conception mécanique, production industrielle et maintenance.",
+        "Énergie et Thermique : Ouvre des carrières dans les énergies renouvelables, le froid industriel et la climatisation."
+      ],
+      contact: {
+        email: "ensgme@unstim.bj",
+        phone: "+229 23 41 05 12",
+        website: "www.ensgme.unstim.bj"
       },
-      {
-        id: "unstim-5",
-        name: "Institut de Recherche Scientifique",
-        admissionRequirements: ["Master en sciences", "Projet de recherche", "Encadrement académique"],
-        location: "Abomey",
-        country: "Bénin",
-        programs: ["Recherche Appliquée", "Innovation", "Transfert de Technologie", "Propriété Intellectuelle"],
-        contact: {
-          email: "recherche@unstim.bj",
-          phone: "+229 22 50 05 12",
-          website: "www.recherche.unstim.bj"
-        },
-        description: "Recherche scientifique de pointe."
+      description: "Une école au service de l’innovation en énergie, mécanique et efficacité industrielle."
+    },
+    {
+      id: "unstim-5",
+      name: "École Nationale Supérieure des Mathématiques et Sciences Physiques (ENSP)",
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours très sélectif"],
+      location: "Abomey",
+      country: "Bénin",
+      programs: [
+        "Mathématiques Appliquées : Forme des statisticiens, data scientists et modélisateurs.",
+        "Physique Appliquée : Prépare des ingénieurs en physique industrielle, énergie et instrumentation."
+      ],
+      contact: {
+        email: "ensp@unstim.bj",
+        phone: "+229 23 41 06 45",
+        website: "www.ensp.unstim.bj"
       },
-      {
-        id: "unstim-6",
-        name: "École d'Informatique et Télécommunications",
-        admissionRequirements: ["Baccalauréat série C ou D", "Test de logique", "Aptitude informatique"],
-        location: "Abomey",
-        country: "Bénin",
-        programs: ["Informatique", "Réseaux et Télécommunications", "Intelligence Artificielle", "Cybersécurité"],
-        contact: {
-          email: "info@unstim.bj",
-          phone: "+229 22 50 06 34",
-          website: "www.info.unstim.bj"
-        },
-        description: "Excellence en informatique et nouvelles technologies."
-      }
-    ]
-  },
+      description: "Une école dédiée aux sciences fondamentales pour des carrières en recherche, ingénierie et innovation."
+    }
+  ]
+},
   {
     id: "4",
     name: "Université Nationale d'Agriculture (UNA)",
