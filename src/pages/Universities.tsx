@@ -5,6 +5,7 @@ import { Footer } from "@/components/ui/footer"
 import { navigationLinks } from "@/lib/navigation"
 import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import { UniversityCard } from "@/components/ui/university-card"
 import { universities } from "@/data/universities"
 
@@ -82,7 +83,7 @@ export default function Universities() {
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
             {filteredUniversities.map((university) => (
-              <div key={university.id} className="w-full">
+              <div key={university.id} className="w-full max-w-full">
                 <UniversityCard university={university} />
               </div>
             ))}
@@ -93,7 +94,7 @@ export default function Universities() {
               <p className="text-muted-foreground text-lg">
                 Aucune université trouvée pour votre recherche.
               </p>
-              <Button 
+              <Button
                 variant="outline" 
                 className="mt-4"
                 onClick={() => {

@@ -119,7 +119,7 @@ export default function Programs() {
               <div
                 key={program.id}
                 id={program.slug}
-                className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift"
+                className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift max-w-full"
               >
                 {/* Image de la filière */}
                 <div className="aspect-video w-full overflow-hidden bg-muted">
@@ -130,29 +130,29 @@ export default function Programs() {
                   />
                 </div>
                 
-                <div className="p-6 w-full">
+                <div className="p-3 sm:p-6 w-full">
                   <div className="mb-4 flex items-center justify-between w-full">
                     {getIcon(program.icon)}
                     <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary-foreground flex-shrink-0">
                       {program.duration}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors break-words mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors break-words mb-2 leading-tight">
                     {program.name}
                   </h3>
-                  <p className="mt-1 text-xs text-muted-foreground break-words">
+                  <p className="mt-1 text-xs text-muted-foreground break-words leading-tight">
                     {program.category}
                   </p>
-                  <p className="mt-4 text-sm text-muted-foreground break-words">
+                  <p className="mt-4 text-xs sm:text-sm text-muted-foreground break-words leading-relaxed line-clamp-3">
                     {program.description}
                   </p>
                   <div className="mt-6">
-                    <h4 className="text-sm font-medium mb-2">Débouchés:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1 w-full">
+                    <h4 className="text-xs sm:text-sm font-medium mb-2">Débouchés:</h4>
+                    <ul className="text-xs sm:text-sm text-muted-foreground space-y-1 w-full">
                       {program.careers.map((career, i) => (
-                        <li key={i} className="flex items-start w-full">
+                        <li key={i} className="flex items-start w-full gap-2">
                           <GraduationCap className="mr-2 h-3 w-3 text-primary" />
-                          <span className="break-words flex-1">{career}</span>
+                          <span className="break-words flex-1 leading-relaxed">{career}</span>
                         </li>
                       ))}
                     </ul>

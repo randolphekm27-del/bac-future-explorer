@@ -282,10 +282,37 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
     try {
       // Envoyer également à l'administrateur pour suivi
       try {
-        await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+        const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+        const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+        
+        if (supabaseUrl && supabaseKey) {
+          await fetch(`${supabaseUrl}/functions/v1/send-email`, {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${supabaseKey}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              type: 'contact',
+              email: 'utilisateur@chat-ia.com',
+              data: {
+                message: currentMessage,
+                source: 'Chat IA',
+                testResults: testResults ? 'Avec résultats de test' : 'Sans test',
+                timestamp: new Date().toISOString()
+              }
+            })
+          });
+        }
+      } catch (emailError) {
+        console.log('Notification admin non envoyée:', emailError);
+      }
+      
+      try {
+        await fetch(`${supabaseUrl}/functions/v1/send-email`, {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+            'Authorization': `Bearer ${supabaseKey}`,
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({

@@ -45,10 +45,27 @@ export function NewsletterPopup() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+      // Vérifier si les variables d'environnement existent
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      
+      if (!supabaseUrl || !supabaseKey) {
+        console.warn('Variables Supabase manquantes, simulation locale');
+        // Simulation pour développement
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setIsSubmitted(true);
+        toast.success('Guide envoyé ! Vérifiez votre boîte mail 📧');
+        setTimeout(() => {
+          setIsVisible(false);
+          localStorage.setItem('newsletter-dismissed', 'true');
+        }, 3000);
+        return;
+      }
+      
+      const response = await fetch(`${supabaseUrl}/functions/v1/send-email`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          'Authorization': `Bearer ${supabaseKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
