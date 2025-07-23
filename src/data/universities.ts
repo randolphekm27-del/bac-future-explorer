@@ -286,6 +286,193 @@ export const universities: University[] = [
     }
   ]
 },
+  {
+    id: "3",
+    name: "Université Nationale des Sciences, Technologies, Ingénierie et Mathématiques (UNSTIM)",
+    location: "Abomey",
+    type: "Public",
+    image: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "L'UNSTIM est une université de pointe au Bénin, dédiée aux formations technologiques, scientifiques et d'ingénierie, avec un fort accent sur l'innovation et les solutions pratiques aux défis du développement.",
+    slug: "universite-unstim",
+    schools: [
+      {
+        id: "unstim-1",
+        name: "Institut Universitaire de Technologie (IUT Lokossa)",
+        admissionRequirements: ["Baccalauréat série C, D, E, F", "Concours d'entrée"],
+        location: "Lokossa",
+        country: "Bénin",
+        programs: ["Génie Électrique", "Génie Mécanique", "Génie Civil", "Informatique Appliquée"],
+        contact: {
+          email: "iutlokossa@unstim.bj",
+          phone: "+229 23 41 02 34",
+          website: "www.iutlokossa.unstim.bj"
+        },
+        description: "Un centre de formation technique et professionnelle pour les métiers de l'ingénierie et de l'informatique.",
+        goodToKnow: "L'IUT Lokossa est équipé d'ateliers modernes et maintient des partenariats avec l'industrie. Formation pratique intensive avec 60% d'ateliers. Les diplômés sont immédiatement opérationnels et très recherchés par les entreprises du secteur BTP et technologique."
+      },
+      {
+        id: "unstim-2",
+        name: "École Nationale Supérieure des Biosciences et Biotechnologies Appliquées (ENSBBA)",
+        admissionRequirements: ["Baccalauréat série D ou C", "Sélection sur dossier ou concours"],
+        location: "Abomey",
+        country: "Bénin",
+        programs: ["Biotech", "Agro-industrie", "Biosciences"],
+        contact: {
+          email: "ensbba@unstim.bj",
+          phone: "+229 23 41 03 21",
+          website: "www.ensbba.unstim.bj"
+        },
+        description: "Une école qui associe science et technologie pour développer des solutions innovantes en santé et en agroalimentaire.",
+        goodToKnow: "L'ENSBBA dispose de laboratoires de recherche de pointe et collabore avec des instituts internationaux. Les étudiants participent à des projets de recherche appliquée. Excellent taux de placement dans l'industrie pharmaceutique et agroalimentaire (90%)."
+      },
+      {
+        id: "unstim-3",
+        name: "École Nationale Supérieure de Génie Électrique et Informatique (ENSGEI)",
+        admissionRequirements: ["Baccalauréat série C, D ou E", "Concours très sélectif"],
+        location: "Abomey",
+        country: "Bénin",
+        programs: ["Génie Électrique", "Info Industrielle"],
+        contact: {
+          email: "ensgei@unstim.bj",
+          phone: "+229 23 41 04 56",
+          website: "www.ensgei.unstim.bj"
+        },
+        description: "Une formation d'ingénieurs alliant électricité, informatique et technologies industrielles.",
+        goodToKnow: "L'ENSGEI forme l'élite technique du pays. Partenariats avec EDF et des entreprises technologiques européennes. Formation incluant des stages à l'étranger. Les diplômés accèdent rapidement à des postes d'ingénieurs seniors."
+      },
+      {
+        id: "unstim-4",
+        name: "École Nationale Supérieure de Génie Mécanique et Énergétique (ENSGME)",
+        admissionRequirements: ["Baccalauréat série C, D ou F", "Concours d'entrée"],
+        location: "Abomey",
+        country: "Bénin",
+        programs: ["Génie Mécanique", "Énergie"],
+        contact: {
+          email: "ensgme@unstim.bj",
+          phone: "+229 23 41 05 12",
+          website: "www.ensgme.unstim.bj"
+        },
+        description: "Une école au service de l'innovation en énergie, mécanique et efficacité industrielle.",
+        goodToKnow: "L'ENSGME se spécialise dans les énergies renouvelables et l'efficacité énergétique. Laboratoire d'énergies solaires unique en Afrique de l'Ouest. Les diplômés sont pionniers dans la transition énergétique du continent."
+      },
+      {
+        id: "unstim-5",
+        name: "École Nationale Supérieure des Mathématiques et Sciences Physiques (ENSP)",
+        admissionRequirements: ["Baccalauréat série C ou D", "Concours très sélectif"],
+        location: "Abomey",
+        country: "Bénin",
+        programs: ["Maths Appliquées", "Physique"],
+        contact: {
+          email: "ensp@unstim.bj",
+          phone: "+229 23 41 06 45",
+          website: "www.ensp.unstim.bj"
+        },
+        description: "Une école dédiée aux sciences fondamentales pour des carrières en recherche, ingénierie et innovation.",
+        goodToKnow: "L'ENSP forme des chercheurs et data scientists de haut niveau. Collaborations avec des universités européennes et américaines. Les diplômés poursuivent souvent en doctorat ou intègrent des centres de recherche internationaux."
+      }
+    ]
+  },
+  {
+    id: "4",
+    name: "Université Nationale d'Agriculture (UNA)",
+    location: "Porto-Novo",
+    type: "Public",
+    image: "https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description: "L'UNA est dédiée à l'enseignement et à la recherche dans le domaine de l'agriculture.",
+    slug: "universite-agriculture",
+    schools: [
+      {
+        id: "una-1",
+        name: "École d'Agronomie Tropicale",
+        admissionRequirements: ["Baccalauréat série C ou D", "Passion pour l'agriculture", "Test de connaissances rurales"],
+        location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Agronomie", "Agriculture", "Agroécologie", "Sciences Sol"],
+        contact: {
+          email: "agro@una.bj",
+          phone: "+229 20 21 01 23",
+          website: "www.agro.una.bj"
+        },
+        description: "Spécialisation en agriculture tropicale durable.",
+        goodToKnow: "L'École d'Agronomie dispose de champs d'expérimentation et de serres modernes. Formation axée sur l'agriculture durable et les techniques innovantes. Partenariats avec des coopératives agricoles pour stages pratiques. Taux d'insertion excellent dans l'agrobusiness."
+      },
+      {
+        id: "una-2",
+        name: "Institut de Zootechnie",
+        admissionRequirements: ["Baccalauréat série C ou D", "Intérêt pour l'élevage", "Connaissance animale de base"],
+        location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Zootechnie", "Élevage", "Nutrition", "Santé Animale"],
+        contact: {
+          email: "zootechnie@una.bj",
+          phone: "+229 20 21 02 45",
+          website: "www.zootechnie.una.bj"
+        },
+        description: "Excellence en sciences animales.",
+        goodToKnow: "L'Institut dispose d'une ferme d'élevage avec diverses espèces animales pour la formation pratique. Collaborations avec des vétérinaires et éleveurs professionnels. Formation complète incluant la gestion d'élevage moderne et la santé animale."
+      },
+      {
+        id: "una-3",
+        name: "École de Foresterie",
+        admissionRequirements: ["Baccalauréat série C ou D", "Passion environnementale", "Aptitude terrain"],
+        location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Foresterie", "Ressources Naturelles", "Écologie", "Conservation"],
+        contact: {
+          email: "foresterie@una.bj",
+          phone: "+229 20 21 03 67",
+          website: "www.foresterie.una.bj"
+        },
+        description: "Préservation et gestion durable des forêts.",
+        goodToKnow: "L'École de Foresterie travaille étroitement avec les parcs nationaux du Bénin. Formation incluant des missions sur terrain en forêt tropicale. Les diplômés contribuent activement à la préservation de la biodiversité et aux projets environnementaux."
+      },
+      {
+        id: "una-4",
+        name: "Institut de Technologie Alimentaire",
+        admissionRequirements: ["Baccalauréat série C ou D", "Intérêt agroalimentaire", "Bases en chimie"],
+        location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Tech Alimentaire", "Transformation", "Nutrition", "Qualité"],
+        contact: {
+          email: "alimentaire@una.bj",
+          phone: "+229 20 21 04 89",
+          website: "www.alimentaire.una.bj"
+        },
+        description: "Innovation en transformation agroalimentaire.",
+        goodToKnow: "L'Institut dispose d'un laboratoire de transformation alimentaire et d'une unité pilote de production. Formation pratique avec développement de nouveaux produits. Partenariats avec l'industrie agroalimentaire pour stages et emplois."
+      },
+      {
+        id: "una-5",
+        name: "École d'Économie Rurale",
+        admissionRequirements: ["Baccalauréat toutes séries", "Intérêt pour le développement rural", "Notions d'économie"],
+        location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Économie Rurale", "Développement Rural", "Coopératives", "Microfinance"],
+        contact: {
+          email: "economie@una.bj",
+          phone: "+229 20 21 05 12",
+          website: "www.economie.una.bj"
+        },
+        description: "Formation aux enjeux économiques du monde rural.",
+        goodToKnow: "L'École forme des spécialistes du développement rural et de l'économie agricole. Collaborations avec des ONG et projets de développement. Les diplômés deviennent conseillers en développement rural, gestionnaires de projets agricoles ou créent leurs propres structures."
+      },
+      {
+        id: "una-6",
+        name: "Institut d'Horticulture et d'Aménagement Paysager",
+        admissionRequirements: ["Baccalauréat série C ou D", "Passion pour les plantes", "Créativité artistique"],
+        location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Horticulture", "Aménagement Paysager", "Jardinage", "Plantes Ornementales"],
+        contact: {
+          email: "horticulture@una.bj",
+          phone: "+229 20 21 06 34",
+          website: "www.horticulture.una.bj"
+        },
+        description: "Art et science des jardins et espaces verts.",
+        goodToKnow: "L'Institut dispose de jardins botaniques et de serres spécialisées. Formation alliant technique horticole et design paysager. Les diplômés travaillent dans l'aménagement urbain, les jardins privés ou créent leur entreprise d'espaces verts."
+      }
+    ]
+  }
 ];
 
 // Fonction utilitaire pour récupérer une université par son slug
