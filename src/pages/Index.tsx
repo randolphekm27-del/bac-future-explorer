@@ -12,12 +12,20 @@ import { NewsletterPopup } from "@/components/ui/newsletter-popup"
 import { SmartSearch } from "@/components/ui/smart-search"
 import { StatsSection } from "@/components/ui/stats-section"
 import { FloatingAccessibility } from "@/components/ui/floating-accessibility"
+import { AnimatedTextCycle } from "@/components/ui/animated-text-cycle"
 import { navigationLinks } from "@/lib/navigation"
 import { Link, useNavigate } from "react-router-dom"
 const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png"
 
 const Index = () => {
   const navigate = useNavigate()
+
+  const animatedTexts = [
+    "Trouvez votre voie après le Bac",
+    "Vous venez d'obtenir votre bac ?",
+    "Connaissez-vous les meilleures universités du Bénin ?",
+    "Sur ce site, vous verrez tout ce qu'il faut savoir après le Bac"
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -31,11 +39,10 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight animate-fade-in">
-                <span className="text-shadow">Trouvez votre voie</span><br />
-                <span className="text-shadow">après le </span>
-                <span className="gradient-text">Bac</span>
-              </h1>
+              <AnimatedTextCycle 
+                texts={animatedTexts}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight min-h-[120px] md:min-h-[140px] lg:min-h-[160px]"
+              />
               <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-medium animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                 Guide complet pour les nouveaux bacheliers du Bénin.
