@@ -309,6 +309,8 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
       }
       
       try {
+        // Supabase temporairement désactivé
+        /*
         await fetch(`${supabaseUrl}/functions/v1/send-email`, {
           method: 'POST',
           headers: {
@@ -326,6 +328,7 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
             }
           })
         });
+        */
       } catch (emailError) {
         console.log('Notification admin non envoyée:', emailError);
       }

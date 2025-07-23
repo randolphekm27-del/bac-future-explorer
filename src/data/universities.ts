@@ -11,6 +11,7 @@ export interface School {
     website: string;
   };
   description: string;
+  goodToKnow: string;
 }
 
 export interface University {
@@ -23,6 +24,64 @@ export interface University {
   slug: string;
   schools: School[];
 }
+
+// Fonction utilitaire pour raccourcir les noms de programmes longs
+export const formatProgramName = (program: string): string => {
+  const keywords = {
+    "Sciences et Techniques de Production Végétale": "Production Végétale",
+    "Sciences et Techniques de Production Animale et Halieutique": "Production Animale",
+    "Aménagement et Gestion des Ressources Naturelles": "Ressources Naturelles",
+    "Sociologie et Économie Rurales": "Économie Rurale",
+    "Nutrition et Sciences Agroalimentaires": "Nutrition",
+    "Génie Électrique et Informatique Industrielle": "Génie Électrique",
+    "Génie Mécanique et Productique": "Génie Mécanique",
+    "Informatique de Gestion": "Info Gestion",
+    "Gestion des Transports et Logistique": "Transport",
+    "Maintenance Industrielle": "Maintenance",
+    "Énergies Renouvelables": "Énergies Vertes",
+    "Entrepreneuriat et Gestion des Entreprises": "Entrepreneuriat",
+    "Finance et Comptabilité": "Finance",
+    "Marketing et Management des Organisations": "Marketing",
+    "Sciences Politiques et Relations Internationales": "Relations Internationales",
+    "Droit public et privé": "Droit",
+    "Biotechnologies": "Biotech",
+    "Agro-industrie": "Agro-industrie",
+    "Santé et Biosciences": "Biosciences",
+    "Informatique Industrielle": "Info Industrielle",
+    "Énergie et Thermique": "Énergie",
+    "Mathématiques Appliquées": "Maths Appliquées",
+    "Physique Appliquée": "Physique",
+    "Agriculture Tropicale": "Agriculture",
+    "Gestion des Ressources Naturelles": "Ressources Naturelles",
+    "Technologie Alimentaire": "Tech Alimentaire",
+    "Transformation Agroalimentaire": "Transformation",
+    "Qualité Alimentaire": "Qualité",
+    "Sciences du Sol": "Sciences Sol",
+    "Nutrition Animale": "Nutrition",
+    "Santé Animale": "Santé Animale"
+  };
+  
+  // Si le programme contient ":", prendre la partie avant
+  const baseName = program.split(" : ")[0];
+  
+  // Chercher un mot-clé correspondant
+  for (const [full, short] of Object.entries(keywords)) {
+    if (baseName.includes(full)) {
+      return short;
+    }
+  }
+  
+  // Si trop long (plus de 25 caractères), tronquer intelligemment
+  if (baseName.length > 25) {
+    const words = baseName.split(" ");
+    if (words.length > 2) {
+      return words.slice(0, 2).join(" ");
+    }
+    return baseName.substring(0, 22) + "...";
+  }
+  
+  return baseName;
+};
 
 export const universities: University[] = [
   {
@@ -46,7 +105,8 @@ export const universities: University[] = [
           phone: "+229 21 36 00 74",
           website: "www.eneam.uac.bj"
         },
-        description: "Formation d'excellence en management et économie appliquée."
+        description: "Formation d'excellence en management et économie appliquée.",
+        goodToKnow: "L'ENEAM est reconnue comme l'une des meilleures écoles de management en Afrique de l'Ouest. Les diplômés bénéficient d'un excellent taux d'insertion professionnelle (95%) et peuvent poursuivre en master ou intégrer directement le marché du travail dans des entreprises nationales et internationales."
       },
       {
         id: "uac-2",
@@ -60,7 +120,8 @@ export const universities: University[] = [
           phone: "+229 21 36 01 23",
           website: "www.fast.uac.bj"
         },
-        description: "Centre d'excellence pour les sciences exactes et appliquées."
+        description: "Centre d'excellence pour les sciences exactes et appliquées.",
+        goodToKnow: "La FAST dispose de laboratoires modernes et d'équipements informatiques de pointe. Les étudiants participent régulièrement à des projets de recherche et peuvent décrocher des stages dans des entreprises technologiques. Le cursus prépare autant à la recherche qu'au secteur privé."
       },
       {
         id: "uac-3",
@@ -74,7 +135,8 @@ export const universities: University[] = [
           phone: "+229 21 30 01 46",
           website: "www.fss.uac.bj"
         },
-        description: "Formation médicale de référence en Afrique de l'Ouest."
+        description: "Formation médicale de référence en Afrique de l'Ouest.",
+        goodToKnow: "La FSS forme des médecins depuis plus de 40 ans avec un internat hospitalier dans les meilleurs hôpitaux du pays. La formation est très exigeante (7 ans minimum) mais offre d'excellentes perspectives. Les diplômés peuvent exercer au Bénin ou poursuivre une spécialisation à l'étranger."
       },
       {
         id: "uac-4",
@@ -88,7 +150,8 @@ export const universities: University[] = [
           phone: "+229 21 36 02 17",
           website: "www.fadesp.uac.bj"
         },
-        description: "Excellence en formation juridique et sciences politiques."
+        description: "Excellence en formation juridique et sciences politiques.",
+        goodToKnow: "La FADESP forme les cadres juridiques et administratifs du pays. Les étudiants peuvent accéder au barreau après leur formation ou intégrer la fonction publique. L'école organise régulièrement des cliniques juridiques pour l'expérience pratique et maintient des partenariats avec des cabinets d'avocats."
       },
       {
         id: "uac-5",
@@ -102,7 +165,8 @@ export const universities: University[] = [
           phone: "+229 21 36 03 45",
           website: "www.epac.uac.bj"
         },
-        description: "Formation d'ingénieurs de haut niveau."
+        description: "Formation d'ingénieurs de haut niveau.",
+        goodToKnow: "L'EPAC est l'école d'ingénierie la plus prestigieuse du Bénin. Les promotions sont limitées (50 étudiants max par filière) garantissant un encadrement personnalisé. Les diplômés sont très recherchés et trouvent facilement des emplois bien rémunérés dans le BTP, l'énergie et l'industrie."
       },
       {
         id: "uac-6",
@@ -116,7 +180,8 @@ export const universities: University[] = [
           phone: "+229 21 36 04 78",
           website: "www.flash.uac.bj"
         },
-        description: "Centre de formation en sciences humaines et sociales."
+        description: "Centre de formation en sciences humaines et sociales.",
+        goodToKnow: "La FLASH propose une formation pluridisciplinaire qui développe l'esprit critique et les compétences en communication. Les débouchés incluent les médias, l'enseignement, la diplomatie et les ONG. L'école encourage fortement les échanges internationaux et les stages pratiques."
       }
     ]
   },
@@ -135,19 +200,14 @@ export const universities: University[] = [
       admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée ou classement sur dossier"],
       location: "Parakou",
       country: "Bénin",
-      programs: [
-        "Sciences et Techniques de Production Végétale : Prépare aux métiers de conseiller agricole, entrepreneur en agriculture ou spécialiste de la production végétale.",
-        "Sciences et Techniques de Production Animale et Halieutique : Mène vers des carrières de technicien d’élevage, pisciculteur ou responsable de projets halieutiques.",
-        "Aménagement et Gestion des Ressources Naturelles : Ouvre la voie aux professions d’agent forestier, gestionnaire des ressources naturelles et consultant en environnement.",
-        "Sociologie et Économie Rurales : Conduit à des métiers de développement rural, gestion de coopératives et consultance en économie rurale.",
-        "Nutrition et Sciences Agroalimentaires : Forme des techniciens et ingénieurs en sécurité alimentaire, qualité agroalimentaire et nutrition."
-      ],
+      programs: ["Production Végétale", "Production Animale", "Ressources Naturelles", "Économie Rurale", "Nutrition"],
       contact: {
         email: "fa@up.bj",
         phone: "+229 23 61 01 23",
         website: "www.fa.up.bj"
       },
-      description: "Une formation complète et pratique pour préparer les étudiants aux métiers de l’agriculture moderne et durable."
+      description: "Une formation complète et pratique pour préparer les étudiants aux métiers de l'agriculture moderne et durable.",
+      goodToKnow: "La FA de Parakou dispose d'une ferme expérimentale de 200 hectares où les étudiants pratiquent directement. L'école maintient des partenariats avec des ONG agricoles et offre de nombreuses opportunités de stage. Les diplômés sont très recherchés par les projets de développement rural."
     },
     {
       id: "up-2",
@@ -155,51 +215,44 @@ export const universities: University[] = [
       admissionRequirements: ["Baccalauréat série C ou D", "Concours sélectif"],
       location: "Parakou",
       country: "Bénin",
-      programs: [
-        "Médecine humaine : Prépare à devenir médecin généraliste ou spécialiste au sein des hôpitaux et cliniques."
-      ],
+      programs: ["Médecine"],
       contact: {
         email: "fm@up.bj",
         phone: "+229 23 61 02 45",
         website: "www.fm.up.bj"
       },
-      description: "Une formation médicale complète qui prépare des praticiens compétents au service de la santé publique."
+      description: "Une formation médicale complète qui prépare des praticiens compétents au service de la santé publique.",
+      goodToKnow: "La FM de Parakou est la deuxième faculté de médecine du pays. Elle se spécialise dans la médecine tropicale et communautaire. Les étudiants effectuent leur internat au CHU de Parakou, réputé pour sa qualité des soins. La formation dure 7 ans avec de bonnes perspectives d'emploi."
     },
     {
       id: "up-3",
       name: "Institut de Formation en Soins Infirmiers et Obstétricaux (IFSIO)",
-      admissionRequirements: ["Baccalauréat série C ou D", "Concours d’entrée"],
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée"],
       location: "Parakou",
       country: "Bénin",
-      programs: [
-        "Soins infirmiers : Pour former des infirmiers diplômés et compétents dans divers domaines de la santé.",
-        "Soins obstétricaux : Pour devenir sage-femme ou technicien spécialisé en santé maternelle et infantile."
-      ],
+      programs: ["Soins infirmiers", "Soins obstétricaux"],
       contact: {
         email: "ifsio@up.bj",
         phone: "+229 23 61 03 67",
         website: "www.ifsio.up.bj"
       },
-      description: "Une école dédiée à la formation de professionnels de santé hautement qualifiés."
+      description: "Une école dédiée à la formation de professionnels de santé hautement qualifiés.",
+      goodToKnow: "L'IFSIO forme des professionnels de santé très demandés. La formation de 3 ans inclut de nombreux stages pratiques. Les diplômés trouvent facilement du travail dans les hôpitaux, cliniques privées ou ONG de santé. Possibilité de spécialisation après le diplôme."
     },
     {
       id: "up-4",
       name: "Institut Universitaire de Technologie (IUT)",
-      admissionRequirements: ["Baccalauréat série C ou D", "Concours d’entrée"],
+      admissionRequirements: ["Baccalauréat série C ou D", "Concours d'entrée"],
       location: "Parakou",
       country: "Bénin",
-      programs: [
-        "Informatique de Gestion : Prépare aux métiers de développeur, administrateur systèmes et data analyst.",
-        "Gestion des Transports et Logistique : Pour des postes dans le fret, transit, et la supply chain.",
-        "Maintenance Industrielle : Ouvre les portes des métiers de technicien de maintenance et d’ingénieur industriel.",
-        "Énergies Renouvelables : Prépare des experts en installation et gestion des systèmes énergétiques solaires ou verts."
-      ],
+      programs: ["Info Gestion", "Transport", "Maintenance", "Énergies Vertes"],
       contact: {
         email: "iut@up.bj",
         phone: "+229 23 61 04 89",
         website: "www.iut.up.bj"
       },
-      description: "Une formation technique et professionnelle orientée vers les besoins du marché et l’innovation."
+      description: "Une formation technique et professionnelle orientée vers les besoins du marché et l'innovation.",
+      goodToKnow: "L'IUT de Parakou privilégie la pratique avec 50% du temps en ateliers et stages. Les entreprises partenaires recrutent directement les diplômés. Formation courte (2-3 ans) avec insertion professionnelle immédiate. Possibilité de poursuivre en licence professionnelle."
     },
     {
       id: "up-5",
@@ -207,17 +260,14 @@ export const universities: University[] = [
       admissionRequirements: ["Baccalauréat série A, B, C ou D", "Sélection sur dossier ou concours"],
       location: "Parakou",
       country: "Bénin",
-      programs: [
-        "Entrepreneuriat et Gestion des Entreprises : Prépare des entrepreneurs, gestionnaires et chefs de projet.",
-        "Finance et Comptabilité : Forme des analystes financiers, auditeurs et experts-comptables.",
-        "Marketing et Management des Organisations : Prépare aux métiers de chef de produit, responsable marketing et consultant en stratégie."
-      ],
+      programs: ["Entrepreneuriat", "Finance", "Marketing"],
       contact: {
         email: "faseg@up.bj",
         phone: "+229 23 61 05 12",
         website: "www.faseg.up.bj"
       },
-      description: "Un centre d’excellence en sciences économiques et gestion pour former les leaders de demain."
+      description: "Un centre d'excellence en sciences économiques et gestion pour former les leaders de demain.",
+      goodToKnow: "La FASEG a un incubateur d'entreprises qui accompagne les étudiants entrepreneurs. De nombreux diplômés créent leur propre entreprise avec un taux de réussite élevé. L'école maintient des liens étroits avec la chambre de commerce et les banques locales."
     },
     {
       id: "up-6",
@@ -225,415 +275,20 @@ export const universities: University[] = [
       admissionRequirements: ["Baccalauréat toutes séries", "Sélection sur dossier ou entretien"],
       location: "Parakou",
       country: "Bénin",
-      programs: [
-        "Droit public et privé : Forme des juristes, avocats, greffiers et magistrats.",
-        "Sciences Politiques et Relations Internationales : Prépare aux carrières de diplomate, consultant politique ou attaché culturel."
-      ],
+      programs: ["Droit", "Relations Internationales"],
       contact: {
         email: "fdsp@up.bj",
         phone: "+229 23 61 06 34",
         website: "www.fdsp.up.bj"
       },
-      description: "Une faculté pour les futurs juristes, politiciens et experts en relations internationales."
+      description: "Une faculté pour les futurs juristes, politiciens et experts en relations internationales.",
+      goodToKnow: "La FDSP de Parakou se distingue par ses formations en droit coutumier africain. Les étudiants peuvent participer à des missions d'observation électorale et stages dans les tribunaux. Excellente préparation aux concours de la magistrature et du barreau."
     }
   ]
 },
-  {
-  id: "3",
-  name: "Université Nationale des Sciences, Technologies, Ingénierie et Mathématiques (UNSTIM)",
-  location: "Abomey",
-  type: "Public",
-  image: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800",
-  description: "L’UNSTIM est une université de pointe au Bénin, dédiée aux formations technologiques, scientifiques et d’ingénierie, avec un fort accent sur l’innovation et les solutions pratiques aux défis du développement.",
-  slug: "universite-unstim",
-  schools: [
-    {
-      id: "unstim-1",
-      name: "Institut Universitaire de Technologie (IUT Lokossa)",
-      admissionRequirements: ["Baccalauréat série C, D, E, F", "Concours d’entrée"],
-      location: "Lokossa",
-      country: "Bénin",
-      programs: [
-        "Génie Électrique et Informatique Industrielle : Forme des techniciens supérieurs et ingénieurs capables de concevoir et maintenir des systèmes électriques et automatisés.",
-        "Génie Mécanique et Productique : Prépare aux métiers de technicien de maintenance, concepteur de systèmes mécaniques et chef d’atelier.",
-        "Génie Civil : Ouvre la voie aux postes de conducteur de travaux, chef de chantier ou ingénieur BTP.",
-        "Informatique Appliquée : Prépare à devenir développeur logiciel, administrateur réseau ou data analyst."
-      ],
-      contact: {
-        email: "iutlokossa@unstim.bj",
-        phone: "+229 23 41 02 34",
-        website: "www.iutlokossa.unstim.bj"
-      },
-      description: "Un centre de formation technique et professionnelle pour les métiers de l’ingénierie et de l’informatique."
-    },
-    {
-      id: "unstim-2",
-      name: "École Nationale Supérieure des Biosciences et Biotechnologies Appliquées (ENSBBA)",
-      admissionRequirements: ["Baccalauréat série D ou C", "Sélection sur dossier ou concours"],
-      location: "Abomey",
-      country: "Bénin",
-      programs: [
-        "Biotechnologies : Prépare des spécialistes en recherche, bio-industrie et production pharmaceutique.",
-        "Agro-industrie : Forme des cadres pour les industries agroalimentaires et la gestion de la qualité.",
-        "Santé et Biosciences : Offre des débouchés dans les laboratoires, centres de recherche et industries médicales."
-      ],
-      contact: {
-        email: "ensbba@unstim.bj",
-        phone: "+229 23 41 03 21",
-        website: "www.ensbba.unstim.bj"
-      },
-      description: "Une école qui associe science et technologie pour développer des solutions innovantes en santé et en agroalimentaire."
-    },
-    {
-      id: "unstim-3",
-      name: "École Nationale Supérieure de Génie Électrique et Informatique (ENSGEI)",
-      admissionRequirements: ["Baccalauréat série C, D ou E", "Concours très sélectif"],
-      location: "Abomey",
-      country: "Bénin",
-      programs: [
-        "Génie Électrique : Prépare des ingénieurs en réseaux électriques, systèmes d’énergie et automatismes.",
-        "Informatique Industrielle : Forme des experts en automatisation, robotique et systèmes embarqués."
-      ],
-      contact: {
-        email: "ensgei@unstim.bj",
-        phone: "+229 23 41 04 56",
-        website: "www.ensgei.unstim.bj"
-      },
-      description: "Une formation d’ingénieurs alliant électricité, informatique et technologies industrielles."
-    },
-    {
-      id: "unstim-4",
-      name: "École Nationale Supérieure de Génie Mécanique et Énergétique (ENSGME)",
-      admissionRequirements: ["Baccalauréat série C, D ou F", "Concours d’entrée"],
-      location: "Abomey",
-      country: "Bénin",
-      programs: [
-        "Génie Mécanique : Prépare des ingénieurs en conception mécanique, production industrielle et maintenance.",
-        "Énergie et Thermique : Ouvre des carrières dans les énergies renouvelables, le froid industriel et la climatisation."
-      ],
-      contact: {
-        email: "ensgme@unstim.bj",
-        phone: "+229 23 41 05 12",
-        website: "www.ensgme.unstim.bj"
-      },
-      description: "Une école au service de l’innovation en énergie, mécanique et efficacité industrielle."
-    },
-    {
-      id: "unstim-5",
-      name: "École Nationale Supérieure des Mathématiques et Sciences Physiques (ENSP)",
-      admissionRequirements: ["Baccalauréat série C ou D", "Concours très sélectif"],
-      location: "Abomey",
-      country: "Bénin",
-      programs: [
-        "Mathématiques Appliquées : Forme des statisticiens, data scientists et modélisateurs.",
-        "Physique Appliquée : Prépare des ingénieurs en physique industrielle, énergie et instrumentation."
-      ],
-      contact: {
-        email: "ensp@unstim.bj",
-        phone: "+229 23 41 06 45",
-        website: "www.ensp.unstim.bj"
-      },
-      description: "Une école dédiée aux sciences fondamentales pour des carrières en recherche, ingénierie et innovation."
-    }
-  ]
-},
-  {
-    id: "4",
-    name: "Université Nationale d'Agriculture (UNA)",
-    location: "Porto-Novo",
-    type: "Public",
-    image: "https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "L'UNA est dédiée à l'enseignement et à la recherche dans le domaine de l'agriculture.",
-    slug: "universite-agriculture",
-    schools: [
-      {
-        id: "una-1",
-        name: "École d'Agronomie Tropicale",
-        admissionRequirements: ["Baccalauréat série C ou D", "Passion pour l'agriculture", "Test de connaissances rurales"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Agronomie", "Agriculture Tropicale", "Agroécologie", "Sciences du Sol"],
-        contact: {
-          email: "agro@una.bj",
-          phone: "+229 20 21 01 23",
-          website: "www.agro.una.bj"
-        },
-        description: "Spécialisation en agriculture tropicale durable."
-      },
-      {
-        id: "una-2",
-        name: "Institut de Zootechnie",
-        admissionRequirements: ["Baccalauréat série C ou D", "Intérêt pour l'élevage", "Connaissance animale de base"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Zootechnie", "Élevage", "Nutrition Animale", "Santé Animale"],
-        contact: {
-          email: "zootechnie@una.bj",
-          phone: "+229 20 21 02 45",
-          website: "www.zootechnie.una.bj"
-        },
-        description: "Excellence en sciences animales."
-      },
-      {
-        id: "una-3",
-        name: "École de Foresterie",
-        admissionRequirements: ["Baccalauréat série C ou D", "Passion environnementale", "Aptitude terrain"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Foresterie", "Gestion des Ressources Naturelles", "Écologie", "Conservation"],
-        contact: {
-          email: "foresterie@una.bj",
-          phone: "+229 20 21 03 67",
-          website: "www.foresterie.una.bj"
-        },
-        description: "Préservation et gestion durable des forêts."
-      },
-      {
-        id: "una-4",
-        name: "Institut de Technologie Alimentaire",
-        admissionRequirements: ["Baccalauréat série C ou D", "Intérêt agroalimentaire", "Bases en chimie"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Technologie Alimentaire", "Transformation Agroalimentaire", "Nutrition", "Qualité Alimentaire"],
-        contact: {
-          email: "alimentaire@una.bj",
-          phone: "+229 20 21 04 89",
-          website: "www.alimentaire.una.bj"
-        },
-        description: "Innovation en transformation agroalimentaire."
-      },
-      {
-        id: "una-5",
-        name: "École d'Économie Rurale",
-        admissionRequirements: ["Baccalauréat toutes séries", "Intérêt développement rural", "Test économie"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Économie Rurale", "Développement Rural", "Coopératives Agricoles", "Microfinance"],
-        contact: {
-          email: "economie@una.bj",
-          phone: "+229 20 21 05 12",
-          website: "www.economie.una.bj"
-        },
-        description: "Développement économique rural intégré."
-      },
-      {
-        id: "una-6",
-        name: "Institut de Recherche Agricole",
-        admissionRequirements: ["Master en agriculture", "Projet recherche", "Expérience terrain"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Recherche Agricole", "Innovation Rurale", "Biotechnologie Agricole", "Amélioration Génétique"],
-        contact: {
-          email: "recherche@una.bj",
-          phone: "+229 20 21 06 34",
-          website: "www.recherche.una.bj"
-        },
-        description: "Recherche agricole de pointe."
-      }
-    ]
-  },
-  {
-    id: "5",
-    name: "Institut de Mathématiques et de Sciences Physiques (IMSP)",
-    location: "Dangbo",
-    type: "Public",
-    image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "L'IMSP est un institut de recherche et d'enseignement en mathématiques et sciences physiques.",
-    slug: "institut-imsp",
-    schools: [
-      {
-        id: "imsp-1",
-        name: "École de Mathématiques Pures",
-        admissionRequirements: ["Baccalauréat série C", "Excellence en mathématiques", "Test de niveau élevé"],
-        location: "Dangbo",
-        country: "Bénin",
-        programs: ["Mathématiques", "Algèbre", "Analyse", "Géométrie"],
-        contact: {
-          email: "maths@imsp.bj",
-          phone: "+229 20 22 01 23",
-          website: "www.maths.imsp.bj"
-        },
-        description: "Formation d'élite en mathématiques pures."
-      },
-      {
-        id: "imsp-2",
-        name: "Institut de Physique Théorique",
-        admissionRequirements: ["Baccalauréat série C", "Excellence en physique", "Bases mathématiques solides"],
-        location: "Dangbo",
-        country: "Bénin",
-        programs: ["Physique", "Physique Théorique", "Mécanique Quantique", "Relativité"],
-        contact: {
-          email: "physique@imsp.bj",
-          phone: "+229 20 22 02 45",
-          website: "www.physique.imsp.bj"
-        },
-        description: "Recherche fondamentale en physique théorique."
-      },
-      {
-        id: "imsp-3",
-        name: "Centre de Statistiques Appliquées",
-        admissionRequirements: ["Baccalauréat série C", "Aptitude statistique", "Logique mathématique"],
-        location: "Dangbo",
-        country: "Bénin",
-        programs: ["Statistiques", "Probabilités", "Analyse de Données", "Biostatistiques"],
-        contact: {
-          email: "stats@imsp.bj",
-          phone: "+229 20 22 03 67",
-          website: "www.stats.imsp.bj"
-        },
-        description: "Excellence en statistiques et probabilités."
-      },
-      {
-        id: "imsp-4",
-        name: "École d'Informatique Mathématique",
-        admissionRequirements: ["Baccalauréat série C", "Logique algorithmique", "Passion informatique"],
-        location: "Dangbo",
-        country: "Bénin",
-        programs: ["Informatique", "Informatique Mathématique", "Algorithmes", "Calcul Scientifique"],
-        contact: {
-          email: "info@imsp.bj",
-          phone: "+229 20 22 04 89",
-          website: "www.info.imsp.bj"
-        },
-        description: "Informatique théorique et appliquée."
-      },
-      {
-        id: "imsp-5",
-        name: "Laboratoire de Recherche",
-        admissionRequirements: ["Master ou équivalent", "Projet recherche avancé", "Publication scientifique"],
-        location: "Dangbo",
-        country: "Bénin",
-        programs: ["Recherche Fondamentale", "Publications", "Doctorat", "Post-doctorat"],
-        contact: {
-          email: "labo@imsp.bj",
-          phone: "+229 20 22 05 12",
-          website: "www.labo.imsp.bj"
-        },
-        description: "Recherche fondamentale de niveau international."
-      },
-      {
-        id: "imsp-6",
-        name: "Centre d'Excellence Scientifique",
-        admissionRequirements: ["Excellence académique", "Sélection rigoureuse", "Potentiel recherche"],
-        location: "Dangbo",
-        country: "Bénin",
-        programs: ["Formation d'Excellence", "Encadrement Personnalisé", "Bourses d'Études", "Échanges Internationaux"],
-        contact: {
-          email: "excellence@imsp.bj",
-          phone: "+229 20 22 06 34",
-          website: "www.excellence.imsp.bj"
-        },
-        description: "Centre d'excellence scientifique régional."
-      }
-    ]
-  },
-  {
-    id: "6",
-    name: "Université Africaine de Technologie et de Management (UATM)",
-    location: "Cotonou",
-    type: "Privé",
-    image: "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=800",
-    description: "L'UATM est une université privée offrant des formations en gestion et technologie.",
-    slug: "universite-uatm",
-    schools: [
-      {
-        id: "uatm-1",
-        name: "Business School",
-        admissionRequirements: ["Baccalauréat toutes séries", "Test d'aptitude", "Frais de scolarité"],
-        location: "Cotonou",
-        country: "Bénin",
-        programs: ["Gestion", "Marketing", "Finance", "Management"],
-        contact: {
-          email: "business@uatm.edu",
-          phone: "+229 21 31 01 23",
-          website: "www.business.uatm.edu"
-        },
-        description: "École de commerce de référence."
-      },
-      {
-        id: "uatm-2",
-        name: "École de Technologie",
-        admissionRequirements: ["Baccalauréat série C ou D", "Test technique", "Motivation technologique"],
-        location: "Cotonou",
-        country: "Bénin",
-        programs: ["Informatique", "Réseaux", "Développement Web", "Maintenance"],
-        contact: {
-          email: "tech@uatm.edu",
-          phone: "+229 21 31 02 45",
-          website: "www.tech.uatm.edu"
-        },
-        description: "Innovation technologique appliquée."
-      },
-      {
-        id: "uatm-3",
-        name: "Institut de Communication",
-        admissionRequirements: ["Baccalauréat toutes séries", "Test de créativité", "Portfolio"],
-        location: "Cotonou",
-        country: "Bénin",
-        programs: ["Communication", "Journalisme", "Relations Publiques", "Marketing Digital"],
-        contact: {
-          email: "comm@uatm.edu",
-          phone: "+229 21 31 03 67",
-          website: "www.comm.uatm.edu"
-        },
-        description: "Communication moderne et digitale."
-      },
-      {
-        id: "uatm-4",
-        name: "École de Management International",
-        admissionRequirements: ["Baccalauréat + niveau anglais", "Test international", "Projet professionnel"],
-        location: "Cotonou",
-        country: "Bénin",
-        programs: ["Management International", "Commerce International", "Négociation", "Logistique"],
-        contact: {
-          email: "international@uatm.edu",
-          phone: "+229 21 31 04 89",
-          website: "www.international.uatm.edu"
-        },
-        description: "Formation internationale en management."
-      },
-      {
-        id: "uatm-5",
-        name: "Centre d'Innovation Entrepreneuriale",
-        admissionRequirements: ["Projet d'entreprise", "Motivation entrepreneuriale", "Business plan"],
-        location: "Cotonou",
-        country: "Bénin",
-        programs: ["Entrepreneuriat", "Innovation", "Start-up", "Incubation"],
-        contact: {
-          email: "innovation@uatm.edu",
-          phone: "+229 21 31 05 12",
-          website: "www.innovation.uatm.edu"
-        },
-        description: "Accompagnement entrepreneurial complet."
-      },
-      {
-        id: "uatm-6",
-        name: "Institut de Formation Continue",
-        admissionRequirements: ["Expérience professionnelle", "Projet formation", "Financement disponible"],
-        location: "Cotonou",
-        country: "Bénin",
-        programs: ["Formation Continue", "Certification", "MBA", "Executive Education"],
-        contact: {
-          email: "continue@uatm.edu",
-          phone: "+229 21 31 06 34",
-          website: "www.continue.uatm.edu"
-        },
-        description: "Formation pour professionnels en activité."
-      }
-    ]
-  }
 ];
 
+// Fonction utilitaire pour récupérer une université par son slug
 export const getUniversityBySlug = (slug: string): University | undefined => {
   return universities.find(university => university.slug === slug);
-};
-
-export const getSchoolById = (schoolId: string): { school: School; university: University } | undefined => {
-  for (const university of universities) {
-    const school = university.schools.find(s => s.id === schoolId);
-    if (school) {
-      return { school, university };
-    }
-  }
-  return undefined;
 };

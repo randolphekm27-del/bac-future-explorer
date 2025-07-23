@@ -1,10 +1,12 @@
-import { MapPin, Phone, Mail, Globe, ChevronDown, ChevronUp } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, ChevronDown, ChevronUp, Info } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "./button";
 import type { School, University } from "@/data/universities";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./collapsible";
 import { createProgramSlug } from "@/data/programs";
+import { formatProgramName } from "@/data/universities";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
 
 interface SchoolCardProps {
   school: School;
@@ -54,15 +56,34 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
       <div className="mb-4 w-full">
         <h4 className="text-xs sm:text-sm font-medium mb-2">Filières proposées:</h4>
         <div className="flex flex-wrap gap-1 sm:gap-2 w-full">
-          {school.programs.map((program, i) => (
-            <Link
-              key={i}
-              to={`/programs?program=${createProgramSlug(program)}`}
-              className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
-            >
-              {program}
-            </Link>
-          ))}
+          <TooltipProvider>
+            {school.programs.map((program, i) => {
+              const originalProgram = program;
+              const shortName = formatProgramName(program);
+              const needsTooltip = shortName !== program && shortName.length < program.length;
+              
+              const LinkElement = (
+                <Link
+                  key={i}
+                  to={`/programs?program=${createProgramSlug(originalProgram)}`}
+                  className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
+                >
+                  {shortName}
+                </Link>
+              );
+
+              return needsTooltip ? (
+                <Tooltip key={i}>
+                  <TooltipTrigger asChild>
+                    {LinkElement}
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="max-w-xs text-center">{originalProgram}</p>
+                  </TooltipContent>
+                </Tooltip>
+              ) : LinkElement;
+            })}
+          </TooltipProvider>
         </div>
       </div>
 
@@ -82,6 +103,17 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
             </li>
           )}
         </ul>
+      </div>
+
+      {/* À savoir - section ajoutée */}
+      <div className="mb-4">
+        <h4 className="text-xs sm:text-sm font-medium mb-2 flex items-center gap-1">
+          <Info className="h-4 w-4 text-primary" />
+          À savoir:
+        </h4>
+        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words">
+          {school.goodToKnow}
+        </p>
       </div>
 
       {/* Contact - affiché selon l'état */}
