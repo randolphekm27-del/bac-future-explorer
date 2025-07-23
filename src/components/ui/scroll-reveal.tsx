@@ -32,10 +32,10 @@ export function ScrollReveal({ children, className, delay = 0 }: ScrollRevealPro
     <div
       ref={ref}
       className={cn(
-        "transition-all duration-700 ease-out",
+        "transition-all duration-500 ease-out will-change-transform",
         isVisible 
           ? "opacity-100 translate-y-0" 
-          : "opacity-0 translate-y-8",
+          : "opacity-0 translate-y-4",
         className
       )}
     >
