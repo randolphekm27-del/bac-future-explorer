@@ -45,7 +45,7 @@ Je peux maintenant vous donner des conseils ultra-personnalisés ! Que souhaitez
   }
 
   return (
-    <div className={cn("fixed right-4 bottom-4 z-[9999] flex flex-col gap-3", className)}>
+    <div className={cn("fixed right-2 sm:right-4 bottom-4 z-50 flex flex-col gap-2 sm:gap-3", className)}>
       <OrientationTest onComplete={handleTestComplete} />
       <AIChat 
         testResults={testResults}
