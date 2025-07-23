@@ -45,12 +45,16 @@ Je peux maintenant vous donner des conseils ultra-personnalisés ! Que souhaitez
   }
 
   return (
-    <div className={cn("fixed right-2 sm:right-4 bottom-4 z-[9999] flex flex-col gap-2 sm:gap-3", className)}>
-      <OrientationTest onComplete={handleTestComplete} />
-      <AIChat 
-        testResults={testResults}
-        initialMessage={testResults ? createWelcomeMessage(testResults) : undefined}
-      />
+    <div className={cn("fixed right-2 sm:right-4 bottom-4 z-[99999] flex flex-col gap-2 sm:gap-3 pointer-events-none", className)}>
+      <div className="pointer-events-auto">
+        <OrientationTest onComplete={handleTestComplete} />
+      </div>
+      <div className="pointer-events-auto">
+        <AIChat 
+          testResults={testResults}
+          initialMessage={testResults ? createWelcomeMessage(testResults) : undefined}
+        />
+      </div>
     </div>
   )
 }
