@@ -16,17 +16,17 @@ export function AnimatedTextCycle({ texts, className = "" }: AnimatedTextCyclePr
     let timeoutId: NodeJS.Timeout
 
     if (isTyping && displayedText.length < currentText.length) {
-      // Afficher lettre par lettre (2 secondes / longueur du texte)
-      const typingSpeed = 2000 / currentText.length
+      // Afficher lettre par lettre (1 seconde / longueur du texte)
+      const typingSpeed = 1000 / currentText.length
       timeoutId = setTimeout(() => {
         setDisplayedText(currentText.slice(0, displayedText.length + 1))
       }, typingSpeed)
     } else if (isTyping && displayedText.length === currentText.length) {
-      // Texte complet affiché, attendre 7 secondes puis commencer l'effacement
+      // Texte complet affiché, attendre 5 secondes puis commencer l'effacement
       timeoutId = setTimeout(() => {
         setIsTyping(false)
         setIsVisible(false)
-      }, 7000)
+      }, 5000)
     } else if (!isTyping) {
       // Effacement en fondu (500ms), puis passer au texte suivant
       timeoutId = setTimeout(() => {
