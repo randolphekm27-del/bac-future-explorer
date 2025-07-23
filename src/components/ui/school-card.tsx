@@ -52,22 +52,14 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
       <div className="mb-4 w-full">
         <h4 className="text-xs sm:text-sm font-medium mb-2">Filières proposées:</h4>
         <div className="flex flex-wrap gap-1 sm:gap-2 w-full">
-          {school.programs.map((program, i) => {
-            // Transformer les longs noms en mots-clés
-            const shortProgram = program.length > 12 ? 
-              program.split(' ').map(word => word.length > 4 ? word.substring(0, 4) + '.' : word).join(' ') :
-              program;
-            
-            return (
-              <span
-                key={i}
-                className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary break-words flex-shrink-0 max-w-full truncate"
-                title={program} // Affiche le nom complet au survol
-              >
-                {shortProgram}
-              </span>
-            );
-          })}
+          {school.programs.map((program, i) => (
+            <span
+              key={i}
+              className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary break-words flex-shrink-0 max-w-full truncate"
+            >
+              {program}
+            </span>
+          ))}
         </div>
       </div>
 
@@ -87,14 +79,6 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
             </li>
           )}
         </ul>
-      </div>
-
-      {/* À savoir - toujours visible */}
-      <div className="mb-4">
-        <h4 className="text-xs sm:text-sm font-medium mb-2">À savoir:</h4>
-        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-          {school.goodToKnow}
-        </p>
       </div>
 
       {/* Contact - affiché selon l'état */}
