@@ -154,14 +154,14 @@ export default function Internships() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex gap-2 overflow-x-auto pb-2">
+                <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth overscroll-contain">
                   {types.map((type) => (
                     <Button
                       key={type}
                       variant={typeFilter === type ? "default" : "outline"}
                       size="sm"
                       onClick={() => setTypeFilter(type)}
-                      className="whitespace-nowrap"
+                      className="whitespace-nowrap flex-shrink-0"
                     >
                       {type === "all" ? "Tous" : type}
                     </Button>

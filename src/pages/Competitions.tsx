@@ -110,14 +110,14 @@ export default function Competitions() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2">
+            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth overscroll-contain">
               {categories.map((category) => (
                 <Button
                   key={category}
                   variant={categoryFilter === category ? "default" : "outline"}
                   size="sm"
                   onClick={() => setCategoryFilter(category)}
-                  className="whitespace-nowrap"
+                  className="whitespace-nowrap flex-shrink-0"
                 >
                   {category === "all" ? "Tous" : category}
                 </Button>
