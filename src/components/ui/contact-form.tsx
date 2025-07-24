@@ -152,13 +152,13 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-2xl gradient-text">{title}</DialogTitle>
-          <DialogDescription className="text-base">{description}</DialogDescription>
+      <DialogContent className="sm:max-w-[600px]">
+        <DialogHeader className="flex-shrink-0 pb-4 border-b border-border">
+          <DialogTitle className="text-xl gradient-text">{title}</DialogTitle>
+          <DialogDescription className="text-sm">{description}</DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+        <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="companyName" className="text-sm font-medium">
@@ -266,18 +266,18 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
             />
           </div>
 
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
-            <p className="text-sm text-primary font-medium mb-2">
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-3">
+            <p className="text-sm text-primary font-medium mb-1">
               📧 Après validation de votre demande :
             </p>
-            <ul className="text-xs space-y-1 text-muted-foreground">
+            <ul className="text-xs space-y-0.5 text-muted-foreground">
               <li>• Notre équipe vous contactera sous 48h</li>
               <li>• Nous étudierons ensemble les modalités de partenariat</li>
               <li>• Nous mettrons en avant votre {type === "company" ? "entreprise" : "formation"} sur la plateforme</li>
             </ul>
           </div>
 
-          <div className="flex gap-3 pt-4">
+          <div className="flex gap-3 pt-2 flex-shrink-0 border-t border-border mt-4">
             <Button
               type="button"
               variant="outline"
