@@ -156,17 +156,15 @@ export default function Internships() {
                 </div>
                 <div className="flex gap-2 overflow-x-auto pb-2">
                   {types.map((type) => (
-                    <button
+                    <Button
                       key={type}
+                      variant={typeFilter === type ? "default" : "outline"}
+                      size="sm"
                       onClick={() => setTypeFilter(type)}
-                      className={`px-4 py-2 rounded-md text-sm whitespace-nowrap ${
-                        typeFilter === type
-                          ? "bg-primary text-white"
-                          : "bg-secondary text-secondary-foreground"
-                      }`}
+                      className="whitespace-nowrap"
                     >
                       {type === "all" ? "Tous" : type}
-                    </button>
+                    </Button>
                   ))}
                 </div>
               </div>

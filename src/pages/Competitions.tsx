@@ -112,17 +112,15 @@ export default function Competitions() {
             </div>
             <div className="flex gap-2 overflow-x-auto pb-2">
               {categories.map((category) => (
-                <button
+                <Button
                   key={category}
+                  variant={categoryFilter === category ? "default" : "outline"}
+                  size="sm"
                   onClick={() => setCategoryFilter(category)}
-                  className={`px-4 py-2 rounded-md text-sm whitespace-nowrap ${
-                    categoryFilter === category
-                      ? "bg-primary text-white"
-                      : "bg-secondary text-secondary-foreground"
-                  }`}
+                  className="whitespace-nowrap"
                 >
                   {category === "all" ? "Tous" : category}
-                </button>
+                </Button>
               ))}
             </div>
           </div>
