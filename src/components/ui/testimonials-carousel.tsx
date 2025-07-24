@@ -50,7 +50,7 @@ export function TestimonialsCarousel() {
 
   return (
     <div className="relative max-w-4xl mx-auto">
-      <div className="rounded-2xl bg-card border shadow-lg">
+      <div className="overflow-hidden rounded-2xl bg-card border shadow-lg">
         <div 
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
