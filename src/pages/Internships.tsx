@@ -1,5 +1,5 @@
 import { Briefcase, Search, Calendar, MapPin, Building, Plus } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { navigationLinks } from "@/lib/navigation"
@@ -121,13 +121,6 @@ export default function Internships() {
     return matchesSearch && matchesType
   })
 
-  // Améliorer le scroll tactile sur mobile
-  useEffect(() => {
-    document.querySelectorAll('[data-scroll]').forEach(el => {
-      el.addEventListener('touchstart', () => {}, { passive: true });
-    });
-  }, [])
-
   return (
     <div className="flex min-h-screen flex-col">
       <Navigation links={navigationLinks} />
@@ -161,13 +154,14 @@ export default function Internships() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="w-full overflow-hidden relative">
+                <div className="w-full relative">
                   <div 
-                    data-scroll
-                    className="flex gap-3 overflow-x-auto max-w-full pb-3 pr-8 scroll-smooth snap-x snap-mandatory scrollbar-hide" 
+                    className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide pr-8" 
                     style={{ 
                       scrollbarWidth: 'none', 
-                      msOverflowStyle: 'none'
+                      msOverflowStyle: 'none', 
+                      WebkitOverflowScrolling: 'touch',
+                      scrollBehavior: 'smooth'
                     }}
                   >
                     {types.map((type) => (
@@ -176,14 +170,14 @@ export default function Internships() {
                         variant={typeFilter === type ? "default" : "outline"}
                         size="sm"
                         onClick={() => setTypeFilter(type)}
-                        className="whitespace-nowrap min-w-fit flex-shrink-0 snap-start px-4 py-2"
+                        className="whitespace-nowrap flex-shrink-0 min-w-fit px-4 py-2"
                       >
                         {type === "all" ? "Tous" : type}
                       </Button>
                     ))}
                   </div>
                   {/* Gradient fade indicator pour montrer qu'on peut scroller */}
-                  <div className="absolute right-0 top-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
+                  <div className="absolute right-0 top-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
                 </div>
               </div>
 

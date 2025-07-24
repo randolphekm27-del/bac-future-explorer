@@ -76,13 +76,6 @@ export default function Programs() {
     }
   }, [location])
 
-  // Améliorer le scroll tactile sur mobile
-  useEffect(() => {
-    document.querySelectorAll('[data-scroll]').forEach(el => {
-      el.addEventListener('touchstart', () => {}, { passive: true });
-    });
-  }, [])
-
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
@@ -104,13 +97,14 @@ export default function Programs() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="w-full overflow-hidden relative">
+            <div className="w-full relative">
               <div 
-                data-scroll
-                className="flex gap-3 overflow-x-auto max-w-full pb-3 pr-8 scroll-smooth snap-x snap-mandatory scrollbar-hide"
+                className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide pr-8" 
                 style={{ 
                   scrollbarWidth: 'none', 
-                  msOverflowStyle: 'none'
+                  msOverflowStyle: 'none', 
+                  WebkitOverflowScrolling: 'touch',
+                  scrollBehavior: 'smooth'
                 }}
               >
                 {categories.map((category) => (
@@ -119,14 +113,14 @@ export default function Programs() {
                     variant={categoryFilter === category ? "default" : "outline"}
                     size="sm"
                     onClick={() => setCategoryFilter(category)}
-                    className="whitespace-nowrap min-w-fit flex-shrink-0 snap-start px-4 py-2"
+                    className="whitespace-nowrap flex-shrink-0 min-w-fit px-4 py-2"
                   >
                     {category === "all" ? "Toutes" : category}
                   </Button>
                 ))}
               </div>
               {/* Gradient fade indicator pour montrer qu'on peut scroller */}
-              <div className="absolute right-0 top-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
+              <div className="absolute right-0 top-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
             </div>
           </div>
 
