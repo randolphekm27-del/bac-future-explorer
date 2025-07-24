@@ -214,6 +214,21 @@ section {
   overflow-x: hidden;
 }
 
+/* Prévention absolue des scrolls locaux */
+div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidden) {
+  overflow: visible !important;
+}
+
+/* Ensure testimonials don't create scroll context */
+.testimonials-container {
+  overflow: visible !important;
+}
+
+/* Remove any transform that could create stacking context issues */
+.carousel-item {
+  will-change: auto;
+}
+
 @layer utilities {
   /* Premium Animations */
   .animate-scale-in {

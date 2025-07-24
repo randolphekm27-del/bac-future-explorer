@@ -50,26 +50,30 @@ export function TestimonialsCarousel() {
 
   return (
     <div className="relative max-w-4xl mx-auto">
-      <div className="overflow-hidden rounded-2xl bg-card border shadow-lg">
-        <div 
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="w-full flex-shrink-0 p-8">
-              <div className="text-center">
-                <div className="text-4xl mb-4">{testimonial.avatar}</div>
-                <div className="flex justify-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                  ))}
-                </div>
-                <blockquote className="text-xl italic text-muted-foreground mb-6">
-                  "{testimonial.content}"
-                </blockquote>
-                <div>
-                  <div className="font-semibold text-lg">{testimonial.name}</div>
-                  <div className="text-primary">{testimonial.role}</div>
+      <div className="rounded-2xl bg-card border shadow-lg">
+        <div className="relative">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={testimonial.id} 
+              className={`transition-opacity duration-500 ease-in-out ${
+                index === currentIndex ? 'opacity-100' : 'opacity-0 absolute inset-0'
+              }`}
+            >
+              <div className="w-full p-8">
+                <div className="text-center">
+                  <div className="text-4xl mb-4">{testimonial.avatar}</div>
+                  <div className="flex justify-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-accent text-accent" />
+                    ))}
+                  </div>
+                  <blockquote className="text-xl italic text-muted-foreground mb-6">
+                    "{testimonial.content}"
+                  </blockquote>
+                  <div>
+                    <div className="font-semibold text-lg">{testimonial.name}</div>
+                    <div className="text-primary">{testimonial.role}</div>
+                  </div>
                 </div>
               </div>
             </div>

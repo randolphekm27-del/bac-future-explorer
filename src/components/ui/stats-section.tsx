@@ -35,7 +35,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-primary/5 to-accent/5">
+    <section className="py-20">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <div className="text-center mb-16">

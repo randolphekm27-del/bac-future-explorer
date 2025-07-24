@@ -83,9 +83,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-background">
-        <StatsSection />
-      </section>
+      <StatsSection />
 
       {/* Features Section */}
       <section className="py-20 gradient-hero">
