@@ -97,13 +97,16 @@ export default function Programs() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="w-full">
-              <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide" style={{ 
-                scrollbarWidth: 'none', 
-                msOverflowStyle: 'none', 
-                WebkitOverflowScrolling: 'touch',
-                scrollBehavior: 'smooth'
-              }}>
+            <div className="w-full relative">
+              <div 
+                className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide pr-8" 
+                style={{ 
+                  scrollbarWidth: 'none', 
+                  msOverflowStyle: 'none', 
+                  WebkitOverflowScrolling: 'touch',
+                  scrollBehavior: 'smooth'
+                }}
+              >
                 {categories.map((category) => (
                   <Button
                     key={category}
@@ -116,6 +119,8 @@ export default function Programs() {
                   </Button>
                 ))}
               </div>
+              {/* Gradient fade indicator pour montrer qu'on peut scroller */}
+              <div className="absolute right-0 top-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
             </div>
           </div>
 
