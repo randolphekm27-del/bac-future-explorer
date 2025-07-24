@@ -144,30 +144,40 @@ export default function Internships() {
               <TabsTrigger value="resources">Ressources utiles</TabsTrigger>
             </TabsList>
             <TabsContent value="opportunities">
-              <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mb-8 space-y-4 w-full">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
                     placeholder="Rechercher un stage..."
-                    className="pl-10"
+                    className="pl-10 w-full"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {types.map((type) => (
-                    <button
-                      key={type}
-                      onClick={() => setTypeFilter(type)}
-                      className={`px-4 py-2 rounded-md text-sm whitespace-nowrap ${
-                        typeFilter === type
-                          ? "bg-primary text-white"
-                          : "bg-secondary text-secondary-foreground"
-                      }`}
-                    >
-                      {type === "all" ? "Tous" : type}
-                    </button>
-                  ))}
+                <div className="w-full relative">
+                  <div 
+                    className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide pr-8" 
+                    style={{ 
+                      scrollbarWidth: 'none', 
+                      msOverflowStyle: 'none', 
+                      WebkitOverflowScrolling: 'touch',
+                      scrollBehavior: 'smooth'
+                    }}
+                  >
+                    {types.map((type) => (
+                      <Button
+                        key={type}
+                        variant={typeFilter === type ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setTypeFilter(type)}
+                        className="whitespace-nowrap flex-shrink-0 min-w-fit px-4 py-2"
+                      >
+                        {type === "all" ? "Tous" : type}
+                      </Button>
+                    ))}
+                  </div>
+                  {/* Gradient fade indicator pour montrer qu'on peut scroller */}
+                  <div className="absolute right-0 top-0 bottom-3 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
                 </div>
               </div>
 
