@@ -196,29 +196,16 @@ body {
 .container, main, section {
   overflow-x: hidden;
   max-width: 100%;
-  overflow-y: visible !important;
+  overflow-y: visible;
 }
 
 /* Force scroll unifié pour tous les composants */
 main {
-  overflow-y: visible !important;
+  overflow-y: visible;
 }
 
 section {
-  overflow-y: visible !important;
-}
-
-/* Supprime tous les overflow: hidden qui cassent le scroll */
-* {
-  overflow-y: visible !important;
-}
-
-/* Exception pour les composants qui ont besoin d'overflow hidden */
-.carousel-container, .dropdown-menu, .dialog-content, .popover-content, .tooltip-content, 
-.command-list, .select-content, .hover-card-content, .context-menu-content, .menubar-content, 
-.navigation-menu-content, .accordion-content, .collapsible-content, .slider-track, .progress-indicator,
-.avatar, .button, .toast, .alert, .badge, .card-image, .feature-card img, .glass-card img {
-  overflow-y: revert !important;
+  overflow-y: visible;
 }
 
 /* Amélioration responsive pour les conteneurs */

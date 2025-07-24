@@ -28,7 +28,7 @@ const Index = () => {
   ]
 
   return (
-    <div className="flex min-h-screen flex-col bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background">
       <Navigation links={navigationLinks} />
       <NewsletterPopup />
       
