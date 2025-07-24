@@ -317,7 +317,7 @@ export const universities: University[] = [
             website: "www.fsa.uac.bj"
           },
           description: "Référence régionale pour l'agriculture durable et la sécurité alimentaire.",
-          goodToKnow: "La FSA mène des recherches sur les cultures résistantes à la sécheresse et forme les entrepreneurs agricoles. Ferme-école de 50ha avec système d'irrigation solaire. Débouchés : responsables de coopératives, experts FAO, ou créateurs de fermes agroécologiques comme 'AgriTech Benin'."
+          goodToKnow: "La FSA mène des recherches sur les cultures résistantes à la sécheresse et forme les entrepreneurs agricoles. Ferme-école de 50ha avec système d'irrigation solaire. Débouchés : responsables de coopératives, experts FAO, ou créateurs de fermes agroécologiques comme "AgriTech Benin"."
         },
         {
           id: "uac-16",
