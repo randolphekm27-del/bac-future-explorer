@@ -99,15 +99,17 @@ export default function Programs() {
             </div>
             <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
               {categories.map((category) => (
-                <Button
+                <button
                   key={category}
-                  variant={categoryFilter === category ? "default" : "outline"}
-                  size="sm"
                   onClick={() => setCategoryFilter(category)}
-                  className="whitespace-nowrap flex-shrink-0"
+                  className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
+                    categoryFilter === category
+                      ? "bg-primary text-white"
+                      : "bg-secondary text-secondary-foreground"
+                  }`}
                 >
                   {category === "all" ? "Toutes" : category}
-                </Button>
+                </button>
               ))}
             </div>
           </div>
