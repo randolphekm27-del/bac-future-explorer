@@ -31,8 +31,12 @@ Deno.serve(async (req: Request) => {
       throw new Error('Type de demande requis')
     }
 
-    // Configuration Resend (vous devrez ajouter votre clé API)
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY') || 'your-resend-api-key'
+    // Configuration Resend
+    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+    
+    if (!RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY manquante dans les variables d\'environnement')
+    }
 
     const headers = {
       'Authorization': `Bearer ${RESEND_API_KEY}`,
