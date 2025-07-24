@@ -144,28 +144,35 @@ export default function Internships() {
               <TabsTrigger value="resources">Ressources utiles</TabsTrigger>
             </TabsList>
             <TabsContent value="opportunities">
-              <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+              <div className="mb-8 space-y-4 w-full">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                   <Input
                     placeholder="Rechercher un stage..."
-                    className="pl-10"
+                    className="pl-10 w-full"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide scroll-smooth overscroll-x-contain snap-x snap-mandatory" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
-                  {types.map((type) => (
-                    <Button
-                      key={type}
-                      variant={typeFilter === type ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setTypeFilter(type)}
-                      className="whitespace-nowrap flex-shrink-0 snap-start min-w-fit px-4"
-                    >
-                      {type === "all" ? "Tous" : type}
-                    </Button>
-                  ))}
+                <div className="w-full">
+                  <div className="flex gap-3 overflow-x-auto pb-3 scrollbar-hide" style={{ 
+                    scrollbarWidth: 'none', 
+                    msOverflowStyle: 'none', 
+                    WebkitOverflowScrolling: 'touch',
+                    scrollBehavior: 'smooth'
+                  }}>
+                    {types.map((type) => (
+                      <Button
+                        key={type}
+                        variant={typeFilter === type ? "default" : "outline"}
+                        size="sm"
+                        onClick={() => setTypeFilter(type)}
+                        className="whitespace-nowrap flex-shrink-0 min-w-fit px-4 py-2"
+                      >
+                        {type === "all" ? "Tous" : type}
+                      </Button>
+                    ))}
+                  </div>
                 </div>
               </div>
 
