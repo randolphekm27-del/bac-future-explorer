@@ -76,6 +76,13 @@ export default function Programs() {
     }
   }, [location])
 
+  // Améliorer le scroll tactile sur mobile
+  useEffect(() => {
+    document.querySelectorAll('[data-scroll]').forEach(el => {
+      el.addEventListener('touchstart', () => {}, { passive: true });
+    });
+  }, [])
+
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
@@ -99,6 +106,7 @@ export default function Programs() {
             </div>
             <div className="w-full overflow-hidden relative">
               <div 
+                data-scroll
                 className="flex gap-3 overflow-x-auto max-w-full pb-3 pr-8 scroll-smooth snap-x snap-mandatory scrollbar-hide"
                 style={{ 
                   scrollbarWidth: 'none', 
