@@ -97,7 +97,7 @@ export default function Programs() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth overscroll-contain">
+            <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2 scrollbar-hide scroll-smooth overscroll-contain touch-pan-x">
               {categories.map((category) => (
                 <Button
                   key={category}
