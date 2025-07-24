@@ -66,9 +66,9 @@ export default function UniversityDetail() {
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
                   <BookOpen className="h-5 w-5 text-primary" />
                   <div className="text-center">
-                    <div className="font-semibold">{university.schools.length}</div>
+                    <div className="font-semibold">{university.schools?.length || 0}</div>
                     <div className="text-sm text-muted-foreground">
-                      {university.schools.length > 1 ? 'Écoles' : 'École'}
+                      {(university.schools?.length || 0) > 1 ? 'Écoles' : 'École'}
                     </div>
                   </div>
                 </div>
@@ -76,10 +76,10 @@ export default function UniversityDetail() {
                   <Users className="h-5 w-5 text-primary" />
                   <div className="text-center">
                     <div className="font-semibold">
-                      {university.schools.reduce((acc, school) => acc + school.programs.length, 0)}
+                      {university.schools?.reduce((acc, school) => acc + (school.programs?.length || 0), 0) || 0}
                     </div>
                     <div className="text-sm text-muted-foreground">
-                      {university.schools.reduce((acc, school) => acc + school.programs.length, 0) > 1 ? 'Filières' : 'Filière'}
+                      {(university.schools?.reduce((acc, school) => acc + (school.programs?.length || 0), 0) || 0) > 1 ? 'Filières' : 'Filière'}
                     </div>
                   </div>
                 </div>
@@ -101,14 +101,20 @@ export default function UniversityDetail() {
           />
 
           <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 w-full">
-            {university.schools.map((school) => (
-              <SchoolCard
-                key={school.id}
-                school={school}
-                university={university}
-                expandable={true}
-              />
-            ))}
+            {university.schools?.length > 0 ? (
+              university.schools.map((school) => (
+                <SchoolCard
+                  key={school.id}
+                  school={school}
+                  university={university}
+                  expandable={true}
+                />
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground">Aucune école disponible pour cette université.</p>
+              </div>
+            )}
           </div>
         </div>
       </main>
