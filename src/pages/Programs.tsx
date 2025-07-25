@@ -76,6 +76,13 @@ export default function Programs() {
     }
   }, [location])
 
+  // Améliorer le scroll tactile horizontal
+  useEffect(() => {
+    document.querySelectorAll('[data-scroll]').forEach(el => {
+      el.addEventListener('touchstart', () => {}, { passive: true });
+    });
+  }, [])
+
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
@@ -97,12 +104,16 @@ export default function Programs() {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            <div 
+              className="flex gap-2 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory scrollbar-hide"
+              data-scroll
+              style={{ touchAction: 'pan-x' }}
+            >
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setCategoryFilter(category)}
-                  className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
+                  className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 snap-start ${
                     categoryFilter === category
                       ? "bg-primary text-white"
                       : "bg-secondary text-secondary-foreground"
