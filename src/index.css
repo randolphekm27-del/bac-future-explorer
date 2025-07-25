@@ -199,6 +199,12 @@ body {
   overflow-y: visible;
 }
 
+/* Exception pour les conteneurs de scroll horizontal */
+[data-scroll] {
+  overflow-x: auto !important;
+  overflow-y: hidden;
+}
+
 /* Force scroll unifié pour tous les composants */
 main {
   overflow-y: visible;
@@ -215,7 +221,7 @@ section {
 }
 
 /* Prévention absolue des scrolls locaux */
-div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidden) {
+div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidden):not([data-scroll]) {
   overflow: visible !important;
 }
 
