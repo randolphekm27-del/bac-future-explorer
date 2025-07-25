@@ -13,254 +13,160 @@ export interface Program {
 }
 
 export const programs: Program[] = [
-  // UAC - Université d'Abomey-Calavi
+  // === 1. SCIENCES DE LA SANTÉ ET BIOLOGIE ===
   {
-    id: "1",
+    id: "prog-sante-1",
     name: "Santé publique polyvalente",
-    slug: "sante-publique-polyvalente",
-    category: "Sciences de la Santé",
-    duration: "4-5 ans",
-    description: "Formation en santé communautaire, épidémiologie et gestion des systèmes de santé.",
-    careers: ["Responsable santé publique", "Épidémiologiste", "Gestionnaire de programmes sanitaires"],
-    icon: "Users",
-    schoolIds: ["uac-3"]
+    slug: "sante-publique",
+    category: "Médecine et Santé Publique",
+    duration: "3 ans",
+    description: "Formation en politiques sanitaires et prévention des maladies.",
+    domainDetails: "Approche communautaire avec modules sur les épidémies tropicales (paludisme, Ebola). Stages dans les centres de santé primaire.",
+    careers: ["Agent de santé communautaire", "Épidémiologiste", "Planificateur sanitaire"],
+    icon: "ShieldPlus",
+    schoolIds: ["uac-2"] // IRSP
   },
   {
-    id: "2",
-    name: "Géographie et Aménagement du Territoire",
-    slug: "geographie-amenagement",
-    category: "Sciences Humaines",
-    duration: "3-5 ans",
-    description: "Étude des espaces terrestres et de leur organisation par les sociétés.",
-    careers: ["Urbaniste", "Aménageur territorial", "Géomaticien"],
-    icon: "Map",
-    schoolIds: ["uac-2"]
+    id: "prog-sante-2",
+    name: "Médecine Humaine",
+    slug: "medecine-humaine",
+    category: "Médecine et Santé Publique",
+    duration: "7 ans",
+    description: "Parcours complet de formation médicale générale.",
+    domainDetails: "Enseignement clinique avec rotations dans les CHU. Spécialisation possible après le doctorat.",
+    careers: ["Médecin généraliste", "Spécialiste hospitalier"],
+    icon: "Stethoscope",
+    schoolIds: ["up-2", "uac-16"] // UP FM et UAC FSS
   },
   {
-    id: "3",
-    name: "Socio-Anthropologie",
-    slug: "socio-anthropologie",
-    category: "Sciences Sociales",
-    duration: "3-5 ans",
-    description: "Analyse des sociétés humaines et des cultures à travers leurs structures sociales.",
-    careers: ["Chercheur", "Consultant en développement", "Chargé d'études"],
-    icon: "Users",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "4",
-    name: "Anglais",
-    slug: "anglais",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Maîtrise approfondie de la langue anglaise et de ses cultures.",
-    careers: ["Enseignant", "Traducteur", "Interprète"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4"]
-  },
-  {
-    id: "5",
-    name: "Cycle préparatoire MPSI",
-    slug: "mpsi",
-    category: "Sciences Exactes",
-    duration: "2 ans",
-    description: "Préparation intensive en mathématiques, physique et sciences de l'ingénieur.",
-    careers: ["Ingénieur", "Chercheur", "Enseignant"],
-    icon: "BookOpen",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "6",
-    name: "Cycle préparatoire PCSI",
-    slug: "pcsi",
-    category: "Sciences Exactes",
-    duration: "2 ans",
-    description: "Formation intensive en physique, chimie et sciences de l'ingénieur.",
-    careers: ["Ingénieur", "Chercheur", "Enseignant"],
-    icon: "BookOpen",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "7",
-    name: "Allemand",
-    slug: "allemand",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Maîtrise approfondie de la langue allemande et de ses cultures.",
-    careers: ["Enseignant", "Traducteur", "Interprète"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4", "up-27"]
-  },
-  {
-    id: "8",
-    name: "Espagnol",
-    slug: "espagnol",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Maîtrise approfondie de la langue espagnole et de ses cultures.",
-    careers: ["Enseignant", "Traducteur", "Interprète"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4", "up-29"]
-  },
-  {
-    id: "9",
-    name: "Lettres Modernes",
-    slug: "lettres-modernes",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Étude approfondie de la littérature et de la langue française.",
-    careers: ["Enseignant", "Écrivain", "Rédacteur"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4", "up-32"]
-  },
-  {
-    id: "10",
-    name: "Science du Langage et de la Communication",
-    slug: "science-langage",
-    category: "Sciences Humaines",
-    duration: "3-5 ans",
-    description: "Analyse scientifique des langages et des processus de communication.",
-    careers: ["Orthophoniste", "Expert en communication", "Chercheur"],
-    icon: "Users",
-    schoolIds: ["uac-4"]
+    id: "prog-env-1",
+    name: "Environnement, Hygiène et Santé publique",
+    slug: "environnement-sante",
+    category: "Médecine et Santé Publique",
+    duration: "3 ans",
+    description: "Gestion des risques sanitaires et environnementaux.",
+    domainDetails: "Modules sur l'assainissement, la gestion des déchets et les politiques publiques.",
+    careers: ["Ingénieur sanitaire", "Consultant en environnement"],
+    icon: "Leaf",
+    schoolIds: ["uac-16", "up-7"] // UAC CIFRED et UP ENFTS
   },
 
-  // UP - Université de Parakou
+  // === 2. SCIENCES DE L'INGÉNIEUR ET TECHNOLOGIES ===
   {
-    id: "101",
-    name: "Sciences et Techniques de Production Végétale",
-    slug: "production-vegetale",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en techniques modernes de production et amélioration des plantes.",
-    careers: ["Agronome", "Gestionnaire de ferme", "Chercheur"],
-    icon: "Briefcase",
-    schoolIds: ["up-1", "una-3"]
-  },
-  {
-    id: "102",
-    name: "Sciences et Techniques de Production Animale et Halieutique",
-    slug: "production-animale",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en élevage, pêche et gestion des ressources animales.",
-    careers: ["Vétérinaire", "Aquaculteur", "Gestionnaire d'élevage"],
-    icon: "Briefcase",
-    schoolIds: ["up-2", "una-8"]
-  },
-  {
-    id: "103",
-    name: "Aménagement et Gestion des Ressources Naturelles",
-    slug: "amenagement-ressources",
-    category: "Sciences Environnementales",
-    duration: "3-5 ans",
-    description: "Formation en gestion durable des écosystèmes et ressources naturelles.",
-    careers: ["Gestionnaire de parc", "Expert en environnement", "Consultant"],
-    icon: "Map",
-    schoolIds: ["up-3", "una-12"]
-  },
-  {
-    id: "104",
-    name: "Sociologie et Economie Rurale",
-    slug: "sociologie-rurale",
-    category: "Sciences Sociales",
-    duration: "3-5 ans",
-    description: "Analyse des dynamiques sociales et économiques en milieu rural.",
-    careers: ["Sociologue", "Planificateur rural", "Chercheur"],
-    icon: "Users",
-    schoolIds: ["up-4", "una-11"]
-  },
-
-  // UNSTIM
-  {
-    id: "201",
-    name: "Electrotechnique",
-    slug: "electrotechnique",
-    category: "Ingénierie",
-    duration: "3-5 ans",
-    description: "Formation en conception et maintenance des systèmes électriques.",
-    careers: ["Ingénieur électricien", "Technicien supérieur", "Concepteur"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-3"]
-  },
-  {
-    id: "202",
+    id: "prog-eng-1",
     name: "Génie Civil",
     slug: "genie-civil",
-    category: "Ingénierie",
+    category: "Génie Civil, Mécanique et Énergétique",
     duration: "5 ans",
-    description: "Formation en construction, infrastructures et gestion de projets BTP.",
-    careers: ["Ingénieur civil", "Chef de chantier", "Bureau d'études"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-4", "uac-78"]
+    description: "Conception et réalisation d'infrastructures.",
+    domainDetails: "Logiciels professionnels (AutoCAD, Revit). Spécialisations en BTP ou hydraulique.",
+    careers: ["Ingénieur travaux", "Conducteur de projets"],
+    icon: "Construction",
+    schoolIds: ["unstim-4", "uac-78", "up-16"] // UNSTIM INSTI, UAC EPAC, UP IUT
   },
   {
-    id: "203",
-    name: "Froid et Climatisation",
+    id: "unstim-23",
+    name: "Génie Energétique (Froid et climatisation)",
     slug: "froid-climatisation",
-    category: "Ingénierie",
-    duration: "3-5 ans",
-    description: "Formation en systèmes de réfrigération et conditionnement d'air.",
-    careers: ["Technicien frigoriste", "Ingénieur thermicien", "Maintenance"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-10"]
+    category: "Génie Civil, Mécanique et Énergétique",
+    duration: "4 ans",
+    description: "Spécialisation en systèmes de réfrigération.",
+    domainDetails: "Laboratoire équipé de systèmes industriels. Partenariats avec les entreprises du secteur.",
+    careers: ["Technicien frigoriste", "Ingénieur en climatisation"],
+    icon: "Snowflake",
+    schoolIds: ["unstim-17"] // ENSGEP
   },
   {
-    id: "204",
-    name: "Energies Renouvelables",
-    slug: "energies-renouvelables",
-    category: "Ingénierie",
-    duration: "3-5 ans",
-    description: "Formation en technologies solaires, éoliennes et biomasse.",
-    careers: ["Ingénieur énergie", "Technicien en énergie verte", "Consultant"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-12", "una-14"]
+    id: "prog-tech-1",
+    name: "Informatique de Gestion",
+    slug: "info-gestion",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    duration: "3 ans",
+    description: "Développement logiciel et gestion des SI.",
+    domainDetails: "Programmation (Java, Python), bases de données (SQL), gestion de projet agile.",
+    careers: ["Développeur", "Administrateur de bases de données"],
+    icon: "Code",
+    schoolIds: ["up-14", "unstim-18"] // UP IUT et UNSTIM INSTI
   },
 
-  // UNA - Université Nationale d'Agriculture
+  // === 3. SCIENCES SOCIALES, HUMAINES ET ARTS ===
   {
-    id: "301",
-    name: "Agriculture",
-    slug: "agriculture",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation complète en techniques agricoles modernes.",
-    careers: ["Agronome", "Exploitant agricole", "Conseiller agricole"],
-    icon: "Briefcase",
-    schoolIds: ["una-1"]
+    id: "prog-sh-1",
+    name: "Socio-Anthropologie",
+    slug: "socio-anthropologie",
+    category: "Sciences Humaines et Sociales",
+    duration: "3 ans",
+    description: "Étude des sociétés humaines et des cultures.",
+    domainDetails: "Méthodes qualitatives appliquées aux contextes africains. Enquêtes de terrain dans les communautés rurales/urbaines.",
+    careers: ["Chercheur en sciences sociales", "Consultant en développement", "Agent de projet"],
+    icon: "Users",
+    schoolIds: ["uac-3", "up-31"] // UAC FLASH-Adjarra et UP FLASH
   },
   {
-    id: "302",
-    name: "Aquaculture",
-    slug: "aquaculture",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en élevage d'organismes aquatiques et gestion piscicole.",
-    careers: ["Aquaculteur", "Gestionnaire de ferme aquacole", "Expert"],
-    icon: "Briefcase",
-    schoolIds: ["una-7"]
+    id: "prog-lang-1",
+    name: "Anglais",
+    slug: "anglais",
+    category: "Lettres, Langues et Communication",
+    duration: "3 ans",
+    description: "Formation linguistique et culture anglo-saxonne.",
+    domainDetails: "Approche professionnelle (traduction, interprétation) avec certifications TOEFL/IELTS intégrées.",
+    careers: ["Enseignant", "Traducteur", "Agent touristique"],
+    icon: "Languages",
+    schoolIds: ["uac-4", "up-28"] // UAC FLLAC et UP FLASH
   },
   {
-    id: "303",
-    name: "Finance agricole",
-    slug: "finance-agricole",
-    category: "Sciences Économiques",
-    duration: "3-5 ans",
-    description: "Spécialisation en gestion financière des exploitations agricoles.",
-    careers: ["Financier agricole", "Gestionnaire de coopérative", "Analyste"],
-    icon: "Briefcase",
-    schoolIds: ["una-9"]
+    id: "prog-art-1",
+    name: "Arts dramatiques",
+    slug: "arts-dramatiques",
+    category: "Arts et Culture",
+    duration: "3 ans",
+    description: "Formation aux métiers du théâtre et de la scène.",
+    domainDetails: "Combinaison de techniques contemporaines et traditions théâtrales africaines.",
+    careers: ["Comédien", "Metteur en scène"],
+    icon: "Drama",
+    schoolIds: ["uac-12"] // UAC INMAAC
   },
+
+  // === 4. ÉCONOMIE, GESTION ET DROIT ===
   {
-    id: "304",
-    name: "Agroéquipement",
-    slug: "agroequipement",
-    category: "Ingénierie Agricole",
-    duration: "3-5 ans",
-    description: "Formation en machinisme agricole et gestion des équipements.",
-    careers: ["Ingénieur agroéquipement", "Technicien spécialisé", "Maintenance"],
-    icon: "BookOpen",
-    schoolIds: ["una-13"]
+    id: "prog-eco-1",
+    name: "Finance et Comptabilité",
+    slug: "finance-comptabilite",
+    category: "Gestion, Finance et Commerce",
+    duration: "3 ans",
+    description: "Gestion financière et analyse comptable.",
+    domainDetails: "Normes IFRS, logiciels SAGE, audit financier. Préparation aux certifications professionnelles.",
+    careers: ["Comptable agréé", "Analyste financier"],
+    icon: "CreditCard",
+    schoolIds: ["up-23", "uac-43"] // UP FASEG et UAC ENEAM
+  },
+
+  // === 5. AGRICULTURE, ENVIRONNEMENT ET RESSOURCES NATURELLES ===
+  {
+    id: "prog-agro-1",
+    name: "Sciences et Techniques de Production Végétale",
+    slug: "production-vegetale",
+    category: "Agriculture et Productions Végétales/Animales",
+    duration: "3 ans",
+    description: "Formation en agronomie et gestion des cultures.",
+    domainDetails: "Techniques modernes d'irrigation, lutte intégrée contre les ravageurs. Fermes-écoles équipées.",
+    careers: ["Agronome", "Gestionnaire de périmètres irrigués"],
+    icon: "Sprout",
+    schoolIds: ["up-1", "uac-61", "una-3"] // UP FA, UAC FSA, UNA
+  },
+
+  // === 6. SCIENCES FONDAMENTALES ET MATHÉMATIQUES ===
+  {
+    id: "uac-5",
+    name: "Cycle préparatoire : Mathématiques, Physiques et Science de l'Ingénieur (MPSI)",
+    slug: "prepa-mpsi",
+    category: "Mathématiques, Physique et Chimie",
+    duration: "2 ans",
+    description: "Préparation intensive aux concours d'écoles d'ingénieurs.",
+    domainDetails: "Programme exigeant avec 30h de cours/semaine. Taux de réussite >80% aux concours.",
+    careers: ["Accès aux grandes écoles d'ingénieurs"],
+    icon: "Calculator",
+    schoolIds: ["uac-5"] // IMSP UAC
   }
 ];
 
