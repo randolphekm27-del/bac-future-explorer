@@ -7,6 +7,7 @@ export interface Program {
   category: string;
   duration: string;
   description: string;
+  domainDetails?: string;
   careers: string[];
   icon: string;
   schoolIds: string[]; // IDs des écoles qui proposent cette filière
@@ -152,7 +153,7 @@ export const programs: Program[] = [
     domainDetails: "Techniques modernes d'irrigation, lutte intégrée contre les ravageurs. Fermes-écoles équipées.",
     careers: ["Agronome", "Gestionnaire de périmètres irrigués"],
     icon: "Sprout",
-    schoolIds: ["up-1", "uac-61", "una-3"] // UP FA, UAC FSA, UNA
+    schoolIds: ["up-1", "uac-61", "una-1", "una-2", "una-3", "una-7", "una-9", "una-10", "una-11", "una-12"] // UP FA, UAC FSA, UNA écoles agricoles
   },
 
   // === 6. SCIENCES FONDAMENTALES ET MATHÉMATIQUES ===
