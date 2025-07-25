@@ -166,8 +166,6 @@ const generateProgramsFromUniversities = (): Program[] => {
   return Array.from(programMap.values()).sort((a, b) => a.name.localeCompare(b.name));
 };
 
-export const programs: Program[] = generateProgramsFromUniversities();
-
 // Fonction utilitaire pour créer un slug propre
 export const createProgramSlug = (programName: string): string => {
   return programName
@@ -184,6 +182,8 @@ export const createProgramSlug = (programName: string): string => {
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 };
+
+export const programs: Program[] = generateProgramsFromUniversities();
 
 export const getProgramBySlug = (slug: string): Program | undefined => {
   return programs.find(program => program.slug === slug);
