@@ -1,4 +1,4 @@
-import { universities } from './universities';
+import { universities, formatProgramName } from './universities';
 
 export interface Program {
   id: string;
@@ -13,163 +13,160 @@ export interface Program {
   schoolIds: string[]; // IDs des écoles qui proposent cette filière
 }
 
-export const programs: Program[] = [
-  // === 1. SCIENCES DE LA SANTÉ ET BIOLOGIE ===
-  {
-    id: "prog-sante-1",
-    name: "Santé publique polyvalente",
-    slug: "sante-publique",
-    category: "Médecine et Santé Publique",
-    duration: "3 ans",
-    description: "Formation en politiques sanitaires et prévention des maladies.",
-    domainDetails: "Approche communautaire avec modules sur les épidémies tropicales (paludisme, Ebola). Stages dans les centres de santé primaire.",
-    careers: ["Agent de santé communautaire", "Épidémiologiste", "Planificateur sanitaire"],
-    icon: "ShieldPlus",
-    schoolIds: ["uac-2"] // IRSP
-  },
-  {
-    id: "prog-sante-2",
-    name: "Médecine Humaine",
-    slug: "medecine-humaine",
-    category: "Médecine et Santé Publique",
-    duration: "7 ans",
-    description: "Parcours complet de formation médicale générale.",
-    domainDetails: "Enseignement clinique avec rotations dans les CHU. Spécialisation possible après le doctorat.",
-    careers: ["Médecin généraliste", "Spécialiste hospitalier"],
-    icon: "Stethoscope",
-    schoolIds: ["up-2", "uac-16"] // UP FM et UAC FSS
-  },
-  {
-    id: "prog-env-1",
-    name: "Environnement, Hygiène et Santé publique",
-    slug: "environnement-sante",
-    category: "Médecine et Santé Publique",
-    duration: "3 ans",
-    description: "Gestion des risques sanitaires et environnementaux.",
-    domainDetails: "Modules sur l'assainissement, la gestion des déchets et les politiques publiques.",
-    careers: ["Ingénieur sanitaire", "Consultant en environnement"],
-    icon: "Leaf",
-    schoolIds: ["uac-16", "up-7"] // UAC CIFRED et UP ENFTS
-  },
-
-  // === 2. SCIENCES DE L'INGÉNIEUR ET TECHNOLOGIES ===
-  {
-    id: "prog-eng-1",
-    name: "Génie Civil",
-    slug: "genie-civil",
-    category: "Génie Civil, Mécanique et Énergétique",
-    duration: "5 ans",
-    description: "Conception et réalisation d'infrastructures.",
-    domainDetails: "Logiciels professionnels (AutoCAD, Revit). Spécialisations en BTP ou hydraulique.",
-    careers: ["Ingénieur travaux", "Conducteur de projets"],
-    icon: "Construction",
-    schoolIds: ["unstim-4", "uac-78", "up-16"] // UNSTIM INSTI, UAC EPAC, UP IUT
-  },
-  {
-    id: "unstim-23",
-    name: "Génie Energétique (Froid et climatisation)",
-    slug: "froid-climatisation",
-    category: "Génie Civil, Mécanique et Énergétique",
-    duration: "4 ans",
-    description: "Spécialisation en systèmes de réfrigération.",
-    domainDetails: "Laboratoire équipé de systèmes industriels. Partenariats avec les entreprises du secteur.",
-    careers: ["Technicien frigoriste", "Ingénieur en climatisation"],
-    icon: "Snowflake",
-    schoolIds: ["unstim-17"] // ENSGEP
-  },
-  {
-    id: "prog-tech-1",
-    name: "Informatique de Gestion",
-    slug: "info-gestion",
-    category: "Informatique, Télécoms et Intelligence Artificielle",
-    duration: "3 ans",
-    description: "Développement logiciel et gestion des SI.",
-    domainDetails: "Programmation (Java, Python), bases de données (SQL), gestion de projet agile.",
-    careers: ["Développeur", "Administrateur de bases de données"],
-    icon: "Code",
-    schoolIds: ["up-14", "unstim-18"] // UP IUT et UNSTIM INSTI
-  },
-
-  // === 3. SCIENCES SOCIALES, HUMAINES ET ARTS ===
-  {
-    id: "prog-sh-1",
-    name: "Socio-Anthropologie",
-    slug: "socio-anthropologie",
-    category: "Sciences Humaines et Sociales",
-    duration: "3 ans",
-    description: "Étude des sociétés humaines et des cultures.",
-    domainDetails: "Méthodes qualitatives appliquées aux contextes africains. Enquêtes de terrain dans les communautés rurales/urbaines.",
-    careers: ["Chercheur en sciences sociales", "Consultant en développement", "Agent de projet"],
-    icon: "Users",
-    schoolIds: ["uac-3", "up-31"] // UAC FLASH-Adjarra et UP FLASH
-  },
-  {
-    id: "prog-lang-1",
-    name: "Anglais",
-    slug: "anglais",
-    category: "Lettres, Langues et Communication",
-    duration: "3 ans",
-    description: "Formation linguistique et culture anglo-saxonne.",
-    domainDetails: "Approche professionnelle (traduction, interprétation) avec certifications TOEFL/IELTS intégrées.",
-    careers: ["Enseignant", "Traducteur", "Agent touristique"],
-    icon: "Languages",
-    schoolIds: ["uac-4", "up-28"] // UAC FLLAC et UP FLASH
-  },
-  {
-    id: "prog-art-1",
-    name: "Arts dramatiques",
-    slug: "arts-dramatiques",
-    category: "Arts et Culture",
-    duration: "3 ans",
-    description: "Formation aux métiers du théâtre et de la scène.",
-    domainDetails: "Combinaison de techniques contemporaines et traditions théâtrales africaines.",
-    careers: ["Comédien", "Metteur en scène"],
-    icon: "Drama",
-    schoolIds: ["uac-12"] // UAC INMAAC
-  },
-
-  // === 4. ÉCONOMIE, GESTION ET DROIT ===
-  {
-    id: "prog-eco-1",
-    name: "Finance et Comptabilité",
-    slug: "finance-comptabilite",
-    category: "Gestion, Finance et Commerce",
-    duration: "3 ans",
-    description: "Gestion financière et analyse comptable.",
-    domainDetails: "Normes IFRS, logiciels SAGE, audit financier. Préparation aux certifications professionnelles.",
-    careers: ["Comptable agréé", "Analyste financier"],
-    icon: "CreditCard",
-    schoolIds: ["up-23", "uac-43"] // UP FASEG et UAC ENEAM
-  },
-
-  // === 5. AGRICULTURE, ENVIRONNEMENT ET RESSOURCES NATURELLES ===
-  {
-    id: "prog-agro-1",
-    name: "Sciences et Techniques de Production Végétale",
-    slug: "production-vegetale",
-    category: "Agriculture et Productions Végétales/Animales",
-    duration: "3 ans",
-    description: "Formation en agronomie et gestion des cultures.",
-    domainDetails: "Techniques modernes d'irrigation, lutte intégrée contre les ravageurs. Fermes-écoles équipées.",
-    careers: ["Agronome", "Gestionnaire de périmètres irrigués"],
-    icon: "Sprout",
-    schoolIds: ["up-1", "uac-61", "una-1", "una-2", "una-3", "una-7", "una-9", "una-10", "una-11", "una-12"] // UP FA, UAC FSA, UNA écoles agricoles
-  },
-
-  // === 6. SCIENCES FONDAMENTALES ET MATHÉMATIQUES ===
-  {
-    id: "uac-5",
-    name: "Cycle préparatoire : Mathématiques, Physiques et Science de l'Ingénieur (MPSI)",
-    slug: "prepa-mpsi",
-    category: "Mathématiques, Physique et Chimie",
-    duration: "2 ans",
-    description: "Préparation intensive aux concours d'écoles d'ingénieurs.",
-    domainDetails: "Programme exigeant avec 30h de cours/semaine. Taux de réussite >80% aux concours.",
-    careers: ["Accès aux grandes écoles d'ingénieurs"],
-    icon: "Calculator",
-    schoolIds: ["uac-5"] // IMSP UAC
+// Fonction pour catégoriser les programmes
+const categorizeProgram = (programName: string): string => {
+  const name = programName.toLowerCase();
+  
+  // Agriculture et Productions
+  if (name.includes('production végétale') || name.includes('production animale') || 
+      name.includes('agriculture') || name.includes('nutrition') || name.includes('aménagement') ||
+      name.includes('gestion des ressources naturelles') || name.includes('forêt') ||
+      name.includes('technologie alimentaire') || name.includes('sciences du sol')) {
+    return "Agriculture et Productions Végétales/Animales";
   }
-];
+  
+  // Médecine et Santé
+  if (name.includes('santé') || name.includes('médecine') || name.includes('obstétrical') ||
+      name.includes('biosciences') || name.includes('hygiène')) {
+    return "Médecine et Santé Publique";
+  }
+  
+  // Ingénierie et Technologies
+  if (name.includes('génie') || name.includes('énergétique') || name.includes('informatique') ||
+      name.includes('électrique') || name.includes('mécanique') || name.includes('industrielle') ||
+      name.includes('télécommunications') || name.includes('maintenance') || name.includes('logiciel') ||
+      name.includes('intelligence artificielle') || name.includes('systèmes embarqués') ||
+      name.includes('sécurité informatique') || name.includes('réseaux') || name.includes('programmation')) {
+    return "Informatique, Télécoms et Intelligence Artificielle";
+  }
+  
+  // Génie Civil et Construction
+  if (name.includes('civil') || name.includes('hydraulique') || name.includes('assainissement') ||
+      name.includes('eau') || name.includes('génie rural') || name.includes('hydrologie') ||
+      name.includes('hydrogéologie') || name.includes('ecohydrologie')) {
+    return "Génie Civil, Mécanique et Énergétique";
+  }
+  
+  // Environnement
+  if (name.includes('environnement') || name.includes('climatique') || name.includes('géomatique') ||
+      name.includes('cadre de vie') || name.includes('planification') || name.includes('espaces urbains')) {
+    return "Environnement et Développement Durable";
+  }
+  
+  // Gestion et Finance
+  if (name.includes('gestion') || name.includes('finance') || name.includes('comptable') ||
+      name.includes('banque') || name.includes('assurance') || name.includes('marketing') ||
+      name.includes('transport') || name.includes('logistique') || name.includes('ressources humaines') ||
+      name.includes('statistique') || name.includes('planification') || name.includes('développement') ||
+      name.includes('patrimoine culturel')) {
+    return "Gestion, Finance et Commerce";
+  }
+  
+  // Arts et Culture
+  if (name.includes('arts') || name.includes('dramatique') || name.includes('plastique') ||
+      name.includes('musique') || name.includes('musicologie') || name.includes('cinéma') ||
+      name.includes('audiovisuel') || name.includes('administration culturelle')) {
+    return "Arts et Culture";
+  }
+  
+  // Lettres et Langues
+  if (name.includes('allemand') || name.includes('espagnol') || name.includes('lettres') ||
+      name.includes('langage') || name.includes('communication') || name.includes('anglais') ||
+      name.includes('journalisme') || name.includes('multimédia')) {
+    return "Lettres, Langues et Communication";
+  }
+  
+  // Sciences Humaines
+  if (name.includes('géographie') || name.includes('socio') || name.includes('anthropologie') ||
+      name.includes('éducation') || name.includes('histoire') || name.includes('psychologie') ||
+      name.includes('administration')) {
+    return "Sciences Humaines et Sociales";
+  }
+  
+  // Sciences Fondamentales
+  if (name.includes('mathématiques') || name.includes('physique') || name.includes('chimie') ||
+      name.includes('mpsi') || name.includes('pcsi')) {
+    return "Mathématiques, Physique et Chimie";
+  }
+  
+  return "Autres";
+};
+
+// Fonction pour attribuer une icône selon le programme
+const getIconForProgram = (programName: string): string => {
+  const name = programName.toLowerCase();
+  
+  if (name.includes('production végétale') || name.includes('agriculture')) return "Sprout";
+  if (name.includes('production animale')) return "PawPrint";
+  if (name.includes('santé') || name.includes('médecine')) return "Heart";
+  if (name.includes('obstétrical')) return "Baby";
+  if (name.includes('informatique') || name.includes('programmation')) return "Code";
+  if (name.includes('génie électrique')) return "Zap";
+  if (name.includes('génie mécanique')) return "Settings";
+  if (name.includes('génie civil') || name.includes('hydraulique')) return "Building";
+  if (name.includes('eau') || name.includes('hydrologie')) return "Droplets";
+  if (name.includes('environnement') || name.includes('climatique')) return "Leaf";
+  if (name.includes('géomatique')) return "Map";
+  if (name.includes('finance') || name.includes('banque')) return "CreditCard";
+  if (name.includes('gestion') || name.includes('management')) return "Briefcase";
+  if (name.includes('marketing')) return "TrendingUp";
+  if (name.includes('transport') || name.includes('logistique')) return "Truck";
+  if (name.includes('statistique')) return "BarChart";
+  if (name.includes('arts') || name.includes('dramatique')) return "Palette";
+  if (name.includes('musique')) return "Music";
+  if (name.includes('cinéma') || name.includes('audiovisuel')) return "Video";
+  if (name.includes('allemand') || name.includes('espagnol') || name.includes('anglais')) return "Languages";
+  if (name.includes('lettres') || name.includes('communication')) return "BookOpen";
+  if (name.includes('journalisme')) return "Newspaper";
+  if (name.includes('géographie')) return "Globe";
+  if (name.includes('socio') || name.includes('anthropologie')) return "Users";
+  if (name.includes('éducation')) return "GraduationCap";
+  if (name.includes('histoire')) return "Clock";
+  if (name.includes('psychologie')) return "Brain";
+  if (name.includes('administration')) return "FileText";
+  if (name.includes('mathématiques') || name.includes('mpsi')) return "Calculator";
+  if (name.includes('physique') || name.includes('pcsi')) return "Atom";
+  
+  return "BookOpen"; // Icône par défaut
+};
+
+// Génération automatique des programmes à partir des données des universités
+const generateProgramsFromUniversities = (): Program[] => {
+  const programMap = new Map<string, Program>();
+  
+  universities.forEach(university => {
+    university.schools.forEach(school => {
+      school.programs.forEach(programName => {
+        const formattedName = formatProgramName(programName);
+        const slug = createProgramSlug(formattedName);
+        
+        if (!programMap.has(slug)) {
+          programMap.set(slug, {
+            id: `prog-${slug}`,
+            name: formattedName,
+            slug: slug,
+            category: categorizeProgram(formattedName),
+            duration: "3-5 ans", // Durée générique
+            description: `Formation spécialisée en ${formattedName.toLowerCase()}.`,
+            careers: [`Spécialiste en ${formattedName.toLowerCase()}`, "Consultant", "Expert du domaine"],
+            icon: getIconForProgram(formattedName),
+            schoolIds: [school.id]
+          });
+        } else {
+          // Ajouter l'école à la liste si elle n'y est pas déjà
+          const existingProgram = programMap.get(slug)!;
+          if (!existingProgram.schoolIds.includes(school.id)) {
+            existingProgram.schoolIds.push(school.id);
+          }
+        }
+      });
+    });
+  });
+  
+  return Array.from(programMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+};
+
+export const programs: Program[] = generateProgramsFromUniversities();
 
 // Fonction utilitaire pour créer un slug propre
 export const createProgramSlug = (programName: string): string => {
