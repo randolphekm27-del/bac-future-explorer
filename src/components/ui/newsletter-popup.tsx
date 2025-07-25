@@ -21,6 +21,19 @@ export function NewsletterPopup() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    // Gestion du scroll du body
+    if (isVisible) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isVisible]);
+
   const handleClose = () => {
     setIsVisible(false);
     localStorage.setItem('newsletter-dismissed', 'true');
@@ -103,16 +116,20 @@ export function NewsletterPopup() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
       <div 
         className="absolute inset-0 bg-black/50 animate-fade-in"
         onClick={handleClose}
       />
       
       <div className={cn(
-        "relative bg-background border shadow-2xl rounded-2xl p-8 max-w-md w-full mx-4",
+        "relative bg-background border shadow-2xl rounded-2xl p-8 max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto",
         "animate-scale-in transform-gpu"
-      )}>
+      )}
+      style={{ 
+        transform: 'none',
+        position: 'relative'
+      }}>
         <Button
           variant="ghost"
           size="icon"
