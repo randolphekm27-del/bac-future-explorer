@@ -89,21 +89,13 @@ const competitions = [
 
 export default function Competitions() {
   const [searchTerm, setSearchTerm] = useState("")
-  const [categoryFilter, setCategoryFilter] = useState("all")
-
-  const categories = ["all", ...new Set(competitions.map((comp) => comp.category))]
 
   const filteredCompetitions = competitions.filter((competition) => {
-    const matchesSearch = 
+    return (
       competition.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       competition.organizer.toLowerCase().includes(searchTerm.toLowerCase()) ||
       competition.description.toLowerCase().includes(searchTerm.toLowerCase())
-    
-    const matchesCategory = 
-      categoryFilter === "all" || 
-      competition.category === categoryFilter
-
-    return matchesSearch && matchesCategory
+    )
   })
 
   return (
@@ -121,45 +113,19 @@ export default function Competitions() {
             </p>
           </div>
 
-          {/* Barre de recherche et filtres */}
-          <div className="mb-10">
-            <div className="flex flex-col md:flex-row gap-4 items-stretch">
-              <div className="relative flex-1">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-muted-foreground" />
-                </div>
-                <Input
-                  type="text"
-                  placeholder="Rechercher un concours..."
-                  className="w-full pl-10 py-6 text-base"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+          {/* Barre de recherche seule */}
+          <div className="mb-10 max-w-2xl mx-auto">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-muted-foreground" />
               </div>
-              
-              {/* Conteneur des filtres avec défilement horizontal amélioré */}
-              <div className="relative w-full md:w-auto">
-                <div className="flex gap-3 overflow-x-auto scrollbar-hide py-1">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setCategoryFilter(category)}
-                      className={`
-                        px-5 py-3 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0
-                        transition-colors duration-200
-                        ${
-                          categoryFilter === category
-                            ? "bg-primary text-white shadow-md"
-                            : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                        }
-                      `}
-                    >
-                      {category === "all" ? "Toutes catégories" : category}
-                    </button>
-                  ))}
-                </div>
-                <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-              </div>
+              <Input
+                type="text"
+                placeholder="Rechercher un concours..."
+                className="w-full pl-10 py-6 text-base"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
           </div>
 
@@ -235,17 +201,14 @@ export default function Competitions() {
           {filteredCompetitions.length === 0 && (
             <div className="text-center py-12">
               <h3 className="text-xl font-medium text-muted-foreground">
-                Aucun concours trouvé pour ces critères
+                Aucun concours trouvé
               </h3>
               <Button 
                 variant="outline" 
                 className="mt-4"
-                onClick={() => {
-                  setSearchTerm("")
-                  setCategoryFilter("all")
-                }}
+                onClick={() => setSearchTerm("")}
               >
-                Réinitialiser les filtres
+                Réinitialiser la recherche
               </Button>
             </div>
           )}
