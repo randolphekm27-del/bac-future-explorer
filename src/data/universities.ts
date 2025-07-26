@@ -226,12 +226,10 @@ export const universities: University[] = [
     website: ""
   },
   description: "Formation pluridisciplinaire en sciences humaines avec une forte dimension terrain.",
-  goodToKnow: `
-    La FLASH-Adjarra propose des formations en sciences humaines qui étudient la société sous différents angles. 
+  goodToKnow: "La FLASH-Adjarra propose des formations en sciences humaines qui étudient la société sous différents angles. 
     Que ce soit en géographie (pour comprendre l'espace et l'aménagement), en socio-anthropologie (pour analyser 
     les comportements sociaux) ou en anglais (pour la communication internationale), l'accent est mis sur l'application 
-    pratique des connaissances. Une bonne option si vous aimez réfléchir aux questions de société et travailler sur le terrain.
-  `
+    pratique des connaissances. Une bonne option si vous aimez réfléchir aux questions de société et travailler sur le terrain."
 }),
       formatSchoolPrograms({
         id: "uac-3",
@@ -246,7 +244,7 @@ export const universities: University[] = [
           website: "https://www.imsp-benin.com"
         },
         description: "Pôle d'excellence pour les sciences fondamentales préparant aux grandes écoles d'ingénieurs.",
-        goodToKnow: `L'IMSP forme des esprits scientifiques en physique et mathématiques pures. Ainsi, si vous visez les grandes écoles d'ingénieurs ou la recherche fondamentale, vous y apprendrez à modéliser les lois de l'univers tout en travaillant sur des cas concrets africains.`
+        goodToKnow: "L'IMSP forme des esprits scientifiques en physique et mathématiques pures. Ainsi, si vous visez les grandes écoles d'ingénieurs ou la recherche fondamentale, vous y apprendrez à modéliser les lois de l'univers tout en travaillant sur des cas concrets africains."
       }),
       formatSchoolPrograms({
         id: "uac-4",
@@ -261,7 +259,7 @@ export const universities: University[] = [
           website: ""
         },
         description: "Centre d'excellence en langues étrangères et communication interculturelle.",
-        goodToKnow: `La FLLAC forme des passeurs de cultures en langues et littératures. Ainsi, si vous rêvez de devenir traducteur, diplomate ou professeur, vous y développerez une maîtrise exceptionnelle des langues couplée à une profonde intelligence interculturelle.`me."
+        goodToKnow: "La FLLAC forme des passeurs de cultures en langues et littératures. Ainsi, si vous rêvez de devenir traducteur, diplomate ou professeur, vous y développerez une maîtrise exceptionnelle des langues couplée à une profonde intelligence interculturelle."
       }),
       formatSchoolPrograms({
         id: "uac-5",
