@@ -121,7 +121,7 @@ export default function Competitions() {
             </p>
           </div>
 
-          {/* Barre de recherche et filtres - Version corrigée */}
+          {/* Barre de recherche et filtres */}
           <div className="mb-10">
             <div className="flex flex-col md:flex-row gap-4 items-stretch">
               <div className="relative flex-1">
@@ -137,15 +137,9 @@ export default function Competitions() {
                 />
               </div>
               
-              {/* Conteneur des filtres corrigé */}
-              <div className="relative max-w-[100vw] overflow-hidden">
-                <div 
-                  className="flex gap-3 overflow-x-auto scrollbar-hide py-2 px-2"
-                  style={{
-                    scrollSnapType: 'x mandatory',
-                    WebkitOverflowScrolling: 'touch'
-                  }}
-                >
+              {/* Conteneur des filtres avec défilement horizontal amélioré */}
+              <div className="relative w-full md:w-auto">
+                <div className="flex gap-3 overflow-x-auto scrollbar-hide py-1">
                   {categories.map((category) => (
                     <button
                       key={category}
@@ -153,19 +147,18 @@ export default function Competitions() {
                       className={`
                         px-5 py-3 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0
                         transition-colors duration-200
-                        ${categoryFilter === category
-                          ? "bg-primary text-white shadow-md"
-                          : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        ${
+                          categoryFilter === category
+                            ? "bg-primary text-white shadow-md"
+                            : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                         }
                       `}
-                      style={{ scrollSnapAlign: 'start' }}
                     >
                       {category === "all" ? "Toutes catégories" : category}
                     </button>
                   ))}
                 </div>
                 <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none" />
-                <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent pointer-events-none md:hidden" />
               </div>
             </div>
           </div>
