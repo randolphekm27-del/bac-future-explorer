@@ -16,8 +16,7 @@ const competitions = [
     location: "Cotonou",
     category: "Technologie",
     prizes: ["1er prix: 1,000,000 FCFA", "2e prix: 500,000 FCFA", "3e prix: 250,000 FCFA"],
-    description:
-      "48h pour développer des solutions innovantes aux défis numériques du Bénin.",
+    description: "48h pour développer des solutions innovantes aux défis numériques du Bénin.",
     requirements: ["Étudiants en informatique", "Développeurs", "Designers"],
   },
   {
@@ -28,8 +27,7 @@ const competitions = [
     location: "Porto-Novo",
     category: "Entrepreneuriat",
     prizes: ["Financement jusqu'à 5,000,000 FCFA", "Mentorat personnalisé", "Espace de travail"],
-    description:
-      "Présentez votre projet d'entreprise sociale et gagnez un financement pour le lancer.",
+    description: "Présentez votre projet d'entreprise sociale et gagnez un financement pour le lancer.",
     requirements: ["Porteurs de projet", "Étudiants", "Entrepreneurs"],
   },
   {
@@ -40,8 +38,7 @@ const competitions = [
     location: "Parakou",
     category: "Agriculture",
     prizes: ["Subvention de projet", "Formation technique", "Équipements agricoles"],
-    description:
-      "Solutions innovantes pour moderniser l'agriculture béninoise.",
+    description: "Solutions innovantes pour moderniser l'agriculture béninoise.",
     requirements: ["Agronomes", "Techniciens agricoles", "Innovateurs"],
   },
   {
@@ -52,8 +49,7 @@ const competitions = [
     location: "Abomey-Calavi",
     category: "Environnement",
     prizes: ["Prix d'innovation verte", "Partenariats internationaux", "Stage rémunéré"],
-    description:
-      "Concours dédié aux solutions technologiques pour l'environnement.",
+    description: "Concours dédié aux solutions technologiques pour l'environnement.",
     requirements: ["Étudiants en environnement", "Développeurs", "Écologistes"],
   },
   {
@@ -64,9 +60,30 @@ const competitions = [
     location: "Cotonou",
     category: "Marketing",
     prizes: ["Formation certifiante", "Stage en agence", "Équipement professionnel"],
-    description:
-      "Compétition de stratégie marketing digital et communication.",
+    description: "Compétition de stratégie marketing digital et communication.",
     requirements: ["Étudiants en marketing", "Communicants", "Créatifs"],
+  },
+  {
+    id: 6,
+    title: "Olympiades de Mathématiques",
+    organizer: "Université d'Abomey-Calavi",
+    date: "10-12 Mars 2025",
+    location: "Abomey-Calavi",
+    category: "Éducation",
+    prizes: ["Bourses d'études", "Ordinateurs portables", "Livres scientifiques"],
+    description: "Compétition nationale de mathématiques pour étudiants universitaires.",
+    requirements: ["Étudiants en sciences", "Mathématiciens", "Passionnés de maths"],
+  },
+  {
+    id: 7,
+    title: "Startup Weekend Bénin",
+    organizer: "Techstars",
+    date: "7-9 Juin 2025",
+    location: "Cotonou",
+    category: "Entrepreneuriat",
+    prizes: ["Capital d'amorçage", "Accélération startup", "Réseautage international"],
+    description: "54 heures pour transformer une idée en startup viable.",
+    requirements: ["Entrepreneurs", "Développeurs", "Designers", "Business developers"],
   },
 ]
 
@@ -90,109 +107,148 @@ export default function Competitions() {
   })
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background">
       <Navigation links={navigationLinks} />
 
       <main className="flex-1 pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <SectionTitle
-            title="Concours & Hackathons"
-            description="Participez à des challenges stimulants et gagnez des prix pour lancer votre carrière."
-          />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">
+              Concours & Hackathons
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Participez à des challenges stimulants et gagnez des prix pour lancer votre carrière.
+            </p>
+          </div>
 
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                placeholder="Rechercher un concours..."
-                className="pl-10"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <div className="flex gap-2 overflow-x-auto pb-2">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setCategoryFilter(category)}
-                  className={`px-4 py-2 rounded-md text-sm whitespace-nowrap ${
-                    categoryFilter === category
-                      ? "bg-primary text-white"
-                      : "bg-secondary text-secondary-foreground"
-                  }`}
-                >
-                  {category === "all" ? "Tous" : category}
-                </button>
-              ))}
+          {/* Barre de recherche et filtres */}
+          <div className="mb-10">
+            <div className="flex flex-col md:flex-row gap-4 items-stretch">
+              <div className="relative flex-1">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Search className="h-5 w-5 text-muted-foreground" />
+                </div>
+                <Input
+                  type="text"
+                  placeholder="Rechercher un concours..."
+                  className="w-full pl-10 py-6 text-base"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+              
+              {/* Conteneur des filtres avec défilement horizontal amélioré */}
+              <div className="relative w-full md:w-auto">
+                <div className="flex gap-3 overflow-x-auto scrollbar-hide py-1">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => setCategoryFilter(category)}
+                      className={`
+                        px-5 py-3 rounded-lg text-sm font-medium whitespace-nowrap flex-shrink-0
+                        transition-colors duration-200
+                        ${
+                          categoryFilter === category
+                            ? "bg-primary text-white shadow-md"
+                            : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        }
+                      `}
+                    >
+                      {category === "all" ? "Toutes catégories" : category}
+                    </button>
+                  ))}
+                </div>
+                <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+              </div>
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          {/* Liste des concours */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredCompetitions.map((competition) => (
               <div
                 key={competition.id}
-                className="group rounded-lg border bg-background p-6 hover:border-primary/50 transition-colors animate-scale-in"
+                className="group relative overflow-hidden rounded-xl border border-border bg-card shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary">
-                    {competition.category}
-                  </span>
-                  <div className="flex items-center space-x-4">
-                    <span className="flex items-center text-xs text-muted-foreground">
-                      <Calendar className="mr-1 h-3 w-3" />
-                      {competition.date}
+                <div className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/20 text-accent">
+                      {competition.category}
                     </span>
-                    <span className="flex items-center text-xs text-muted-foreground">
-                      <MapPin className="mr-1 h-3 w-3" />
-                      {competition.location}
-                    </span>
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <Calendar className="h-4 w-4" />
+                      <span>{competition.date}</span>
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                  {competition.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Organisé par: {competition.organizer}
-                </p>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  {competition.description}
-                </p>
-                
-                <div className="mt-6 space-y-4">
-                  <div>
-                    <h4 className="text-sm font-medium mb-2">Prix à gagner:</h4>
-                    <ul className="space-y-1">
+
+                  <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+                    {competition.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Organisé par <span className="font-medium">{competition.organizer}</span>
+                  </p>
+                  
+                  <p className="text-sm text-muted-foreground mb-5">
+                    {competition.description}
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium mb-2 text-foreground">Prix à gagner :</h4>
+                    <ul className="space-y-2">
                       {competition.prizes.map((prize, i) => (
-                        <li key={i} className="flex items-center text-sm text-muted-foreground">
-                          <Trophy className="mr-2 h-4 w-4 text-primary" />
-                          {prize}
+                        <li key={i} className="flex items-start text-sm text-muted-foreground">
+                          <Trophy className="flex-shrink-0 h-4 w-4 mt-0.5 mr-2 text-primary" />
+                          <span>{prize}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-                  
-                  <div>
-                    <h4 className="text-sm font-medium mb-2">Profils recherchés:</h4>
+
+                  <div className="mb-6">
+                    <h4 className="text-sm font-medium mb-2 text-foreground">Profils recherchés :</h4>
                     <div className="flex flex-wrap gap-2">
                       {competition.requirements.map((req, i) => (
                         <span
                           key={i}
-                          className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground"
+                          className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-secondary text-secondary-foreground"
                         >
                           {req}
                         </span>
                       ))}
                     </div>
                   </div>
+
+                  <div className="mt-6">
+                    <Button className="w-full" size="lg">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      S'inscrire
+                    </Button>
+                  </div>
                 </div>
 
-                <Button className="mt-6 w-full">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  S'inscrire au concours
-                </Button>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
+
+          {filteredCompetitions.length === 0 && (
+            <div className="text-center py-12">
+              <h3 className="text-xl font-medium text-muted-foreground">
+                Aucun concours trouvé pour ces critères
+              </h3>
+              <Button 
+                variant="outline" 
+                className="mt-4"
+                onClick={() => {
+                  setSearchTerm("")
+                  setCategoryFilter("all")
+                }}
+              >
+                Réinitialiser les filtres
+              </Button>
+            </div>
+          )}
         </div>
       </main>
 
