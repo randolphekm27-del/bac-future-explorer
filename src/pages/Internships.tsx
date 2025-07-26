@@ -108,7 +108,9 @@ export default function Internships() {
       internship.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
       internship.location.toLowerCase().includes(searchTerm.toLowerCase())
     
-    const matchesType = typeFilter === "all" || internship.type === typeFilter
+    const matchesType = 
+      typeFilter === "all" || 
+      internship.type === typeFilter
 
     return matchesSearch && matchesType
   })
@@ -135,7 +137,6 @@ export default function Internships() {
               <TabsTrigger value="opportunities">Opportunités de stage</TabsTrigger>
               <TabsTrigger value="resources">Ressources utiles</TabsTrigger>
             </TabsList>
-            
             <TabsContent value="opportunities">
               <div className="mb-8 flex flex-col gap-4 sm:flex-row">
                 <div className="relative flex-1">
@@ -148,6 +149,7 @@ export default function Internships() {
                   />
                 </div>
                 
+                {/* Conteneur des boutons de filtre avec défilement horizontal */}
                 <div className="relative w-full sm:w-auto">
                   <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
                     {types.map((type) => (
@@ -218,7 +220,6 @@ export default function Internships() {
                 ))}
               </div>
             </TabsContent>
-
             <TabsContent value="resources">
               <div className="grid gap-6 md:grid-cols-2">
                 {resources.map((resource, i) => (
