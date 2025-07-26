@@ -1,4 +1,4 @@
-import { universities } from './universities';
+import { universities, formatProgramName } from './universities';
 
 export interface Program {
   id: string;
@@ -7,262 +7,164 @@ export interface Program {
   category: string;
   duration: string;
   description: string;
+  domainDetails?: string;
   careers: string[];
   icon: string;
   schoolIds: string[]; // IDs des écoles qui proposent cette filière
 }
 
-export const programs: Program[] = [
-  // UAC - Université d'Abomey-Calavi
-  {
-    id: "1",
-    name: "Santé publique polyvalente",
-    slug: "sante-publique-polyvalente",
-    category: "Sciences de la Santé",
-    duration: "4-5 ans",
-    description: "Formation en santé communautaire, épidémiologie et gestion des systèmes de santé.",
-    careers: ["Responsable santé publique", "Épidémiologiste", "Gestionnaire de programmes sanitaires"],
-    icon: "Users",
-    schoolIds: ["uac-3"]
-  },
-  {
-    id: "2",
-    name: "Géographie et Aménagement du Territoire",
-    slug: "geographie-amenagement",
-    category: "Sciences Humaines",
-    duration: "3-5 ans",
-    description: "Étude des espaces terrestres et de leur organisation par les sociétés.",
-    careers: ["Urbaniste", "Aménageur territorial", "Géomaticien"],
-    icon: "Map",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "3",
-    name: "Socio-Anthropologie",
-    slug: "socio-anthropologie",
-    category: "Sciences Sociales",
-    duration: "3-5 ans",
-    description: "Analyse des sociétés humaines et des cultures à travers leurs structures sociales.",
-    careers: ["Chercheur", "Consultant en développement", "Chargé d'études"],
-    icon: "Users",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "4",
-    name: "Anglais",
-    slug: "anglais",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Maîtrise approfondie de la langue anglaise et de ses cultures.",
-    careers: ["Enseignant", "Traducteur", "Interprète"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4"]
-  },
-  {
-    id: "5",
-    name: "Cycle préparatoire MPSI",
-    slug: "mpsi",
-    category: "Sciences Exactes",
-    duration: "2 ans",
-    description: "Préparation intensive en mathématiques, physique et sciences de l'ingénieur.",
-    careers: ["Ingénieur", "Chercheur", "Enseignant"],
-    icon: "BookOpen",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "6",
-    name: "Cycle préparatoire PCSI",
-    slug: "pcsi",
-    category: "Sciences Exactes",
-    duration: "2 ans",
-    description: "Formation intensive en physique, chimie et sciences de l'ingénieur.",
-    careers: ["Ingénieur", "Chercheur", "Enseignant"],
-    icon: "BookOpen",
-    schoolIds: ["uac-2"]
-  },
-  {
-    id: "7",
-    name: "Allemand",
-    slug: "allemand",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Maîtrise approfondie de la langue allemande et de ses cultures.",
-    careers: ["Enseignant", "Traducteur", "Interprète"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4", "up-27"]
-  },
-  {
-    id: "8",
-    name: "Espagnol",
-    slug: "espagnol",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Maîtrise approfondie de la langue espagnole et de ses cultures.",
-    careers: ["Enseignant", "Traducteur", "Interprète"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4", "up-29"]
-  },
-  {
-    id: "9",
-    name: "Lettres Modernes",
-    slug: "lettres-modernes",
-    category: "Lettres et Langues",
-    duration: "3-5 ans",
-    description: "Étude approfondie de la littérature et de la langue française.",
-    careers: ["Enseignant", "Écrivain", "Rédacteur"],
-    icon: "BookOpen",
-    schoolIds: ["uac-4", "up-32"]
-  },
-  {
-    id: "10",
-    name: "Science du Langage et de la Communication",
-    slug: "science-langage",
-    category: "Sciences Humaines",
-    duration: "3-5 ans",
-    description: "Analyse scientifique des langages et des processus de communication.",
-    careers: ["Orthophoniste", "Expert en communication", "Chercheur"],
-    icon: "Users",
-    schoolIds: ["uac-4"]
-  },
-
-  // UP - Université de Parakou
-  {
-    id: "101",
-    name: "Sciences et Techniques de Production Végétale",
-    slug: "production-vegetale",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en techniques modernes de production et amélioration des plantes.",
-    careers: ["Agronome", "Gestionnaire de ferme", "Chercheur"],
-    icon: "Briefcase",
-    schoolIds: ["up-1", "una-3"]
-  },
-  {
-    id: "102",
-    name: "Sciences et Techniques de Production Animale et Halieutique",
-    slug: "production-animale",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en élevage, pêche et gestion des ressources animales.",
-    careers: ["Vétérinaire", "Aquaculteur", "Gestionnaire d'élevage"],
-    icon: "Briefcase",
-    schoolIds: ["up-2", "una-8"]
-  },
-  {
-    id: "103",
-    name: "Aménagement et Gestion des Ressources Naturelles",
-    slug: "amenagement-ressources",
-    category: "Sciences Environnementales",
-    duration: "3-5 ans",
-    description: "Formation en gestion durable des écosystèmes et ressources naturelles.",
-    careers: ["Gestionnaire de parc", "Expert en environnement", "Consultant"],
-    icon: "Map",
-    schoolIds: ["up-3", "una-12"]
-  },
-  {
-    id: "104",
-    name: "Sociologie et Economie Rurale",
-    slug: "sociologie-rurale",
-    category: "Sciences Sociales",
-    duration: "3-5 ans",
-    description: "Analyse des dynamiques sociales et économiques en milieu rural.",
-    careers: ["Sociologue", "Planificateur rural", "Chercheur"],
-    icon: "Users",
-    schoolIds: ["up-4", "una-11"]
-  },
-
-  // UNSTIM
-  {
-    id: "201",
-    name: "Electrotechnique",
-    slug: "electrotechnique",
-    category: "Ingénierie",
-    duration: "3-5 ans",
-    description: "Formation en conception et maintenance des systèmes électriques.",
-    careers: ["Ingénieur électricien", "Technicien supérieur", "Concepteur"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-3"]
-  },
-  {
-    id: "202",
-    name: "Génie Civil",
-    slug: "genie-civil",
-    category: "Ingénierie",
-    duration: "5 ans",
-    description: "Formation en construction, infrastructures et gestion de projets BTP.",
-    careers: ["Ingénieur civil", "Chef de chantier", "Bureau d'études"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-4", "uac-78"]
-  },
-  {
-    id: "203",
-    name: "Froid et Climatisation",
-    slug: "froid-climatisation",
-    category: "Ingénierie",
-    duration: "3-5 ans",
-    description: "Formation en systèmes de réfrigération et conditionnement d'air.",
-    careers: ["Technicien frigoriste", "Ingénieur thermicien", "Maintenance"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-10"]
-  },
-  {
-    id: "204",
-    name: "Energies Renouvelables",
-    slug: "energies-renouvelables",
-    category: "Ingénierie",
-    duration: "3-5 ans",
-    description: "Formation en technologies solaires, éoliennes et biomasse.",
-    careers: ["Ingénieur énergie", "Technicien en énergie verte", "Consultant"],
-    icon: "BookOpen",
-    schoolIds: ["unstim-12", "una-14"]
-  },
-
-  // UNA - Université Nationale d'Agriculture
-  {
-    id: "301",
-    name: "Agriculture",
-    slug: "agriculture",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation complète en techniques agricoles modernes.",
-    careers: ["Agronome", "Exploitant agricole", "Conseiller agricole"],
-    icon: "Briefcase",
-    schoolIds: ["una-1"]
-  },
-  {
-    id: "302",
-    name: "Aquaculture",
-    slug: "aquaculture",
-    category: "Sciences Agricoles",
-    duration: "3-5 ans",
-    description: "Formation en élevage d'organismes aquatiques et gestion piscicole.",
-    careers: ["Aquaculteur", "Gestionnaire de ferme aquacole", "Expert"],
-    icon: "Briefcase",
-    schoolIds: ["una-7"]
-  },
-  {
-    id: "303",
-    name: "Finance agricole",
-    slug: "finance-agricole",
-    category: "Sciences Économiques",
-    duration: "3-5 ans",
-    description: "Spécialisation en gestion financière des exploitations agricoles.",
-    careers: ["Financier agricole", "Gestionnaire de coopérative", "Analyste"],
-    icon: "Briefcase",
-    schoolIds: ["una-9"]
-  },
-  {
-    id: "304",
-    name: "Agroéquipement",
-    slug: "agroequipement",
-    category: "Ingénierie Agricole",
-    duration: "3-5 ans",
-    description: "Formation en machinisme agricole et gestion des équipements.",
-    careers: ["Ingénieur agroéquipement", "Technicien spécialisé", "Maintenance"],
-    icon: "BookOpen",
-    schoolIds: ["una-13"]
+// Fonction pour catégoriser les programmes
+const categorizeProgram = (programName: string): string => {
+  const name = programName.toLowerCase();
+  
+  // Agriculture et Productions
+  if (name.includes('production végétale') || name.includes('production animale') || 
+      name.includes('agriculture') || name.includes('nutrition') || name.includes('aménagement') ||
+      name.includes('gestion des ressources naturelles') || name.includes('forêt') ||
+      name.includes('technologie alimentaire') || name.includes('sciences du sol')) {
+    return "Agriculture et Productions Végétales/Animales";
   }
-];
+  
+  // Médecine et Santé
+  if (name.includes('santé') || name.includes('médecine') || name.includes('obstétrical') ||
+      name.includes('biosciences') || name.includes('hygiène')) {
+    return "Médecine et Santé Publique";
+  }
+  
+  // Ingénierie et Technologies
+  if (name.includes('génie') || name.includes('énergétique') || name.includes('informatique') ||
+      name.includes('électrique') || name.includes('mécanique') || name.includes('industrielle') ||
+      name.includes('télécommunications') || name.includes('maintenance') || name.includes('logiciel') ||
+      name.includes('intelligence artificielle') || name.includes('systèmes embarqués') ||
+      name.includes('sécurité informatique') || name.includes('réseaux') || name.includes('programmation')) {
+    return "Informatique, Télécoms et Intelligence Artificielle";
+  }
+  
+  // Génie Civil et Construction
+  if (name.includes('civil') || name.includes('hydraulique') || name.includes('assainissement') ||
+      name.includes('eau') || name.includes('génie rural') || name.includes('hydrologie') ||
+      name.includes('hydrogéologie') || name.includes('ecohydrologie')) {
+    return "Génie Civil, Mécanique et Énergétique";
+  }
+  
+  // Environnement
+  if (name.includes('environnement') || name.includes('climatique') || name.includes('géomatique') ||
+      name.includes('cadre de vie') || name.includes('planification') || name.includes('espaces urbains')) {
+    return "Environnement et Développement Durable";
+  }
+  
+  // Gestion et Finance
+  if (name.includes('gestion') || name.includes('finance') || name.includes('comptable') ||
+      name.includes('banque') || name.includes('assurance') || name.includes('marketing') ||
+      name.includes('transport') || name.includes('logistique') || name.includes('ressources humaines') ||
+      name.includes('statistique') || name.includes('planification') || name.includes('développement') ||
+      name.includes('patrimoine culturel')) {
+    return "Gestion, Finance et Commerce";
+  }
+  
+  // Arts et Culture
+  if (name.includes('arts') || name.includes('dramatique') || name.includes('plastique') ||
+      name.includes('musique') || name.includes('musicologie') || name.includes('cinéma') ||
+      name.includes('audiovisuel') || name.includes('administration culturelle')) {
+    return "Arts et Culture";
+  }
+  
+  // Lettres et Langues
+  if (name.includes('allemand') || name.includes('espagnol') || name.includes('lettres') ||
+      name.includes('langage') || name.includes('communication') || name.includes('anglais') ||
+      name.includes('journalisme') || name.includes('multimédia')) {
+    return "Lettres, Langues et Communication";
+  }
+  
+  // Sciences Humaines
+  if (name.includes('géographie') || name.includes('socio') || name.includes('anthropologie') ||
+      name.includes('éducation') || name.includes('histoire') || name.includes('psychologie') ||
+      name.includes('administration')) {
+    return "Sciences Humaines et Sociales";
+  }
+  
+  // Sciences Fondamentales
+  if (name.includes('mathématiques') || name.includes('physique') || name.includes('chimie') ||
+      name.includes('mpsi') || name.includes('pcsi')) {
+    return "Mathématiques, Physique et Chimie";
+  }
+  
+  return "Autres";
+};
+
+// Fonction pour attribuer une icône selon le programme
+const getIconForProgram = (programName: string): string => {
+  const name = programName.toLowerCase();
+  
+  if (name.includes('production végétale') || name.includes('agriculture')) return "Sprout";
+  if (name.includes('production animale')) return "PawPrint";
+  if (name.includes('santé') || name.includes('médecine')) return "Heart";
+  if (name.includes('obstétrical')) return "Baby";
+  if (name.includes('informatique') || name.includes('programmation')) return "Code";
+  if (name.includes('génie électrique')) return "Zap";
+  if (name.includes('génie mécanique')) return "Settings";
+  if (name.includes('génie civil') || name.includes('hydraulique')) return "Building";
+  if (name.includes('eau') || name.includes('hydrologie')) return "Droplets";
+  if (name.includes('environnement') || name.includes('climatique')) return "Leaf";
+  if (name.includes('géomatique')) return "Map";
+  if (name.includes('finance') || name.includes('banque')) return "CreditCard";
+  if (name.includes('gestion') || name.includes('management')) return "Briefcase";
+  if (name.includes('marketing')) return "TrendingUp";
+  if (name.includes('transport') || name.includes('logistique')) return "Truck";
+  if (name.includes('statistique')) return "BarChart";
+  if (name.includes('arts') || name.includes('dramatique')) return "Palette";
+  if (name.includes('musique')) return "Music";
+  if (name.includes('cinéma') || name.includes('audiovisuel')) return "Video";
+  if (name.includes('allemand') || name.includes('espagnol') || name.includes('anglais')) return "Languages";
+  if (name.includes('lettres') || name.includes('communication')) return "BookOpen";
+  if (name.includes('journalisme')) return "Newspaper";
+  if (name.includes('géographie')) return "Globe";
+  if (name.includes('socio') || name.includes('anthropologie')) return "Users";
+  if (name.includes('éducation')) return "GraduationCap";
+  if (name.includes('histoire')) return "Clock";
+  if (name.includes('psychologie')) return "Brain";
+  if (name.includes('administration')) return "FileText";
+  if (name.includes('mathématiques') || name.includes('mpsi')) return "Calculator";
+  if (name.includes('physique') || name.includes('pcsi')) return "Atom";
+  
+  return "BookOpen"; // Icône par défaut
+};
+
+// Génération automatique des programmes à partir des données des universités
+const generateProgramsFromUniversities = (): Program[] => {
+  const programMap = new Map<string, Program>();
+  
+  universities.forEach(university => {
+    university.schools.forEach(school => {
+      school.programs.forEach(programName => {
+        const formattedName = formatProgramName(programName);
+        const slug = createProgramSlug(formattedName);
+        
+        if (!programMap.has(slug)) {
+          programMap.set(slug, {
+            id: `prog-${slug}`,
+            name: formattedName,
+            slug: slug,
+            category: categorizeProgram(formattedName),
+            duration: "3-5 ans", // Durée générique
+            description: `Formation spécialisée en ${formattedName.toLowerCase()}.`,
+            careers: [`Spécialiste en ${formattedName.toLowerCase()}`, "Consultant", "Expert du domaine"],
+            icon: getIconForProgram(formattedName),
+            schoolIds: [school.id]
+          });
+        } else {
+          // Ajouter l'école à la liste si elle n'y est pas déjà
+          const existingProgram = programMap.get(slug)!;
+          if (!existingProgram.schoolIds.includes(school.id)) {
+            existingProgram.schoolIds.push(school.id);
+          }
+        }
+      });
+    });
+  });
+  
+  return Array.from(programMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+};
 
 // Fonction utilitaire pour créer un slug propre
 export const createProgramSlug = (programName: string): string => {
@@ -280,6 +182,8 @@ export const createProgramSlug = (programName: string): string => {
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
 };
+
+export const programs: Program[] = generateProgramsFromUniversities();
 
 export const getProgramBySlug = (slug: string): Program | undefined => {
   return programs.find(program => program.slug === slug);
