@@ -21,115 +21,75 @@ const categorizeProgram = (programName: string): string => {
   if (name.includes('production végétale') || name.includes('production animale') || 
       name.includes('agriculture') || name.includes('nutrition') || name.includes('aménagement') ||
       name.includes('gestion des ressources naturelles') || name.includes('forêt') ||
-      name.includes('technologie alimentaire') || name.includes('sciences du sol') ||
-      name.includes('agronomie') || name.includes('élevage') || name.includes('agro') ||
-      name.includes('vétérinaire') || name.includes('pêche') || name.includes('aquaculture')) {
+      name.includes('technologie alimentaire') || name.includes('sciences du sol')) {
     return "Agriculture et Productions Végétales/Animales";
   }
   
   // Médecine et Santé
   if (name.includes('santé') || name.includes('médecine') || name.includes('obstétrical') ||
-      name.includes('biosciences') || name.includes('hygiène') || name.includes('soins') ||
-      name.includes('infirmier') || name.includes('pharmacie') || name.includes('dentaire') ||
-      name.includes('sage-femme') || name.includes('kinésithérapie') || name.includes('biologie médicale')) {
+      name.includes('biosciences') || name.includes('hygiène')) {
     return "Médecine et Santé Publique";
   }
   
-  // Ingénierie et Technologies - Informatique/Télécoms
-  if (name.includes('informatique') || name.includes('télécommunications') || name.includes('logiciel') ||
+  // Ingénierie et Technologies
+  if (name.includes('génie') || name.includes('énergétique') || name.includes('informatique') ||
+      name.includes('électrique') || name.includes('mécanique') || name.includes('industrielle') ||
+      name.includes('télécommunications') || name.includes('maintenance') || name.includes('logiciel') ||
       name.includes('intelligence artificielle') || name.includes('systèmes embarqués') ||
-      name.includes('sécurité informatique') || name.includes('réseaux') || name.includes('programmation') ||
-      name.includes('multimédia') || name.includes('technologie') || name.includes('numérique') ||
-      name.includes('digital') || name.includes('cyber') || name.includes('data') ||
-      name.includes('système d\'information')) {
+      name.includes('sécurité informatique') || name.includes('réseaux') || name.includes('programmation')) {
     return "Informatique, Télécoms et Intelligence Artificielle";
   }
   
-  // Génie Électrique/Mécanique/Énergétique  
-  if (name.includes('génie électrique') || name.includes('génie mécanique') || name.includes('énergétique') ||
-      name.includes('électrique') || name.includes('mécanique') || name.includes('industrielle') ||
-      name.includes('maintenance') || name.includes('automatique') || name.includes('électronique') ||
-      name.includes('électrotechnique') || name.includes('energie') || name.includes('moteur') ||
-      name.includes('machine') || name.includes('thermique')) {
-    return "Génie Électrique, Mécanique et Énergétique";
-  }
-  
   // Génie Civil et Construction
-  if (name.includes('génie civil') || name.includes('civil') || name.includes('hydraulique') || 
-      name.includes('assainissement') || name.includes('eau') || name.includes('génie rural') || 
-      name.includes('hydrologie') || name.includes('hydrogéologie') || name.includes('ecohydrologie') ||
-      name.includes('construction') || name.includes('bâtiment') || name.includes('travaux publics') ||
-      name.includes('géotechnique') || name.includes('infrastructure')) {
-    return "Génie Civil, Hydraulique et Construction";
+  if (name.includes('civil') || name.includes('hydraulique') || name.includes('assainissement') ||
+      name.includes('eau') || name.includes('génie rural') || name.includes('hydrologie') ||
+      name.includes('hydrogéologie') || name.includes('ecohydrologie')) {
+    return "Génie Civil, Mécanique et Énergétique";
   }
   
   // Environnement
   if (name.includes('environnement') || name.includes('climatique') || name.includes('géomatique') ||
-      name.includes('cadre de vie') || name.includes('espaces urbains') || name.includes('écologie') ||
-      name.includes('développement durable') || name.includes('biodiversité') || 
-      name.includes('cartographie') || name.includes('sig') || name.includes('géographie physique')) {
+      name.includes('cadre de vie') || name.includes('planification') || name.includes('espaces urbains')) {
     return "Environnement et Développement Durable";
   }
   
   // Gestion et Finance
   if (name.includes('gestion') || name.includes('finance') || name.includes('comptable') ||
       name.includes('banque') || name.includes('assurance') || name.includes('marketing') ||
-      name.includes('commerce') || name.includes('économie') || name.includes('management') ||
-      name.includes('entrepreneuriat') || name.includes('business') || name.includes('administration') ||
-      name.includes('ressources humaines') || name.includes('audit') || name.includes('fiscalité')) {
+      name.includes('transport') || name.includes('logistique') || name.includes('ressources humaines') ||
+      name.includes('statistique') || name.includes('planification') || name.includes('développement') ||
+      name.includes('patrimoine culturel')) {
     return "Gestion, Finance et Commerce";
-  }
-  
-  // Transport et Logistique
-  if (name.includes('transport') || name.includes('logistique') || name.includes('circulation') ||
-      name.includes('mobilité') || name.includes('véhicule') || name.includes('automobile') ||
-      name.includes('aéronautique') || name.includes('maritime') || name.includes('supply chain')) {
-    return "Transport et Logistique";
   }
   
   // Arts et Culture
   if (name.includes('arts') || name.includes('dramatique') || name.includes('plastique') ||
       name.includes('musique') || name.includes('musicologie') || name.includes('cinéma') ||
-      name.includes('audiovisuel') || name.includes('administration culturelle') ||
-      name.includes('création') || name.includes('design') || name.includes('théâtre') ||
-      name.includes('danse') || name.includes('photographie')) {
+      name.includes('audiovisuel') || name.includes('administration culturelle')) {
     return "Arts et Culture";
   }
   
   // Lettres et Langues
   if (name.includes('allemand') || name.includes('espagnol') || name.includes('lettres') ||
       name.includes('langage') || name.includes('communication') || name.includes('anglais') ||
-      name.includes('journalisme') || name.includes('français') || name.includes('arabe') ||
-      name.includes('linguistique') || name.includes('traduction') || name.includes('interprétariat') ||
-      name.includes('littérature') || name.includes('philosophie')) {
+      name.includes('journalisme') || name.includes('multimédia')) {
     return "Lettres, Langues et Communication";
   }
   
   // Sciences Humaines
   if (name.includes('géographie') || name.includes('socio') || name.includes('anthropologie') ||
       name.includes('éducation') || name.includes('histoire') || name.includes('psychologie') ||
-      name.includes('sciences humaines') || name.includes('service social') || 
-      name.includes('développement communautaire') || name.includes('relations internationales') ||
-      name.includes('sciences politiques') || name.includes('droit') || name.includes('juridique')) {
+      name.includes('administration')) {
     return "Sciences Humaines et Sociales";
   }
   
   // Sciences Fondamentales
   if (name.includes('mathématiques') || name.includes('physique') || name.includes('chimie') ||
-      name.includes('mpsi') || name.includes('pcsi') || name.includes('biologie') ||
-      name.includes('statistique') || name.includes('sciences') || name.includes('recherche') ||
-      name.includes('laboratoire') || name.includes('analyse') || name.includes('géologie')) {
+      name.includes('mpsi') || name.includes('pcsi')) {
     return "Mathématiques, Physique et Chimie";
   }
   
-  // Planification et Développement
-  if (name.includes('planification') || name.includes('développement') || name.includes('aménagement') ||
-      name.includes('urbanisme') || name.includes('territoire') || name.includes('population') ||
-      name.includes('démographie') || name.includes('projet') || name.includes('coopération')) {
-    return "Planification et Développement Territorial";
-  }
-  
-  return "Autres Formations";
+  return "Autres";
 };
 
 // Fonction pour attribuer une icône selon le programme
