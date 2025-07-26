@@ -17,8 +17,7 @@ const internships = [
     location: "Cotonou",
     duration: "3 mois",
     type: "Informatique",
-    description:
-      "Stage pour développeurs web junior souhaitant se spécialiser en React et Node.js.",
+    description: "Stage pour développeurs web junior souhaitant se spécialiser en React et Node.js.",
     requirements: ["HTML/CSS", "JavaScript", "Connaissance de React"],
   },
   {
@@ -28,8 +27,7 @@ const internships = [
     location: "Parakou",
     duration: "6 mois",
     type: "Marketing",
-    description:
-      "Participation à la stratégie marketing digital d'une entreprise agroalimentaire en pleine croissance.",
+    description: "Participation à la stratégie marketing digital d'une entreprise agroalimentaire en pleine croissance.",
     requirements: ["Réseaux sociaux", "SEO", "Création de contenu"],
   },
   {
@@ -39,8 +37,7 @@ const internships = [
     location: "Cotonou",
     duration: "4 mois",
     type: "Droit",
-    description:
-      "Accompagnement des avocats dans la recherche juridique et la rédaction de documents légaux.",
+    description: "Accompagnement des avocats dans la recherche juridique et la rédaction de documents légaux.",
     requirements: ["Droit des affaires", "Recherche juridique", "Rédaction"],
   },
   {
@@ -50,8 +47,7 @@ const internships = [
     location: "Porto-Novo",
     duration: "3 mois",
     type: "Finance",
-    description:
-      "Participation à la comptabilité générale et la préparation des déclarations fiscales.",
+    description: "Participation à la comptabilité générale et la préparation des déclarations fiscales.",
     requirements: ["Comptabilité générale", "Excel", "Fiscalité de base"],
   },
   {
@@ -61,8 +57,7 @@ const internships = [
     location: "Abomey-Calavi",
     duration: "6 mois",
     type: "Agronomie",
-    description:
-      "Participation à des projets de recherche sur l'amélioration des techniques agricoles.",
+    description: "Participation à des projets de recherche sur l'amélioration des techniques agricoles.",
     requirements: ["Agronomie", "Méthodes de recherche", "Analyse de données"],
   },
   {
@@ -72,8 +67,7 @@ const internships = [
     location: "Cotonou",
     duration: "3 mois",
     type: "Communication",
-    description:
-      "Gestion des réseaux sociaux et création de contenu pour divers clients.",
+    description: "Gestion des réseaux sociaux et création de contenu pour divers clients.",
     requirements: ["Réseaux sociaux", "Photoshop", "Rédaction web"],
   },
 ]
@@ -114,9 +108,7 @@ export default function Internships() {
       internship.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
       internship.location.toLowerCase().includes(searchTerm.toLowerCase())
     
-    const matchesType = 
-      typeFilter === "all" || 
-      internship.type === typeFilter
+    const matchesType = typeFilter === "all" || internship.type === typeFilter
 
     return matchesSearch && matchesType
   })
@@ -143,6 +135,7 @@ export default function Internships() {
               <TabsTrigger value="opportunities">Opportunités de stage</TabsTrigger>
               <TabsTrigger value="resources">Ressources utiles</TabsTrigger>
             </TabsList>
+            
             <TabsContent value="opportunities">
               <div className="mb-8 flex flex-col gap-4 sm:flex-row">
                 <div className="relative flex-1">
@@ -154,20 +147,24 @@ export default function Internships() {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-                <div className="flex gap-2 overflow-x-auto pb-2">
-                  {types.map((type) => (
-                    <button
-                      key={type}
-                      onClick={() => setTypeFilter(type)}
-                      className={`px-4 py-2 rounded-md text-sm whitespace-nowrap ${
-                        typeFilter === type
-                          ? "bg-primary text-white"
-                          : "bg-secondary text-secondary-foreground"
-                      }`}
-                    >
-                      {type === "all" ? "Tous" : type}
-                    </button>
-                  ))}
+                
+                <div className="relative w-full sm:w-auto">
+                  <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
+                    {types.map((type) => (
+                      <button
+                        key={type}
+                        onClick={() => setTypeFilter(type)}
+                        className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
+                          typeFilter === type
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary text-secondary-foreground"
+                        }`}
+                      >
+                        {type === "all" ? "Tous" : type}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none" />
                 </div>
               </div>
 
@@ -221,6 +218,7 @@ export default function Internships() {
                 ))}
               </div>
             </TabsContent>
+
             <TabsContent value="resources">
               <div className="grid gap-6 md:grid-cols-2">
                 {resources.map((resource, i) => (
