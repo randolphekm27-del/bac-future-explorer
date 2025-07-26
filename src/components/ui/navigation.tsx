@@ -37,8 +37,8 @@ export function Navigation({ links }: NavigationProps) {
   }, [location.pathname])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 w-full glass-nav z-50 shadow-lg overflow-x-hidden">
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 w-full glass-nav z-50 shadow-lg">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 sm:space-x-3 hover:opacity-80 transition-opacity">
             <img 
@@ -85,13 +85,13 @@ export function Navigation({ links }: NavigationProps) {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-fade-in border-t bg-background/95 backdrop-blur-sm">
-            <div className="flex flex-col space-y-2 px-3 py-4">
+            <div className="flex flex-col space-y-2 py-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "flex items-center space-x-3 text-sm font-medium transition-all duration-200 px-4 py-3 rounded-md hover:bg-accent",
+                    "flex items-center space-x-3 text-sm font-medium transition-all duration-200 px-4 py-3 rounded-md mx-2 hover:bg-accent",
                     location.pathname === link.href 
                       ? "text-primary bg-accent border-l-4 border-primary" 
                       : "text-muted-foreground hover:text-foreground"
