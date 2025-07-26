@@ -190,79 +190,93 @@ export const universities: University[] = [
     slug: "universite-abomey-calavi",
     schools: [
       formatSchoolPrograms({
-        id: "uac-1",
-        name: "Institut Régional de Santé Publique (IRSP)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "SVT, PCT, Maths"],
-        location: "Ouidah",
-        country: "Bénin",
-        programs: ["Santé publique polyvalente"],
-        contact: {
-          email: "irsp@uac.bj",
-          phone: "+229 21 34 56 78",
-          website: "www.irsp.uac.bj"
-        },
-        description: "Formation en santé publique et épidémiologie pour répondre aux enjeux sanitaires locaux.",
-        goodToKnow: "L'IRSP est un pilier de la santé communautaire au Bénin."
-      }),
+  id: "uac-1",
+  name: "Institut Régional de Santé Publique (IRSP)",
+  admissionRequirements: ["Classement"],
+  location: "Ouidah",
+  country: "Bénin",
+  programs: ["Santé publique polyvalente"],
+  contact: {
+    email: "irsp@irsp-ouidah.org",
+    phone: "+229 55 99 20 20",
+    website: "https://irsp-ouidah.org"
+  },
+  description: "Formation en santé publique et épidémiologie pour répondre aux enjeux sanitaires locaux.",
+  goodToKnow: `
+    L'IRSP forme des professionnels polyvalents en santé publique, capables de répondre aux défis sanitaires complexes. 
+    Ainsi, si vous souhaitez œuvrer dans la gestion de programmes de vaccination, l'analyse des politiques de santé, 
+    la surveillance épidémiologique ou la sensibilisation communautaire, cette formation vous préparera à intervenir 
+    sur le terrain comme dans les instances décisionnelles, en Afrique et au-delà.
+    
+    Opportunités : Ses diplômés intègrent des organisations internationales (OMS, UNICEF), des ministères de la Santé, 
+    des ONG spécialisées ou des structures de recherche, avec des missions allant de la réponse aux crises sanitaires 
+    à l'optimisation des systèmes de soins.
+  `
+}),
       formatSchoolPrograms({
-        id: "uac-2",
-        name: "Faculté des Lettres, Arts et Sciences Humaines-Adjarra (FLASH-Adjarra)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D, DEAT, DT/STI", "Classement", "Français, Hist-Géo, Maths (selon filière)"],
-        location: "Adjarra",
-        country: "Bénin",
-        programs: ["Géographie et Aménagement du Territoire", "Socio-Anthropologie", "Anglais"],
-        contact: {
-          email: "flash@uac.bj",
-          phone: "+229 22 44 66 88",
-          website: "www.flash.uac.bj"
-        },
-        description: "Formation pluridisciplinaire en sciences humaines avec une forte dimension terrain.",
-        goodToKnow: "La FLASH-Adjarra se distingue par ses projets concrets."
-      }),
+  id: "uac-2",
+  name: "Faculté des Lettres, Arts et Sciences Humaines-Adjarra (FLASH-Adjarra)",
+  admissionRequirements: ["Classement"],
+  location: "Adjarra",
+  country: "Bénin",
+  programs: ["Géographie et Aménagement du Territoire", "Socio-Anthropologie", "Anglais"],
+  contact: {
+    email: "flash@uac.bj",
+    phone: "+229 22 44 66 88",
+    website: ""
+  },
+  description: "Formation pluridisciplinaire en sciences humaines avec une forte dimension terrain.",
+  goodToKnow: `
+    La FLASH-Adjarra propose des formations en sciences humaines qui étudient la société sous différents angles. 
+    Que ce soit en géographie (pour comprendre l'espace et l'aménagement), en socio-anthropologie (pour analyser 
+    les comportements sociaux) ou en anglais (pour la communication internationale), l'accent est mis sur l'application 
+    pratique des connaissances. Une bonne option si vous aimez réfléchir aux questions de société et travailler sur le terrain.
+  `
+}),
       formatSchoolPrograms({
         id: "uac-3",
         name: "Institut de Mathématiques et de Sciences Physiques (IMSP)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "Maths, PCT, Français"],
-        location: "Abomey-Calavi",
+        admissionRequirements: ["Classement"],
+        location: "Porto-Novo",
         country: "Bénin",
         programs: ["Cycle préparatoire : Mathématiques, Physiques et Science de l'Ingénieur (MPSI)", "Cycle préparatoire : Physique-Chimie et Science de l'Ingénieur (PCSI)"],
         contact: {
-          email: "imsp@uac.bj",
-          phone: "+229 21 30 40 50",
-          website: "www.imsp.uac.bj"
+          email: "secretariat@imsp-uac.org",
+          phone: "+229 20 22 24 55",
+          website: "https://www.imsp-benin.com"
         },
         description: "Pôle d'excellence pour les sciences fondamentales préparant aux grandes écoles d'ingénieurs.",
-        goodToKnow: "L'IMSP est le fleuron scientifique du Bénin."
+        goodToKnow: `L'IMSP forme des esprits scientifiques en physique et mathématiques pures. Ainsi, si vous visez les grandes écoles d'ingénieurs ou la recherche fondamentale, vous y apprendrez à modéliser les lois de l'univers tout en travaillant sur des cas concrets africains.`
       }),
       formatSchoolPrograms({
         id: "uac-4",
         name: "Faculté des Lettres, Langues, Arts et Communications (FLLAC)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement", "Langues vivantes/Français selon filière"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
         programs: ["Allemand", "Espagnol", "Lettres Modernes", "Science du Langage et de la Communication"],
         contact: {
-          email: "fllac@uac.bj",
-          phone: "+229 21 25 36 47",
-          website: "www.fllac.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Centre d'excellence en langues étrangères et communication interculturelle.",
-        goodToKnow: "La FLLAC cultive le multilinguisme."
+        goodToKnow: `La FLLAC forme des passeurs de cultures en langues et littératures. Ainsi, si vous rêvez de devenir traducteur, diplomate ou professeur, vous y développerez une maîtrise exceptionnelle des langues couplée à une profonde intelligence interculturelle.`me."
       }),
       formatSchoolPrograms({
         id: "uac-5",
         name: "Institut National des Métiers d'Arts (INMAAC)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement + Pratique artistique", "Français/Histoire de l'art"],
-        location: "Abomey",
+        admissionRequirements: ["Classement"],
+        location: "Abomey6Calavi",
         country: "Bénin",
         programs: ["Arts dramatiques", "Arts Plastiques", "Musique et Musicologie", "Cinéma et Audiovisuel"],
         contact: {
-          email: "inmaac@uac.bj",
-          phone: "+229 23 55 77 99",
-          website: "www.inmaac.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Formation aux métiers des arts vivants et visuels ancrée dans le patrimoine béninois.",
-        goodToKnow: "Installé près des Palais Royaux d'Abomey."
+        goodToKnow: `L'INMAAC forme des créateurs engagés en arts visuels et scéniques. Ainsi, si vous voulez réinventer le patrimoine béninois à travers le théâtre, la peinture ou le cinéma, vous y trouverez un cadre unique au cœur des palais royaux d'Abomey.`
       }),
       formatSchoolPrograms({
         id: "uac-6",
@@ -277,7 +291,7 @@ export const universities: University[] = [
           website: "www.cifred.uac.bj"
         },
         description: "Expertise en gestion durable des écosystèmes et santé environnementale.",
-        goodToKnow: "Le CIFRED agit concrètement contre la pollution."
+        goodToKnow: `Le CIFRED forme des gardiens des écosystèmes en sciences environnementales. Ainsi, si vous souhaitez lutter contre la pollution ou concevoir des villes durables, vous y acquerrez des solutions pratiques testées dans le bassin du Niger.`
       }),
       formatSchoolPrograms({
         id: "uac-7",
