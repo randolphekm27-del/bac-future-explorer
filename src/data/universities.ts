@@ -381,7 +381,7 @@ export const universities: University[] = [
           phone: "+229 01 97 86 78 78",
           website: "non disponible"
         },
-        description: "Pépinière de l'élite administrative béninoise depuis 1964.",
+        description: "Pépinière des métiers de l'audiovisuel et du multimédia.",
         goodToKnow: "L’ENSTIC est l’école de référence pour apprendre à informer, filmer et raconter le monde. Ainsi, si vous rêvez de devenir journaliste, réalisateur ou créateur de contenus, vous y développerez les compétences pour faire entendre les voix d’aujourd’hui et influencer les idées de demain."
       }),
       formatSchoolPrograms({
@@ -402,168 +402,208 @@ export const universities: University[] = [
       formatSchoolPrograms({
         id: "uac-14",
         name: "Institut de Formation et de Recherche en Informatique (IFRI)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "Maths, Informatique"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
         programs: ["Génie Logiciel", "Internet et Multimédia", "Intelligence artificielle (IA)", "Systèmes embarqués et Internet des Objets (SEIoT)", "Sécurité Informatique"],
         contact: {
           email: "ifri@uac.bj",
-          phone: "+229 21 44 55 66",
-          website: "www.ifri.uac.bj"
+          phone: "+229 55 02 80 70",
+          website: "https://www.ifri-uac.bj"
         },
         description: "Pionnier des nouvelles technologies en Afrique francophone.",
-        goodToKnow: "L'IFRI développe des solutions pour l'agriculture et la santé."
+        goodToKnow: "L’IFRI est l’école de référence pour celles et ceux qui veulent façonner l’avenir avec la technologie. On y forme des experts en intelligence artificielle, cybersécurité, objets connectés, génie logiciel et multimédia. Ainsi, si vous rêvez de créer des applications utiles, de protéger les données sensibles, d’innover dans la santé ou l’agriculture grâce au numérique, l’IFRI vous offre les clés pour devenir un acteur incontournable de la révolution digitale en Afrique."
       }),
       formatSchoolPrograms({
         id: "uac-15",
         name: "Faculté des Sciences Agronomiques (FSA)",
-        admissionRequirements: ["Baccalauréat série C, D, EA", "Classement", "SVT, Maths"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
         programs: ["Sciences et Techniques de Production Végétale", "Sciences et Techniques de Production Animale", "Aménagement et Gestion des Forêts et Parcours Naturels", "Génie Rural, Mécanisation Agricole, Pêche et Aquaculture", "Nutrition et Technologie Alimentaires", "Agroéconomie, Sociologie et Vulgarisation Rurales", "Entreprenariat Agricole"],
         contact: {
-          email: "fsa@uac.bj",
-          phone: "+229 21 33 44 55",
-          website: "www.fsa.uac.bj"
+          email: "fsa.uac@uac.bj",
+          phone: "229 01 41 78 71 70",
+          website: "https://fsa-uac.bj"
         },
         description: "Référence régionale pour l'agriculture durable et la sécurité alimentaire.",
-        goodToKnow: "La FSA mène des recherches sur les cultures résistantes à la sécheresse."
+        goodToKnow: "La FSA est l’école qui prépare ceux qui nourriront le monde de demain. On y apprend à produire mieux, à protéger les forêts, à élever durablement, à transformer les aliments et à innover dans l’agriculture. Ainsi, si vous voulez contribuer à la sécurité alimentaire, entreprendre dans l’agro-business ou rendre nos systèmes agricoles plus résilients face au climat, la FSA vous forme aux métiers les plus essentiels de notre avenir."
       }),
       formatSchoolPrograms({
         id: "uac-16",
         name: "Faculté des Sciences de la Santé (FSS)",
-        admissionRequirements: ["Baccalauréat série C, D", "Concours", "SVT, PCT"],
+        admissionRequirements: ["Classement"],
         location: "Cotonou",
         country: "Bénin",
-        programs: ["Médecine Générale", "Pharmacie", "Kinésithérapie", "Assistance sociale", "Nutrition et Diététique", "Analyse Biomédicale"],
+        programs: ["Médecine Générale", "Pharmacie", "Pharmacie", "Kinésithérapie", "Assistance sociale", "Nutrition et Diététique"],
         contact: {
           email: "fss@uac.bj",
           phone: "+229 21 77 88 99",
           website: "www.fss.uac.bj"
         },
         description: "Formation médicale complète avec hôpital universitaire de référence.",
-        goodToKnow: "La FSS dispose du seul simulateur de patient haute-fidélité d'Afrique de l'Ouest."
+        goodToKnow: "La FSS forme les soignants et spécialistes qui prennent soin de la vie à chaque étape. On y étudie la médecine, la pharmacie, la kinésithérapie, la nutrition ou encore l’assistance sociale, avec des équipements de pointe comme un simulateur de patient unique en Afrique de l’Ouest. Ainsi, si vous rêvez d’aider, de soigner ou d’innover dans le domaine de la santé, la FSS vous offre un cadre solide pour apprendre, pratiquer et faire la différence."
       }),
       formatSchoolPrograms({
         id: "uac-17",
         name: "École Polytechnique d'Abomey-Calavi (EPAC)",
-        admissionRequirements: ["Baccalauréat série C, D, E", "Classement", "Maths, Physique"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Génie de Technologie Alimentaire", "Production et Santé animale", "Génie de l'Environnement", "Génie d'Imagerie médicale et de Radiothérapie", "Génie Civil", "Génie Electrique", "Génie Mécanique et Energétique", "Génie Informatique et Télécom", "Génie Chimique procédés", "Machinisme Agricole", "Génie Biomédical (Maintenance Biomédicale et Hospitalière)"],
+        programs: ["Analyse Biomédicale", "Génie de Technologie Alimentaire", "Production et Santé animale", "Génie de l'Environnement", "Génie d'Imagerie médicale et de Radiothérapie", "Génie Civil", "Génie Electrique", "Génie Mécanique et Energétique", "Génie Informatique et Télécom", "Génie Chimique procédés", "Machinisme Agricole", "Génie Biomédical (Maintenance Biomédicale et Hospitalière)"],
         contact: {
-          email: "epac@uac.bj",
-          phone: "+229 21 60 70 80",
-          website: "www.epac.uac.bj"
+          email: "",
+          phone: "",
+          website: "https://epac.eacademia.bj"
         },
         description: "Formation d'ingénieurs orientée vers les défis industriels africains.",
-        goodToKnow: "L'EPAC collabore avec des entreprises comme SONACOP et MTN."
+        goodToKnow: "L’EPAC forme les ingénieurs qui construisent l’Afrique de demain, dans des domaines clés comme l’énergie, la santé, l’alimentation, l’environnement ou le numérique. Ainsi, si vous voulez concevoir des infrastructures, créer des solutions technologiques ou améliorer la vie des populations à travers l’ingénierie, l’EPAC vous ouvre les portes des secteurs les plus stratégiques et recherchés du continent."
+      }),
+      formatSchoolPrograms({
+        id: "uac-181",
+        name: "Centre de Formation et de Recherche en matière de Population (CEFORP)",
+        admissionRequirements: ["Classement"],
+        location: "Cotonou",
+        country: "Bénin",
+        programs: ["Dynamique de Population et Planification Régionale"],
+        contact: {
+          email: "",
+          phone: "+229 63 41 92 10",
+          website: ""
+        },
+        description: "Centre spécialisé dans l’étude des populations et l’aménagement du territoire en Afrique.",
+goodToKnow: "Le CEFORP forme les experts capables d’analyser les évolutions démographiques pour mieux planifier les villes, les politiques sociales et les projets de développement. Ainsi, si vous voulez contribuer à une meilleure organisation des territoires et à des politiques publiques efficaces, vous y trouverez les outils pour agir sur le terrain."
       }),
       formatSchoolPrograms({
         id: "uac-18",
         name: "Haute École de Commerce International (HERCI)",
-        admissionRequirements: ["Baccalauréat série B, C, D", "Classement", "Maths, Langues"],
-        location: "Cotonou",
+        admissionRequirements: ["Classement"],
+        location: "Porto-Novo",
         country: "Bénin",
         programs: ["Négoce International", "Gestion des Relations Maritimes Internationales", "Commerce International"],
         contact: {
-          email: "herci@uac.bj",
-          phone: "+229 21 50 60 70",
-          website: "www.herci.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
-        description: "Spécialiste du négoce et des chaînes d'approvisionnement en Afrique.",
-        goodToKnow: "L'HERCI forme aux spécificités des marchés africains."
+        description: "École spécialisée dans le commerce international et la logistique portuaire, avec un ancrage fort sur les réalités économiques africaines.",
+        goodToKnow: "L’HERCI forme les futurs professionnels du négoce et des échanges internationaux, capables de comprendre les marchés africains et de gérer des flux commerciaux à l’échelle mondiale. Ainsi, si vous voulez travailler dans les ports, les douanes, les entreprises d’import-export ou lancer votre propre activité, cette école vous donne les clés pour réussir dans un monde connecté."
       }),
       formatSchoolPrograms({
-        id: "uac-19",
-        name: "Institut National de l'Éducation Physique (INEP)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Tests sportifs", "EPS"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Education Physique et Sportive", "Entrainement Sportif", "Développement communautaire", "Animation", "Récréologie", "Entrepreneuriat social"],
-        contact: {
-          email: "inep@uac.bj",
-          phone: "+229 20 77 66 55",
-          website: "www.inep.uac.bj"
-        },
-        description: "Centre d'excellence pour les métiers du sport et de la rééducation.",
-        goodToKnow: "L'INEP a formé les coachs des équipes nationales."
-      }),
+  id: "uac-19",
+  name: "Institut National de l'Éducation Physique (INEP) (ex INJEPS)",
+  admissionRequirements: ["Concours", "Classement"],
+  location: "Adjarra Docodji",
+  country: "Bénin",
+  programs: [
+    "Éducation Physique et Sportive",
+    "Entraînement Sportif",
+    "Développement Communautaire",
+    "Andragogie",
+    "Récréologie",
+    "Entrepreneuriat Social"
+  ],
+  contact: {
+    email: "",
+    phone: "+229 01 20 21 28 28",
+    website: ""
+  },
+  description: "Pôle national de formation aux métiers du sport, de l’accompagnement social et de la motricité humaine.",
+  goodToKnow: "L'INEP forme les professionnels qui encadrent les équipes nationales, les éducateurs sportifs, les acteurs du bien-être collectif, ainsi que les porteurs de projets à impact social. C’est la porte d’entrée vers une carrière dans le sport de haut niveau, l’éducation, ou l’innovation sociale par le mouvement."
+}),
       formatSchoolPrograms({
-        id: "uac-20",
-        name: "École Normale Supérieure de Porto-Novo (ENS)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Concours", "Discipline majeure"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Français", "Philosophie"],
-        contact: {
-          email: "ens@uac.bj",
-          phone: "+229 20 88 99 00",
-          website: "www.ens.uac.bj"
-        },
-        description: "Institution historique formant les enseignants-chercheurs depuis 1962.",
-        goodToKnow: "L'ENS est le vivier des futurs professeurs d'université."
-      }),
+  id: "uac-20",
+  name: "École Normale Supérieure de Porto-Novo (ENS)",
+  admissionRequirements: ["Concours"],
+  location: "Porto-Novo",
+  country: "Bénin",
+  programs: [
+    "Histoire et Géographie",
+    "Espagnol",
+    "Allemand",
+    "Anglais",
+    "Français",
+    "Philosophie"
+  ],
+  contact: {
+    email: "ens.uac@uac.bj",
+    phone: "+229 01 97 69 88 73",
+    website: ""
+  },
+  description: "Institution pionnière dans la formation des enseignants du supérieur et des cadres pédagogiques depuis 1962.",
+  goodToKnow: "L’ENS incarne l’excellence académique dans les lettres et sciences humaines. Elle forme des formateurs, des pédagogues de haut niveau et des penseurs engagés, prêts à transmettre, inspirer et transformer le paysage éducatif africain."
+}),
       formatSchoolPrograms({
-        id: "uac-21",
-        name: "Faculté de Droit et Science Politique (FADESP)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement", "Culture juridique"],
-        location: "Abomey-Calavi",
-        country: "Bénin",
-        programs: ["Droit", "Sciences Politiques"],
-        contact: {
-          email: "fadesp@uac.bj",
-          phone: "+229 21 70 80 90",
-          website: "www.fadesp.uac.bj"
-        },
-        description: "Berceau de l'élite judiciaire et politique béninoise.",
-        goodToKnow: "La FADESP organise des simulations de procès à la Cour Constitutionnelle."
-      }),
+  id: "uac-21",
+  name: "Faculté de Droit et Science Politique (FADESP)",
+  admissionRequirements: ["Classement"],
+  location: "Abomey-Calavi",
+  country: "Bénin",
+  programs: ["Droit", "Sciences Politiques"],
+  contact: {
+    email: "",
+    phone: "",
+    website: ""
+  },
+  description: "Berceau stratégique de l’élite juridique et politique du Bénin, formant les esprits appelés à gouverner, défendre et transformer la société.",
+  goodToKnow: "La FADESP cultive une pédagogie immersive : les étudiants y participent à des procès simulés à la Cour Constitutionnelle, développant ainsi un sens aigu du droit, de l’éthique et de la rhétorique."
+}),
       formatSchoolPrograms({
-        id: "uac-22",
-        name: "Faculté des Sciences Économiques (FASEG)",
-        admissionRequirements: ["Baccalauréat série B, C, D", "Classement", "Maths, Économie"],
-        location: "Abomey-Calavi",
-        country: "Bénin",
-        programs: ["Sciences Economiques et de Gestion (Tronc commun)", "Econométrie et Statistiques Appliquées", "Sciences et Techniques Comptables et Financières (STCF)"],
-        contact: {
-          email: "faseg@uac.bj",
-          phone: "+229 21 55 66 77",
-          website: "www.faseg.uac.bj"
-        },
-        description: "Pôle d'excellence en analyse économique quantitative.",
-        goodToKnow: "La FASEG forme les experts qui élaborent les politiques économiques nationales."
-      }),
+  id: "uac-22",
+  name: "Faculté des Sciences Économiques (FASEG)",
+  admissionRequirements: ["Classement"],
+  location: "Abomey-Calavi",
+  country: "Bénin",
+  programs: [
+    "Sciences Economiques et de Gestion (Tronc commun)",
+    "Econométrie et Statistiques Appliquées",
+    "Sciences et Techniques Comptables et Financières (STCF)"
+  ],
+  contact: {
+    email: "",
+    phone: "",
+    website: "https://faseg-uac.bj"
+  },
+  description: "Carrefour académique où se forment les architectes des systèmes économiques de demain.",
+  goodToKnow: "La FASEG façonne les esprits capables de modéliser les dynamiques macroéconomiques, d’élaborer des politiques publiques et d’optimiser les performances financières des institutions nationales et internationales."
+}),
       formatSchoolPrograms({
-        id: "uac-23",
-        name: "Faculté des Sciences et Techniques (FAST)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "Maths, Physique"],
-        location: "Abomey-Calavi",
-        country: "Bénin",
-        programs: ["Sciences de la Vie et de la Terre", "Physique-Chimie", "Mathématiques Informatiques et Applications", "Energie Renouvelable et Système Energétique", "Céréaliculture, Standardologie et Ressources Biologiques", "Microbiologie et Biotechnologie Alimentaire", "Hydrobiologie Appliquée"],
-        contact: {
-          email: "fast@uac.bj",
-          phone: "+229 21 40 50 60",
-          website: "www.fast.uac.bj"
-        },
-        description: "Formation scientifique orientée vers l'innovation technologique.",
-        goodToKnow: "La FAST développe des solutions solaires pour les zones rurales."
-      }),
+  id: "uac-23",
+  name: "Faculté des Sciences et Techniques (FAST)",
+  admissionRequirements: ["Classement"],
+  location: "Abomey-Calavi",
+  country: "Bénin",
+  programs: [
+    "Sciences de la Vie et de la Terre",
+    "Physique-Chimie",
+    "Mathématiques Informatiques et Applications",
+    "Énergie Renouvelable et Système Énergétique",
+    "Microbiologie et Biotechnologie Alimentaire",
+    "Hydrobiologie Appliquée"
+  ],
+  contact: {
+    email: "",
+    phone: "",
+    website: ""
+  },
+  description: "Épicentre de la recherche scientifique appliquée aux grands enjeux de demain.",
+  goodToKnow: "À la FAST, vous apprenez à concevoir des innovations durables : des biotechnologies alimentaires aux énergies vertes, en passant par la modélisation mathématique des systèmes complexes. C’est le lieu idéal pour devenir un acteur de la transition écologique, énergétique et numérique en Afrique."
+}),
       formatSchoolPrograms({
-        id: "uac-24",
-        name: "Institut Confucius",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Entretien", "Mandarin (débutants acceptés)"],
-        location: "Abomey-Calavi",
-        country: "Bénin",
-        programs: ["Langue Chinoise", "Didactique du Chinois"],
-        contact: {
-          email: "confucius@uac.bj",
-          phone: "+229 21 90 12 34",
-          website: "www.confucius.uac.bj"
-        },
-        description: "Centre officiel pour l'apprentissage du chinois et les échanges sino-béninois.",
-        goodToKnow: "L'Institut offre des bourses d'études en Chine."
-      })
+  id: "uac-24",
+  name: "Institut Confucius",
+  admissionRequirements: [""],
+  location: "Abomey-Calavi",
+  country: "Bénin",
+  programs: ["Langue Chinoise", "Didactique du Chinois"],
+  contact: {
+    email: "silanickel@gmail.com",
+    phone: "+229 01 67 53 79 06",
+    website: ""
+  },
+  description: "Passerelle culturelle et linguistique entre le Bénin et la Chine.",
+  goodToKnow: "L’Institut Confucius initie aux subtilités de la langue chinoise tout en facilitant des opportunités concrètes : bourses d'études, échanges culturels, certifications linguistiques officielles. Une réelle immersion dans le monde sinophone pour bâtir des carrières internationales."
+})
     ]
   },
   {
