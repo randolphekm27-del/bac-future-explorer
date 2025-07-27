@@ -107,7 +107,7 @@ export const formatProgramName = (program: string): string => {
     "Administration Générale": "Admin Générale",
     "Administration des Finances": "Admin Finances",
     "Secrétariat de Gestion": "Secrétariat",
-    "Sciences et Techniques de l'Information documentaire": "Info-Doc",
+    "Sciences et Techniques de l'Information documentaire": "Sciences et Techniques de l'Information documentaire",
     "Génie Logiciel": "Génie Logiciel",
     "Internet et Multimédia": "Multimédia",
     "Intelligence artificielle (IA)": "Intelligence Artificielle",
@@ -150,6 +150,7 @@ export const formatProgramName = (program: string): string => {
     "Sciences et Techniques Comptables et Financières (STCF)": "Comptabilité-Finance",
     "Sciences de la Vie et de la Terre": "SVT",
     "Physique-Chimie": "Physique-Chimie",
+    "Sciences et Techniques de l'Ingénieur":"Sciences et Techniques de l'Ingénieur",
     "Mathématiques Informatiques et Applications": "Maths-Info"
   };
   
