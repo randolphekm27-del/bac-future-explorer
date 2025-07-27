@@ -225,7 +225,7 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Porto-Novo",
         country: "Bénin",
-        programs: ["Cycle préparatoire : Mathématiques, Physiques et Science de l'Ingénieur (MPSI)", "Cycle préparatoire : Physique-Chimie et Science de l'Ingénieur (PCSI)"],
+        programs: ["Mathématiques, Physiques et Science de l'Ingénieur (MPSI)", "Physique-Chimie et Science de l'Ingénieur (PCSI)"],
         contact: {
           email: "secretariat@imsp-uac.org",
           phone: "+229 20 22 24 55",
