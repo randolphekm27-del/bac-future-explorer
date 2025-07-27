@@ -969,183 +969,150 @@ goodToKnow: "Le CEFORP forme les experts capables d’analyser les évolutions d
     schools: [
       formatSchoolPrograms({
         id: "una-1",
-        name: "Ecole d'Agriculture (EAG)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT/Résine et espaces", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
+        name: "Ecole d'Aquaculture (EAQ)",
+        admissionRequirements: ["Classement"],
+        location: "Adjohou",
         country: "Bénin",
-        programs: ["Agriculture"],
+        programs: ["Aquaculture"],
         contact: {
-          email: "eag@una.bj",
-          phone: "+229 21 23 45 68",
-          website: "www.una.bj/eag"
+          email: "ecole.aquaculture@una.bj",
+          phone: "+229 97 71 92 03",
+          website: "ecole.aquaculture@una.bj"
         },
         description: "Formation technique en agriculture et production végétale.",
-        goodToKnow: "Formation polyvalente avec seulement 39 places disponibles. Débouchés dans les entreprises agricoles et l'enseignement technique."
+        goodToKnow: "L’École d’Aquaculture forme des experts en élevage aquatique, avec une formation technique pointue et limitée à 39 places. Ainsi, si vous souhaitez travailler dans l’agriculture moderne ou l’enseignement, cette école vous ouvre des portes solides."
       }),
       formatSchoolPrograms({
         id: "una-2",
         name: "Ecole d'Horticulture et d'Aménagement des Espaces Verts (EHAEV)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT PV et Foresterie", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
+        admissionRequirements: ["Classement"],
+        location: "Idigny",
         country: "Bénin",
         programs: ["Horticulture et Aménagement des espaces Verts"],
         contact: {
           email: "ehaev@una.bj",
-          phone: "+229 21 23 45 69",
+          phone: "+229 20 213 288",
           website: "www.una.bj/ehaev"
         },
         description: "Spécialisée dans la production horticole et l'aménagement paysager.",
-        goodToKnow: "68 places disponibles. Débouchés dans l'aménagement urbain et la production horticole."
+        goodToKnow: "L’EHAEV forme des spécialistes en horticulture et aménagement paysager, avec 68 places disponibles chaque année. Ainsi, si vous aimez créer des espaces verts ou travailler dans la production végétale, cette école vous prépare à de belles carrières."
       }),
       formatSchoolPrograms({
         id: "una-3",
         name: "Ecole de Gestion et de Production Végétale et Semencière (EGPVS)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT PV", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
+        admissionRequirements: ["Classement"],
+        location: "Idigny",
         country: "Bénin",
         programs: ["Gestion et Production Végétale et Semencière"],
         contact: {
-          email: "egpvs@una.bj",
-          phone: "+229 21 23 45 70",
+          email: "scolarité.centrale@una.bj",
+          phone: "+229 97 719 203",
           website: "www.una.bj/egpvs"
         },
         description: "Formation en production végétale et gestion des semences.",
-        goodToKnow: "82 places disponibles. Débouchés dans la recherche agricole et l'entreprenariat végétal."
+        goodToKnow: "L’EGPVS prépare aux métiers de la recherche agricole, de la production végétale et de l’entrepreneuriat semencier, en formant des experts capables de répondre aux enjeux agricoles actuels."
       }),
       formatSchoolPrograms({
         id: "una-4",
-        name: "Industrie des Produits Agro-Alimentaires et Nutrition Humaine (IPA-NH)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT/Nutrition et Technologie Alimentaire", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
+        name: "Ecole des Sciences et Techniques de Conservations et de Transformations des Produits Agricoles (ESTCTPA)",
+        admissionRequirements: ["Classement"],
+        location: "Sakété",
         country: "Bénin",
-        programs: ["Industrie des Produits Agro-Alimentaires et Nutrition Humaine"],
+        programs: [
+                  "Industrie des Produits Agro-Alimentaires et Nutrition Humaine",
+                  "Industrie des Bio-Ressources",
+                  "Génie de Conditionnement Emballage et Stockage des Produits Alimentaires"  
+                  ],
         contact: {
-          email: "ipa@una.bj",
-          phone: "+229 21 23 45 71",
+          email: "estctpa2@yahoo.com",
+          phone: "+229 62 985 466",
           website: "www.una.bj/ipa"
         },
         description: "Formation en transformation agroalimentaire et nutrition.",
-        goodToKnow: "30 places disponibles. Débouchés dans les industries agroalimentaires et l'éducation nutritionnelle."
+        goodToKnow: "L’ESTCTPA forme des experts en transformation agroalimentaire, en nutrition humaine et en conditionnement, avec des débouchés dans les industries agroalimentaires, la sécurité alimentaire et l’éducation nutritionnelle."
       }),
       formatSchoolPrograms({
         id: "una-5",
-        name: "Industrie des Bio-Ressources (IBR)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT/Nutrition et Technologie Alimentaire", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
+        name: "Ecole de Génie Rural (EGR)",
+        admissionRequirements: ["Classement"],
+        location: "Kétou",
         country: "Bénin",
-        programs: ["Industrie des Bio-Ressources"],
+        programs: [
+                   "Agroéquipement",
+                   "Electrification Rurale et Energies Renouvelables",
+                   "Infrastructures Rurales et Assainissement"
+                   ],
         contact: {
-          email: "ibr@una.bj",
-          phone: "+229 21 23 45 72",
+          email: "scolarité.centrale@una.bj",
+          phone: "+229 97 719 203",
           website: "www.una.bj/ibr"
         },
         description: "Formation en valorisation des bio-ressources.",
-        goodToKnow: "28 places disponibles. Débouchés dans les industries cosmétiques et de phytothérapie."
+        goodToKnow: "L’EGR forme des spécialistes en électrification rurale, agroéquipements et infrastructures rurales, avec des débouchés dans les projets de développement, l’ingénierie rurale et les énergies renouvelables."
       }),
       formatSchoolPrograms({
         id: "una-6",
-        name: "Génie de Conditionnement Emballage et Stockage des Produits Alimentaires (GCES)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT/Nutrition et Technologie Alimentaire", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
+        name: "Ecole de Gestion et d'Exploitation des Systèmes d'Elevages (EGESE)",
+        admissionRequirements: ["Classement"],
+        location: "Kétou",
         country: "Bénin",
-        programs: ["Génie de Conditionnement Emballage et Stockage des Produits Alimentaires"],
+        programs: ["Productions et Santé Animales"],
         contact: {
           email: "gces@una.bj",
           phone: "+229 21 23 45 73",
           website: "www.una.bj/gces"
         },
         description: "Formation en conditionnement et stockage des produits alimentaires.",
-        goodToKnow: "30 places disponibles. Débouchés dans la conception d'emballages et structures de stockage."
+        goodToKnow: "Débouchés dans les exploitations animales, services vétérinaires, entreprises agro-pastorales, et projets de développement rural."
       }),
       formatSchoolPrograms({
         id: "una-7",
-        name: "Ecole d'Aquaculture (EAq)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT/Pêche et aquaculture", "Classement", "SVT, Maths, SPCT"],
+        name: "Ecole d'Agrobusiness et de Politiques Agricoles (EAPA)",
+        admissionRequirements: ["Classement"],
         location: "Porto-Novo",
         country: "Bénin",
-        programs: ["Aquaculture"],
+        programs: [ 
+                   "Finance agricole",
+                   "Gestion des EXploitations Agricoles et Entreprises Agroalimentaires",
+                   "Marketing des Intrants et Produits Agricoles"
+                 ],
         contact: {
           email: "eaq@una.bj",
           phone: "+229 21 23 45 74",
           website: "www.una.bj/eaq"
         },
         description: "Formation en production aquacole et gestion des élevages.",
-        goodToKnow: "39 places disponibles. Débouchés dans les entreprises aquacoles et la conception d'aliments."
+        goodToKnow: "Débouchés dans les entreprises agroalimentaires, les banques agricoles, les ONG, et les projets de développement agricole."
       }),
       formatSchoolPrograms({
         id: "una-8",
-        name: "Ecole de Génie Rural (EGR)",
-        admissionRequirements: ["Baccalauréat série C, D, E, F1, F2, F3, DT", "Classement", "Maths, SPCT selon spécialité"],
+        name: "Ecole de Socioligie Rurale et de Vulgarisation Agricole (ESRVA)",
+        admissionRequirements: ["Classement"],
         location: "Porto-Novo",
         country: "Bénin",
-        programs: ["Agroéquipement", "Electrification Rurale et Energies renouvelables", "Infrastructures Hydrauliques et Assainissement"],
+        programs: ["Sociologie rurale et Vulgarisation Agricole"],
         contact: {
           email: "egr@una.bj",
           phone: "+229 21 23 45 75",
           website: "www.una.bj/egr"
         },
         description: "Formation en machinisme agricole et énergies renouvelables.",
-        goodToKnow: "Débouchés dans les entreprises de maintenance et projets d'électrification rurale."
+        goodToKnow: "Débouchés dans les ONG, les services de vulgarisation agricole, les projets de développement rural et les collectivités locales."
       }),
       formatSchoolPrograms({
         id: "una-9",
-        name: "Ecole de Gestion et d'Exploitation des Systèmes d'Elevage (EGER)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT/Production animale", "Classement", "SVT, Maths, SPCT"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Productions et Santé Animales"],
-        contact: {
-          email: "eger@una.bj",
-          phone: "+229 21 23 45 76",
-          website: "www.una.bj/eger"
-        },
-        description: "Formation en élevage et santé animale.",
-        goodToKnow: "68 places disponibles. Débouchés dans les fermes agro-vétérinaires et cliniques animales."
-      }),
-      formatSchoolPrograms({
-        id: "una-10",
-        name: "Ecole d'Agrobusiness et de Politiques Agricoles (EAPA)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT", "Classement", "Maths, SPCT, SVT"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Finance agricole", "Gestion des Exploitations Agricoles et Entreprises Rurales"],
-        contact: {
-          email: "eapa@una.bj",
-          phone: "+229 21 23 45 77",
-          website: "www.una.bj/eapa"
-        },
-        description: "Formation en gestion d'entreprises agricoles et politiques agricoles.",
-        goodToKnow: "Débouchés dans la gestion de coopératives et l'analyse de marché agricole."
-      }),
-      formatSchoolPrograms({
-        id: "una-11",
-        name: "Ecole de Sociologie Rurale et de Vulgarisation Agricole (ESRNA)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT", "Classement", "Maths, SPCT, SVT"],
-        location: "Porto-Novo",
-        country: "Bénin",
-        programs: ["Sociologie rurale et Vulgarisation Agricole"],
-        contact: {
-          email: "esrna@una.bj",
-          phone: "+229 21 23 45 78",
-          website: "www.una.bj/esrna"
-        },
-        description: "Formation en développement rural et vulgarisation agricole.",
-        goodToKnow: "56 places disponibles. Débouchés dans les organisations paysannes et projets de développement."
-      }),
-      formatSchoolPrograms({
-        id: "una-12",
-        name: "Ecole de Foresterie Tropicale (EFort)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "Maths, SPCT, SVT"],
-        location: "Porto-Novo",
+        name: "Ecole de Foresterie Tropicale  (EForT)",
+        admissionRequirements: ["Classement"],
+        location: "Idigny",
         country: "Bénin",
         programs: ["Foresterie Tropicale"],
         contact: {
           email: "efort@una.bj",
-          phone: "+229 21 23 45 79",
-          website: "www.una.bj/efort"
+          phone: "+229 95414726",
+          website: "www.una.bj/eger"
         },
-        description: "Formation en gestion des forêts tropicales.",
-        goodToKnow: "33 places disponibles. Débouchés dans la conservation des ressources et la transformation du bois."
+        description: "Formation en élevage et santé animale.",
+        goodToKnow: " Débouchés dans les services forestiers, ONG environnementales, projets de reboisement, et institutions de conservation."
       })
     ]
   }
