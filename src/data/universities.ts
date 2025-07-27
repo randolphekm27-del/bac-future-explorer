@@ -202,16 +202,7 @@ export const universities: University[] = [
     website: "https://irsp-ouidah.org"
   },
   description: "Formation en santé publique et épidémiologie pour répondre aux enjeux sanitaires locaux.",
-  goodToKnow: `
-    L'IRSP forme des professionnels polyvalents en santé publique, capables de répondre aux défis sanitaires complexes. 
-    Ainsi, si vous souhaitez œuvrer dans la gestion de programmes de vaccination, l'analyse des politiques de santé, 
-    la surveillance épidémiologique ou la sensibilisation communautaire, cette formation vous préparera à intervenir 
-    sur le terrain comme dans les instances décisionnelles, en Afrique et au-delà.
-    
-    Opportunités : Ses diplômés intègrent des organisations internationales (OMS, UNICEF), des ministères de la Santé, 
-    des ONG spécialisées ou des structures de recherche, avec des missions allant de la réponse aux crises sanitaires 
-    à l'optimisation des systèmes de soins.
-  `
+  goodToKnow: "L'IRSP forme des professionnels polyvalents en santé publique, capables de répondre aux défis sanitaires complexes. Ainsi, si vous souhaitez œuvrer dans la gestion de programmes de vaccination, l'analyse des politiques de santé, la surveillance épidémiologique ou la sensibilisation communautaire, cette formation vous préparera à intervenir sur le terrain comme dans les instances décisionnelles, en Afrique et au-delà. Opportunités : Ses diplômés intègrent des organisations internationales (OMS, UNICEF), des ministères de la Santé, des ONG spécialisées ou des structures de recherche, avec des missions allant de la réponse aux crises sanitaires à l'optimisation des systèmes de soins."
 }),
       formatSchoolPrograms({
   id: "uac-2",
@@ -226,10 +217,7 @@ export const universities: University[] = [
     website: ""
   },
   description: "Formation pluridisciplinaire en sciences humaines avec une forte dimension terrain.",
-  goodToKnow: "La FLASH-Adjarra propose des formations en sciences humaines qui étudient la société sous différents angles. 
-    Que ce soit en géographie (pour comprendre l'espace et l'aménagement), en socio-anthropologie (pour analyser 
-    les comportements sociaux) ou en anglais (pour la communication internationale), l'accent est mis sur l'application 
-    pratique des connaissances. Une bonne option si vous aimez réfléchir aux questions de société et travailler sur le terrain."
+  goodToKnow: "La FLASH-Adjarra propose des formations en sciences humaines qui étudient la société sous différents angles. Que ce soit en géographie (pour comprendre l'espace et l'aménagement), en socio-anthropologie (pour analyser les comportements sociaux) ou en anglais (pour la communication internationale), l'accent est mis sur l'application pratique des connaissances. Une bonne option si vous aimez réfléchir aux questions de société et travailler sur le terrain."
 }),
       formatSchoolPrograms({
         id: "uac-3",
@@ -267,119 +255,119 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey6Calavi",
         country: "Bénin",
-        programs: ["Arts dramatiques", "Arts Plastiques", "Musique et Musicologie", "Cinéma et Audiovisuel"],
+        programs: ["Arts dramatiques", "Arts Plastiques", "Musique et Musicologie","Administration Culturelle", "Cinéma et Audiovisuel"],
         contact: {
           email: "",
           phone: "",
           website: ""
         },
         description: "Formation aux métiers des arts vivants et visuels ancrée dans le patrimoine béninois.",
-        goodToKnow: `L'INMAAC forme des créateurs engagés en arts visuels et scéniques. Ainsi, si vous voulez réinventer le patrimoine béninois à travers le théâtre, la peinture ou le cinéma, vous y trouverez un cadre unique au cœur des palais royaux d'Abomey.`
+        goodToKnow: "L'INMAAC forme des créateurs engagés en arts visuels et scéniques. Ainsi, si vous voulez réinventer le patrimoine béninois à travers le théâtre, la peinture ou le cinéma, vous y trouverez un cadre unique au cœur des palais royaux d'Abomey."
       }),
       formatSchoolPrograms({
         id: "uac-6",
-        name: "Centre Interfacultaire de Formation en Environnement (CIFRED)",
-        admissionRequirements: ["Baccalauréat série C, D, EA", "Classement", "SVT, PCT, Maths"],
+        name: "Centre Inter Facultaire de Formation et de Recherche en Environnement pour le Développement Durable (CIFRED)",
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Environnement, Hygiène et Santé publique", "Sciences du cadre de vie"],
+        programs: ["Environnement, Hygiène et Santé publique"],
         contact: {
-          email: "cifred@uac.bj",
-          phone: "+229 21 88 77 66",
-          website: "www.cifred.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Expertise en gestion durable des écosystèmes et santé environnementale.",
-        goodToKnow: `Le CIFRED forme des gardiens des écosystèmes en sciences environnementales. Ainsi, si vous souhaitez lutter contre la pollution ou concevoir des villes durables, vous y acquerrez des solutions pratiques testées dans le bassin du Niger.`
+        goodToKnow: "Le CIFRED forme des gardiens des écosystèmes en sciences environnementales. Ainsi, si vous souhaitez lutter contre la pollution ou concevoir des villes durables, vous y acquerrez des solutions pratiques testées dans le bassin du Niger."
       }),
       formatSchoolPrograms({
         id: "uac-7",
         name: "Institut de Cadre de Vie (ex-IGATE)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement", "Maths, Géographie"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Changements climatiques et savoirs endogènes", "Géomatique et Environnement", "Planification et Gestion des espaces urbains et ruraux"],
+        programs: ["Gestion des cadres de vie", "Gestion des changements climatiques et des écosystèmes", "Géomatique et environnement", "Planification et Gestion des espaces ruraux et urbains"],
         contact: {
-          email: "igate@uac.bj",
-          phone: "+229 21 77 66 55",
-          website: "www.igate.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Formation en aménagement durable des territoires et résilience climatique.",
-        goodToKnow: "Pionnier des 'villes intelligentes' en Afrique de l'Ouest."
+        goodToKnow: "L’Institut du Cadre de Vie forme des spécialistes du territoire en géomatique, planification urbaine et climat. Ainsi, si vous souhaitez transformer nos villes face aux défis environnementaux, vous y apprendrez à cartographier, modéliser et réorganiser les espaces de demain."
       }),
       formatSchoolPrograms({
         id: "uac-8",
         name: "Institut National Médico-Sanitaire (INMeS)",
-        admissionRequirements: ["Baccalauréat série C, D", "Concours", "SVT, PCT"],
+        admissionRequirements: ["Concours"],
         location: "Cotonou",
         country: "Bénin",
-        programs: ["Sciences Obstétricales"],
+        programs: ["Sciences Obstétricales", "Sciences infirmières"],
         contact: {
-          email: "inmes@uac.bj",
-          phone: "+229 21 22 33 44",
-          website: "www.inmes.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Formation pratique aux métiers de la santé avec équipements haute-fidélité.",
-        goodToKnow: "L'INMeS réduit la mortalité maternelle."
+        goodToKnow: "L’INMeS forme des professionnels de la santé en soins infirmiers et en obstétrique. Ainsi, si vous voulez aider les mamans et leurs bébés à rester en bonne santé, vous y apprendrez les bons gestes et les bons réflexes pour faire la différence dès les premiers instants."
       }),
       formatSchoolPrograms({
         id: "uac-9",
         name: "Institut National de l'Eau (INE)",
-        admissionRequirements: ["Baccalauréat série C, D, EA", "Classement", "Maths, SVT"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
         programs: ["Hydrologie quantitative et Gestion intégrée des Ressources", "Hydrogéologie et Gestion intégrée des Ressources", "Ecohydrologie et Gestion intégrée des Ressources", "Gestion des crises et risques liés à l'eau et au climat", "Génie rural et Maîtrise de l'Eau", "Hydraulique et Assainissement", "Eau Hygiène et Assainissement (EHA)"],
         contact: {
-          email: "ine@uac.bj",
-          phone: "+229 21 55 44 33",
-          website: "www.ine.uac.bj"
+          email: "info@c2ea.ine-uac.net",
+          phone: "+229 0141552764 / 0196638124",
+          website: "https://c2ea.ine-uac.net"
         },
         description: "Centre africain de référence pour la gestion intégrée des ressources en eau.",
-        goodToKnow: "L'INE forme les experts qui assainissent le fleuve Ouémé."
+        goodToKnow: "L’INE forme des spécialistes de l’eau capables de prévenir les pénuries, d’assainir les villes et de protéger les populations. Ainsi, si vous voulez avoir un métier utile et recherché pour relever les défis climatiques, c’est l’endroit idéal pour apprendre à faire la différence."
       }),
       formatSchoolPrograms({
         id: "uac-10",
         name: "École Nationale d'Économie Appliquée (ENEAM)",
-        admissionRequirements: ["Baccalauréat série B, C, D", "Classement", "Maths, Économie"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Administration des Réseaux informatiques", "Analyse Informatique et Programmation", "Assurance", "Banque et Finance de Marché", "Banque et Institutions des Micro finances", "Marketing", "Gestion des Ressources Humaines", "Gestion des Transports", "Gestion de Logistique", "Statistique Economique et Sectorielle", "Statistique Démographique et Sociale", "Planification et Gestion des Projets", "Planification et Economie du Développement Durable", "Développement Local et Régional", "Gestion Financière et Comptable", "Gestion du Patrimoine Culturel"],
+        programs: ["Administration des Réseaux informatiques", "Analyse Informatique et Programmation", "Administration des Réseaux informatiques", "Assurance", "Banque et Finance de Marché", "Banque et Institutions des Micro finances", "Marketing", "Gestion des Ressources Humaines", "Gestion des Transports", "Gestion de Logistique", "Statistique Economique et Sectorielle", "Statistique Démographique et Sociale", "Planification et Gestion des Projets", "Planification et Economie du Développement Durable", "Développement Local et Régional", "Gestion Financière et Comptable"],
         contact: {
           email: "eneam@uac.bj",
-          phone: "+229 21 36 00 74",
+          phone: "+229 21-30-41-68",
           website: "www.eneam.uac.bj"
         },
         description: "Leader en formation managériale avec accréditation internationale CAMES.",
-        goodToKnow: "Classée parmi les top 5 écoles de management ouest-africaines."
+        goodToKnow: "L’ENEAM est l’une des meilleures écoles qui forment dans les métiers les plus recherchés de notre siècle, comme la finance, l’informatique, la logistique ou encore les statistiques. Ainsi, si vous voulez trouver un bon travail, aider au développement du pays ou même créer votre propre entreprise, c’est une école qui vous donne des bases solides pour réussir."
       }),
       formatSchoolPrograms({
         id: "uac-11",
         name: "École du Patrimoine Africain (EPA)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B", "Classement + Entretien", "Histoire"],
+        admissionRequirements: ["Classement" ],
         location: "Porto-Novo",
         country: "Bénin",
         programs: ["Administration Culturelle"],
         contact: {
-          email: "epa@uac.bj",
-          phone: "+229 20 11 22 33",
-          website: "www.epa.uac.bj"
+          email: "epa@epa-prema.net",
+          phone: "+229 01 96 04 46 02",
+          website: "https://www.epa-prema.net"
         },
         description: "Unique en Afrique francophone pour la muséologie et l'archivage des traditions.",
-        goodToKnow: "L'EPA restaure les trésors royaux d'Abomey."
+        goodToKnow: "L’EPA est une école unique qui forme à la sauvegarde de la culture africaine, à travers la gestion des musées, des archives et des traditions. Ainsi, si vous aimez l’histoire, l’art ou l’identité de nos peuples, c’est l’endroit idéal pour apprendre à protéger ce que l’Afrique a de plus précieux."
       }),
       formatSchoolPrograms({
         id: "uac-12",
         name: "Faculté des Sciences Humaines et Sociales (FASHS)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement", "Français, Philosophie"],
+        admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Géographie et Aménagement du Territoire", "Sciences de l'Éducation", "Lettres Modernes", "Histoire et Archéologie", "Psychologie du travail et des Organisations", "Journalisme", "Métiers de l'Audiovisuel et du Multimédia"],
+        programs: ["Géographie et Aménagement du Territoire","Psychologie", "Sciences de l'Éducation", "Philosophie", "Socio-Anthropologie", "Histoire et Archéologie", "Psychologie du travail et des Organisations"],
         contact: {
-          email: "fashs@uac.bj",
-          phone: "+229 21 66 77 88",
-          website: "www.fashs.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Approche interdisciplinaire des enjeux sociaux et médiatiques contemporains.",
-        goodToKnow: "La FASHS abrite le seul master en journalisme d'investigation du Bénin."
+        goodToKnow: "La FASHS forme des experts capables de décrypter les comportements humains, gérer les territoires et transmettre le savoir. Ainsi, si vous voulez comprendre les défis sociaux actuels et travailler dans l’éducation, la recherche, la communication ou le développement, cette faculté vous ouvre des portes solides pour bâtir votre avenir."
       }),
       formatSchoolPrograms({
         id: "uac-13",
