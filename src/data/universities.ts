@@ -370,19 +370,34 @@ export const universities: University[] = [
         goodToKnow: "La FASHS forme des experts capables de décrypter les comportements humains, gérer les territoires et transmettre le savoir. Ainsi, si vous voulez comprendre les défis sociaux actuels et travailler dans l’éducation, la recherche, la communication ou le développement, cette faculté vous ouvre des portes solides pour bâtir votre avenir."
       }),
       formatSchoolPrograms({
-        id: "uac-13",
-        name: "École Nationale d'Administration (ENA)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Concours rigoureux", "Culture générale"],
+        id: "uac-131",
+        name: "École Nationale des Sciences et Techniques de l'Information et de la Communication (ENSTIC)",
+        admissionRequirements: ["Concours"],
         location: "Porto-Novo",
+        country: "Bénin",
+        programs: ["Journalisme", "Métiers de l'Audiovisuel et du Multimédia"],
+        contact: {
+          email: "secretariat@uac.bj",
+          phone: "+229 01 97 86 78 78",
+          website: "non disponible"
+        },
+        description: "Pépinière de l'élite administrative béninoise depuis 1964.",
+        goodToKnow: "L’ENSTIC est l’école de référence pour apprendre à informer, filmer et raconter le monde. Ainsi, si vous rêvez de devenir journaliste, réalisateur ou créateur de contenus, vous y développerez les compétences pour faire entendre les voix d’aujourd’hui et influencer les idées de demain."
+      }),
+      formatSchoolPrograms({
+        id: "uac-13",
+        name: "École Nationale d'Administration (ENA) (ex ENAM)",
+        admissionRequirements: ["Classement"],
+        location: "Abomey Calavi",
         country: "Bénin",
         programs: ["Administration Générale", "Administration des Finances", "Secrétariat de Gestion", "Sciences et Techniques de l'Information documentaire"],
         contact: {
-          email: "ena@uac.bj",
-          phone: "+229 20 99 88 77",
-          website: "www.ena.uac.bj"
+          email: "",
+          phone: "",
+          website: ""
         },
         description: "Pépinière de l'élite administrative béninoise depuis 1964.",
-        goodToKnow: "L'ENA forme les hauts fonctionnaires qui dirigent les ministères."
+        goodToKnow: "L’ENA est l’école qui prépare les futurs cadres de l’État, dans la gestion, les finances et l’administration publique. Ainsi, si vous rêvez de servir votre pays, d’occuper des postes à responsabilité et de participer aux grandes décisions, c’est ici que votre parcours commence."
       }),
       formatSchoolPrograms({
         id: "uac-14",
