@@ -578,7 +578,7 @@ export const universities: University[] = [
       formatSchoolPrograms({
         id: "up-1",
         name: "Faculté d'Agronomie (FA)",
-        admissionRequirements: ["Baccalauréat série C, D, DEAT", "Classement", "Maths, PCT, SVT"],
+        admissionRequirements: [ "Classement"],
         location: "Parakou",
         country: "Bénin",
         programs: [
@@ -594,12 +594,12 @@ export const universities: University[] = [
           website: "www.fa.up.bj"
         },
         description: "Formation d'excellence en agronomie et développement rural.",
-        goodToKnow: "La FA de Parakou est leader en innovation agricole avec une ferme-école de 100ha."
+        goodToKnow: "La FA de Parakou forme des technicien·ne·s et des ingénieur·e·s agricoles. Ainsi, si vous visez un métier utile dans la production végétale, l’élevage, la nutrition ou la gestion des ressources naturelles, cette école vous propose une formation solide et recherchée."
       }),
       formatSchoolPrograms({
         id: "up-2",
         name: "Faculté de Médecine (FM)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "Maths, PCT, SVT"],
+        admissionRequirements: ["Classement"],
         location: "Parakou",
         country: "Bénin",
         programs: ["Médecine Humaine"],
@@ -609,12 +609,12 @@ export const universities: University[] = [
           website: "www.fm.up.bj"
         },
         description: "Formation complète de médecins généralistes avec pratique hospitalière.",
-        goodToKnow: "La FM dispose d'un CHU de référence régionale."
+        goodToKnow: "La FM de Parakou forme des médecins généralistes à travers un enseignement rigoureux et une forte immersion clinique. Ainsi, si vous souhaitez soigner, accompagner et répondre aux besoins de santé des populations, vous y développerez des compétences solides pour exercer avec responsabilité et efficacité."
       }),
       formatSchoolPrograms({
         id: "up-3",
-        name: "ENFTS (École Nationale de Formation en Santé Publique)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "Maths, PCT, SVT"],
+        name: "ENATSE (École Nationale de Formation des Techniciens Supérieurs en Santé Publique et Surveillance Epidémiologique)",
+        admissionRequirements: ["Classement"],
         location: "Parakou",
         country: "Bénin",
         programs: ["Santé Publique et Surveillance Epidémiologique"],
@@ -624,12 +624,12 @@ export const universities: University[] = [
           website: "www.enfts.up.bj"
         },
         description: "Spécialisation en lutte contre les épidémies et politiques sanitaires.",
-        goodToKnow: "Centre de formation des 'détectives de maladies'."
+        goodToKnow: "L’ENATSE forme des spécialistes capables de repérer et stopper les épidémies avant qu’elles ne se propagent. Ainsi, si vous voulez protéger des vies, prévenir les maladies et aider le pays à mieux réagir face aux crises sanitaires, c’est ici que ça commence."
       }),
       formatSchoolPrograms({
         id: "up-4",
-        name: "Institut de Formation en Soins Infirmiers (IFSI)",
-        admissionRequirements: ["Baccalauréat série C, D", "Concours", "PCT, SVT"],
+        name: "Institut de Formation en Soins Infirmiers et Obstétricaux (IFSIO)",
+        admissionRequirements: ["Concours"],
         location: "Parakou",
         country: "Bénin",
         programs: ["Soins Infirmiers", "Soins Obstétricaux"],
@@ -639,12 +639,12 @@ export const universities: University[] = [
           website: "www.ifsi.up.bj"
         },
         description: "Formation pratique aux métiers de nursing et d'accouchement.",
-        goodToKnow: "L'IFSI forme 70% du personnel infirmier du Nord-Bénin."
+        goodToKnow: "L’IFSIO forme celles et ceux qui veillent sur la vie, du lit d’hôpital à la salle d’accouchement. Ainsi, si vous voulez apprendre un métier concret, utile chaque jour, et qui touche directement la santé des familles, cette école vous donne les gestes et le cœur pour le faire bien."
       }),
       formatSchoolPrograms({
         id: "up-5",
         name: "Institut Universitaire de Technologie (IUT)",
-        admissionRequirements: ["Baccalauréat série B, C, D, G", "Classement", "Maths, Français, Anglais"],
+        admissionRequirements: ["Classement"],
         location: "Parakou",
         country: "Bénin",
         programs: [
@@ -652,63 +652,68 @@ export const universities: University[] = [
           "Gestion Commerciale",
           "Gestion des Entreprises",
           "Gestion des Transports et Logistique",
-          "Informatique de Gestion"
+          "Informatique de Gestion",
+          "Gestion des Ressources Humaines"
         ],
         contact: {
           email: "iut@up.bj",
-          phone: "+229 23 61 04 04",
+          phone: " +229 01 68 12 89 42",
           website: "www.iut.up.bj"
         },
         description: "Formation professionnalisante en gestion et technologies appliquées.",
-        goodToKnow: "L'IUT collabore avec des entreprises locales."
+        goodToKnow: "L’IUT forme des professionnels en gestion et informatique prêts à rejoindre le monde du travail. Ainsi, si vous voulez apprendre un métier concret, avec des liens directs avec les entreprises locales, cette école vous prépare à réussir rapidement."
       }),
       formatSchoolPrograms({
         id: "up-6",
         name: "Faculté des Sciences Economiques et de Gestion (FASEG)",
-        admissionRequirements: ["Baccalauréat série B, C, D, G", "Classement", "Maths, Économie, Anglais"],
+        admissionRequirements: ["Classement"],
         location: "Parakou",
         country: "Bénin",
         programs: [
           "Analyse et Politique Economique",
           "Économie Agricole",
+          "Economie et Finance des collectivités Locales",
+          "Economie et Finance Internationales",
           "Finance et Comptabilité",
+          "Marketing et Management des Organisations",
           "Entrepreneuriat et Gestion"
         ],
         contact: {
-          email: "faseg@up.bj",
-          phone: "+229 23 61 05 05",
-          website: "www.faseg.up.bj"
+          email: "contact.faseg-up@.gouv.bj",
+          phone: "+229 0123610712",
+          website: "www.fasegup.com"
         },
         description: "Expertise en économie du développement et gestion d'entreprise.",
-        goodToKnow: "La FASEG forme les cadres des institutions comme la Chambre de Commerce du Borgou."
+        goodToKnow: "La FASEG forme des experts en économie et gestion, essentiels au développement local et international. Ainsi, si vous souhaitez travailler dans les entreprises, les institutions ou lancer votre propre projet, cette faculté vous donne les bases solides pour réussir."
       }),
       formatSchoolPrograms({
         id: "up-7",
         name: "Faculté de Droit et Sciences Politiques (FDSP)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement", "Français, Culture juridique"],
+        admissionRequirements: ["Classement"],
         location: "Parakou",
         country: "Bénin",
-        programs: ["Droit Privé", "Droit Public", "Sciences Politiques"],
+        programs: ["Droit Privé", "Droit Public", "Sciences Politiques et Relation Internationales"],
         contact: {
           email: "fdsp@up.bj",
           phone: "+229 23 61 06 06",
           website: "www.fdsp.up.bj"
         },
         description: "Formation juridique adaptée aux enjeux du Nord-Bénin.",
-        goodToKnow: "La FDSP est réputée pour ses cliniques juridiques."
+        goodToKnow: "La FDSP forme des juristes et politologues capables d’agir pour la justice et le développement. Ainsi, si vous voulez défendre les droits, comprendre les lois ou contribuer aux décisions publiques, cette faculté vous donne les outils pour devenir un acteur clé de la société."
       }),
       formatSchoolPrograms({
         id: "up-8",
         name: "Faculté des Lettres, Arts et Sciences Humaines (FLASH)",
-        admissionRequirements: ["Baccalauréat série A1, A2, B, C, D", "Classement", "Langues vivantes/Français"],
+        admissionRequirements: ["Classement"],
         location: "Parakou",
         country: "Bénin",
         programs: [
           "Allemand",
           "Anglais",
           "Espagnol",
-          "Géographie",
-          "Sociologie"
+          "Géographie et Aménagement du Territoire",
+          "Sociologie Anthropogie",
+          "Lettres Modernes"
         ],
         contact: {
           email: "flash@up.bj",
@@ -716,7 +721,25 @@ export const universities: University[] = [
           website: "www.flash.up.bj"
         },
         description: "Centre d'excellence en langues et sciences sociales.",
-        goodToKnow: "La FLASH abrite le seul département d'études peules (Fulfulde) du Bénin."
+        goodToKnow: "La FLASH forme des passionnés de langues, de cultures et de sciences humaines. Ainsi, si vous aimez comprendre les sociétés, parler plusieurs langues, ou analyser les grands enjeux du monde, c’est l’école idéale pour développer votre pensée et construire une carrière dans l’enseignement, la recherche, la coopération ou la culture."
+      }),
+      formatSchoolPrograms({
+        id: "up-9",
+        name: "Ecole Nationale de Statistique, de Planification et de Démographie (ENSPD)",
+        admissionRequirements: ["Concours"],
+        location: "Parakou",
+        country: "Bénin",
+        programs: [
+          "Statistique Appliquées",
+          "Planification et Suivi-Evaluation"  
+        ],
+        contact: {
+          email: "flash@up.bj",
+          phone: "+229 23 61 07 07",
+          website: "www.flash.up.bj"
+        },
+        description: "Formation en statistiques, planification et évaluation.",
+        goodToKnow: "L’ENSPD forme des spécialistes des chiffres et des plans d’action pour le développement. Ainsi, si vous voulez aider à prendre de bonnes décisions pour le pays, suivre l’impact des projets ou résoudre des problèmes concrets avec des données, c’est l’école parfaite pour vous lancer."
       })
     ]
   },
@@ -732,13 +755,26 @@ export const universities: University[] = [
       formatSchoolPrograms({
         id: "unstim-1",
         name: "Ecole Normale Supérieure de l'Enseignement Technique (ENSET)",
-        admissionRequirements: ["Baccalauréat série B, C, D, G", "Concours", "Culture générale, Maths/Economie"],
-        location: "Abomey",
+        admissionRequirements: ["Concours"],
+        location: "LOKOSSA",
         country: "Bénin",
         programs: [
           "Electrotechnique",
+          "Electronique",
+          "Comptabilité",
+          "Secrétariat",
           "Génie Civil",
-          "Maintenance Industrielle"
+          "Economie",
+          "Mécanique Automobile",
+          "Fabrication Mécanique",
+          "Economie Familiale et Sociale",
+          "Hôtellerie-Restauration",
+          "Froid et Climatisation",
+          "Energies Renouvelables",
+          "Production Animale",
+          "Production Végétale",
+          "Métiers des Modes et Vetements"
+
         ],
         contact: {
           email: "enset@unstim.bj",
@@ -746,19 +782,20 @@ export const universities: University[] = [
           website: "www.enset.unstim.bj"
         },
         description: "Formation des enseignants et techniciens supérieurs pour les lycées techniques.",
-        goodToKnow: "L'ENSET est le fleuron de la formation technique au Bénin."
+        goodToKnow: "L’ENSET forme les enseignants et techniciens qui font tourner les ateliers, les chantiers, les cuisines ou les fermes. Ainsi, si vous voulez maîtriser un vrai métier, transmettre votre savoir et contribuer au développement technique du pays, cette école est faite pour vous."
       }),
       formatSchoolPrograms({
         id: "unstim-2",
         name: "Institut National Supérieur de Technologie Industrielle (INSTI)",
-        admissionRequirements: ["Baccalauréat série C, D, F, DT", "Classement/Concours", "Maths, PCT selon filière"],
-        location: "Abomey",
+        admissionRequirements: ["Classement"],
+        location: "LOKOSSA",
         country: "Bénin",
         programs: [
           "Génie Civil",
           "Génie Energétique",
-          "Informatique et Télécoms",
-          "Maintenance Automobile"
+          "Génie Electrique et Informatique",
+          "Maintenance des système",
+          "Génie Mécanique et Productique"
         ],
         contact: {
           email: "insti@unstim.bj",
@@ -766,33 +803,33 @@ export const universities: University[] = [
           website: "www.insti.unstim.bj"
         },
         description: "Formation d'ingénieurs technologues immédiatement opérationnels.",
-        goodToKnow: "L'INSTI dispose du plus grand parc machines du Bénin."
+        goodToKnow: "L’INSTI forme des ingénieurs capables de concevoir, entretenir ou moderniser les machines et les infrastructures du pays. Ainsi, si vous aimez la technologie, les systèmes industriels et les solutions concrètes, c’est l’école parfaite pour construire l’avenir avec vos mains et votre tête."
       }),
       formatSchoolPrograms({
         id: "unstim-3",
-        name: "Institut National Supérieur des Classes Préparatoires (INSPEI)",
-        admissionRequirements: ["Baccalauréat série C, D", "Concours national", "Maths, PCT"],
+        name: "Institut National Supérieur des Classes Préparatoires au Etudes d'Ingénieurs (INSPEI)",
+        admissionRequirements: ["Concours"],
         location: "Abomey",
         country: "Bénin",
-        programs: ["Sciences de l'Ingénieur"],
+        programs: ["Sciences et Techniques de l'Ingénieur"],
         contact: {
           email: "inspei@unstim.bj",
           phone: "+229 22 30 30 30",
           website: "www.inspei.unstim.bj"
         },
         description: "Préparation intensive aux grandes écoles d'ingénieurs africaines et internationales.",
-        goodToKnow: "L'INSPEI offre le taux de réussite le plus élevé aux concours."
+        goodToKnow: "L’INSPEI prépare les meilleurs talents aux grandes écoles d’ingénieurs en Afrique et dans le monde. Ainsi, si vous aimez les sciences, les défis et que vous visez l’excellence, c’est l’étape idéale pour vous hisser au sommet."
       }),
       formatSchoolPrograms({
         id: "unstim-4",
         name: "Ecole Normale Supérieure de Natitingou (ENS/Nati)",
-        admissionRequirements: ["Baccalauréat série C, D", "Concours", "SVT, PCT"],
+        admissionRequirements: ["Concours"],
         location: "Natitingou",
         country: "Bénin",
         programs: [
-          "Biotechnologies Médicales",
-          "Génie Biologique",
-          "Diététique"
+          "Mathématiques et Informatique",
+          "Physique, Chimie et Technologie",
+          "Sciences de Vie et de la Terre"
         ],
         contact: {
           email: "ensnati@unstim.bj",
@@ -800,17 +837,19 @@ export const universities: University[] = [
           website: "www.ensnati.unstim.bj"
         },
         description: "Centre d'excellence en biosciences appliquées aux enjeux du Nord-Bénin.",
-        goodToKnow: "L'ENS/Nati mène des recherches sur les plantes médicinales."
+        goodToKnow: "L’ENS/Nati forme des enseignants et chercheurs en sciences exactes, avec une attention particulière aux réalités du Nord-Bénin. Ainsi, si vous aimez les maths, la nature ou la science utile au quotidien, vous y apprendrez à transmettre et à explorer ce qui fait avancer nos communautés."
       }),
       formatSchoolPrograms({
         id: "unstim-5",
-        name: "Ecole Nationale Supérieure des Biosciences (ENSBBA)",
-        admissionRequirements: ["Baccalauréat série C, D", "Classement", "SVT, Maths"],
-        location: "Abomey",
+        name: "Ecole Nationale Supérieure des Biosciences et Biotechnologies Appliquées (ENSBBA)",
+        admissionRequirements: ["Classement"],
+        location: "Dassa-Zoumè",
         country: "Bénin",
         programs: [
           "Biotechnologie Pharmaceutique",
-          "Génétique Appliquée"
+          "Génétique Biotechnologies et Applications",
+          "Génie Biologique et Bioprocédés",
+          "Diététique des aliments et Nutrition"
         ],
         contact: {
           email: "ensbba@unstim.bj",
@@ -818,7 +857,7 @@ export const universities: University[] = [
           website: "www.ensbba.unstim.bj"
         },
         description: "Formation aux biotechnologies pour la santé et l'agro-industrie.",
-        goodToKnow: "Pionnière dans la production locale de médicaments."
+        goodToKnow: "L’ENSBBA vous plonge au cœur des biotechnologies de la santé, de l’alimentation et des bio-industries. Si vous rêvez de produire des médicaments, de comprendre les gènes ou d’innover dans l’agroalimentaire, c’est ici que ça commence."
       }),
       formatSchoolPrograms({
         id: "unstim-6",
@@ -827,9 +866,8 @@ export const universities: University[] = [
         location: "Natitingou",
         country: "Bénin",
         programs: [
-          "Génie Civil",
-          "Géomatique Appliquée",
-          "Équipements Motorisés"
+          "Mathématiques Informatiques",
+          "Physique Chimie"
         ],
         contact: {
           email: "fastnati@unstim.bj",
@@ -837,17 +875,17 @@ export const universities: University[] = [
           website: "www.fastnati.unstim.bj"
         },
         description: "Formation adaptée aux défis techniques des zones montagneuses.",
-        goodToKnow: "La FAST/Nati spécialisée dans les techniques de construction antisismique."
+        goodToKnow: "La FAST/Nati forme aux sciences exactes avec un focus sur les technologies adaptées aux environnements montagneux, comme les constructions antisismiques et les solutions énergétiques durables."
       }),
       formatSchoolPrograms({
         id: "unstim-7",
-        name: "Ecole Nationale Supérieure de Génie Energétique (ENSGEP)",
-        admissionRequirements: ["Baccalauréat série C, D, F", "Classement", "Maths, Physique"],
+        name: "Ecole Nationale Supérieure de Génie Energétique et Procédés (ENSGEP)",
+        admissionRequirements: ["Classement"],
         location: "Abomey",
         country: "Bénin",
         programs: [
-          "Énergies Renouvelables",
-          "Froid Industriel"
+          "Friod et Climatisation",
+          "Equipements motorisés"
         ],
         contact: {
           email: "ensgep@unstim.bj",
@@ -855,7 +893,7 @@ export const universities: University[] = [
           website: "www.ensgep.unstim.bj"
         },
         description: "Expertise en solutions énergétiques durables pour l'Afrique.",
-        goodToKnow: "L'ENSGEP a conçu des centrales solaires hybrides."
+        goodToKnow: "L'ENSGEP innove dans les systèmes énergétiques adaptés à l'Afrique, notamment à travers la conception de centrales solaires hybrides et de solutions techniques pour l'efficacité énergétique locale."
       }),
       formatSchoolPrograms({
         id: "unstim-8",
@@ -864,7 +902,9 @@ export const universities: University[] = [
         location: "Abomey",
         country: "Bénin",
         programs: [
-          "Architecture Urbaine",
+          "Génie Civil",
+          "Génie Géomatique Appliquée",
+          "Architecture et Urbanisme",
           "Hydraulique et Assainissement"
         ],
         contact: {
@@ -873,7 +913,7 @@ export const universities: University[] = [
           website: "www.enstp.unstim.bj"
         },
         description: "Référence pour les infrastructures urbaines et hydrauliques.",
-        goodToKnow: "L'ENSTP forme les experts qui construisent les ponts et réseaux d'eau potable."
+        goodToKnow: "L'ENSTP forme les ingénieurs qui conçoivent les ponts, réseaux d’eau potable et infrastructures urbaines essentielles au développement durable du Bénin et de l’Afrique."
       })
     ]
   },
