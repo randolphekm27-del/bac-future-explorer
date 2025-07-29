@@ -157,23 +157,13 @@ export const formatProgramName = (program: string): string => {
   "Transformation Agroalimentaire": "Transformation Agro"
 };
   
-  const baseName = program.split(" : ")[0];
-  
-  for (const [full, short] of Object.entries(keywords)) {
-    if (baseName.includes(full)) {
-      return short;
-    }
-  }
-  
-  if (baseName.length > 25) {
-    const words = baseName.split(" ");
-    if (words.length > 2) {
-      return words.slice(0, 2).join(" ");
-    }
-    return baseName.substring(0, 22) + "...";
-  }
-  
-  return baseName;
+  const formatProgramName = (program: string) => program; // Retourne le nom original sans modification
+
+const formatSchoolPrograms = (school: School): School => {
+  return {
+    ...school,
+    programs: school.programs // Conserve les noms bruts
+  };
 };
 
 const formatSchoolPrograms = (school: School): School => {
