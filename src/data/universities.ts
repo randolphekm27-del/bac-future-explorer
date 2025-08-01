@@ -157,13 +157,7 @@ export const formatProgramName = (program: string): string => {
   "Transformation Agroalimentaire": "Transformation Agro"
 };
   
-  const formatProgramName = (program: string) => program; // Retourne le nom original sans modification
-
-const formatSchoolPrograms = (school: School): School => {
-  return {
-    ...school,
-    programs: school.programs // Conserve les noms bruts
-  };
+  return keywords[program] || program;
 };
 
 const formatSchoolPrograms = (school: School): School => {
