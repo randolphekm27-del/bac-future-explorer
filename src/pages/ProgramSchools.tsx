@@ -7,8 +7,7 @@ import { SchoolCard } from "@/components/ui/school-card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, GraduationCap, MapPin, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { getProgramBySlug } from "@/data/programs-data";
-import { getSchoolsForProgram } from "@/data/program-schools-mapping";
+import { getProgramBySlug, getSchoolsForProgram } from "@/data/programs";
 
 export default function ProgramSchools() {
   const { slug } = useParams();

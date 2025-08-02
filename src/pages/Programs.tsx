@@ -7,8 +7,7 @@ import { navigationLinks } from "@/lib/navigation"
 import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { programsData, getAllCategories } from "@/data/programs-data"
-import { getSchoolsForProgram } from "@/data/program-schools-mapping"
+import { programs, getAllCategories, getSchoolsForProgram } from "@/data/programs"
 
 // Fonction pour obtenir l'icône appropriée
 const getIcon = (iconName: string) => {
@@ -42,17 +41,75 @@ export default function Programs() {
 
   const categories = ["all", ...getAllCategories()]
 
-  const filteredPrograms = programsData.filter((program) => {
-    const matchesSearch = program.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase()) ||
-      (program.description && program.description.toLowerCase().includes(searchTerm.toLowerCase()))
+  // Fonction de recherche intelligente avec synonymes
+  const smartSearch = (text: string, searchTerm: string): boolean => {
+    if (!searchTerm.trim()) return true;
+    
+    const normalizeText = (str: string) => 
+      str.toLowerCase()
+        .replace(/[àáâãäå]/g, 'a')
+        .replace(/[èéêë]/g, 'e')
+        .replace(/[ìíîï]/g, 'i')
+        .replace(/[òóôõö]/g, 'o')
+        .replace(/[ùúûü]/g, 'u')
+        .replace(/[ç]/g, 'c')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    
+    const normalizedText = normalizeText(text);
+    const normalizedSearch = normalizeText(searchTerm);
+    
+    // Recherche directe
+    if (normalizedText.includes(normalizedSearch)) return true;
+    
+    // Synonymes et termes équivalents
+    const synonyms: Record<string, string[]> = {
+      'informatique': ['info', 'computer', 'ordinateur', 'programmation', 'logiciel', 'software'],
+      'genie': ['ingenierie', 'engineering', 'technique'],
+      'medecine': ['sante', 'health', 'medical', 'docteur'],
+      'economie': ['eco', 'finance', 'argent', 'banque', 'commerce'],
+      'agriculture': ['agri', 'farming', 'cultivateur', 'production'],
+      'droit': ['law', 'juridique', 'avocat', 'justice'],
+      'mathematiques': ['maths', 'math', 'calcul', 'nombres'],
+      'physique': ['sciences', 'science'],
+      'marketing': ['communication', 'pub', 'publicite'],
+      'gestion': ['management', 'administration', 'direction'],
+      'education': ['enseignement', 'pedagogie', 'professeur', 'teaching'],
+      'langues': ['language', 'linguistique', 'traduction'],
+      'arts': ['art', 'artistique', 'creation', 'culture'],
+      'sport': ['sportif', 'athletique', 'eps', 'activite physique']
+    };
+    
+    // Vérifier les synonymes dans les deux sens
+    for (const [key, values] of Object.entries(synonyms)) {
+      if (normalizedSearch.includes(key) && values.some(v => normalizedText.includes(v))) return true;
+      if (normalizedText.includes(key) && values.some(v => normalizedSearch.includes(v))) return true;
+      if (values.some(v => normalizedSearch.includes(v)) && values.some(v => normalizedText.includes(v))) return true;
+    }
+    
+    // Recherche par mots-clés partiels
+    const searchWords = normalizedSearch.split(' ').filter(w => w.length > 2);
+    const textWords = normalizedText.split(' ');
+    
+    return searchWords.some(searchWord => 
+      textWords.some(textWord => 
+        textWord.includes(searchWord) || searchWord.includes(textWord)
+      )
+    );
+  };
+
+  const filteredPrograms = programs.filter((program) => {
+    const matchesSearch = smartSearch(program.name, searchTerm) ||
+      (program.description && smartSearch(program.description, searchTerm)) ||
+      (program.category && smartSearch(program.category, searchTerm)) ||
+      program.careers.some(career => smartSearch(career, searchTerm));
     
     const matchesCategory = 
       categoryFilter === "all" || 
-      program.category === categoryFilter
+      program.category === categoryFilter;
 
-    return matchesSearch && matchesCategory
+    return matchesSearch && matchesCategory;
   })
 
   // Scroll automatique vers une filière spécifique si présente dans l'URL

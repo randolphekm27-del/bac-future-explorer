@@ -1,4 +1,5 @@
 import { universities, formatProgramName } from './universities';
+import { programsData, getProgramBySlug as getManualProgramBySlug } from './programs-data';
 
 export interface Program {
   id: string;
@@ -10,6 +11,7 @@ export interface Program {
   domainDetails?: string;
   careers: string[];
   icon: string;
+  image?: string;
   schoolIds: string[]; // IDs des écoles qui proposent cette filière
 }
 
@@ -89,6 +91,13 @@ const categorizeProgram = (programName: string): string => {
     return "Mathématiques, Physique et Chimie";
   }
   
+  // Droit et Sciences Politiques
+  if (name.includes('droit') || name.includes('science politique') || name.includes('relations internationales') ||
+      name.includes('diplomatie') || name.includes('administration publique') || name.includes('justice')) {
+    return "Droit et Sciences Politiques";
+  }
+  
+  // Autres programmes ne correspondant à aucune catégorie spécifique
   return "Autres";
 };
 
@@ -141,15 +150,19 @@ const generateProgramsFromUniversities = (): Program[] => {
         const slug = createProgramSlug(formattedName);
         
         if (!programMap.has(slug)) {
+          // Chercher si on a des données manuelles pour ce programme
+          const manualProgram = getManualProgramBySlug(slug);
+          
           programMap.set(slug, {
             id: `prog-${slug}`,
             name: formattedName,
             slug: slug,
-            category: categorizeProgram(formattedName),
-            duration: "3-5 ans", // Durée générique
-            description: `Formation spécialisée en ${formattedName.toLowerCase()}.`,
-            careers: [`Spécialiste en ${formattedName.toLowerCase()}`, "Consultant", "Expert du domaine"],
-            icon: getIconForProgram(formattedName),
+            category: manualProgram?.category || categorizeProgram(formattedName),
+            duration: manualProgram?.duration || "3-5 ans",
+            description: manualProgram?.description || `Formation spécialisée en ${formattedName.toLowerCase()}.`,
+            careers: manualProgram?.careers || [`Spécialiste en ${formattedName.toLowerCase()}`, "Consultant", "Expert du domaine"],
+            icon: manualProgram?.icon || getIconForProgram(formattedName),
+            image: manualProgram?.image,
             schoolIds: [school.id]
           });
         } else {
@@ -209,4 +222,15 @@ export const getSchoolsForProgram = (programSlug: string) => {
 
 export const getProgramsForSchool = (schoolId: string): Program[] => {
   return programs.filter(program => program.schoolIds.includes(schoolId));
+};
+
+// Fonction pour obtenir toutes les catégories
+export const getAllCategories = (): string[] => {
+  const categories = new Set<string>();
+  programs.forEach(program => {
+    if (program.category) {
+      categories.add(program.category);
+    }
+  });
+  return Array.from(categories).sort();
 };

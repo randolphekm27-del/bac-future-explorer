@@ -5,7 +5,7 @@ import { Button } from "./button";
 import type { School, University } from "@/data/universities";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./collapsible";
 import { formatProgramName } from "@/data/universities";
-import { findMatchingProgram } from "@/data/program-schools-mapping";
+import { createProgramSlug, getProgramBySlug } from "@/data/programs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
 
 interface SchoolCardProps {
@@ -60,13 +60,14 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
             {school.programs.map((program, i) => {
               const originalProgram = program;
               const shortName = formatProgramName(program);
-              const matchingProgram = findMatchingProgram(originalProgram);
+              const slug = createProgramSlug(shortName);
+              const matchingProgram = getProgramBySlug(slug);
               const needsTooltip = shortName !== program && shortName.length < program.length;
               
               const LinkElement = matchingProgram ? (
                 <Link
                   key={i}
-                  to={`/programs#${matchingProgram.slug}`}
+                  to={`/programs/${matchingProgram.slug}/schools`}
                   className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
                 >
                   {shortName}
