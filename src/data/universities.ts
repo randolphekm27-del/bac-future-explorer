@@ -24,14 +24,11 @@ export interface University {
   slug: string;
   schools: School[];
 }
-  
-  return keywords[program] || program;
-};
 
 const formatSchoolPrograms = (school: School): School => {
   return {
     ...school,
-    programs: school.programs.map(p => formatProgramName(p))
+    programs: school.programs // Pas besoin de formater si les noms sont déjà bons
   };
 };
 
