@@ -8,7 +8,7 @@ export interface Program {
   category: string;
   duration: string;
   description: string;
-  domainDetails?: string;
+  explanation?: string; // Section "Explication" empathique
   careers: string[];
   icon: string;
   image?: string;
@@ -160,6 +160,7 @@ const generateProgramsFromUniversities = (): Program[] => {
             category: manualProgram?.category || categorizeProgram(formattedName),
             duration: manualProgram?.duration || "3-5 ans",
             description: manualProgram?.description || `Formation spécialisée en ${formattedName.toLowerCase()}.`,
+            explanation: manualProgram?.explanation,
             careers: manualProgram?.careers || [`Spécialiste en ${formattedName.toLowerCase()}`, "Consultant", "Expert du domaine"],
             icon: manualProgram?.icon || getIconForProgram(formattedName),
             image: manualProgram?.image,

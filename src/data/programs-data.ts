@@ -5,6 +5,7 @@ export interface ProgramData {
   slug: string;
   category: string;
   description?: string;
+  explanation?: string; // Section "Explication" empathique
   duration?: string;
   careers: string[];
   icon: string;
@@ -20,6 +21,7 @@ export const programsData: ProgramData[] = [
     slug: "sante-publique-polyvalente",
     category: "Santé & Médecine",
     description: "Formation en santé publique et épidémiologie pour répondre aux enjeux sanitaires locaux.",
+    explanation: "Cette filière forme des professionnels capables d'analyser et d'améliorer la santé des populations. Vous apprendrez à concevoir des programmes de prévention, à gérer des crises sanitaires et à promouvoir des politiques de santé publique adaptées aux réalités africaines.",
     duration: "3-5 ans",
     careers: ["Responsable de programmes de santé", "Épidémiologiste", "Gestionnaire de systèmes de santé", "Consultant en politiques sanitaires"],
     icon: "Heart",
@@ -31,6 +33,7 @@ export const programsData: ProgramData[] = [
     slug: "sciences-obstetricales",
     category: "Santé & Médecine",
     description: "Formation spécialisée en santé maternelle et infantile.",
+    explanation: "Vous accompagnerez les femmes tout au long de leur grossesse et lors de l'accouchement. Cette profession noble vous permettra de contribuer à la réduction de la mortalité maternelle et infantile, un enjeu majeur de santé publique en Afrique.",
     duration: "4 ans",
     careers: ["Sage-femme", "Consultant en santé reproductive", "Responsable de maternité", "Formateur en santé maternelle"],
     icon: "Heart",
@@ -110,6 +113,7 @@ export const programsData: ProgramData[] = [
     slug: "geographie-amenagement",
     category: "Sciences Humaines & Sociales",
     description: "Étude des espaces et de leur organisation pour un développement territorial durable.",
+    explanation: "Vous deviendrez un expert de l'organisation spatiale, capable de planifier le développement des villes et régions. Cette formation vous permet de contribuer à l'amélioration du cadre de vie des populations en conciliant développement économique et préservation de l'environnement.",
     duration: "3-5 ans",
     careers: ["Géographe", "Aménageur du territoire", "Urbaniste", "Consultant en développement local"],
     icon: "Map",
@@ -402,6 +406,7 @@ export const programsData: ProgramData[] = [
     slug: "journalisme",
     category: "Journalisme & Communication",
     description: "Formation aux techniques journalistiques et à l'éthique de l'information.",
+    explanation: "Devenez la voix qui informe et éduque la société. En tant que journaliste, vous jouerez un rôle essentiel dans la démocratie en enquêtant, analysant et transmettant l'information de manière objective et responsable.",
     duration: "3-5 ans",
     careers: ["Journaliste", "Rédacteur en chef", "Reporter", "Correspondant étranger"],
     icon: "Newspaper",

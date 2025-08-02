@@ -1,42 +1,20 @@
-import { GraduationCap, Search, BookOpen, Users, Briefcase } from "lucide-react"
+import { Search } from "lucide-react"
 import { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
 import { navigationLinks } from "@/lib/navigation"
 import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { programs, getAllCategories, getSchoolsForProgram } from "@/data/programs"
+import { programs, getAllCategories } from "@/data/programs"
+import { ProgramCard } from "@/components/ui/program-card"
 
-// Fonction pour obtenir l'icône appropriée
-const getIcon = (iconName: string) => {
-  const icons = {
-    Code: <BookOpen className="h-8 w-8 text-primary" />,
-    Zap: <BookOpen className="h-8 w-8 text-primary" />,
-    Radio: <BookOpen className="h-8 w-8 text-primary" />,
-    Heart: <BookOpen className="h-8 w-8 text-primary" />,
-    Pill: <BookOpen className="h-8 w-8 text-primary" />,
-    TrendingUp: <Briefcase className="h-8 w-8 text-primary" />,
-    Calculator: <BookOpen className="h-8 w-8 text-primary" />,
-    Building: <BookOpen className="h-8 w-8 text-primary" />,
-    Droplets: <BookOpen className="h-8 w-8 text-primary" />,
-    Sprout: <BookOpen className="h-8 w-8 text-primary" />,
-    Leaf: <BookOpen className="h-8 w-8 text-primary" />,
-    Scale: <BookOpen className="h-8 w-8 text-primary" />,
-    Building2: <BookOpen className="h-8 w-8 text-primary" />,
-    BookOpen: <BookOpen className="h-8 w-8 text-primary" />,
-    Languages: <BookOpen className="h-8 w-8 text-primary" />,
-    Palette: <BookOpen className="h-8 w-8 text-primary" />,
-    Music: <BookOpen className="h-8 w-8 text-primary" />,
-    Atom: <BookOpen className="h-8 w-8 text-primary" />,
-  };
-  return icons[iconName as keyof typeof icons] || <BookOpen className="h-8 w-8 text-primary" />;
-};
 
 export default function Programs() {
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
+  const [highlightedProgram, setHighlightedProgram] = useState<string | null>(null)
   const location = useLocation()
 
   const categories = ["all", ...getAllCategories()]
@@ -117,6 +95,7 @@ export default function Programs() {
     const hash = location.hash.replace('#', '')
     
     if (hash) {
+      setHighlightedProgram(hash)
       // Attendre que le DOM soit rendu
       setTimeout(() => {
         const element = document.getElementById(hash)
@@ -126,13 +105,13 @@ export default function Programs() {
             block: 'center',
             inline: 'nearest'
           })
-          // Ajouter un effet visuel temporaire
-          element.classList.add('ring-4', 'ring-primary', 'ring-opacity-75', 'shadow-2xl')
-          setTimeout(() => {
-            element.classList.remove('ring-4', 'ring-primary', 'ring-opacity-75', 'shadow-2xl')
-          }, 3000)
         }
       }, 300)
+      
+      // Retirer l'effet après 3 secondes
+      setTimeout(() => {
+        setHighlightedProgram(null)
+      }, 3000)
     }
   }, [location])
 
@@ -186,78 +165,13 @@ export default function Programs() {
           </div>
 
           <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
-            {filteredPrograms.map((program) => {
-              const schoolsCount = getSchoolsForProgram(program.slug).length;
-              
-              return (
-                <div
-                  key={program.id}
-                  id={program.slug}
-                  className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift max-w-full"
-                >
-                  {/* Image de la filière */}
-                  <div className="aspect-video w-full overflow-hidden bg-muted">
-                    <img
-                      src={program.image || "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"}
-                      alt={program.name}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-                  
-                  <div className="p-3 sm:p-6 w-full">
-                    <div className="mb-4 flex items-center justify-between w-full">
-                      {getIcon(program.icon)}
-                      <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary-foreground flex-shrink-0">
-                        {program.duration || "3-5 ans"}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors break-words mb-2 leading-tight">
-                      {program.name}
-                    </h3>
-                    
-                    <p className="mt-1 text-xs text-muted-foreground break-words leading-tight">
-                      {program.category}
-                    </p>
-                    
-                    {program.description && (
-                      <p className="mt-4 text-xs sm:text-sm text-muted-foreground break-words leading-relaxed line-clamp-3">
-                        {program.description}
-                      </p>
-                    )}
-                    
-                    <div className="mt-6">
-                      <h4 className="text-xs sm:text-sm font-medium mb-2">Débouchés:</h4>
-                      <ul className="text-xs sm:text-sm text-muted-foreground space-y-1 w-full">
-                        {program.careers.slice(0, 3).map((career, i) => (
-                          <li key={i} className="flex items-start w-full gap-2">
-                            <GraduationCap className="mr-2 h-3 w-3 text-primary" />
-                            <span className="break-words flex-1 leading-relaxed">{career}</span>
-                          </li>
-                        ))}
-                        {program.careers.length > 3 && (
-                          <li className="text-xs text-primary">
-                            ... et {program.careers.length - 3} autres débouchés
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                    
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="text-xs text-muted-foreground">
-                        {schoolsCount} école{schoolsCount > 1 ? 's' : ''}
-                      </div>
-                    </div>
-                    
-                    <Link to={`/programs/${program.slug}/schools`}>
-                      <Button variant="outline" className="mt-4 w-full text-sm">
-                        Où suivre cette filière ?
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+            {filteredPrograms.map((program) => (
+              <ProgramCard 
+                key={program.id} 
+                program={program} 
+                isHighlighted={highlightedProgram === program.slug}
+              />
+            ))}
           </div>
 
           {filteredPrograms.length === 0 && (

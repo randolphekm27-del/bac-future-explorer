@@ -67,7 +67,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
               const LinkElement = matchingProgram ? (
                 <Link
                   key={i}
-                  to={`/programs/${matchingProgram.slug}/schools`}
+                  to={`/programs#${matchingProgram.slug}`}
                   className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
                 >
                   {shortName}
