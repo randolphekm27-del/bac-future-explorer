@@ -117,19 +117,20 @@ export default function Internships() {
                 
                 {/* Conteneur des boutons de filtre avec défilement horizontal */}
                 <div className="relative w-full sm:w-auto">
-                  <div className="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
+                  <div className="flex gap-2 overflow-x-auto pb-2 sm:pb-0 sm:overflow-x-visible sm:flex-wrap scrollbar-hide">
                     {types.map(type => (
                       <Button
                         key={type}
                         variant={typeFilter === type ? "default" : "outline"}
                         onClick={() => setTypeFilter(type)}
-                        className="whitespace-nowrap"
+                        className="whitespace-nowrap flex-shrink-0 sm:flex-shrink text-xs sm:text-sm"
+                        size="sm"
                       >
-                        {type}
+                        {type === "all" ? "Tous" : type}
                       </Button>
                     ))}
                   </div>
-                  <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+                  <div className="absolute right-0 top-0 bottom-4 w-6 bg-gradient-to-l from-background to-transparent pointer-events-none sm:hidden" />
                 </div>
               </div>
 
