@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Button } from "./button";
 import type { School, University } from "@/data/universities";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "./collapsible";
-import { formatProgramName } from "@/data/universities";
 import { createProgramSlug, getProgramBySlug } from "@/data/programs";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
 
@@ -58,11 +57,8 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
         <div className="flex flex-wrap gap-1 sm:gap-2 w-full">
           <TooltipProvider>
             {school.programs.map((program, i) => {
-              const originalProgram = program;
-              const shortName = formatProgramName(program);
-              const slug = createProgramSlug(shortName);
+              const slug = createProgramSlug(program);
               const matchingProgram = getProgramBySlug(slug);
-              const needsTooltip = shortName !== program && shortName.length < program.length;
               
               const LinkElement = matchingProgram ? (
                 <Link
@@ -70,7 +66,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                   to={`/programs#${matchingProgram.slug}`}
                   className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
                 >
-                  {shortName}
+                  {program}
                 </Link>
               ) : (
                 <span
@@ -78,20 +74,11 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                   className="text-xs px-2 py-1 rounded-full bg-muted/50 text-muted-foreground break-words flex-shrink-0 max-w-full truncate cursor-not-allowed"
                   title="Filière non référencée sur la page des filières"
                 >
-                  {shortName}
+                  {program}
                 </span>
               );
 
-              return needsTooltip ? (
-                <Tooltip key={i}>
-                  <TooltipTrigger asChild>
-                    {LinkElement}
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="max-w-xs text-center">{originalProgram}</p>
-                  </TooltipContent>
-                </Tooltip>
-              ) : LinkElement;
+              return LinkElement;
             })}
           </TooltipProvider>
         </div>

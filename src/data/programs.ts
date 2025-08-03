@@ -1,4 +1,4 @@
-import { universities, formatProgramName } from './universities';
+import { universities } from './universities';
 import { programsData, getProgramBySlug as getManualProgramBySlug } from './programs-data';
 
 export interface Program {
@@ -146,7 +146,7 @@ const generateProgramsFromUniversities = (): Program[] => {
   universities.forEach(university => {
     university.schools.forEach(school => {
       school.programs.forEach(programName => {
-        const formattedName = formatProgramName(programName);
+        const formattedName = programName;
         const slug = createProgramSlug(formattedName);
         
         if (!programMap.has(slug)) {
