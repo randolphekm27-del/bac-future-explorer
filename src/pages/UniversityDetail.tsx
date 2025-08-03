@@ -4,6 +4,7 @@ import { Footer } from "@/components/ui/footer";
 import { navigationLinks } from "@/lib/navigation";
 import { SectionTitle } from "@/components/ui/section-title";
 import { SchoolCard } from "@/components/ui/school-card";
+import { UniversityGallery } from "@/components/ui/university-gallery";
 import { getUniversityBySlug } from "@/data/universities";
 import { MapPin, Users, BookOpen } from "lucide-react";
 
@@ -93,6 +94,16 @@ export default function UniversityDetail() {
               </div>
             </div>
           </div>
+
+          {/* Section galerie */}
+          {university.gallery && (
+            <div className="mb-16">
+              <UniversityGallery 
+                gallery={university.gallery} 
+                universityName={university.name} 
+              />
+            </div>
+          )}
 
           {/* Liste des écoles */}
           <SectionTitle

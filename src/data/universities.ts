@@ -23,6 +23,11 @@ export interface University {
   description: string; 
   slug: string;
   schools: School[];
+  gallery?: {
+    images: string[];
+    videos?: string[];
+    description?: string;
+  };
 }
 
 const formatSchoolPrograms = (school: School): School => {
@@ -41,6 +46,27 @@ export const universities: University[] = [
     image: "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UAC est la plus grande université du Bénin, offrant une large gamme de programmes dans diverses disciplines.",
     slug: "universite-abomey-calavi",
+    gallery: {
+      images: [
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80", 
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1473091534298-04dcbce3278c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800&q=80"
+      ],
+      videos: [
+        "https://example.com/video1.mp4",
+        "https://example.com/video2.mp4"
+      ],
+      description: "Découvrez l'environnement d'apprentissage exceptionnel de l'Université d'Abomey-Calavi à travers nos campus modernes, nos laboratoires de pointe et la vie étudiante dynamique qui caractérise notre établissement."
+    },
     schools: [
       formatSchoolPrograms({
   id: "uac-1",
