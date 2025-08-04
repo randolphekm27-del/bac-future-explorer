@@ -151,7 +151,7 @@ Souhaitez-vous des détails sur une université spécifique ?`
 • Agronomie
 • Communication
 
-${testResults ? `Pour votre profil, je recommande : ${testResults.recommendations?.map(r => r.field).join(', ')}.` : ''}
+${testResults ? `Pour votre profil, je recommande : ${testResults.recommendations?.map((r: any) => r.field).join(', ')}.` : ''}
 
 Voulez-vous explorer une filière particulière ?`
     }
@@ -232,7 +232,7 @@ Cherchez-vous dans un domaine particulier ?`
       return `Basé sur votre profil d'orientation, voici mes conseils personnalisés :
 
 🎯 **Vos forces :** ${testResults.personality || 'Leadership et collaboration'}
-📚 **Filières recommandées :** ${testResults.recommendations?.slice(0, 3).map(r => r.field).join(', ') || 'Sciences, Commerce, Technologie'}
+📚 **Filières recommandées :** ${testResults.recommendations?.slice(0, 3).map((r: any) => r.field).join(', ') || 'Sciences, Commerce, Technologie'}
 ⏱️ **Durée d'études :** ${testResults.studyDuration || 'Formation complète recommandée'}
 
 **Prochaines étapes :**
