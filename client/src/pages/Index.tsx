@@ -40,33 +40,33 @@ const Index = () => {
         <FloatingParticles />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="space-y-8">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="space-y-6 md:space-y-8">
               <AnimatedTextCycle 
                 texts={animatedTexts}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight min-h-[120px] md:min-h-[140px] lg:min-h-[160px]"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-tight min-h-[80px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px]"
               />
-              <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-medium animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <p className="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed font-medium animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                 Guide complet pour les nouveaux bacheliers du Bénin.
               </p>
               
-              <div className="my-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+              <div className="w-full animate-fade-in" style={{ animationDelay: "0.4s" }}>
                 <SmartSearch 
                   placeholder="Que voulez-vous étudier ?" 
-                  className="w-full max-w-none"
+                  className="w-full"
                   onSearch={(query) => navigate(`/universities?search=${query}`)}
                 />
               </div>
               
-              <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-                <Link to="/universities" className="block">
-                  <Button variant="premium" size="xl" className="w-full">
+              <div className="space-y-3 sm:space-y-4 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+                <Link to="/universities" className="block w-full">
+                  <Button variant="premium" size="xl" className="w-full text-sm sm:text-base py-3 sm:py-4">
                     Commencer l'exploration
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </Link>
-                <p className="text-muted-foreground text-center sm:text-left animate-fade-in" style={{ animationDelay: "0.8s" }}>
+                <p className="text-sm sm:text-base text-muted-foreground text-center sm:text-left animate-fade-in" style={{ animationDelay: "0.8s" }}>
                   Plus de 1000 étudiants nous font déjà confiance
                 </p>
               </div>

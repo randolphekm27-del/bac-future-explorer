@@ -49,10 +49,10 @@ export function SmartSearch({ onSearch, placeholder = "Rechercher...", className
   };
 
   return (
-    <div className={cn("relative max-w-md", className)}>
+    <div className={cn("relative w-full", className)}>
       <form onSubmit={handleSubmit}>
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
           <Input
             type="text"
             placeholder={placeholder}
@@ -60,9 +60,9 @@ export function SmartSearch({ onSearch, placeholder = "Rechercher...", className
             onChange={(e) => setQuery(e.target.value)}
             onFocus={() => query && setShowSuggestions(true)}
             onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
-            className="pl-12 pr-12 bg-background/80 backdrop-blur-sm border-primary/20 focus:border-primary/50"
+            className="pl-10 sm:pl-12 pr-10 sm:pr-12 bg-background/80 backdrop-blur-sm border-primary/20 focus:border-primary/50 text-sm sm:text-base py-3 sm:py-4"
           />
-          <Sparkles className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-accent animate-pulse" />
+          <Sparkles className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-accent animate-pulse" />
         </div>
       </form>
 

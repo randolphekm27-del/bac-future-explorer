@@ -84,7 +84,7 @@ export default function Internships() {
   const [searchTerm, setSearchTerm] = useState("");
   const [typeFilter, setTypeFilter] = useState("all");
   const [showContactForm, setShowContactForm] = useState(false);
-  const types = ["all", ...new Set(internships.map(internship => internship.type))];
+  const types = ["all", ...Array.from(new Set(internships.map(internship => internship.type)))];
   const filteredInternships = internships.filter(internship => {
     const matchesSearch = internship.title.toLowerCase().includes(searchTerm.toLowerCase()) || internship.company.toLowerCase().includes(searchTerm.toLowerCase()) || internship.location.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesType = typeFilter === "all" || internship.type === typeFilter;

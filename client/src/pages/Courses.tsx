@@ -102,7 +102,7 @@ export default function Courses() {
   const [categoryFilter, setCategoryFilter] = useState("all")
   const [showContactForm, setShowContactForm] = useState(false)
 
-  const categories = ["all", ...new Set(courses.map((course) => course.category))]
+  const categories = ["all", ...Array.from(new Set(courses.map((course) => course.category)))]
 
   const filteredCourses = courses.filter((course) => {
     const matchesSearch = 

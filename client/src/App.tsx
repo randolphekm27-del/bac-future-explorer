@@ -7,6 +7,7 @@ import { FloatingAccessibility } from "@/components/ui/floating-accessibility";
 import Index from "./pages/Index";
 import Universities from "./pages/Universities";
 import UniversityDetail from "./pages/UniversityDetail";
+import UniversityGallery from "./pages/UniversityGallery";
 import Programs from "./pages/Programs";
 import ProgramSchools from "./pages/ProgramSchools";
 import Internships from "./pages/Internships";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/universities" element={<Universities />} />
           <Route path="/universities/:slug" element={<UniversityDetail />} />
+          <Route path="/universities/:slug/gallery" element={<UniversityGallery />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/programs/:slug/schools" element={<ProgramSchools />} />
           <Route path="/internships" element={<Internships />} />

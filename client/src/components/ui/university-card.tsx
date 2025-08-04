@@ -1,5 +1,6 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Images } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "./button";
 import type { University } from "@/data/universities";
 
 interface UniversityCardProps {
@@ -7,16 +8,33 @@ interface UniversityCardProps {
 }
 
 export function UniversityCard({ university }: UniversityCardProps) {
+  const handleGalleryClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href = `/universities/${university.slug}/gallery`;
+  };
+
   return (
-    <Link to={`/universities/${university.slug}`} className="block w-full">
-      <div className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift max-w-full">
-        <div className="aspect-video w-full overflow-hidden bg-muted">
-          <img
-            src={university.image}
-            alt={university.name}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
+    <div className="group rounded-lg border bg-background overflow-hidden hover:border-primary/50 transition-all duration-300 animate-scale-in w-full hover-lift max-w-full">
+      <div className="aspect-video w-full overflow-hidden bg-muted relative">
+        <img
+          src={university.image}
+          alt={university.name}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        {university.gallery && university.gallery.images && university.gallery.images.length > 0 && (
+          <Button
+            variant="secondary"
+            size="sm"
+            className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            onClick={handleGalleryClick}
+          >
+            <Images className="h-4 w-4 mr-1" />
+            Galerie
+          </Button>
+        )}
+      </div>
+      <Link to={`/universities/${university.slug}`} className="block w-full">
         <div className="p-3 sm:p-6 w-full">
           <div className="flex items-center justify-between mb-2 w-full gap-2">
             <span
@@ -49,7 +67,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
             </span>
           </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }

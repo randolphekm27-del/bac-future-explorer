@@ -76,32 +76,9 @@ export function ContactForm({ isOpen, onClose, type, title, description }: Conta
     setIsSubmitting(true);
 
     try {
-      // Vérifier si les variables d'environnement existent
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-      
-      if (!supabaseUrl || !supabaseKey) {
-        console.warn('Variables Supabase manquantes, simulation locale');
-        // Simulation pour développement
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        toast.success("Demande envoyée avec succès ! Notre équipe vous contactera dans les plus brefs délais. 📧");
-        setFormData({
-          companyName: "",
-          sector: "",
-          email: "",
-          phone: "",
-          message: "",
-          contactPerson: "",
-          experience: "",
-        });
-        onClose();
-        return;
-      }
-      
-      const response = await fetch(`${supabaseUrl}/functions/v1/send-email`, {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${supabaseKey}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
