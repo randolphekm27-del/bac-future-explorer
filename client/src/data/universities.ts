@@ -493,6 +493,25 @@ goodToKnow: "Le CEFORP forme les experts capables d’analyser les évolutions d
     image: "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'Université de Parakou est un pôle académique majeur du nord du Bénin, reconnue pour ses formations de qualité en agriculture, santé, droit et sciences économiques.",
     slug: "universite-parakou",
+    gallery: {
+      images: [
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80"
+      ],
+      videos: [
+        "https://example.com/up-video1.mp4",
+        "https://example.com/up-video2.mp4"
+      ],
+      description: "Découvrez l'Université de Parakou à travers ses campus modernes, ses laboratoires spécialisés et la dynamique vie étudiante qui caractérise cette institution du nord du Bénin."
+    },
     schools: [
       formatSchoolPrograms({
         id: "up-1",
@@ -670,6 +689,25 @@ goodToKnow: "Le CEFORP forme les experts capables d’analyser les évolutions d
     image: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UNSTIM est une université de pointe au Bénin, dédiée aux formations technologiques, scientifiques et d'ingénierie, avec un fort accent sur l'innovation et les solutions pratiques aux défis du développement.",
     slug: "universite-unstim",
+    gallery: {
+      images: [
+        "https://images.unsplash.com/photo-1581092795442-48684803115d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581092916314-68e5e4d1b687?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1562813733-b31f71025d54?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581092786450-0b9b24b6f3ad?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=800&q=80"
+      ],
+      videos: [
+        "https://example.com/unstim-video1.mp4",
+        "https://example.com/unstim-video2.mp4"
+      ],
+      description: "Explorez l'UNSTIM et ses installations technologiques de pointe, ses laboratoires d'ingénierie moderne et l'environnement d'apprentissage innovant dédié aux sciences et technologies."
+    },
     schools: [
       formatSchoolPrograms({
         id: "unstim-1",
@@ -845,6 +883,25 @@ goodToKnow: "Le CEFORP forme les experts capables d’analyser les évolutions d
     image: "https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=800",
     description: "L'UNA est dédiée à l'enseignement et à la recherche dans le domaine de l'agriculture.",
     slug: "universite-agriculture",
+    gallery: {
+      images: [
+        "https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80"
+      ],
+      videos: [
+        "https://example.com/una-video1.mp4",
+        "https://example.com/una-video2.mp4"
+      ],
+      description: "Découvrez l'Université Nationale d'Agriculture à travers ses fermes pédagogiques, ses laboratoires de recherche agricole et les formations pratiques qui caractérisent cette institution dédiée à l'agriculture moderne."
+    },
     schools: [
       formatSchoolPrograms({
         id: "una-1",
