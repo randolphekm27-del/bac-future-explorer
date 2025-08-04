@@ -194,7 +194,15 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Hydrologie quantitative et Gestion intégrée des Ressources", "Hydrogéologie et Gestion intégrée des Ressources", "Ecohydrologie et Gestion intégrée des Ressources", "Gestion des crises et risques liés à l'eau et au climat", "Génie rural et Maîtrise de l'Eau", "Hydraulique et Assainissement", "Eau Hygiène et Assainissement (EHA)"],
+        programs: [
+          "Hydrologie quantitative et Gestion intégrée des Ressources", 
+          "Hydrogéologie et Gestion intégrée des Ressources", 
+          "Ecohydrologie et Gestion intégrée des Ressources", 
+          "Gestion des crises et risques liés à l'eau et au climat", 
+          "Génie rural et Maîtrise de l'Eau", 
+          "Hydraulique et Assainissement", 
+          "Eau Hygiène et Assainissement (EHA)"
+        ],
         contact: {
           email: "info@c2ea.ine-uac.net",
           phone: "+229 0141552764 / 0196638124",
@@ -209,7 +217,23 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Administration des Réseaux informatiques", "Analyse Informatique et Programmation", "Assurance", "Banque et Finance de Marché", "Banque et Institutions des Micro finances", "Marketing", "Gestion des Ressources Humaines", "Gestion des Transports", "Gestion de Logistique", "Statistique Economique et Sectorielle", "Statistique Démographique et Sociale", "Planification et Gestion des Projets", "Planification et Economie du Développement Durable", "Développement Local et Régional", "Gestion Financière et Comptable"],
+        programs: [
+          "Administration des Réseaux informatiques", 
+          "Analyse Informatique et Programmation", 
+          "Assurance", 
+          "Banque et Finance de Marché", 
+          "Banque et Institutions des Micro finances", 
+          "Marketing", 
+          "Gestion des Ressources Humaines", 
+          "Gestion des Transports", 
+          "Gestion de Logistique", 
+          "Statistique Economique et Sectorielle", 
+          "Statistique Démographique et Sociale", 
+          "Planification et Gestion des Projets", 
+          "Planification et Economie du Développement Durable", 
+          "Développement Local et Régional", 
+          "Gestion Financière et Comptable"
+        ],
         contact: {
           email: "eneam@uac.bj",
           phone: "+229 21-30-41-68",
@@ -239,7 +263,15 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Géographie et Aménagement du Territoire","Psychologie", "Sciences de l'Éducation", "Philosophie", "Socio-Anthropologie", "Histoire et Archéologie", "Psychologie du travail et des Organisations"],
+        programs: [
+          "Géographie et Aménagement du Territoire",
+          "Psychologie", 
+          "Sciences de l'Éducation", 
+          "Philosophie", 
+          "Socio-Anthropologie", 
+          "Histoire et Archéologie", 
+          "Psychologie du travail et des Organisations"
+        ],
         contact: {
           email: "",
           phone: "",
@@ -269,7 +301,12 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey Calavi",
         country: "Bénin",
-        programs: ["Administration Générale", "Administration des Finances", "Secrétariat de Gestion", "Sciences et Techniques de l'Information documentaire"],
+        programs: [
+          "Administration Générale", 
+          "Administration des Finances", 
+          "Secrétariat de Gestion", 
+          "Sciences et Techniques de l'Information documentaire"
+        ],
         contact: {
           email: "",
           phone: "",
@@ -284,7 +321,13 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Génie Logiciel", "Internet et Multimédia", "Intelligence artificielle (IA)", "Systèmes embarqués et Internet des Objets (SEIoT)", "Sécurité Informatique"],
+        programs: [
+          "Génie Logiciel", 
+          "Internet et Multimédia", 
+          "Intelligence artificielle (IA)", 
+          "Systèmes embarqués et Internet des Objets (SEIoT)", 
+          "Sécurité Informatique"
+        ],
         contact: {
           email: "ifri@uac.bj",
           phone: "+229 55 02 80 70",
@@ -299,7 +342,15 @@ export const universities: University[] = [
         admissionRequirements: ["Classement"],
         location: "Abomey-Calavi",
         country: "Bénin",
-        programs: ["Sciences et Techniques de Production Végétale", "Sciences et Techniques de Production Animale", "Aménagement et Gestion des Forêts et Parcours Naturels", "Génie Rural, Mécanisation Agricole, Pêche et Aquaculture", "Nutrition et Technologie Alimentaires", "Agroéconomie, Sociologie et Vulgarisation Rurales", "Entreprenariat Agricole"],
+        programs: [
+          "Sciences et Techniques de Production Végétale", 
+          "Sciences et Techniques de Production Animale", 
+          "Aménagement et Gestion des Forêts et Parcours Naturels", 
+          "Génie Rural, Mécanisation Agricole, Pêche et Aquaculture", 
+          "Nutrition et Technologie Alimentaires", 
+          "Agroéconomie, Sociologie et Vulgarisation Rurales", 
+          "Entreprenariat Agricole"
+        ],
         contact: {
           email: "fsa.uac@uac.bj",
           phone: "229 01 41 78 71 70",

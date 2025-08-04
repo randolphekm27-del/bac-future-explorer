@@ -95,15 +95,7 @@ export default function UniversityDetail() {
             </div>
           </div>
 
-          {/* Section galerie */}
-          {university.gallery && (
-            <div className="mb-16">
-              <UniversityGallery 
-                gallery={university.gallery} 
-                universityName={university.name} 
-              />
-            </div>
-          )}
+
 
           {/* Liste des écoles */}
           <SectionTitle

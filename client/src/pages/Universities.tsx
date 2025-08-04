@@ -8,10 +8,13 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { UniversityCard } from "@/components/ui/university-card"
 import { universities } from "@/data/universities"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 export default function Universities() {
   const [searchTerm, setSearchTerm] = useState("")
   const [filter, setFilter] = useState("all") // "all", "public", "private"
+  
+  useScrollAnimation();
 
   const filteredUniversities = universities.filter((university) => {
     const matchesSearch = university.name
@@ -81,9 +84,13 @@ export default function Universities() {
             </div>
           </div>
 
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
-            {filteredUniversities.map((university) => (
-              <div key={university.id} className="w-full max-w-full">
+          <div className="premium-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full">
+            {filteredUniversities.map((university, index) => (
+              <div
+                key={university.id}
+                style={{ '--stagger-delay': index } as React.CSSProperties}
+                className="w-full max-w-full"
+              >
                 <UniversityCard university={university} />
               </div>
             ))}
