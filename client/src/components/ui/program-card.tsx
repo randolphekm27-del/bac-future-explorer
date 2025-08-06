@@ -1,6 +1,7 @@
 import { GraduationCap, BookOpen, Users, Briefcase } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Button } from "./button"
+import { LazyImage } from "./lazy-image"
 import type { Program } from "@/data/programs"
 import { getSchoolsForProgram } from "@/data/programs"
 
@@ -46,7 +47,7 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
     >
       {/* Image de la filière */}
       <div className="aspect-video w-full overflow-hidden bg-muted">
-        <img
+        <LazyImage
           src={program.image || "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"}
           alt={program.name}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
