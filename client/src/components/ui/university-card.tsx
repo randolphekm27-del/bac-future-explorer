@@ -15,7 +15,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
   };
 
   return (
-    <div className="premium-card group w-full max-w-full overflow-hidden scroll-animate stagger-animate">
+    <div className="premium-card group w-full max-w-full overflow-hidden scroll-animate stagger-animate font-responsive">
       <div className="aspect-video w-full overflow-hidden bg-muted relative rounded-xl">
         <img
           src={university.image}
@@ -36,7 +36,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
         )}
       </div>
       <Link to={`/universities/${university.slug}`} className="block w-full premium-focus">
-        <div className="p-6 w-full">
+        <div className="px-responsive py-responsive w-full">
           <div className="flex items-center justify-between mb-4 w-full gap-3">
             <span
               className={`text-xs px-3 py-1.5 rounded-full flex-shrink-0 font-medium transition-all duration-300 ${
@@ -52,10 +52,10 @@ export function UniversityCard({ university }: UniversityCardProps) {
               <span className="truncate">{university.location}</span>
             </span>
           </div>
-          <h3 className="text-lg sm:text-xl font-bold premium-text-gradient break-words mb-3 leading-tight transition-all duration-300 group-hover:scale-105 transform origin-left">
+          <h3 className="text-responsive-lg font-bold premium-text-gradient break-words mb-3 leading-tight transition-all duration-300 group-hover:scale-105 transform origin-left">
             {university.name}
           </h3>
-          <p className="text-sm text-muted-foreground break-words leading-relaxed line-clamp-3 transition-colors duration-300 group-hover:text-foreground/80">
+          <p className="text-responsive-sm text-muted-foreground break-words leading-relaxed line-clamp-3 transition-colors duration-300 group-hover:text-foreground/80">
             {university.description}
           </p>
           

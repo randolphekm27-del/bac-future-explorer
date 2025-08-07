@@ -39,14 +39,14 @@ const Index = () => {
       <section className="relative gradient-hero pt-20 pb-16 sm:pb-24 md:pb-32">
         <FloatingParticles />
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container-responsive relative z-10">
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="space-y-6 md:space-y-8">
+            <div className="space-y-6 md:space-y-8 font-responsive">
               <AnimatedTextCycle 
                 texts={animatedTexts}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-tight min-h-[80px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px]"
               />
-              <p className="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed font-medium animate-fade-in" style={{ animationDelay: "0.2s" }}>
+              <p className="text-responsive-base text-foreground/80 leading-relaxed font-medium animate-fade-in font-responsive" style={{ animationDelay: "0.2s" }}>
                 <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                 Guide complet pour les nouveaux bacheliers du Bénin.
               </p>

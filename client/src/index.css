@@ -155,6 +155,56 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Font Size Accessibility System */
+  html.font-small {
+    font-size: 14px;
+  }
+
+  html.font-normal {
+    font-size: 16px;
+  }
+
+  html.font-large {
+    font-size: 18px;
+  }
+
+  html.font-extra-large {
+    font-size: 20px;
+  }
+
+  /* Responsive font scaling for different screen sizes */
+  @media (max-width: 640px) {
+    html.font-small { font-size: 13px; }
+    html.font-normal { font-size: 15px; }
+    html.font-large { font-size: 17px; }
+    html.font-extra-large { font-size: 19px; }
+  }
+
+  @media (max-width: 480px) {
+    html.font-small { font-size: 12px; }
+    html.font-normal { font-size: 14px; }
+    html.font-large { font-size: 16px; }
+    html.font-extra-large { font-size: 18px; }
+  }
+
+  /* Ensure proper line heights with different font sizes */
+  .font-responsive {
+    line-height: 1.6;
+  }
+
+  /* Better mobile touch targets */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  @media (max-width: 640px) {
+    button, a, [role="button"] {
+      min-height: 48px;
+      min-width: 48px;
+    }
+  }
 }
 
 /* Scrollbar personnalisée pour mobile */
@@ -165,6 +215,65 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Enhanced Responsive Design */
+@layer utilities {
+  /* Responsive text sizes that work with font size system */
+  .text-responsive-xs {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+  
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  .text-responsive-base {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+  
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+  }
+  
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+  
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  .text-responsive-3xl {
+    font-size: clamp(1.875rem, 6vw, 2.5rem);
+  }
+  
+  .text-responsive-4xl {
+    font-size: clamp(2.25rem, 7vw, 3rem);
+  }
+  
+  /* Responsive padding and margins */
+  .px-responsive {
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+  
+  .py-responsive {
+    padding-top: clamp(1rem, 3vw, 1.5rem);
+    padding-bottom: clamp(1rem, 3vw, 1.5rem);
+  }
+  
+  .gap-responsive {
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+  
+  /* Better mobile layouts */
+  .container-responsive {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+  }
 }
 
 /* Prévention du débordement horizontal global et scroll fluide */

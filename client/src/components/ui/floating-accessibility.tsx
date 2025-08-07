@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 import { OrientationTest } from "./orientation-test"
 import { AIChat } from "./ai-chat"
+import { FontSizeControl } from "./font-size-control"
 
 interface FloatingAccessibilityProps {
   className?: string
@@ -46,6 +47,9 @@ Je peux maintenant vous donner des conseils ultra-personnalisés ! Que souhaitez
 
   return (
     <div className={cn("fixed right-2 sm:right-4 bottom-4 z-[99999] flex flex-col gap-2 sm:gap-3 pointer-events-none", className)}>
+      <div className="pointer-events-auto">
+        <FontSizeControl />
+      </div>
       <div className="pointer-events-auto">
         <OrientationTest onComplete={handleTestComplete} />
       </div>

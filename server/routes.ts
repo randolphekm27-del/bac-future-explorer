@@ -50,7 +50,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         case 'newsletter':
           // Envoyer le guide à l'utilisateur
           const userEmailData = {
-            from: 'noreply@apresmonbac.bj',
+            from: 'Orientation <onboarding@resend.dev>',
             to: email,
             subject: '🎓 Votre Guide d\'Orientation Gratuit - Après mon Bac',
             html: `
@@ -105,7 +105,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
           // Notification à l'admin
           const adminNotificationNewsletter = {
-            from: 'noreply@apresmonbac.bj',
+            from: 'Orientation <onboarding@resend.dev>',
             to: ADMIN_EMAIL,
             subject: '📧 Nouvelle inscription newsletter - Après mon Bac',
             html: `
@@ -121,7 +121,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
           };
 
           // Envoyer l'email utilisateur avec Resend SDK
-          await resend.emails.send(userEmailData);
+          try {
+            await resend.emails.send(userEmailData);
+          } catch (emailError: any) {
+            console.error('Erreur envoi email utilisateur:', emailError);
+            // Continue même en cas d'erreur pour l'email utilisateur
+          }
 
           emailData = adminNotificationNewsletter;
           break;
@@ -133,7 +138,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           }
           
           emailData = {
-            from: 'noreply@apresmonbac.bj',
+            from: 'Orientation <onboarding@resend.dev>',
             to: ADMIN_EMAIL,
             subject: '🏢 Nouvelle demande entreprise - Après mon Bac',
             html: `
@@ -169,7 +174,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           }
           
           emailData = {
-            from: 'noreply@apresmonbac.bj',
+            from: 'Orientation <onboarding@resend.dev>',
             to: ADMIN_EMAIL,
             subject: '👨‍🏫 Nouvelle candidature formateur - Après mon Bac',
             html: `
@@ -206,7 +211,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           }
           
           emailData = {
-            from: 'noreply@apresmonbac.bj',
+            from: 'Orientation <onboarding@resend.dev>',
             to: ADMIN_EMAIL,
             subject: '💬 Nouveau message de contact - Après mon Bac',
             html: `
