@@ -38,7 +38,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (!RESEND_API_KEY) {
         return res.status(500).json({ 
           success: false, 
-          error: 'Configuration email manquante' 
+          error: 'Clé API Resend manquante. Veuillez configurer RESEND_API_KEY.' 
         });
       }
 

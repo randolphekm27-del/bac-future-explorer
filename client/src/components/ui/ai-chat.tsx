@@ -151,7 +151,7 @@ Souhaitez-vous des détails sur une université spécifique ?`
 • Agronomie
 • Communication
 
-${testResults ? `Pour votre profil, je recommande : ${testResults.recommendations?.map(r => r.field).join(', ')}.` : ''}
+${testResults ? `Pour votre profil, je recommande : ${testResults.recommendations?.map((r: any) => r.field).join(', ')}.` : ''}
 
 Voulez-vous explorer une filière particulière ?`
     }
@@ -232,7 +232,7 @@ Cherchez-vous dans un domaine particulier ?`
       return `Basé sur votre profil d'orientation, voici mes conseils personnalisés :
 
 🎯 **Vos forces :** ${testResults.personality || 'Leadership et collaboration'}
-📚 **Filières recommandées :** ${testResults.recommendations?.slice(0, 3).map(r => r.field).join(', ') || 'Sciences, Commerce, Technologie'}
+📚 **Filières recommandées :** ${testResults.recommendations?.slice(0, 3).map((r: any) => r.field).join(', ') || 'Sciences, Commerce, Technologie'}
 ⏱️ **Durée d'études :** ${testResults.studyDuration || 'Formation complète recommandée'}
 
 **Prochaines étapes :**
@@ -354,12 +354,13 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
     <>
       <Button
         onClick={() => setIsOpen(true)}
-        className="h-12 w-12 sm:h-14 sm:w-14 rounded-full gradient-primary shadow-lg hover-lift animate-glow group relative"
+        className="h-10 w-10 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative"
         size="icon"
       >
-        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 transition-transform group-hover:scale-110" />
-        <Sparkles className="absolute -top-1 -right-1 h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 animate-pulse" />
-        <span className="sr-only">Chat avec l'IA</span>
+        <MessageCircle className="h-4 w-4 text-white transition-transform group-hover:scale-110" />
+        <span className="absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-black bg-opacity-75 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
+          Assistant IA
+        </span>
       </Button>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>

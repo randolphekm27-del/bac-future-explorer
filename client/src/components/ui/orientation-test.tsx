@@ -551,7 +551,7 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
         data-testid="button-orientation-test"
         className={cn(
           "group relative flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:shadow-xl",
-          "bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600",
+          "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700",
           "text-white hover:scale-105"
         )}
         aria-label="Test d'orientation approfondi"
@@ -641,7 +641,7 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
                     onClick={nextQuestion}
                     disabled={!canProceed()}
                     data-testid="button-next"
-                    className="bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600"
+                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
                   >
                     {currentQuestion === QUESTIONS.length - 1 ? "Voir mes résultats" : "Suivant"}
                     <ChevronRight className="ml-2 h-4 w-4" />
@@ -773,7 +773,7 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
                   </Button>
                   <Button
                     onClick={() => setIsOpen(false)}
-                    className="flex-1 bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600"
+                    className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700"
                     data-testid="button-close-results"
                   >
                     <CheckCircle className="h-4 w-4 mr-2" />
