@@ -1,4 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
+import { Resend } from 'resend';
 
 interface EmailRequest {
   type: 'newsletter' | 'company' | 'trainer' | 'contact';
@@ -36,10 +37,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
   }
 
-  const headers = {
-    Authorization: `Bearer ${RESEND_API_KEY}`,
-    'Content-Type': 'application/json',
-  };
+  const resend = new Resend(RESEND_API_KEY);
 
   try {
     let emailData: any = {};
@@ -77,10 +75,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
                 </div>
                 
                 <div style="text-align: center; margin: 30px 0;">
-                  <a href="https://docs.google.com/document/d/1RaCYVOqpV5yMBMzSMzS9F4X4uPF2JtWX8J5irOHWrks/edit?usp=drive_link" 
-                     style="background: linear-gradient(135deg, #3B82F6, #F97316); color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold;">
-                    📥 Télécharger votre guide (PDF)
+                  <a href="https://drive.google.com/file/d/1-R-g3n6vtr4nsBNV9_IUA6mC3Iio5CLW/view?usp=drivesdk" 
+                     style="display: inline-block; background: linear-gradient(135deg, #3B82F6, #F97316); color: white; padding: 18px 35px; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 16px; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); transition: transform 0.2s ease;">
+                    🎓 Télécharger votre guide complet
                   </a>
+                </div>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                  <p style="color: #6B7280; font-size: 14px;">💾 Format PDF • 📄 Guide complet • 🆓 100% Gratuit</p>
                 </div>
                 
                 <div style="background: #EFF6FF; border-left: 4px solid #3B82F6; padding: 15px; margin: 20px 0;">
@@ -117,12 +119,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           `
         };
 
-        // Envoyer les deux emails
-        await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers,
-          body: JSON.stringify(userEmailData)
-        });
+        // Envoyer le guide à l'utilisateur
+        await resend.emails.send(userEmailData);
 
         emailData = adminNotificationNewsletter;
         break;
@@ -238,18 +236,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     // Envoyer l'email
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(emailData)
-    });
-
-    if (!response.ok) {
-      const error = await response.json();
-      return res.status(500).json({ success: false, error });
-    }
-
-    const result = await response.json();
+    const result = await resend.emails.send(emailData);
 
     return res.status(200).json({ 
       success: true, 
