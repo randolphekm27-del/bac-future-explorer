@@ -46,7 +46,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       case 'newsletter':
         // Envoyer le guide à l'utilisateur
         const userEmailData = {
-          from: 'noreply@apresmonbac.bj',
+          from: 'Après mon Bac <onboarding@resend.dev>',
           to: email,
           subject: '🎓 Votre Guide d\'Orientation Gratuit - Après mon Bac',
           html: `
@@ -104,7 +104,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
         // Notification à l'admin
         const adminNotificationNewsletter = {
-          from: 'noreply@apresmonbac.bj',
+          from: 'Après mon Bac <onboarding@resend.dev>',
           to: ADMIN_EMAIL,
           subject: '📧 Nouvelle inscription newsletter - Après mon Bac',
           html: `
@@ -132,7 +132,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
         
         emailData = {
-          from: 'noreply@apresmonbac.bj',
+          from: 'Après mon Bac <onboarding@resend.dev>',
           to: ADMIN_EMAIL,
           subject: '🏢 Nouvelle demande entreprise - Après mon Bac',
           html: `
@@ -168,7 +168,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
         
         emailData = {
-          from: 'noreply@apresmonbac.bj',
+          from: 'Après mon Bac <onboarding@resend.dev>',
           to: ADMIN_EMAIL,
           subject: '👨‍🏫 Nouvelle candidature formateur - Après mon Bac',
           html: `
@@ -205,7 +205,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
         
         emailData = {
-          from: 'noreply@apresmonbac.bj',
+          from: 'Après mon Bac <onboarding@resend.dev>',
           to: ADMIN_EMAIL,
           subject: '💬 Nouveau message de contact - Après mon Bac',
           html: `

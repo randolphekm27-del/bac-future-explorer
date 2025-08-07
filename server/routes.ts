@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
+import { Resend } from 'resend';
 
 interface EmailRequest {
   type: 'newsletter' | 'company' | 'trainer' | 'contact';
@@ -41,10 +42,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
       }
 
-      const headers = {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      };
+      const resend = new Resend(RESEND_API_KEY);
 
       let emailData: any = {};
 
@@ -121,12 +119,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
             `
           };
 
-          // Envoyer les deux emails
-          await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers,
-            body: JSON.stringify(userEmailData)
-          });
+          // Envoyer le guide à l'utilisateur
+          await resend.emails.send(userEmailData);
 
           emailData = adminNotificationNewsletter;
           break;
@@ -242,22 +236,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       // Envoyer l'email
-      const response = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify(emailData)
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Erreur envoi email');
-      }
+      const result = await resend.emails.send(emailData);
 
       res.json({ 
         success: true, 
         message: 'Email envoyé avec succès',
-        id: result.id 
+        id: result.data?.id 
       });
 
     } catch (error: any) {
