@@ -25,8 +25,8 @@ export function FontSizeControl({ className }: FontSizeControlProps) {
         onClick={() => setIsOpen(!isOpen)}
         data-testid="button-font-size-toggle"
         className={cn(
-          "group relative flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:shadow-xl",
-          "bg-gradient-to-r from-blue-500 to-orange-500 hover:from-blue-600 hover:to-orange-600",
+          "group relative flex h-10 w-10 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:shadow-xl",
+          "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700",
           "text-white hover:scale-105"
         )}
         aria-label="Régler la taille des polices"
@@ -41,9 +41,9 @@ export function FontSizeControl({ className }: FontSizeControlProps) {
       {isOpen && (
         <div 
           className={cn(
-            "absolute bottom-14 right-0 z-[100000]",
+            "absolute top-14 right-0 z-[100000]",
             "rounded-lg bg-white dark:bg-gray-800 p-4 shadow-xl border border-gray-200 dark:border-gray-700",
-            "min-w-[200px] animate-in slide-in-from-bottom-2 duration-300"
+            "min-w-[200px] animate-in slide-in-from-top-2 duration-300"
           )}
           data-testid="panel-font-size-control"
         >
