@@ -45,20 +45,7 @@ ${results.recommendations.slice(0, 3).map((rec, i) =>
 Je peux maintenant vous donner des conseils ultra-personnalisés ! Que souhaitez-vous explorer ?`
   }
 
-  return (
-    <div className={cn("fixed right-2 sm:right-4 bottom-4 z-[99999] flex flex-col gap-2 sm:gap-3 pointer-events-none", className)}>
-      <div className="pointer-events-auto">
-        <FontSizeControl />
-      </div>
-      <div className="pointer-events-auto">
-        <OrientationTest onComplete={handleTestComplete} />
-      </div>
-      <div className="pointer-events-auto">
-        <AIChat 
-          testResults={testResults}
-          initialMessage={testResults ? createWelcomeMessage(testResults) : undefined}
-        />
-      </div>
-    </div>
-  )
+  // Les outils d'accessibilité sont maintenant intégrés dans la navigation
+  // Ce composant n'est plus nécessaire mais on le garde pour la compatibilité
+  return null
 }
