@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { useAccessibility, FontSize } from "@/contexts/AccessibilityContext";
 import { Type, Minus, Plus, Settings } from "lucide-react";
@@ -10,6 +10,23 @@ interface FontSizeControlProps {
 export function FontSizeControl({ className }: FontSizeControlProps) {
   const { fontSize, setFontSize } = useAccessibility();
   const [isOpen, setIsOpen] = useState(false);
+  const controlRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (controlRef.current && !controlRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const fontSizes: { value: FontSize; label: string; icon: React.ReactNode }[] = [
     { value: 'small', label: 'Petit', icon: <Type size={14} /> },
@@ -19,7 +36,7 @@ export function FontSizeControl({ className }: FontSizeControlProps) {
   ];
 
   return (
-    <div className={cn("relative", className)}>
+    <div ref={controlRef} className={cn("relative", className)}>
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -41,7 +58,7 @@ export function FontSizeControl({ className }: FontSizeControlProps) {
       {isOpen && (
         <div 
           className={cn(
-            "absolute top-14 right-0 z-[100000]",
+            "fixed top-16 right-4 z-[100000]",
             "rounded-lg bg-white dark:bg-gray-800 p-4 shadow-xl border border-gray-200 dark:border-gray-700",
             "min-w-[200px] animate-in slide-in-from-top-2 duration-300"
           )}

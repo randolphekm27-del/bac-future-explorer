@@ -599,31 +599,47 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
                     )}
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <RadioGroup
-                      value={QUESTIONS[currentQuestion].type === "single" ? answers[QUESTIONS[currentQuestion].id]?.[0] : undefined}
-                      onValueChange={(value) => handleAnswer(QUESTIONS[currentQuestion].id, value)}
-                    >
-                      {QUESTIONS[currentQuestion].options.map((option) => (
-                        <div key={option.id} className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors">
-                          <input
-                            type={QUESTIONS[currentQuestion].type === "single" ? "radio" : "checkbox"}
-                            id={option.id}
-                            name={QUESTIONS[currentQuestion].id}
-                            checked={answers[QUESTIONS[currentQuestion].id]?.includes(option.id) || false}
-                            onChange={() => handleAnswer(QUESTIONS[currentQuestion].id, option.id)}
-                            className="h-4 w-4"
-                            data-testid={`input-${option.id}`}
-                          />
-                          <Label htmlFor={option.id} className="flex items-center gap-3 flex-1 cursor-pointer">
-                            <span className="text-lg">{option.emoji}</span>
-                            <div>
-                              <div className="font-medium text-responsive-base">{option.label}</div>
-                              <div className="text-xs text-muted-foreground">{option.category}</div>
-                            </div>
-                          </Label>
-                        </div>
-                      ))}
-                    </RadioGroup>
+                    {QUESTIONS[currentQuestion].type === "single" ? (
+                      <RadioGroup
+                        value={answers[QUESTIONS[currentQuestion].id]?.[0] || ""}
+                        onValueChange={(value) => handleAnswer(QUESTIONS[currentQuestion].id, value)}
+                      >
+                        {QUESTIONS[currentQuestion].options.map((option) => (
+                          <div key={option.id} className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors">
+                            <RadioGroupItem value={option.id} id={option.id} />
+                            <Label htmlFor={option.id} className="flex items-center gap-3 flex-1 cursor-pointer">
+                              <span className="text-lg">{option.emoji}</span>
+                              <div>
+                                <div className="font-medium text-responsive-base">{option.label}</div>
+                                <div className="text-xs text-muted-foreground">{option.category}</div>
+                              </div>
+                            </Label>
+                          </div>
+                        ))}
+                      </RadioGroup>
+                    ) : (
+                      <div className="space-y-2">
+                        {QUESTIONS[currentQuestion].options.map((option) => (
+                          <div key={option.id} className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-muted/50 transition-colors">
+                            <input
+                              type="checkbox"
+                              id={option.id}
+                              checked={answers[QUESTIONS[currentQuestion].id]?.includes(option.id) || false}
+                              onChange={() => handleAnswer(QUESTIONS[currentQuestion].id, option.id)}
+                              className="h-4 w-4 text-orange-500 focus:ring-orange-500 border-gray-300 rounded"
+                              data-testid={`input-${option.id}`}
+                            />
+                            <Label htmlFor={option.id} className="flex items-center gap-3 flex-1 cursor-pointer">
+                              <span className="text-lg">{option.emoji}</span>
+                              <div>
+                                <div className="font-medium text-responsive-base">{option.label}</div>
+                                <div className="text-xs text-muted-foreground">{option.category}</div>
+                              </div>
+                            </Label>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
 
