@@ -241,7 +241,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ 
       success: true, 
       message: "Email envoyé avec succès",
-      id: result.id 
+      id: result.data?.id 
     });
   } catch (error: any) {
     return res.status(500).json({ success: false, error: error.message || "Erreur serveur" });
