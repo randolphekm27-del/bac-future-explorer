@@ -363,18 +363,41 @@ Posez-moi une question précise et je vous donnerai des informations détaillée
         </span>
       </Button>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="glass-card w-[95vw] sm:max-w-4xl h-[85vh] sm:h-[80vh] flex flex-col p-3 sm:p-6">
-          <DialogHeader>
-            <DialogTitle className="gradient-text text-lg sm:text-2xl flex items-center gap-2">
-              <Bot className="h-5 w-5 sm:h-6 sm:w-6" />
-              <span className="hidden sm:inline">Assistant IA d'Orientation</span>
-              <span className="sm:hidden">IA Orientation</span>
-              <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400" />
-            </DialogTitle>
-            <DialogDescription className="text-sm sm:text-base">
-              Intelligence artificielle spécialisée en orientation académique au Bénin
-            </DialogDescription>
+      <Dialog open={isOpen} onOpenChange={(open) => {
+        // Ne fermer que si explicitement demandé
+        if (!open) setIsOpen(false);
+      }}>
+        <DialogContent 
+          className="glass-card w-[95vw] sm:max-w-4xl h-[85vh] sm:h-[80vh] flex flex-col p-3 sm:p-6"
+          onPointerDownOutside={(e) => {
+            // Empêcher la fermeture automatique lors de clics à l'extérieur
+            e.preventDefault();
+          }}
+          onInteractOutside={(e) => {
+            // Empêcher la fermeture automatique lors d'interactions à l'extérieur
+            e.preventDefault();
+          }}
+        >
+          <DialogHeader className="flex flex-row items-center justify-between">
+            <div>
+              <DialogTitle className="gradient-text text-lg sm:text-2xl flex items-center gap-2">
+                <Bot className="h-5 w-5 sm:h-6 sm:w-6" />
+                <span className="hidden sm:inline">Assistant IA d'Orientation</span>
+                <span className="sm:hidden">IA Orientation</span>
+                <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400" />
+              </DialogTitle>
+              <DialogDescription className="text-sm sm:text-base">
+                Intelligence artificielle spécialisée en orientation académique au Bénin
+              </DialogDescription>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+              className="ml-4 hover:bg-red-100 hover:text-red-600"
+            >
+              ✕
+            </Button>
           </DialogHeader>
 
           <div className="flex-1 flex flex-col min-h-0">

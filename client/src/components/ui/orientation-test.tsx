@@ -562,16 +562,39 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
         </span>
       </Button>
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-2xl max-h-[90vh] overflow-hidden font-responsive">
-          <DialogHeader className="pb-4">
-            <DialogTitle className="text-responsive-xl font-bold flex items-center gap-3">
-              <GraduationCap className="h-6 w-6 text-blue-500" />
-              Test d'Orientation Personnalisé
-            </DialogTitle>
-            <DialogDescription className="text-responsive-base">
-              Découvrez les filières qui correspondent vraiment à votre profil
-            </DialogDescription>
+      <Dialog open={isOpen} onOpenChange={(open) => {
+        // Ne fermer que si explicitement demandé (bouton close ou échap)
+        if (!open) setIsOpen(false);
+      }}>
+        <DialogContent 
+          className="max-w-2xl max-h-[90vh] overflow-hidden font-responsive"
+          onPointerDownOutside={(e) => {
+            // Empêcher la fermeture automatique lors de clics à l'extérieur
+            e.preventDefault();
+          }}
+          onInteractOutside={(e) => {
+            // Empêcher la fermeture automatique lors d'interactions à l'extérieur
+            e.preventDefault();
+          }}
+        >
+          <DialogHeader className="pb-4 flex flex-row items-center justify-between">
+            <div>
+              <DialogTitle className="text-responsive-xl font-bold flex items-center gap-3">
+                <GraduationCap className="h-6 w-6 text-blue-500" />
+                Test d'Orientation Personnalisé
+              </DialogTitle>
+              <DialogDescription className="text-responsive-base">
+                Découvrez les filières qui correspondent vraiment à votre profil
+              </DialogDescription>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(false)}
+              className="ml-4 hover:bg-red-100 hover:text-red-600"
+            >
+              ✕
+            </Button>
           </DialogHeader>
 
           <div className="space-y-6 overflow-y-auto px-1">
