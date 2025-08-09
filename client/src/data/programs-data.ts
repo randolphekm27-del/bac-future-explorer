@@ -1556,9 +1556,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "administration-finances",
+    id: "administration-des-finances",
     name: "Administration des Finances",
-    slug: "administration-finances",
+    slug: "administration-des-finances",
     category: "Droit & Sciences Politiques",
     description: "Formation spécialisée en gestion financière publique et fiscalité.",
     explanation: "Spécialisez-vous dans la gestion des finances publiques et la fiscalité, des compétences cruciales pour le bon fonctionnement de l'État et des collectivités.",
@@ -1608,8 +1608,14 @@ export const searchPrograms = (query: string): ProgramData[] => {
   const searchTerm = query.toLowerCase();
   return programsData.filter(program => 
     program.name.toLowerCase().includes(searchTerm) ||
-    program.description.toLowerCase().includes(searchTerm) ||
-    program.explanation.toLowerCase().includes(searchTerm) ||
+    (program.description && program.description.toLowerCase().includes(searchTerm)) ||
+    (program.explanation && program.explanation.toLowerCase().includes(searchTerm)) ||
     program.careers.some(career => career.toLowerCase().includes(searchTerm))
   );
+};
+
+// Fonction pour obtenir toutes les catégories
+export const getAllCategories = (): string[] => {
+  const categories = Array.from(new Set(programsData.map(program => program.category)));
+  return categories.sort();
 };
