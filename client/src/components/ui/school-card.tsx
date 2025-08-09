@@ -20,14 +20,14 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
     <div className="group rounded-lg border bg-background p-3 sm:p-6 hover:border-primary/50 transition-colors animate-scale-in w-full max-w-full overflow-hidden">
       <div className="flex items-start justify-between mb-4 w-full">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors break-words leading-tight">
+          <h3 className="text-xl sm:text-2xl font-semibold group-hover:text-primary transition-colors break-words leading-tight">
             {school.name}
           </h3>
-          <div className="mt-1 flex items-center text-xs sm:text-sm text-muted-foreground flex-wrap gap-1">
+          <div className="mt-1 flex items-center text-sm sm:text-base text-muted-foreground flex-wrap gap-1">
             <MapPin className="mr-1 h-4 w-4" />
-            <span className="break-words text-xs sm:text-sm">{school.location}, {school.country}</span>
+            <span className="break-words text-sm sm:text-base">{school.location}, {school.country}</span>
           </div>
-          <p className="text-xs text-muted-foreground mt-1 break-words leading-tight">
+          <p className="text-sm text-muted-foreground mt-1 break-words leading-tight">
             {university.name}
           </p>
         </div>
@@ -47,13 +47,13 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
         )}
       </div>
 
-      <p className="text-xs sm:text-sm text-muted-foreground mb-4 break-words leading-relaxed">
+      <p className="text-sm sm:text-base text-muted-foreground mb-4 break-words leading-relaxed">
         {school.description}
       </p>
 
       {/* Filières proposées */}
       <div className="mb-4 w-full">
-        <h4 className="text-xs sm:text-sm font-medium mb-2">Filières proposées:</h4>
+        <h4 className="text-sm sm:text-base font-medium mb-2">Filières proposées:</h4>
         <div className="flex flex-wrap gap-2 w-full">
           <TooltipProvider>
             {school.programs.map((program, i) => {
@@ -64,14 +64,14 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                 <Link
                   key={i}
                   to={`/programs#${matchingProgram.slug}`}
-                  className="inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid border-primary/20 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/30 transition-all duration-200 font-medium break-words min-w-0 max-w-full"
+                  className="inline-flex items-center justify-center text-sm px-3 py-1.5 rounded-full border border-solid border-primary/20 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/30 transition-all duration-200 font-medium break-words min-w-0 max-w-full"
                 >
                   <span className="truncate">{program}</span>
                 </Link>
               ) : (
                 <span
                   key={i}
-                  className="inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid border-gray-200 bg-muted/50 text-muted-foreground font-medium break-words min-w-0 max-w-full cursor-not-allowed"
+                  className="inline-flex items-center justify-center text-sm px-3 py-1.5 rounded-full border border-solid border-gray-200 bg-muted/50 text-muted-foreground font-medium break-words min-w-0 max-w-full cursor-not-allowed"
                   title="Filière non référencée sur la page des filières"
                 >
                   <span className="truncate">{program}</span>

@@ -57,37 +57,37 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
       <div className="p-3 sm:p-6 w-full">
         <div className="mb-4 flex items-center justify-between w-full">
           {getIcon(program.icon)}
-          <span className="inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid border-accent/20 bg-accent text-primary-foreground font-medium">
+          <span className="inline-flex items-center justify-center text-sm px-3 py-1.5 rounded-full border border-solid border-accent/20 bg-accent text-primary-foreground font-medium">
             {program.duration || "3-5 ans"}
           </span>
         </div>
         
-        <h3 className="text-lg sm:text-xl font-semibold group-hover:text-primary transition-colors break-words mb-2 leading-tight">
+        <h3 className="text-xl sm:text-2xl font-semibold group-hover:text-primary transition-colors break-words mb-2 leading-tight">
           {program.name}
         </h3>
         
-        <p className="mt-1 text-xs text-muted-foreground break-words leading-tight">
+        <p className="mt-1 text-sm text-muted-foreground break-words leading-tight">
           {program.category}
         </p>
         
         {program.description && (
-          <p className="mt-4 text-xs sm:text-sm text-muted-foreground break-words leading-relaxed line-clamp-3">
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground break-words leading-relaxed line-clamp-3">
             {program.description}
           </p>
         )}
         
         {program.explanation && (
           <div className="mt-4 p-3 bg-muted/30 rounded-lg border-l-4 border-primary/20">
-            <h4 className="text-xs sm:text-sm font-medium mb-2 text-primary">À quoi ça mène ?</h4>
-            <p className="text-xs sm:text-sm text-muted-foreground break-words leading-relaxed">
+            <h4 className="text-sm sm:text-base font-medium mb-2 text-primary">À quoi ça mène ?</h4>
+            <p className="text-sm sm:text-base text-muted-foreground break-words leading-relaxed">
               {program.explanation}
             </p>
           </div>
         )}
         
         <div className="mt-6">
-          <h4 className="text-xs sm:text-sm font-medium mb-2">Débouchés:</h4>
-          <ul className="text-xs sm:text-sm text-muted-foreground space-y-1 w-full">
+          <h4 className="text-sm sm:text-base font-medium mb-2">Débouchés:</h4>
+          <ul className="text-sm sm:text-base text-muted-foreground space-y-1 w-full">
             {program.careers.slice(0, 3).map((career, i) => (
               <li key={i} className="flex items-start w-full gap-2">
                 <GraduationCap className="mr-2 h-3 w-3 text-primary" />
@@ -95,7 +95,7 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
               </li>
             ))}
             {program.careers.length > 3 && (
-              <li className="text-xs text-primary">
+              <li className="text-sm text-primary">
                 ... et {program.careers.length - 3} autres débouchés
               </li>
             )}
@@ -103,7 +103,7 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
         </div>
         
         <div className="mt-6 flex items-center justify-between">
-          <div className="text-xs text-muted-foreground">
+          <div className="text-sm text-muted-foreground">
             {schoolsCount} école{schoolsCount > 1 ? 's' : ''}
           </div>
         </div>

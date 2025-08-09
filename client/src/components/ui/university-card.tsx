@@ -39,7 +39,7 @@ export function UniversityCard({ university }: UniversityCardProps) {
         <div className="px-responsive py-responsive w-full">
           <div className="flex items-center justify-between mb-4 w-full gap-3">
             <span
-              className={`inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid font-medium transition-all duration-300 ${
+              className={`inline-flex items-center justify-center text-sm px-3 py-1.5 rounded-full border border-solid font-medium transition-all duration-300 ${
                 university.type === "Public"
                   ? "border-blue-200 bg-gradient-to-r from-blue-100 to-blue-50 text-blue-800 group-hover:from-blue-200 group-hover:to-blue-100 group-hover:border-blue-300"
                   : "border-emerald-200 bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 group-hover:from-emerald-200 group-hover:to-emerald-100 group-hover:border-emerald-300"
@@ -47,8 +47,8 @@ export function UniversityCard({ university }: UniversityCardProps) {
             >
               {university.type}
             </span>
-            <span className="flex items-center text-xs text-muted-foreground flex-shrink-0 min-w-0 transition-colors duration-300 group-hover:text-foreground">
-              <MapPin className="mr-1 h-3 w-3" />
+            <span className="flex items-center text-sm text-muted-foreground flex-shrink-0 min-w-0 transition-colors duration-300 group-hover:text-foreground">
+              <MapPin className="mr-1 h-4 w-4" />
               <span className="truncate">{university.location}</span>
             </span>
           </div>

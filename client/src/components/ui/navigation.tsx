@@ -45,7 +45,7 @@ export function Navigation({ links }: NavigationProps) {
               alt="Après mon Bac Logo" 
               className="h-8 w-8 sm:h-10 sm:w-10"
             />
-            <span className="text-lg sm:text-xl font-bold gradient-text text-shadow hidden xs:block">
+            <span className="text-xl sm:text-2xl font-bold gradient-text text-shadow hidden xs:block">
               Après mon Bac
             </span>
           </Link>
@@ -59,7 +59,7 @@ export function Navigation({ links }: NavigationProps) {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "flex items-center space-x-1 lg:space-x-2 text-xs lg:text-sm font-semibold transition-all duration-300 px-2 lg:px-3 py-2 rounded-xl hover:scale-105",
+                    "flex items-center space-x-1 lg:space-x-2 text-sm lg:text-base font-semibold transition-all duration-300 px-2 lg:px-3 py-2 rounded-xl hover:scale-105",
                     location.pathname === link.href 
                       ? "gradient-primary text-primary-foreground shadow-md" 
                       : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
@@ -93,7 +93,7 @@ export function Navigation({ links }: NavigationProps) {
                   key={link.href}
                   to={link.href}
                   className={cn(
-                    "flex items-center space-x-3 text-sm font-medium transition-all duration-200 px-4 py-3 rounded-md hover:bg-accent",
+                    "flex items-center space-x-3 text-base font-medium transition-all duration-200 px-4 py-3 rounded-md hover:bg-accent",
                     location.pathname === link.href 
                       ? "text-primary bg-accent border-l-4 border-primary" 
                       : "text-muted-foreground hover:text-foreground"

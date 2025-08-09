@@ -46,7 +46,7 @@ const Index = () => {
                 texts={animatedTexts}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-tight min-h-[80px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px]"
               />
-              <p className="text-responsive-base text-foreground/80 leading-relaxed font-medium animate-fade-in font-responsive" style={{ animationDelay: "0.2s" }}>
+              <p className="text-lg sm:text-xl text-foreground/80 leading-relaxed font-medium animate-fade-in font-responsive" style={{ animationDelay: "0.2s" }}>
                 <span className="gradient-text-accent">Explorez</span> les universités, filières et opportunités pour construire votre avenir. 
                 Guide complet pour les nouveaux bacheliers du Bénin.
               </p>
@@ -66,7 +66,7 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                   </Button>
                 </Link>
-                <p className="text-sm sm:text-base text-muted-foreground text-center sm:text-left animate-fade-in" style={{ animationDelay: "0.8s" }}>
+                <p className="text-base sm:text-lg text-muted-foreground text-center sm:text-left animate-fade-in" style={{ animationDelay: "0.8s" }}>
                   Plus de 1000 étudiants nous font déjà confiance
                 </p>
               </div>
@@ -92,8 +92,8 @@ const Index = () => {
       <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Votre réussite commence ici</h2>
-            <p className="text-xl text-muted-foreground">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Votre réussite commence ici</h2>
+            <p className="text-xl sm:text-2xl text-muted-foreground">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -102,8 +102,8 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Building2 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Universités</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Universités</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission
               </p>
               <Link to="/universities">
@@ -118,8 +118,8 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <GraduationCap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Filières & Débouchés</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Filières & Débouchés</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 Découvrez les formations disponibles et leurs perspectives d'emploi
               </p>
               <Link to="/programs">
@@ -134,8 +134,8 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Briefcase className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Stages & Opportunités</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Stages & Opportunités</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 Trouvez des stages et développez votre expérience professionnelle
               </p>
               <Link to="/internships">
@@ -150,8 +150,8 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Trophy className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Concours & Hackathons</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Concours & Hackathons</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 Participez aux concours et challenges pour vous démarquer
               </p>
               <Link to="/competitions">
@@ -166,8 +166,8 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <PlayCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Formations Pratiques</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Formations Pratiques</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 Développez vos compétences avec nos formations spécialisées
               </p>
               <Link to="/courses">
@@ -182,8 +182,8 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Communauté</h3>
-              <p className="text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3">Communauté</h3>
+              <p className="text-base text-muted-foreground mb-4">
                 Rejoignez une communauté d'étudiants motivés et ambitieux
               </p>
               <Button variant="outline" className="w-full">
@@ -199,8 +199,8 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ils nous font confiance</h2>
-            <p className="text-xl text-muted-foreground">Découvrez les témoignages de nos étudiants</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Ils nous font confiance</h2>
+            <p className="text-xl sm:text-2xl text-muted-foreground">Découvrez les témoignages de nos étudiants</p>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <TestimonialsCarousel />
