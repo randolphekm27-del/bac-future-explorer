@@ -57,7 +57,7 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
       <div className="p-3 sm:p-6 w-full">
         <div className="mb-4 flex items-center justify-between w-full">
           {getIcon(program.icon)}
-          <span className="text-xs px-3 py-1 rounded-full bg-accent text-primary-foreground flex-shrink-0">
+          <span className="inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid border-accent/20 bg-accent text-primary-foreground font-medium">
             {program.duration || "3-5 ans"}
           </span>
         </div>

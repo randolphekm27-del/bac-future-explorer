@@ -53,30 +53,30 @@ export default function Universities() {
             <div className="flex gap-2 overflow-x-auto scrollbar-hide">
               <button
                 onClick={() => setFilter("all")}
-                className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
+                className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm whitespace-nowrap border border-solid font-medium transition-all duration-200 ${
                   filter === "all"
-                    ? "bg-primary text-white"
-                    : "bg-secondary text-secondary-foreground"
+                    ? "bg-primary text-white border-primary"
+                    : "bg-secondary text-secondary-foreground border-gray-200 hover:border-primary/20"
                 }`}
               >
                 Tous
               </button>
               <button
                 onClick={() => setFilter("public")}
-                className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
+                className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm whitespace-nowrap border border-solid font-medium transition-all duration-200 ${
                   filter === "public"
-                    ? "bg-primary text-white"
-                    : "bg-secondary text-secondary-foreground"
+                    ? "bg-primary text-white border-primary"
+                    : "bg-secondary text-secondary-foreground border-gray-200 hover:border-primary/20"
                 }`}
               >
                 Public
               </button>
               <button
                 onClick={() => setFilter("private")}
-                className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 ${
+                className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm whitespace-nowrap border border-solid font-medium transition-all duration-200 ${
                   filter === "private"
-                    ? "bg-primary text-white"
-                    : "bg-secondary text-secondary-foreground"
+                    ? "bg-primary text-white border-primary"
+                    : "bg-secondary text-secondary-foreground border-gray-200 hover:border-primary/20"
                 }`}
               >
                 Privé

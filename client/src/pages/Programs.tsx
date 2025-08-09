@@ -152,10 +152,10 @@ export default function Programs() {
                 <button
                   key={category}
                   onClick={() => setCategoryFilter(category)}
-                  className={`px-4 py-2 rounded-md text-sm whitespace-nowrap flex-shrink-0 snap-start ${
+                  className={`inline-flex items-center justify-center px-4 py-2 rounded-full text-sm whitespace-nowrap border border-solid font-medium transition-all duration-200 flex-shrink-0 snap-start ${
                     categoryFilter === category
-                      ? "bg-primary text-white"
-                      : "bg-secondary text-secondary-foreground"
+                      ? "bg-primary text-white border-primary"
+                      : "bg-secondary text-secondary-foreground border-gray-200 hover:border-primary/20"
                   }`}
                 >
                   {category === "all" ? "Toutes" : category}

@@ -39,10 +39,10 @@ export function UniversityCard({ university }: UniversityCardProps) {
         <div className="px-responsive py-responsive w-full">
           <div className="flex items-center justify-between mb-4 w-full gap-3">
             <span
-              className={`text-xs px-3 py-1.5 rounded-full flex-shrink-0 font-medium transition-all duration-300 ${
+              className={`inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid font-medium transition-all duration-300 ${
                 university.type === "Public"
-                  ? "bg-gradient-to-r from-blue-100 to-blue-50 text-blue-800 group-hover:from-blue-200 group-hover:to-blue-100"
-                  : "bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 group-hover:from-emerald-200 group-hover:to-emerald-100"
+                  ? "border-blue-200 bg-gradient-to-r from-blue-100 to-blue-50 text-blue-800 group-hover:from-blue-200 group-hover:to-blue-100 group-hover:border-blue-300"
+                  : "border-emerald-200 bg-gradient-to-r from-emerald-100 to-emerald-50 text-emerald-800 group-hover:from-emerald-200 group-hover:to-emerald-100 group-hover:border-emerald-300"
               }`}
             >
               {university.type}

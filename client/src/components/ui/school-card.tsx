@@ -54,7 +54,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
       {/* Filières proposées */}
       <div className="mb-4 w-full">
         <h4 className="text-xs sm:text-sm font-medium mb-2">Filières proposées:</h4>
-        <div className="flex flex-wrap gap-1 sm:gap-2 w-full">
+        <div className="flex flex-wrap gap-2 w-full">
           <TooltipProvider>
             {school.programs.map((program, i) => {
               const slug = createProgramSlug(program);
@@ -64,17 +64,17 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                 <Link
                   key={i}
                   to={`/programs#${matchingProgram.slug}`}
-                  className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors break-words flex-shrink-0 max-w-full truncate"
+                  className="inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid border-primary/20 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/30 transition-all duration-200 font-medium break-words min-w-0 max-w-full"
                 >
-                  {program}
+                  <span className="truncate">{program}</span>
                 </Link>
               ) : (
                 <span
                   key={i}
-                  className="text-xs px-2 py-1 rounded-full bg-muted/50 text-muted-foreground break-words flex-shrink-0 max-w-full truncate cursor-not-allowed"
+                  className="inline-flex items-center justify-center text-xs px-3 py-1.5 rounded-full border border-solid border-gray-200 bg-muted/50 text-muted-foreground font-medium break-words min-w-0 max-w-full cursor-not-allowed"
                   title="Filière non référencée sur la page des filières"
                 >
-                  {program}
+                  <span className="truncate">{program}</span>
                 </span>
               );
 

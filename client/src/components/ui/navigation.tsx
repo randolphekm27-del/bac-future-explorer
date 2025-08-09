@@ -1,13 +1,8 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "./button"
-import { Menu, X, Type, Bot, Target } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { Link, useLocation } from "react-router-dom"
-import { FontSizeControl } from "./font-size-control"
-import { OrientationTest } from "./orientation-test"
-import { AIChat } from "./ai-chat"
-import { useState } from "react"
-
 interface NavigationProps {
   links: {
     title: string
@@ -18,12 +13,7 @@ interface NavigationProps {
 
 export function Navigation({ links }: NavigationProps) {
   const [isOpen, setIsOpen] = React.useState(false)
-  const [testResults, setTestResults] = useState<any>(null)
   const location = useLocation()
-
-  const handleTestComplete = (results: any) => {
-    setTestResults(results)
-  }
 
   // Close mobile menu when clicking outside
   React.useEffect(() => {
@@ -80,13 +70,6 @@ export function Navigation({ links }: NavigationProps) {
                 </Link>
               ))}
             </div>
-            
-            {/* Accessibility Tools */}
-            <div className="flex items-center space-x-1 lg:space-x-2 border-l border-gray-200 dark:border-gray-700 pl-2 lg:pl-4">
-              <FontSizeControl className="relative" />
-              <OrientationTest onComplete={handleTestComplete} />
-              <AIChat testResults={testResults} />
-            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,16 +104,6 @@ export function Navigation({ links }: NavigationProps) {
                   <span>{link.title}</span>
                 </Link>
               ))}
-              
-              {/* Mobile Accessibility Tools */}
-              <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
-                <div className="text-xs font-semibold text-muted-foreground px-4 mb-3">Outils d'assistance</div>
-                <div className="flex flex-col space-y-3 px-4">
-                  <FontSizeControl className="self-start" />
-                  <OrientationTest onComplete={handleTestComplete} />
-                  <AIChat testResults={testResults} />
-                </div>
-              </div>
             </div>
           </div>
         )}
