@@ -1139,18 +1139,7 @@ export const programsData: ProgramData[] = [
     icon: "Music",
     image: "https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
-  {
-    id: "cinema-audiovisuel",
-    name: "Cinéma et Audiovisuel",
-    slug: "cinema-audiovisuel",
-    category: "Arts et Culture",
-    description: "Production et réalisation cinématographique et audiovisuelle.",
-    explanation: "Racontez des histoires qui marquent en maîtrisant les techniques du cinéma et de l'audiovisuel, arts majeurs de notre époque moderne.",
-    duration: "3 ans",
-    careers: ["Réalisateur", "Monteur", "Chef opérateur", "Producteur audiovisuel"],
-    icon: "Video",
-    image: "https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg?auto=compress&cs=tinysrgb&w=400"
-  },
+
   {
     id: "administration-culturelle",
     name: "Administration Culturelle",
@@ -1409,7 +1398,7 @@ export const programsData: ProgramData[] = [
   // ARTS & CULTURE
   {
     id: "arts-dramatiques",
-    name: "Arts dramatiques",
+    name: "Arts dramatiques", 
     slug: "arts-dramatiques",
     category: "Arts & Culture",
     description: "Formation aux techniques du théâtre et de l'interprétation scénique.",
@@ -1432,9 +1421,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "musique-musicologie",
+    id: "musique-et-musicologie",
     name: "Musique et Musicologie",
-    slug: "musique-musicologie",
+    slug: "musique-et-musicologie",
     category: "Arts & Culture",
     description: "Formation musicale pratique et théorique, étude scientifique de la musique.",
     explanation: "Alliez pratique instrumentale et connaissance approfondie des théories musicales pour devenir un musicien complet ou un expert en sciences de la musique.",
@@ -1456,9 +1445,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "cinema-audiovisuel",
-    name: "Cinéma et Audiovisuel",
-    slug: "cinema-audiovisuel",
+    id: "cinema-et-audiovisuel",
+    name: "Cinéma et Audiovisuel", 
+    slug: "cinema-et-audiovisuel",
     category: "Arts & Culture",
     description: "Formation aux métiers du cinéma, de la télévision et des nouveaux médias.",
     explanation: "Plongez dans l'univers du 7ème art et des médias audiovisuels pour devenir un professionnel créatif et technique de cette industrie en plein essor en Afrique.",
@@ -1468,9 +1457,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "metiers-audiovisuel",
+    id: "metiers-de-laudiovisuel-et-du-multimedia",
     name: "Métiers de l'Audiovisuel et du Multimédia",
-    slug: "metiers-audiovisuel",
+    slug: "metiers-de-laudiovisuel-et-du-multimedia",
     category: "Arts & Culture",
     description: "Formation technique aux métiers de la production audiovisuelle et numérique.",
     explanation: "Acquérez les compétences techniques pointues nécessaires pour travailler dans les coulisses de la production audiovisuelle et des nouveaux médias numériques.",
@@ -1480,9 +1469,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/713149/pexels-photo-713149.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "gestion-patrimoine",
+    id: "gestion-du-patrimoine-culturel",
     name: "Gestion du patrimoine Culturel",
-    slug: "gestion-patrimoine",
+    slug: "gestion-du-patrimoine-culturel",
     category: "Arts & Culture",
     description: "Formation à la conservation et valorisation du patrimoine matériel et immatériel.",
     explanation: "Devenez un acteur de la préservation et de la mise en valeur du riche patrimoine culturel africain, un enjeu crucial pour le développement touristique et identitaire du continent.",
@@ -1506,9 +1495,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "science-communication",
+    id: "science-du-langage-et-de-la-communication",
     name: "Science du Langage et de la Communication",
-    slug: "science-communication",
+    slug: "science-du-langage-et-de-la-communication",
     category: "Journalisme & Communication",
     description: "Approche scientifique des processus de communication et des médias.",
     explanation: "Analysez les mécanismes de la communication sous tous ses aspects (médias, organisations, relations interpersonnelles) pour devenir un expert en stratégies de communication.",
@@ -1544,7 +1533,7 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "administration-generale",
+    id: "administration-generale", 
     name: "Administration Générale",
     slug: "administration-generale",
     category: "Droit & Sciences Politiques",
@@ -1568,9 +1557,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "secretariat-gestion",
+    id: "secretariat-de-gestion",
     name: "Secrétariat de Gestion",
-    slug: "secretariat-gestion",
+    slug: "secretariat-de-gestion",
     category: "Droit & Sciences Politiques",
     description: "Formation aux techniques de secrétariat administratif et de gestion documentaire.",
     explanation: "Devenez un professionnel polyvalent du soutien administratif, indispensable au bon fonctionnement des organisations publiques et privées.",
@@ -1580,9 +1569,9 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
   {
-    id: "information-documentaire",
+    id: "sciences-et-techniques-de-linformation-documentaire",
     name: "Sciences et Techniques de l'Information documentaire",
-    slug: "information-documentaire",
+    slug: "sciences-et-techniques-de-linformation-documentaire",
     category: "Droit & Sciences Politiques",
     description: "Gestion des systèmes d'information et des ressources documentaires.",
     explanation: "Maîtrisez l'organisation et la diffusion de l'information dans un monde où la gestion des connaissances est un enjeu stratégique pour toutes les organisations.",
