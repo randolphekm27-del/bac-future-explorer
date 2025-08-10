@@ -282,6 +282,538 @@ export const programsData: ProgramData[] = [
     image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400"
   },
 
+  // INFORMATIQUE ET TELECOMMUNICATIONS
+  {
+    id: "administration-reseaux-informatiques",
+    name: "Administration des réseaux informatiques",
+    slug: "administration-des-reseaux-informatiques",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    description: "Formation spécialisée en gestion, sécurité et administration des infrastructures réseau.",
+    explanation: "Devenez l'architecte des systèmes informatiques modernes en maîtrisant la conception, l'installation et la maintenance des réseaux informatiques. Vous serez au cœur de la transformation digitale des entreprises.",
+    duration: "3-4 ans",
+    careers: ["Administrateur réseau", "Architecte systèmes et réseaux", "Ingénieur cybersécurité", "Responsable infrastructure IT"],
+    icon: "Network",
+    image: "https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "analyse-informatique-programmation",
+    name: "Analyse informatique et programmation",
+    slug: "analyse-informatique-et-programmation",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    description: "Formation complète en développement logiciel et analyse de systèmes informatiques.",
+    explanation: "Transformez vos idées en solutions digitales concrètes. Cette formation vous donne les clés pour créer des applications et systèmes qui révolutionnent notre quotidien.",
+    duration: "3-4 ans",
+    careers: ["Développeur logiciel", "Analyste programmeur", "Chef de projet informatique", "Consultant en systèmes d'information"],
+    icon: "Code",
+    image: "https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // GENIE ET TECHNOLOGIES
+  {
+    id: "genie-biomédical",
+    name: "Génie biomédical (maintenance biomédicale et hospitalière)",
+    slug: "genie-biomedical-maintenance-biomedicale-et-hospitaliere",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    description: "Spécialisation en maintenance et gestion des équipements médicaux et hospitaliers.",
+    explanation: "Alliant technologie et santé, vous maintiendrez les équipements médicaux vitaux qui sauvent des vies chaque jour. Votre expertise technique contribue directement au bien-être des patients.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur biomédical", "Technicien maintenance biomédicale", "Responsable équipements hospitaliers", "Consultant en technologies médicales"],
+    icon: "Stethoscope",
+    image: "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "fabrication-mecanique",
+    name: "Fabrication mécanique",
+    slug: "fabrication-mecanique",
+    category: "Génie Civil, Mécanique et Énergétique",
+    description: "Formation en conception, usinage et fabrication de pièces et systèmes mécaniques.",
+    explanation: "Donnez forme aux idées en maîtrisant les techniques de fabrication mécanique. Vous créerez les composants qui font fonctionner les machines de demain.",
+    duration: "3-4 ans",
+    careers: ["Technicien en fabrication mécanique", "Ingénieur méthodes", "Responsable production industrielle", "Concepteur mécanique"],
+    icon: "Settings",
+    image: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "froid-climatisation",
+    name: "Froid et climatisation",
+    slug: "froid-et-climatisation",
+    category: "Génie Civil, Mécanique et Énergétique",
+    description: "Spécialisation en systèmes de réfrigération, climatisation et pompes à chaleur.",
+    explanation: "Maîtrisez les technologies du confort thermique et de la conservation des aliments. Votre expertise est essentielle dans un monde où le contrôle de la température est vital.",
+    duration: "3-4 ans",
+    careers: ["Frigoriste", "Technicien en climatisation", "Ingénieur thermique", "Responsable maintenance frigorifique"],
+    icon: "Snowflake",
+    image: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-energetique",
+    name: "Génie énergétique",
+    slug: "genie-energetique",
+    category: "Génie Civil, Mécanique et Énergétique",
+    description: "Formation en systèmes énergétiques, efficacité énergétique et énergies renouvelables.",
+    explanation: "Participez à la transition énergétique en devenant expert des systèmes énergétiques durables. Votre travail contribue directement à la lutte contre le changement climatique.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur énergéticien", "Consultant en efficacité énergétique", "Chef de projet énergies renouvelables", "Auditeur énergétique"],
+    icon: "Zap",
+    image: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "electrification-rurale-energie-renouvelable",
+    name: "Électrification rurale et énergie renouvelable",
+    slug: "electrification-rurale-et-energie-renouvelable",
+    category: "Environnement et Développement Durable",
+    description: "Spécialisation en accès à l'électricité pour les zones rurales via les énergies renouvelables.",
+    explanation: "Illuminez l'avenir des communautés rurales en apportant l'électricité là où elle manque. Votre mission : connecter le monde rural à l'énergie propre et durable.",
+    duration: "3-5 ans",
+    careers: ["Ingénieur en électrification rurale", "Chef de projet énergies renouvelables", "Consultant en développement rural", "Expert en mini-réseaux électriques"],
+    icon: "Sun",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "energie-renouvelable-systeme-energetique",
+    name: "Énergie renouvelable et système énergétique",
+    slug: "energie-renouvelable-et-systeme-energetique",
+    category: "Environnement et Développement Durable",
+    description: "Formation complète en énergies propres et gestion des systèmes énergétiques modernes.",
+    explanation: "Devenez un acteur clé de la révolution énergétique en maîtrisant les technologies d'avenir : solaire, éolien, hydraulique. L'énergie du futur commence par votre formation.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur énergies renouvelables", "Gestionnaire de réseaux intelligents", "Développeur de projets énergétiques", "Consultant en transition énergétique"],
+    icon: "Leaf",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // AGRICULTURE ET ENVIRONNEMENT
+  {
+    id: "agronomie-sociologie-vulgarisation-rurale",
+    name: "Agronomie, sociologie et vulgarisation rurale",
+    slug: "agronomie-sociologie-et-vulgarisation-rurale",
+    category: "Agriculture et Productions Végétales/Animales",
+    description: "Formation interdisciplinaire alliant techniques agricoles et développement communautaire rural.",
+    explanation: "Transformez l'agriculture africaine en combinant expertise technique et compréhension sociale. Vous accompagnerez les agriculteurs vers des pratiques plus productives et durables.",
+    duration: "3-5 ans",
+    careers: ["Ingénieur agronome vulgarisateur", "Conseiller agricole", "Agent de développement rural", "Coordonnateur de projets agricoles"],
+    icon: "Users",
+    image: "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "amenagement-gestion-forets-parcours",
+    name: "Aménagement et gestion des forêts et parcours naturels",
+    slug: "amenagement-et-gestion-des-forets-et-parcours-naturels",
+    category: "Environnement et Développement Durable",
+    description: "Gestion durable des écosystèmes forestiers et pastoraux africains.",
+    explanation: "Protégez les poumons verts de l'Afrique en devenant gardien des forêts et espaces naturels. Votre mission : concilier conservation et développement économique des communautés locales.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur forestier", "Gestionnaire d'aires protégées", "Expert en agroforesterie", "Conseiller en gestion pastorale"],
+    icon: "TreePine",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "eau-hygiene-assainissement",
+    name: "Eau hygiène et assainissement (EHA)",
+    slug: "eau-hygiene-et-assainissement-eha",
+    category: "Génie Civil, Mécanique et Énergétique",
+    description: "Spécialisation en gestion de l'eau potable, hygiène et systèmes d'assainissement.",
+    explanation: "L'eau, c'est la vie. Devenez expert en accès à l'eau potable et en assainissement pour améliorer la santé publique et la qualité de vie des populations.",
+    duration: "3-4 ans",
+    careers: ["Ingénieur en hydraulique urbaine", "Expert en assainissement", "Coordinateur projets WASH", "Responsable qualité de l'eau"],
+    icon: "Droplets",
+    image: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "ecohydrologie-gestion-integree-ressources",
+    name: "Ecohydrologie et gestion intégrée des ressources",
+    slug: "ecohydrologie-et-gestion-integree-des-ressources",
+    category: "Environnement et Développement Durable",
+    description: "Approche écologique de la gestion des ressources en eau et des écosystèmes aquatiques.",
+    explanation: "Comprenez les liens complexes entre eau et écosystèmes pour gérer durablement nos ressources hydriques face aux défis climatiques.",
+    duration: "4-5 ans",
+    careers: ["Écohydrologue", "Gestionnaire de bassins versants", "Expert en restauration d'écosystèmes", "Consultant en adaptation climatique"],
+    icon: "Waves",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "environnement-hygiene-sante-publique",
+    name: "Environnement, hygiène et santé publique",
+    slug: "environnement-hygiene-et-sante-publique",
+    category: "Santé & Médecine",
+    description: "Formation en santé environnementale et prévention des risques sanitaires.",
+    explanation: "Protégez la santé des populations en agissant sur leur environnement. Prévenez les maladies en améliorant les conditions de vie et l'hygiène collective.",
+    duration: "3-4 ans",
+    careers: ["Inspecteur de santé publique", "Expert en santé environnementale", "Responsable hygiène et sécurité", "Coordinateur de programmes de prévention"],
+    icon: "Shield",
+    image: "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // GESTION ET FINANCE
+  {
+    id: "finances-comptabilite",
+    name: "Finances et comptabilité",
+    slug: "finances-et-comptabilite",
+    category: "Gestion, Finance et Commerce",
+    description: "Formation complète en comptabilité, analyse financière et gestion des ressources financières.",
+    explanation: "Maîtrisez les chiffres et devenez gardien de la santé financière des organisations. Votre expertise aide les entreprises à prendre les bonnes décisions et à prospérer.",
+    duration: "3-4 ans",
+    careers: ["Comptable", "Contrôleur de gestion", "Analyste financier", "Expert-comptable"],
+    icon: "Calculator",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "banque-finance-marche",
+    name: "Banque et finance de marché",
+    slug: "banque-et-finance-de-marche",
+    category: "Gestion, Finance et Commerce",
+    description: "Spécialisation en services bancaires, marchés financiers et instruments de financement.",
+    explanation: "Participez au cœur de l'économie moderne en maîtrisant les rouages des marchés financiers et des services bancaires. Votre expertise façonne l'avenir économique.",
+    duration: "3-5 ans",
+    careers: ["Analyste de crédit", "Conseiller en investissement", "Trader", "Directeur d'agence bancaire"],
+    icon: "CreditCard",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "banque-institutions-microfinance",
+    name: "Banque et institutions des micros finances",
+    slug: "banque-et-institutions-des-micros-finances",
+    category: "Gestion, Finance et Commerce",
+    description: "Formation spécialisée en microfinance et inclusion financière pour le développement.",
+    explanation: "Donnez accès aux services financiers aux populations exclues du système bancaire traditionnel. Votre travail transforme des vies en permettant l'entrepreneuriat local.",
+    duration: "3-4 ans",
+    careers: ["Agent de microcrédit", "Gestionnaire d'institution de microfinance", "Consultant en inclusion financière", "Analyste de risque microfinance"],
+    icon: "PiggyBank",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "entrepreneuriat-gestion",
+    name: "Entrepreneuriat et gestion",
+    slug: "entrepreneuriat-et-gestion",
+    category: "Gestion, Finance et Commerce",
+    description: "Formation à la création et gestion d'entreprises, leadership et innovation.",
+    explanation: "Transformez vos idées en entreprises prospères. Cette formation vous donne tous les outils pour créer, développer et diriger les entreprises de demain.",
+    duration: "3-4 ans",
+    careers: ["Entrepreneur", "Consultant en création d'entreprise", "Directeur général", "Coach business"],
+    icon: "Briefcase",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "economie-finance-internationale",
+    name: "Économie et finance internationale",
+    slug: "economie-et-finance-internationale",
+    category: "Gestion, Finance et Commerce",
+    description: "Analyse des marchés internationaux, commerce mondial et politiques économiques.",
+    explanation: "Comprenez les enjeux économiques mondiaux et participez aux échanges internationaux qui façonnent notre monde interconnecté.",
+    duration: "3-5 ans",
+    careers: ["Économiste international", "Analyste de marché", "Conseiller en commerce extérieur", "Expert en coopération économique"],
+    icon: "Globe",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "economie-finance-collectivites-locales",
+    name: "Économie et finance des collectivités locales",
+    slug: "economie-et-finance-des-collectivites-locales",
+    category: "Gestion, Finance et Commerce",
+    description: "Spécialisation en gestion financière des administrations et collectivités territoriales.",
+    explanation: "Contribuez au développement local en maîtrisant la gestion financière des communes, régions et autres collectivités. Votre expertise améliore les services publics.",
+    duration: "3-4 ans",
+    careers: ["Gestionnaire financier territorial", "Contrôleur de gestion publique", "Conseiller en finances locales", "Auditeur des collectivités"],
+    icon: "Building2",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "econometrie-statistiques-appliquees",
+    name: "Économétrie et statistiques appliquées",
+    slug: "econometrie-et-statistiques-appliquees",
+    category: "Gestion, Finance et Commerce",
+    description: "Formation en analyse quantitative, modélisation économique et traitement statistique des données.",
+    explanation: "Révélez les tendances cachées dans les données pour éclairer les décisions économiques. Votre expertise mathématique guide les politiques et stratégies.",
+    duration: "3-5 ans",
+    careers: ["Économètre", "Analyste de données", "Statisticien économique", "Consultant en études de marché"],
+    icon: "BarChart",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "economie-familiale-sociale",
+    name: "Économie familiale et sociale",
+    slug: "economie-familiale-et-sociale",
+    category: "Sciences Humaines & Sociales",
+    description: "Formation en gestion domestique, économie du ménage et développement social.",
+    explanation: "Aidez les familles à améliorer leur bien-être économique et social. Votre accompagnement transforme la vie quotidienne des ménages vers plus d'autonomie.",
+    duration: "3 ans",
+    careers: ["Conseiller en économie familiale", "Agent de développement social", "Formateur en gestion domestique", "Coordinateur de programmes sociaux"],
+    icon: "Home",
+    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "developpement-local-regional",
+    name: "Développement local et régional",
+    slug: "developpement-local-et-regional",
+    category: "Sciences Humaines & Sociales",
+    description: "Formation en planification territoriale et animation du développement local.",
+    explanation: "Dynamisez les territoires en concevant et pilotant des projets de développement qui répondent aux besoins locaux. Votre vision transforme les communautés.",
+    duration: "3-5 ans",
+    careers: ["Agent de développement local", "Chargé de mission territorial", "Animateur de projet communautaire", "Consultant en développement régional"],
+    icon: "MapPin",
+    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // ARTS ET CULTURE
+  {
+    id: "cinema-audiovisuel",
+    name: "Cinéma et audiovisuel",
+    slug: "cinema-et-audiovisuel",
+    category: "Arts et Culture",
+    description: "Formation en création audiovisuelle, production cinématographique et technologies de l'image.",
+    explanation: "Racontez des histoires qui marquent les esprits en maîtrisant tous les aspects de la création audiovisuelle. Votre art contribue au rayonnement culturel africain.",
+    duration: "3-4 ans",
+    careers: ["Réalisateur", "Monteur vidéo", "Producteur audiovisuel", "Technicien image et son"],
+    icon: "Video",
+    image: "https://images.pexels.com/photos/436413/pexels-photo-436413.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // ARCHITECTURE ET URBANISME
+  {
+    id: "architecture-urbanisme",
+    name: "Architecture et urbanisme",
+    slug: "architecture-et-urbanisme",
+    category: "Génie Civil, Mécanique et Énergétique",
+    description: "Conception architecturale et planification urbaine durable.",
+    explanation: "Façonnez l'avenir des villes africaines en concevant des espaces de vie harmonieux et durables. Votre créativité transforme les paysages urbains.",
+    duration: "5-6 ans",
+    careers: ["Architecte", "Urbaniste", "Planificateur urbain", "Consultant en aménagement"],
+    icon: "Building",
+    image: "https://images.pexels.com/photos/1108701/pexels-photo-1108701.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // LANGUES ET CULTURES
+  {
+    id: "didactique-chinois",
+    name: "Didactique du chinois",
+    slug: "didactique-du-chinois",
+    category: "Lettres, Langues et Communication",
+    description: "Formation en enseignement de la langue et culture chinoises.",
+    explanation: "Ouvrez les portes de l'Asie en enseignant la langue de plus d'un milliard de personnes. Votre expertise linguistique renforce les liens interculturels.",
+    duration: "3-4 ans",
+    careers: ["Professeur de chinois", "Traducteur chinois-français", "Guide touristique spécialisé", "Attaché culturel"],
+    icon: "Languages",
+    image: "https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "dietetique-chinois",
+    name: "Diététique du chinois", 
+    slug: "dietetique-du-chinois",
+    category: "Santé & Médecine",
+    description: "Spécialisation en médecine traditionnelle chinoise et diététique thérapeutique.",
+    explanation: "Alliant traditions millénaires et science moderne, vous accompagnerez les patients vers une alimentation thérapeutique basée sur la sagesse chinoise.",
+    duration: "3-4 ans",
+    careers: ["Praticien en diététique chinoise", "Thérapeute en médecine traditionnelle", "Consultant en nutrition holistique", "Formateur en diététique traditionnelle"],
+    icon: "Leaf",
+    image: "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "dietetique-aliments-nutrition",
+    name: "Diététique des aliments et nutrition",
+    slug: "dietetique-des-aliments-et-nutrition",
+    category: "Santé & Médecine", 
+    description: "Formation scientifique en nutrition humaine et thérapie alimentaire.",
+    explanation: "Transformez l'alimentation en médicament en maîtrisant les propriétés nutritionnelles des aliments pour prévenir et traiter les maladies.",
+    duration: "3-4 ans",
+    careers: ["Diététicien-nutritionniste", "Consultant en sécurité alimentaire", "Responsable qualité alimentaire", "Chercheur en nutrition"],
+    icon: "Apple",
+    image: "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // DÉMOGRAPHIE ET PLANIFICATION
+  {
+    id: "dynamique-population-planification",
+    name: "Dynamique de population et planification régionale",
+    slug: "dynamique-de-population-et-planification-regionale",
+    category: "Sciences Humaines & Sociales",
+    description: "Analyse démographique et planification du développement territorial.",
+    explanation: "Anticipez les évolutions démographiques pour mieux planifier le développement des territoires. Votre expertise guide les politiques publiques d'avenir.",
+    duration: "3-5 ans",
+    careers: ["Démographe", "Planificateur territorial", "Analyste en politiques publiques", "Expert en prospective démographique"],
+    icon: "Users",
+    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // EDUCATION ET SPORTS
+  {
+    id: "education-physique-sportive",
+    name: "Éducation physique et sportive",
+    slug: "education-physique-et-sportive",
+    category: "Sciences Humaines & Sociales",
+    description: "Formation en enseignement du sport, préparation physique et encadrement sportif.",
+    explanation: "Transmettez les valeurs du sport et contribuez au bien-être physique et mental des jeunes. Votre passion pour le mouvement éduque et inspire.",
+    duration: "3-4 ans",
+    careers: ["Professeur d'EPS", "Entraîneur sportif", "Préparateur physique", "Animateur sportif"],
+    icon: "Dumbbell",
+    image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // LETTRES, LANGUES ET COMMUNICATION
+  {
+    id: "francais",
+    name: "Français",
+    slug: "francais",
+    category: "Lettres, Langues et Communication", 
+    description: "Maîtrise approfondie de la langue française, littérature et didactique.",
+    explanation: "Maîtrisez la langue de Molière pour transmettre la richesse de la francophonie. Votre expertise linguistique ouvre les portes de l'expression et de la culture.",
+    duration: "3-5 ans",
+    careers: ["Professeur de français", "Écrivain", "Correcteur-rédacteur", "Conseiller pédagogique"],
+    icon: "BookOpen",
+    image: "https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // TECHNOLOGIES ALIMENTAIRES ET BIOLOGIQUES
+  {
+    id: "genie-conditionnement-stockage-alimentaire",
+    name: "Génie de conditionnement emballage et stockage des produits alimentaires",
+    slug: "genie-de-conditionnement-emballage-et-stockage-des-produits-alimentaires",
+    category: "Agriculture et Productions Végétales/Animales",
+    description: "Spécialisation en technologies de conservation et emballage des produits alimentaires.",
+    explanation: "Luttez contre le gaspillage alimentaire en maîtrisant les technologies de conservation et d'emballage. Votre expertise préserve la qualité nutritionnelle des aliments.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur en conditionnement alimentaire", "Responsable qualité agroalimentaire", "Expert en technologies de conservation", "Consultant en packaging"],
+    icon: "Package",
+    image: "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-technologie-alimentaire",
+    name: "Génie de technologie alimentaire",
+    slug: "genie-de-technologie-alimentaire",
+    category: "Agriculture et Productions Végétales/Animales",
+    description: "Formation en transformation et technologie des produits alimentaires.",
+    explanation: "Transformez les matières premières agricoles en produits alimentaires de qualité. Votre savoir-faire technique nourrit les populations de manière saine et durable.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur agroalimentaire", "Technologue alimentaire", "Responsable R&D alimentaire", "Expert en sécurité alimentaire"],
+    icon: "ChefHat",
+    image: "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genetique-biotechnologique",
+    name: "Génétique biotechnologique et application",
+    slug: "genetique-biotechnologique-et-application",
+    category: "Mathématiques, Physique et Chimie",
+    description: "Formation en biotechnologies, génie génétique et applications industrielles.",
+    explanation: "Explorez les frontières de la biologie moderne pour développer des solutions innovantes en santé, agriculture et industrie. Vous façonnez la médecine de demain.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur biotechnologiste", "Chercheur en génétique", "Spécialiste en biologie moléculaire", "Consultant en biotechnologies"],
+    icon: "Dna",
+    image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-biologique-bioprocedes",
+    name: "Génie biologique et bio procédés",
+    slug: "genie-biologique-et-bio-procedes",
+    category: "Mathématiques, Physique et Chimie",
+    description: "Formation en ingénierie des processus biologiques et biotechnologies industrielles.",
+    explanation: "Concevez les procédés biologiques qui transforment la matière vivante en produits utiles. Votre ingénierie révolutionne l'industrie vers plus de durabilité.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur en bioprocédés", "Responsable production biotechnologique", "Expert en fermentation industrielle", "Consultant en bioéconomie"],
+    icon: "Beaker",
+    image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // GENIE SPECIFIQUES
+  {
+    id: "genie-chimique-procedes",
+    name: "Génie chimique procédés",
+    slug: "genie-chimique-procedes",
+    category: "Mathématiques, Physique et Chimie",
+    description: "Formation en procédés chimiques industriels et transformation de la matière.",
+    explanation: "Transformez la matière première en produits utiles grâce à votre maîtrise des procédés chimiques. Votre expertise façonne l'industrie chimique de demain.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur procédés chimiques", "Responsable production chimique", "Expert en sécurité industrielle", "Consultant en optimisation des procédés"],
+    icon: "Beaker",
+    image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-imagerie-medicale-radiographie",
+    name: "Génie d'imagerie médicale et de radiographie",
+    slug: "genie-d-imagerie-medicale-et-de-radiographie",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    description: "Spécialisation en technologies d'imagerie médicale et techniques radiographiques.",
+    explanation: "Révélez l'invisible dans le corps humain grâce aux technologies d'imagerie avancées. Votre expertise technique aide les médecins à poser des diagnostics précis.",
+    duration: "4-5 ans",
+    careers: ["Technicien en imagerie médicale", "Ingénieur biomédical imagerie", "Radiographe", "Spécialiste maintenance équipements médicaux"],
+    icon: "Activity",
+    image: "https://images.pexels.com/photos/236380/pexels-photo-236380.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-environnement",
+    name: "Génie de l'environnement",
+    slug: "genie-de-l-environnement",
+    category: "Environnement et Développement Durable",
+    description: "Ingénierie pour la protection et la restauration de l'environnement.",
+    explanation: "Protégez notre planète en concevant des solutions techniques pour préserver l'air, l'eau et les sols. Votre ingénierie contribue à un avenir durable.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur environnement", "Expert en dépollution", "Consultant en développement durable", "Responsable qualité environnementale"],
+    icon: "Leaf",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-electrique-informatique-electronique",
+    name: "Génie électrique et informatique (électronique et électrotechnique)",
+    slug: "genie-electrique-et-informatique-electronique-et-electrotechnique",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    description: "Formation en systèmes électriques, électroniques et automatismes industriels.",
+    explanation: "Maîtrisez l'électricité et l'électronique pour concevoir les systèmes qui alimentent notre monde moderne. Votre expertise éclaire l'avenir technologique.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur électricien", "Technicien en électronique", "Automaticien", "Responsable maintenance électrique"],
+    icon: "Zap",
+    image: "https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-electrique-informatique-telecommunications",
+    name: "Génie électrique et informatique ( informatique et télécommunications)",
+    slug: "genie-electrique-et-informatique-informatique-et-telecommunications",
+    category: "Informatique, Télécoms et Intelligence Artificielle",
+    description: "Spécialisation en réseaux de télécommunications et systèmes informatiques.",
+    explanation: "Connectez le monde en maîtrisant les technologies qui permettent aux données de voyager à travers la planète. Vous êtes l'architecte de la société connectée.",
+    duration: "4-5 ans",
+    careers: ["Ingénieur télécommunications", "Architecte réseau", "Expert en systèmes de communication", "Consultant en infrastructures IT"],
+    icon: "Radio",
+    image: "https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "genie-geomatique-appliquee",
+    name: "Génie géomatique appliquée",
+    slug: "genie-geomatique-appliquee",
+    category: "Environnement et Développement Durable",
+    description: "Technologies de cartographie, GPS et systèmes d'information géographique.",
+    explanation: "Cartographiez le monde avec précision grâce aux technologies géospatiales modernes. Votre expertise guide l'aménagement et la gestion du territoire.",
+    duration: "4-5 ans",
+    careers: ["Géomaticien", "Ingénieur en SIG", "Cartographe numérique", "Spécialiste en télédétection"],
+    icon: "Map",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // ECONOMIE
+  {
+    id: "economie",
+    name: "Économie",
+    slug: "economie",
+    category: "Gestion, Finance et Commerce",
+    description: "Formation générale en sciences économiques et analyse des marchés.",
+    explanation: "Comprenez les mécanismes qui régissent notre société économique pour éclairer les décisions qui façonnent l'avenir des nations.",
+    duration: "3-5 ans",
+    careers: ["Économiste", "Analyste économique", "Conseiller économique", "Chercheur en économie"],
+    icon: "TrendingUp",
+    image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
+  // ENERGIE RENOUVELABLE (autre variante)
+  {
+    id: "energie-renouvelable",
+    name: "Énergie Renouvelable",
+    slug: "energie-renouvelable",
+    category: "Environnement et Développement Durable",
+    description: "Formation spécialisée en technologies d'énergies propres et durables.",
+    explanation: "Participez à la révolution énergétique en maîtrisant les technologies solaires, éoliennes et autres sources d'énergie propre pour un avenir durable.",
+    duration: "3-5 ans",
+    careers: ["Technicien en énergies renouvelables", "Installateur solaire", "Expert en éolien", "Consultant en transition énergétique"],
+    icon: "Sun",
+    image: "https://images.pexels.com/photos/441900/pexels-photo-441900.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+
   // LETTRES, LANGUES ET COMMUNICATION
   {
     id: "anglais",
