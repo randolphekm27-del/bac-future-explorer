@@ -742,16 +742,19 @@ export function OrientationTest({ onComplete }: OrientationTestProps) {
         onClick={() => setIsOpen(true)}
         data-testid="button-orientation-test"
         className={cn(
-          "group relative flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-all duration-300 hover:shadow-xl",
-          "bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700",
-          "text-white hover:scale-105"
+          "group relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full shadow-2xl transition-all duration-500 hover:shadow-3xl animate-pulse hover:animate-none",
+          "bg-gradient-to-br from-orange-500 via-orange-600 to-red-500 hover:from-orange-600 hover:via-orange-700 hover:to-red-600",
+          "text-white hover:scale-110 border-4 border-orange-300/50 hover:border-orange-200/70",
+          "before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-orange-400/30 before:to-red-400/30 before:blur-lg before:scale-150 before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-500"
         )}
-        aria-label="Test d'orientation approfondi"
+        aria-label="Test d'orientation personnalisé - Découvrez votre voie"
       >
-        <HelpCircle size={20} />
-        <span className="absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-black bg-opacity-75 px-2 py-1 text-xs text-white opacity-0 transition-opacity group-hover:opacity-100">
-          Test d'orientation
-        </span>
+        <HelpCircle size={28} className="relative z-10 drop-shadow-lg" />
+        <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-gray-900 to-gray-800 text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap shadow-xl border border-gray-600">
+          🎯 Test d'orientation personnalisé
+          <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-800"></div>
+        </div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-orange-400/20 to-red-400/20 animate-ping"></div>
       </Button>
 
       <Dialog open={isOpen} onOpenChange={(open) => {

@@ -173,19 +173,19 @@
     font-size: 20px;
   }
 
-  /* Responsive font scaling for different screen sizes */
+  /* Responsive font scaling for different screen sizes - Augmentation de 4px sur mobile */
   @media (max-width: 640px) {
-    html.font-small { font-size: 13px; }
-    html.font-normal { font-size: 15px; }
-    html.font-large { font-size: 17px; }
-    html.font-extra-large { font-size: 19px; }
+    html.font-small { font-size: 17px; }
+    html.font-normal { font-size: 19px; }
+    html.font-large { font-size: 21px; }
+    html.font-extra-large { font-size: 23px; }
   }
 
   @media (max-width: 480px) {
-    html.font-small { font-size: 12px; }
-    html.font-normal { font-size: 14px; }
-    html.font-large { font-size: 16px; }
-    html.font-extra-large { font-size: 18px; }
+    html.font-small { font-size: 16px; }
+    html.font-normal { font-size: 18px; }
+    html.font-large { font-size: 20px; }
+    html.font-extra-large { font-size: 22px; }
   }
 
   /* Ensure proper line heights with different font sizes */
@@ -219,37 +219,37 @@
 
 /* Enhanced Responsive Design */
 @layer utilities {
-  /* Responsive text sizes that work with font size system */
+  /* Responsive text sizes that work with font size system - Augmentation de 4px sur mobile */
   .text-responsive-xs {
-    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    font-size: clamp(1rem, 2vw, 1.125rem);
   }
   
   .text-responsive-sm {
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   }
   
   .text-responsive-base {
-    font-size: clamp(1rem, 3vw, 1.125rem);
+    font-size: clamp(1.25rem, 3vw, 1.375rem);
   }
   
   .text-responsive-lg {
-    font-size: clamp(1.125rem, 3.5vw, 1.25rem);
+    font-size: clamp(1.375rem, 3.5vw, 1.5rem);
   }
   
   .text-responsive-xl {
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
   }
   
   .text-responsive-2xl {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
   }
   
   .text-responsive-3xl {
-    font-size: clamp(1.875rem, 6vw, 2.5rem);
+    font-size: clamp(2.125rem, 6vw, 2.75rem);
   }
   
   .text-responsive-4xl {
-    font-size: clamp(2.25rem, 7vw, 3rem);
+    font-size: clamp(2.5rem, 7vw, 3.25rem);
   }
   
   /* Responsive padding and margins */
@@ -657,31 +657,33 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
     overflow: hidden;
   }
 
-  /* Responsive Design */
+  /* Responsive Design - Augmentation des tailles sur mobile (+4px) */
   @media (max-width: 768px) {
     .container {
       @apply px-3 max-w-full;
     }
     
-    .text-6xl {
-      @apply text-3xl;
-    }
+    /* Augmentation de toutes les tailles de texte de 4px sur mobile */
+    .text-xs { font-size: 1rem !important; }
+    .text-sm { font-size: 1.125rem !important; }
+    .text-base { font-size: 1.25rem !important; }
+    .text-lg { font-size: 1.375rem !important; }
+    .text-xl { font-size: 1.5rem !important; }
+    .text-2xl { font-size: 1.75rem !important; }
+    .text-3xl { font-size: 2.125rem !important; }
+    .text-4xl { font-size: 2.5rem !important; }
+    .text-5xl { font-size: 3.25rem !important; }
+    .text-6xl { font-size: 4rem !important; }
     
-    .text-5xl {
-      @apply text-2xl;
-    }
-    
-    .text-4xl {
-      @apply text-xl;
-    }
-    
-    .text-3xl {
-      @apply text-lg;
-    }
-    
-    .text-2xl {
-      @apply text-base;
-    }
+    /* Ajustement des textes responsive */
+    .text-responsive-xs { font-size: 1.25rem !important; }
+    .text-responsive-sm { font-size: 1.375rem !important; }
+    .text-responsive-base { font-size: 1.5rem !important; }
+    .text-responsive-lg { font-size: 1.625rem !important; }
+    .text-responsive-xl { font-size: 1.75rem !important; }
+    .text-responsive-2xl { font-size: 2rem !important; }
+    .text-responsive-3xl { font-size: 2.375rem !important; }
+    .text-responsive-4xl { font-size: 2.75rem !important; }
     
     .p-8 {
       @apply p-4;
@@ -712,6 +714,20 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
     .flex {
       @apply max-w-full;
     }
+  }
+
+  /* Mobile ultra small - Encore plus visible */
+  @media (max-width: 480px) {
+    .text-xs { font-size: 1.125rem !important; }
+    .text-sm { font-size: 1.25rem !important; }
+    .text-base { font-size: 1.375rem !important; }
+    .text-lg { font-size: 1.5rem !important; }
+    .text-xl { font-size: 1.625rem !important; }
+    .text-2xl { font-size: 1.875rem !important; }
+    .text-3xl { font-size: 2.25rem !important; }
+    .text-4xl { font-size: 2.625rem !important; }
+    .text-5xl { font-size: 3.375rem !important; }
+    .text-6xl { font-size: 4.125rem !important; }
   }
 
   /* Responsive Breakpoints */

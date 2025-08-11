@@ -11,6 +11,7 @@ import { InteractiveTimeline } from "@/components/ui/interactive-timeline"
 import { NewsletterPopup } from "@/components/ui/newsletter-popup"
 import { SmartSearch } from "@/components/ui/smart-search"
 import { StatsSection } from "@/components/ui/stats-section"
+import { OrientationTest } from "@/components/ui/orientation-test"
 
 import { AnimatedTextCycle } from "@/components/ui/animated-text-cycle"
 import { navigationLinks } from "@/lib/navigation"
@@ -204,6 +205,76 @@ const Index = () => {
           </div>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <TestimonialsCarousel />
+          </div>
+        </div>
+      </section>
+
+      {/* Test d'Orientation CTA Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="orientation-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#orientation-grid)" />
+          </svg>
+        </div>
+        
+        {/* Glow Effects */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-400/15 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="animate-fade-in space-y-8">
+              <div className="space-y-6">
+                <h2 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-white via-blue-100 to-orange-200 bg-clip-text text-transparent leading-tight">
+                  Trouvez votre voie idéale
+                </h2>
+                <p className="text-xl md:text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto font-medium">
+                  Notre test d'orientation intelligent analyse vos centres d'intérêt, compétences et aspirations pour vous recommander les filières les plus adaptées à votre profil unique.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
+                <div className="text-center animate-bounce">
+                  <OrientationTest />
+                </div>
+                
+                <div className="text-center space-y-4">
+                  <div className="glass-card rounded-2xl p-6 bg-white/10 backdrop-blur-sm border border-white/20 max-w-md">
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                      <div>
+                        <div className="text-3xl font-bold text-white">50+</div>
+                        <div className="text-blue-200 text-sm">Filières</div>
+                      </div>
+                      <div>
+                        <div className="text-3xl font-bold text-white">15</div>
+                        <div className="text-blue-200 text-sm">Questions</div>
+                      </div>
+                      <div>
+                        <div className="text-3xl font-bold text-white">5min</div>
+                        <div className="text-blue-200 text-sm">Durée</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-center space-x-2 text-blue-200">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-base font-medium">100% gratuit • Résultats instantanés</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="pt-12">
+                <p className="text-blue-200/80 text-lg">
+                  Rejoignez plus de <span className="font-bold text-orange-300">1,000 étudiants</span> qui ont trouvé leur voie grâce à notre test
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
