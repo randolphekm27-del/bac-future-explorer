@@ -3,7 +3,7 @@ import { Building2, GraduationCap, Briefcase, Trophy, PlayCircle, Mail, Phone, M
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 border-t border-white/10">
+    <footer className="bg-blue-600 border-t border-white/10">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}

@@ -327,35 +327,227 @@ const FIELD_RECOMMENDATIONS = {
 const generateResourceLinks = (interests: string[], location: string): ResourceLink[] => {
   const baseResources: ResourceLink[] = [
     {
-      title: "Guide des Universités du Bénin 2025",
+      title: "📖 Guide des Universités du Bénin 2025",
       url: "https://drive.google.com/file/d/1-R-g3n6vtr4nsBNV9_IUA6mC3Iio5CLW/view?usp=drivesdk",
       type: "university",
       description: "Guide complet avec toutes les filières et conditions d'admission"
     },
     {
-      title: "Bourses d'études disponibles",
-      url: "https://apresmonbac.bj/bourses",
-      type: "scholarship", 
-      description: "Liste des bourses nationales et internationales pour les étudiants béninois"
+      title: "🎓 Explorer toutes les filières",
+      url: "/programs",
+      type: "program", 
+      description: "Découvrez plus de 50 filières détaillées avec débouchés spécifiques"
+    },
+    {
+      title: "🏫 Universités et écoles",
+      url: "/universities",
+      type: "university",
+      description: "Liste complète des établissements d'enseignement supérieur"
     }
   ]
 
-  // Ressources spécifiques selon les intérêts
+  // Ressources spécialisées selon les intérêts avec liens directs vers les filières
   if (interests.includes('technology')) {
-    baseResources.push({
-      title: "Tech Hub Bénin - Opportunités IT",
-      url: "https://apresmonbac.bj/tech",
-      type: "career",
-      description: "Emplois et stages dans le secteur technologique au Bénin"
-    })
+    baseResources.push(
+      {
+        title: "💻 Administration des réseaux informatiques",
+        url: "/programs",
+        type: "program",
+        description: "Gestion et sécurité des infrastructures réseau"
+      },
+      {
+        title: "⚙️ Génie électrique et télécommunications",
+        url: "/programs", 
+        type: "program",
+        description: "Technologies de communication moderne"
+      },
+      {
+        title: "🔧 Analyse informatique et programmation",
+        url: "/programs",
+        type: "program",
+        description: "Développement logiciel et systèmes"
+      }
+    )
+  }
+
+  if (interests.includes('health')) {
+    baseResources.push(
+      {
+        title: "🏥 Médecine Générale",
+        url: "/programs",
+        type: "program", 
+        description: "Formation médicale complète"
+      },
+      {
+        title: "👩‍⚕️ Sciences infirmières",
+        url: "/programs",
+        type: "program", 
+        description: "Soins infirmiers et gestion de santé"
+      },
+      {
+        title: "💊 Pharmacie", 
+        url: "/programs",
+        type: "program",
+        description: "Sciences pharmaceutiques et médicaments"
+      }
+    )
+  }
+
+  if (interests.includes('engineering')) {
+    baseResources.push(
+      {
+        title: "🏗️ Génie civil et hydraulique",
+        url: "/programs",
+        type: "program",
+        description: "Construction et aménagement"
+      },
+      {
+        title: "🏢 Architecture et urbanisme",
+        url: "/programs",
+        type: "program", 
+        description: "Conception architecturale et urbanisme"
+      },
+      {
+        title: "⚡ Génie énergétique",
+        url: "/programs",
+        type: "program",
+        description: "Systèmes énergétiques et durabilité"
+      }
+    )
   }
 
   if (interests.includes('agriculture')) {
+    baseResources.push(
+      {
+        title: "🌱 Agronomie et vulgarisation rurale",
+        url: "/programs",
+        type: "program",
+        description: "Agriculture moderne et développement rural"
+      },
+      {
+        title: "🥕 Production végétale et animale",
+        url: "/programs",
+        type: "program", 
+        description: "Techniques de production agricole"
+      },
+      {
+        title: "🍎 Technologie alimentaire",
+        url: "/programs",
+        type: "program",
+        description: "Transformation des produits alimentaires"
+      }
+    )
+  }
+
+  if (interests.includes('business')) {
+    baseResources.push(
+      {
+        title: "💼 Entrepreneuriat et gestion",
+        url: "/programs",
+        type: "program",
+        description: "Création et gestion d'entreprises"
+      },
+      {
+        title: "💰 Finance et comptabilité",
+        url: "/programs",
+        type: "program", 
+        description: "Gestion financière et comptable"
+      },
+      {
+        title: "🏦 Banque et microfinance",
+        url: "/programs",
+        type: "program",
+        description: "Services financiers et inclusion"
+      }
+    )
+  }
+
+  if (interests.includes('arts')) {
+    baseResources.push(
+      {
+        title: "🎬 Cinéma et audiovisuel", 
+        url: "/programs",
+        type: "program",
+        description: "Création audiovisuelle et production"
+      },
+      {
+        title: "🎨 Arts et culture",
+        url: "/programs",
+        type: "program",
+        description: "Formation artistique et culturelle"
+      }
+    )
+  }
+
+  if (interests.includes('education')) {
+    baseResources.push(
+      {
+        title: "📚 Sciences de l'éducation",
+        url: "/programs",
+        type: "program",
+        description: "Formation pédagogique et éducative"
+      },
+      {
+        title: "🏃‍♂️ Éducation physique et sportive",
+        url: "/programs",
+        type: "program",
+        description: "Enseignement du sport"
+      }
+    )
+  }
+
+  if (interests.includes('law')) {
+    baseResources.push(
+      {
+        title: "⚖️ Droit et sciences juridiques",
+        url: "/programs",
+        type: "program",
+        description: "Formation juridique et légale"
+      }
+    )
+  }
+
+  if (interests.includes('finance')) {
+    baseResources.push(
+      {
+        title: "🌍 Économie et finance internationale",
+        url: "/programs", 
+        type: "program",
+        description: "Marchés financiers mondiaux"
+      },
+      {
+        title: "📈 Banque et finance de marché",
+        url: "/programs",
+        type: "program",
+        description: "Services bancaires et investissement"
+      }
+    )
+  }
+
+  if (interests.includes('social')) {
+    baseResources.push(
+      {
+        title: "🤝 Développement communautaire",
+        url: "/programs",
+        type: "program",
+        description: "Animation sociale et développement local"
+      },
+      {
+        title: "👥 Assistance sociale",
+        url: "/programs",
+        type: "program",
+        description: "Accompagnement social et insertion"
+      }
+    )
+  }
+
+  // Ressources supplémentaires basées sur la localisation
+  if (location === 'abroad') {
     baseResources.push({
-      title: "Programmes Agricoles - MAEP",
-      url: "https://apresmonbac.bj/agriculture",
-      type: "program",
-      description: "Programmes gouvernementaux d'appui aux jeunes agriculteurs"
+      title: "✈️ Bourses d'études internationales",
+      url: "https://drive.google.com/file/d/1-R-g3n6vtr4nsBNV9_IUA6mC3Iio5CLW/view?usp=drivesdk",
+      type: "scholarship",
+      description: "Opportunités d'études à l'étranger pour les Béninois"
     })
   }
 
