@@ -2111,7 +2111,69 @@ export const programsData: ProgramData[] = [
     careers: ["Documentaliste", "Archiviste", "Gestionnaire de base de données", "Responsable de centre documentaire"],
     icon: "Database",
     image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
-  }
+  },
+
+  
+  {
+    id: "sciences-et-techniques-de-production-végétale",
+    name: "Sciences et techniques de production végétale",
+    slug: "sciences-et-techniques-de-production-végétale",
+    category: "Aménagement et Gestion des Ressources Naturelles",
+    description: "Formation spécialisée dans la production et l'amélioration des cultures végétales.",
+    explanation: "Apprenez à optimiser les rendements agricoles grâce à la maîtrise des techniques culturales, la protection des plantes, la gestion durable des sols et l'innovation agronomique.",
+    duration: "3-5 ans",
+    careers: ["Entrepreneur Agricole", "Conseiller Agricole", "Enseignant des lycées agricoles", "Encadreur en protection des végétaux"],
+    icon: "Database",
+    image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+   {
+    id: "sciences-et-techniques-de-production-animale-et-halieutique",
+    name: "Sciences et techniques de production animale et halieutique",
+    slug: "sciences-et-techniques-de-production-animale-et-halieutique",
+    category: "Aménagement et Gestion des Ressources Naturelles",
+    description: "Formation spécialisée dans l'élevage, la gestion des productions animales et les ressources aquatiques.",
+    explanation: "Développez des compétences pour améliorer la production et la santé des animaux terrestres et aquatiques, en intégrant des techniques d’élevage durable, de nutrition, de reproduction et de gestion des écosystèmes aquatiques.",
+    duration: "3-5 ans",
+    careers: ["Technicien en gestion et conduite d'élevage", "Conseiller Agricole", "Entrepreneur Agricole", "Technicien en gestion des exploitations animales et aquacoles"],
+    icon: "Database",
+    image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+   {
+    id: "aménagement-et-gestion-des-ressources-naturelles",
+    name: "Aménagement et gestion des ressources naturelles",
+    slug: "aménagement-et-gestion-des-ressources-naturelles",
+    category: "Aménagement et Gestion des Ressources Naturelles",
+    description: "Formation axée sur la préservation, la valorisation et la gestion durable des ressources naturelles.",
+    explanation: "Acquérez les compétences pour planifier, aménager et gérer les espaces naturels, tout en conciliant développement économique, préservation de l'environnement et utilisation rationnelle des ressources.",
+    duration: "3-5 ans",
+    careers: ["Technicien en aménagement et gestion des aires protégées", "Cadre des eaux et forêts", "Assistance dans les études de gestion et de conservation des aires protégées", "Entrepreneur Agricole"],
+    icon: "Database",
+    image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+  {
+    id: "sociologie-et-economie-rurales",
+    name: "Sociologie et Economie Rurales",
+    slug: "sociologie-et-economie-rurales",
+    category: "aménagement-et-gestion-des-ressources-naturelles",
+    description: "Formation centrée sur l'étude des dynamiques sociales et économiques en milieu rural.",
+    explanation: "Analysez les comportements, les organisations et les politiques rurales afin de proposer des solutions de développement adaptées aux communautés agricoles et aux territoires ruraux.",
+    duration: "3-5 ans",
+    careers: ["Assistance dans la création et la gestion d'entreprise", "Mise en place et gestion de cluster agricole", "Assistance dans les études socio-économiques", "Facilitation de la mise en place des innovations institutionnelles"],
+    icon: "Database",
+    image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
+   {
+    id: "nutrition-et-sciences-agroalimentaires",
+    name: "Nutrition et Sciences Agroalimentaires",
+    slug: "nutrition-et-sciences-agroalimentaires",
+    category: "aménagement-et-gestion-des-ressources-naturelles",
+    description: "Formation spécialisée dans la qualité, la transformation et la sécurité des aliments.",
+    explanation: "Maîtrisez les techniques de production et de contrôle des denrées alimentaires tout en intégrant les principes de nutrition pour répondre aux besoins de santé et de consommation de la population.",
+    duration: "3-5 ans",
+    careers: ["Entrepreneur Agro-alimentaire", "Responsable système de qualité IAA", "Chef production IAA", "Technicien en nutrition et sciences agroalimentaires"],
+    icon: "Database",
+    image: "https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&w=400"
+  },
 ];
 
 // Fonction pour récupérer un programme par son slug
