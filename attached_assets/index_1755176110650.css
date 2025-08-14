@@ -70,12 +70,19 @@
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -733,16 +740,6 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
       display: block;
     }
   }
-
-  /* Hover effects */
-  .hover-scale {
-    transition: var(--transition-smooth);
-    transform: scale(1);
-  }
-
-  .hover-scale:hover {
-    transform: scale(1.05);
-  }
 }
 
 /* Premium Keyframes */
@@ -799,6 +796,15 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 @keyframes glow {
   from {
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
@@ -806,26 +812,4 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
   to {
     box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
   }
-}
-
-/* Additional Vibrant Blue Elements */
-.vibrant-link {
-  @apply text-primary hover:text-primary/80 font-medium transition-colors;
-}
-
-.vibrant-badge {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary;
-}
-
-.vibrant-highlight {
-  @apply bg-primary/10 text-primary px-1 py-0.5 rounded;
-}
-
-/* Ensure contrast in dark mode */
-.dark .text-contrast {
-  color: hsl(0 0% 98%);
-}
-
-.dark .bg-contrast {
-  background-color: hsl(225 25% 5%);
 }
