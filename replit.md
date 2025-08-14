@@ -6,6 +6,16 @@ This is a comprehensive university orientation platform for Benin called "Après
 
 Preferred communication style: Simple, everyday language.
 
+# Recent Changes
+
+## Migration to Replit Environment (August 14, 2025)
+- **Fixed CSS Configuration**: Resolved Tailwind CSS issue with `hover:text-primary-dark` class that was causing application startup failures
+- **Improved Accessibility**: Enhanced visibility of text elements by replacing generic `text-muted-foreground` classes with explicit dark/light mode color classes (`text-gray-900 dark:text-white`, `text-gray-600 dark:text-gray-300`)
+- **Enhanced Button Styling**: Applied vibrant blue color scheme to all outline buttons for better visibility and consistency (`border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950`)
+- **Fixed Scroll Issues**: Removed independent scroll effects from StatsSection by eliminating multiple ScrollReveal components that were causing conflicting scroll behaviors
+- **Component Fixes**: Corrected OrientationTest component props to prevent TypeScript errors
+- **Color Consistency**: Applied blue vibrant theme (#3B82F6) across all interactive elements and icons for unified user experience
+
 # System Architecture
 
 ## Frontend Architecture

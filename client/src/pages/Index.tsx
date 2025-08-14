@@ -97,8 +97,8 @@ const Index = () => {
       <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Votre réussite commence ici</h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Votre réussite commence ici</h2>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -107,12 +107,12 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
                 <Building2 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Universités</h3>
-              <p className="text-base text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Universités</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission
               </p>
               <Link to="/universities">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Explorer
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -123,12 +123,12 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
                 <GraduationCap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Filières & Débouchés</h3>
-              <p className="text-base text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Filières & Débouchés</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Découvrez les formations disponibles et leurs perspectives d'emploi
               </p>
               <Link to="/programs">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Découvrir
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -139,12 +139,12 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
                 <Briefcase className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Stages & Opportunités</h3>
-              <p className="text-base text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Stages & Opportunités</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Trouvez des stages et développez votre expérience professionnelle
               </p>
               <Link to="/internships">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Voir les stages
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -155,12 +155,12 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
                 <Trophy className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Concours & Hackathons</h3>
-              <p className="text-base text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Concours & Hackathons</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Participez aux concours et challenges pour vous démarquer
               </p>
               <Link to="/competitions">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Participer
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -171,12 +171,12 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
                 <PlayCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Formations Pratiques</h3>
-              <p className="text-base text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Formations Pratiques</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Développez vos compétences avec nos formations spécialisées
               </p>
               <Link to="/courses">
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Se former
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -187,11 +187,11 @@ const Index = () => {
               <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
                 <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold mb-3">Communauté</h3>
-              <p className="text-base text-muted-foreground mb-4">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Communauté</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Rejoignez une communauté d'étudiants motivés et ambitieux
               </p>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                 Rejoindre
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
@@ -204,8 +204,8 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Ils nous font confiance</h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground">Découvrez les témoignages de nos étudiants</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Ils nous font confiance</h2>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300">Découvrez les témoignages de nos étudiants</p>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <TestimonialsCarousel />
@@ -245,7 +245,7 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
                 <div className="text-center animate-bounce">
-                  <OrientationTest />
+                  <OrientationTest onComplete={() => {}} />
                 </div>
                 
                 <div className="text-center space-y-4">
