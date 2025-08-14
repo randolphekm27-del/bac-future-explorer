@@ -694,7 +694,7 @@ html {
 
 /* Additional Vibrant Blue Elements */
 .vibrant-link {
-  @apply text-primary hover:text-primary-dark font-medium transition-colors;
+  @apply text-primary hover:text-primary/80 font-medium transition-colors;
 }
 
 .vibrant-badge {
