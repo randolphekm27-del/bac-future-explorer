@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Design System - Optimized for Responsiveness */
+/* Premium Design System - Optimized Visibility & Vibrant Blues */
 
 @layer base {
   :root {
-    /* Premium Color Palette */
+    /* Enhanced Color Palette with Vibrant Blues */
     --background: 0 0% 99%;
     --foreground: 225 25% 8%;
     
@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 225 25% 8%;
     
-    /* Vibrant Premium Blues */
-    --primary: 220 100% 55%;
-    --primary-light: 220 100% 65%;
-    --primary-dark: 220 100% 45%;
+    /* Enhanced Vibrant Premium Blues */
+    --primary: 211 100% 50%; /* More vibrant blue */
+    --primary-light: 211 100% 60%;
+    --primary-dark: 211 100% 40%;
     --primary-foreground: 0 0% 100%;
     
     /* Sophisticated Grays */
@@ -35,32 +35,32 @@
     --accent-dark: 25 95% 45%;
     --accent-foreground: 0 0% 100%;
     
-    /* Footer Blue */
+    /* Vibrant Footer Blue */
     --footer-blue: 211 100% 50%;
     
     --destructive: 0 85% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%; /* White text for better contrast */
     
     /* Premium Borders & Inputs */
     --border: 215 20% 88%;
     --input: 215 20% 92%;
-    --ring: 220 100% 55%;
+    --ring: 211 100% 50%; /* Matching vibrant blue */
 
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 55%), hsl(220 100% 65%));
+    /* Enhanced Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 50%), hsl(211 100% 60%));
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 55%), hsl(25 95% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 100% 55% / 0.1), hsl(25 95% 55% / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(211 100% 50% / 0.1), hsl(25 95% 55% / 0.1));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(215 25% 98%));
     
-    /* Premium Shadows */
-    --shadow-sm: 0 2px 8px hsl(220 100% 55% / 0.08);
-    --shadow-md: 0 8px 24px hsl(220 100% 55% / 0.12);
-    --shadow-lg: 0 16px 40px hsl(220 100% 55% / 0.16);
-    --shadow-xl: 0 24px 64px hsl(220 100% 55% / 0.20);
+    /* Enhanced Shadows with blue tint */
+    --shadow-sm: 0 2px 8px hsl(211 100% 50% / 0.1);
+    --shadow-md: 0 8px 24px hsl(211 100% 50% / 0.15);
+    --shadow-lg: 0 16px 40px hsl(211 100% 50% / 0.2);
+    --shadow-xl: 0 24px 64px hsl(211 100% 50% / 0.25);
     
     /* Premium Glass Effects */
-    --glass-bg: hsl(0 0% 100% / 0.8);
-    --glass-border: hsl(220 100% 55% / 0.2);
+    --glass-bg: hsl(0 0% 100% / 0.85);
+    --glass-border: hsl(211 100% 50% / 0.25);
     
     /* Premium Animation Variables */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,14 +69,15 @@
     
     --radius: 0.75rem;
 
+    /* Sidebar with vibrant blue */
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-foreground: 225 25% 8%;
+    --sidebar-primary: 211 100% 50%; /* Vibrant blue */
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 211 100% 50%; /* Vibrant blue */
   }
 
   .dark {
@@ -89,9 +90,10 @@
     --popover: 225 25% 6%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 220 100% 60%;
-    --primary-light: 220 100% 70%;
-    --primary-dark: 220 100% 50%;
+    /* Dark mode vibrant blues */
+    --primary: 211 100% 55%;
+    --primary-light: 211 100% 65%;
+    --primary-dark: 211 100% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 225 25% 12%;
@@ -105,38 +107,38 @@
     --accent-dark: 25 95% 50%;
     --accent-foreground: 0 0% 100%;
     
-    --footer-blue: 211 100% 50%;
+    --footer-blue: 211 100% 55%;
 
     --destructive: 0 85% 65%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 225 25% 15%;
     --input: 225 25% 15%;
-    --ring: 220 100% 60%;
+    --ring: 211 100% 55%;
     
     /* Dark Mode Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 60%), hsl(220 100% 70%));
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 55%), hsl(211 100% 65%));
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 60%), hsl(25 95% 70%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 100% 60% / 0.1), hsl(25 95% 60% / 0.1));
+    --gradient-hero: linear-gradient(135deg, hsl(211 100% 55% / 0.1), hsl(25 95% 60% / 0.1));
     --gradient-card: linear-gradient(135deg, hsl(225 25% 6%), hsl(225 25% 8%));
     
     /* Dark Mode Premium Shadows */
-    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
-    --shadow-md: 0 8px 24px hsl(0 0% 0% / 0.4);
-    --shadow-lg: 0 16px 40px hsl(0 0% 0% / 0.5);
-    --shadow-xl: 0 24px 64px hsl(0 0% 0% / 0.6);
+    --shadow-sm: 0 2px 8px hsl(211 100% 55% / 0.15);
+    --shadow-md: 0 8px 24px hsl(211 100% 55% / 0.2);
+    --shadow-lg: 0 16px 40px hsl(211 100% 55% / 0.25);
+    --shadow-xl: 0 24px 64px hsl(211 100% 55% / 0.3);
     
     /* Dark Mode Glass Effects */
-    --glass-bg: hsl(225 25% 6% / 0.8);
-    --glass-border: hsl(220 100% 60% / 0.3);
+    --glass-bg: hsl(225 25% 6% / 0.85);
+    --glass-border: hsl(211 100% 55% / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 211 100% 55%; /* Vibrant blue */
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 211 100% 55%; /* Vibrant blue */
   }
 }
 
@@ -154,6 +156,15 @@
     box-sizing: border-box;
     scroll-behavior: smooth !important;
     transform: translateZ(0);
+  }
+
+  /* Enhanced Contrast for Text */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground font-bold;
+  }
+
+  p, li {
+    @apply text-foreground/90;
   }
 
   /* Optimized Font Size System */
@@ -193,10 +204,11 @@
     line-height: 1.5;
   }
 
-  /* Optimized touch targets */
+  /* Optimized touch targets with vibrant blue focus */
   button, a, [role="button"] {
     min-height: 44px;
     min-width: 44px;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
   }
 
   @media (max-width: 768px) {
@@ -288,6 +300,28 @@
     grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 1.5rem;
   }
+
+  /* Vibrant Blue Utility Classes */
+  .bg-vibrant-blue {
+    @apply bg-[hsl(211_100%_50%)];
+  }
+
+  .text-vibrant-blue {
+    @apply text-[hsl(211_100%_50%)];
+  }
+
+  .border-vibrant-blue {
+    @apply border-[hsl(211_100%_50%)];
+  }
+
+  /* Enhanced Visibility Classes */
+  .text-contrast {
+    @apply text-foreground dark:text-background;
+  }
+
+  .bg-contrast {
+    @apply bg-foreground dark:bg-background;
+  }
 }
 
 /* Global Layout Fixes */
@@ -369,9 +403,9 @@ html {
   }
 }
 
-/* Premium Component Classes */
+/* Enhanced Premium Component Classes */
 .premium-card {
-  @apply bg-gradient-to-br from-white to-gray-50/50 border border-gray-200/50 rounded-xl p-5 shadow-md hover:shadow-lg backdrop-blur-sm;
+  @apply bg-gradient-to-br from-white to-gray-50/80 border border-gray-200/60 rounded-xl p-5 shadow-md hover:shadow-lg backdrop-blur-sm;
   background: var(--gradient-card);
   box-shadow: var(--shadow-md);
   transition: var(--transition-smooth);
@@ -390,7 +424,7 @@ html {
 }
 
 .premium-button-primary {
-  @apply premium-button bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:ring-blue-500;
+  @apply premium-button text-white hover:text-white focus:ring-primary focus:ring-offset-2;
   background: var(--gradient-primary);
   box-shadow: var(--shadow-sm);
 }
@@ -401,7 +435,7 @@ html {
 }
 
 .premium-button-secondary {
-  @apply premium-button bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 focus:ring-orange-500;
+  @apply premium-button text-white hover:text-white focus:ring-accent focus:ring-offset-2;
   background: var(--gradient-accent);
   box-shadow: var(--shadow-sm);
 }
@@ -411,9 +445,12 @@ html {
   box-shadow: var(--shadow-md);
 }
 
+.premium-button-outline {
+  @apply premium-button bg-transparent border border-primary text-primary hover:bg-primary/10 dark:hover:bg-primary/20;
+}
+
 .premium-text-gradient {
-  @apply bg-gradient-to-r from-blue-600 via-purple-600 to-orange-500 bg-clip-text text-transparent;
-  background: linear-gradient(135deg, hsl(220 100% 55%), hsl(270 100% 55%), hsl(25 95% 55%));
+  @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -449,13 +486,13 @@ html {
   content: '';
   @apply absolute inset-0 opacity-10;
   background: linear-gradient(135deg, 
-    hsl(220 100% 55% / 0.1) 0%, 
+    hsl(211 100% 50% / 0.1) 0%, 
     transparent 25%, 
     transparent 75%, 
     hsl(25 95% 55% / 0.1) 100%);
 }
 
-/* Scroll Animations */
+/* Enhanced Scroll Animations */
 .scroll-animate {
   opacity: 0;
   transform: translateY(30px);
@@ -477,9 +514,9 @@ html {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Focus States */
+/* Enhanced Focus States */
 .premium-focus {
-  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-900;
   transition: var(--transition-fast);
 }
 
@@ -542,6 +579,11 @@ html {
     .premium-hero {
       min-height: 70vh;
     }
+
+    /* Ensure text contrast on mobile */
+    .text-contrast-mobile {
+      @apply text-foreground dark:text-background;
+    }
   }
 
   /* Small Mobile Optimization */
@@ -577,6 +619,12 @@ html {
     /* Layout fixes */
     .grid-optimized {
       grid-template-columns: 1fr;
+    }
+
+    /* Enhanced touch targets */
+    button, a, [role="button"] {
+      min-height: 48px;
+      min-width: 48px;
     }
   }
 }
@@ -643,3 +691,25 @@ html {
     box-shadow: 0 0 30px hsl(var(--primary) / 0.6);
   }
 }
+
+/* Additional Vibrant Blue Elements */
+.vibrant-link {
+  @apply text-primary hover:text-primary-dark font-medium transition-colors;
+}
+
+.vibrant-badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary;
+}
+
+.vibrant-highlight {
+  @apply bg-primary/10 text-primary px-1 py-0.5 rounded;
+}
+
+/* Ensure contrast in dark mode */
+.dark .text-contrast {
+  color: hsl(0 0% 98%);
+}
+
+.dark .bg-contrast {
+  background-color: hsl(225 25% 5%);
+    }
