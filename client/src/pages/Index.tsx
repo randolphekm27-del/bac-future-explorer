@@ -94,106 +94,106 @@ const Index = () => {
       <StatsSection />
 
       {/* Features Section */}
-      <section className="py-16 sm:py-20 lg:py-24 gradient-hero">
+      <section className="py-20 gradient-hero">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white leading-tight">Votre réussite commence ici</h2>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Votre réussite commence ici</h2>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300">Découvrez toutes les ressources dont vous avez besoin pour votre avenir</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Feature cards with vibrant blue border and icons */}
-            <div className="glass-card rounded-xl p-5 sm:p-6 lg:p-8 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.1s" }}>
-              <div className="w-14 sm:w-16 lg:w-18 h-14 sm:h-16 lg:h-18 mx-auto mb-4 sm:mb-5 lg:mb-6 rounded-full gradient-primary flex items-center justify-center bg-blue-600 shadow-lg">
-                <Building2 className="h-7 sm:h-8 lg:h-9 w-7 sm:w-8 lg:w-9 text-white" />
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.1s" }}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
+                <Building2 className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">Universités</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Universités</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Explorez toutes les universités du Bénin avec leurs filières et conditions d'admission
               </p>
               <Link to="/universities">
-                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 min-h-[48px] text-sm sm:text-base font-medium">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Explorer
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-5 sm:p-6 lg:p-8 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.2s" }}>
-              <div className="w-14 sm:w-16 lg:w-18 h-14 sm:h-16 lg:h-18 mx-auto mb-4 sm:mb-5 lg:mb-6 rounded-full gradient-primary flex items-center justify-center bg-blue-600 shadow-lg">
-                <GraduationCap className="h-7 sm:h-8 lg:h-9 w-7 sm:w-8 lg:w-9 text-white" />
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.2s" }}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
+                <GraduationCap className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">Filières & Débouchés</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Filières & Débouchés</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Découvrez les formations disponibles et leurs perspectives d'emploi
               </p>
               <Link to="/programs">
-                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 min-h-[48px] text-sm sm:text-base font-medium">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Découvrir
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-5 sm:p-6 lg:p-8 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.3s" }}>
-              <div className="w-14 sm:w-16 lg:w-18 h-14 sm:h-16 lg:h-18 mx-auto mb-4 sm:mb-5 lg:mb-6 rounded-full gradient-primary flex items-center justify-center bg-blue-600 shadow-lg">
-                <Briefcase className="h-7 sm:h-8 lg:h-9 w-7 sm:w-8 lg:w-9 text-white" />
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.3s" }}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
+                <Briefcase className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">Stages & Opportunités</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Stages & Opportunités</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Trouvez des stages et développez votre expérience professionnelle
               </p>
               <Link to="/internships">
-                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 min-h-[48px] text-sm sm:text-base font-medium">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Voir les stages
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-5 sm:p-6 lg:p-8 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.4s" }}>
-              <div className="w-14 sm:w-16 lg:w-18 h-14 sm:h-16 lg:h-18 mx-auto mb-4 sm:mb-5 lg:mb-6 rounded-full gradient-primary flex items-center justify-center bg-blue-600 shadow-lg">
-                <Trophy className="h-7 sm:h-8 lg:h-9 w-7 sm:w-8 lg:w-9 text-white" />
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.4s" }}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
+                <Trophy className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">Concours & Hackathons</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Concours & Hackathons</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Participez aux concours et challenges pour vous démarquer
               </p>
               <Link to="/competitions">
-                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 min-h-[48px] text-sm sm:text-base font-medium">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Participer
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-5 sm:p-6 lg:p-8 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.5s" }}>
-              <div className="w-14 sm:w-16 lg:w-18 h-14 sm:h-16 lg:h-18 mx-auto mb-4 sm:mb-5 lg:mb-6 rounded-full gradient-primary flex items-center justify-center bg-blue-600 shadow-lg">
-                <PlayCircle className="h-7 sm:h-8 lg:h-9 w-7 sm:w-8 lg:w-9 text-white" />
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.5s" }}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
+                <PlayCircle className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">Formations Pratiques</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Formations Pratiques</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Développez vos compétences avec nos formations spécialisées
               </p>
               <Link to="/courses">
-                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 min-h-[48px] text-sm sm:text-base font-medium">
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                   Se former
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
 
-            <div className="glass-card rounded-xl p-5 sm:p-6 lg:p-8 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.6s" }}>
-              <div className="w-14 sm:w-16 lg:w-18 h-14 sm:h-16 lg:h-18 mx-auto mb-4 sm:mb-5 lg:mb-6 rounded-full gradient-primary flex items-center justify-center bg-blue-600 shadow-lg">
-                <Users className="h-7 sm:h-8 lg:h-9 w-7 sm:w-8 lg:w-9 text-white" />
+            <div className="glass-card rounded-xl p-6 text-center hover-scale animate-fade-in border-2 border-blue-500/20 hover:border-blue-500/40 transition-all" style={{ animationDelay: "0.6s" }}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full gradient-primary flex items-center justify-center bg-blue-600">
+                <Users className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white leading-tight">Communauté</h3>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+              <h3 className="text-2xl font-semibold mb-3 text-gray-900 dark:text-white">Communauté</h3>
+              <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Rejoignez une communauté d'étudiants motivés et ambitieux
               </p>
-              <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 min-h-[48px] text-sm sm:text-base font-medium">
+              <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
                 Rejoindre
-                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
@@ -201,11 +201,11 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white leading-tight">Ils nous font confiance</h2>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">Découvrez les témoignages de nos étudiants</p>
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">Ils nous font confiance</h2>
+            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300">Découvrez les témoignages de nos étudiants</p>
           </div>
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <TestimonialsCarousel />

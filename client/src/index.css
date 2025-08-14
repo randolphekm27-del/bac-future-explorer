@@ -166,19 +166,19 @@
     font-size: 20px;
   }
 
-  /* Responsive font scaling for different screen sizes - Augmentation de 2px sur mobile */
+  /* Responsive font scaling for different screen sizes - Augmentation de 4px sur mobile */
   @media (max-width: 640px) {
+    html.font-small { font-size: 17px; }
+    html.font-normal { font-size: 19px; }
+    html.font-large { font-size: 21px; }
+    html.font-extra-large { font-size: 23px; }
+  }
+
+  @media (max-width: 480px) {
     html.font-small { font-size: 16px; }
     html.font-normal { font-size: 18px; }
     html.font-large { font-size: 20px; }
     html.font-extra-large { font-size: 22px; }
-  }
-
-  @media (max-width: 480px) {
-    html.font-small { font-size: 15px; }
-    html.font-normal { font-size: 17px; }
-    html.font-large { font-size: 19px; }
-    html.font-extra-large { font-size: 21px; }
   }
 
   /* Ensure proper line heights with different font sizes */
@@ -212,45 +212,37 @@
 
 /* Enhanced Responsive Design */
 @layer utilities {
-  /* Responsive text sizes optimisées pour lisibilité mobile */
+  /* Responsive text sizes that work with font size system - Augmentation de 4px sur mobile */
   .text-responsive-xs {
-    font-size: clamp(0.875rem, 2vw, 1.125rem);
-    line-height: 1.5;
+    font-size: clamp(1rem, 2vw, 1.125rem);
   }
   
   .text-responsive-sm {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    line-height: 1.5;
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem);
   }
   
   .text-responsive-base {
-    font-size: clamp(1.125rem, 3vw, 1.375rem);
-    line-height: 1.6;
+    font-size: clamp(1.25rem, 3vw, 1.375rem);
   }
   
   .text-responsive-lg {
-    font-size: clamp(1.25rem, 3.5vw, 1.5rem);
-    line-height: 1.4;
+    font-size: clamp(1.375rem, 3.5vw, 1.5rem);
   }
   
   .text-responsive-xl {
-    font-size: clamp(1.375rem, 4vw, 1.75rem);
-    line-height: 1.3;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
   }
   
   .text-responsive-2xl {
-    font-size: clamp(1.625rem, 5vw, 2.25rem);
-    line-height: 1.3;
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
   }
   
   .text-responsive-3xl {
-    font-size: clamp(2rem, 6vw, 2.75rem);
-    line-height: 1.2;
+    font-size: clamp(2.125rem, 6vw, 2.75rem);
   }
   
   .text-responsive-4xl {
-    font-size: clamp(2.375rem, 7vw, 3.25rem);
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 7vw, 3.25rem);
   }
   
   /* Responsive padding and margins */
@@ -658,33 +650,33 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
     overflow: hidden;
   }
 
-  /* Responsive Design - Augmentation des tailles sur mobile (+2px) */
+  /* Responsive Design - Augmentation des tailles sur mobile (+4px) */
   @media (max-width: 768px) {
     .container {
-      @apply px-4 max-w-full;
+      @apply px-3 max-w-full;
     }
     
-    /* Augmentation de toutes les tailles de texte de 2px sur mobile pour meilleure lisibilité */
-    .text-xs { font-size: 0.875rem !important; }
-    .text-sm { font-size: 1rem !important; }
-    .text-base { font-size: 1.125rem !important; }
-    .text-lg { font-size: 1.25rem !important; }
-    .text-xl { font-size: 1.375rem !important; }
-    .text-2xl { font-size: 1.625rem !important; }
-    .text-3xl { font-size: 2rem !important; }
-    .text-4xl { font-size: 2.375rem !important; }
-    .text-5xl { font-size: 3rem !important; }
-    .text-6xl { font-size: 3.75rem !important; }
+    /* Augmentation de toutes les tailles de texte de 4px sur mobile */
+    .text-xs { font-size: 1rem !important; }
+    .text-sm { font-size: 1.125rem !important; }
+    .text-base { font-size: 1.25rem !important; }
+    .text-lg { font-size: 1.375rem !important; }
+    .text-xl { font-size: 1.5rem !important; }
+    .text-2xl { font-size: 1.75rem !important; }
+    .text-3xl { font-size: 2.125rem !important; }
+    .text-4xl { font-size: 2.5rem !important; }
+    .text-5xl { font-size: 3.25rem !important; }
+    .text-6xl { font-size: 4rem !important; }
     
     /* Ajustement des textes responsive */
-    .text-responsive-xs { font-size: 1.125rem !important; }
-    .text-responsive-sm { font-size: 1.25rem !important; }
-    .text-responsive-base { font-size: 1.375rem !important; }
-    .text-responsive-lg { font-size: 1.5rem !important; }
-    .text-responsive-xl { font-size: 1.625rem !important; }
-    .text-responsive-2xl { font-size: 1.875rem !important; }
-    .text-responsive-3xl { font-size: 2.25rem !important; }
-    .text-responsive-4xl { font-size: 2.625rem !important; }
+    .text-responsive-xs { font-size: 1.25rem !important; }
+    .text-responsive-sm { font-size: 1.375rem !important; }
+    .text-responsive-base { font-size: 1.5rem !important; }
+    .text-responsive-lg { font-size: 1.625rem !important; }
+    .text-responsive-xl { font-size: 1.75rem !important; }
+    .text-responsive-2xl { font-size: 2rem !important; }
+    .text-responsive-3xl { font-size: 2.375rem !important; }
+    .text-responsive-4xl { font-size: 2.75rem !important; }
     
     .p-8 {
       @apply p-4;
@@ -717,43 +709,18 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
     }
   }
 
-  /* Mobile ultra small - Tailles optimisées pour lisibilité */
+  /* Mobile ultra small - Encore plus visible */
   @media (max-width: 480px) {
-    .text-xs { font-size: 0.8125rem !important; }
-    .text-sm { font-size: 0.9375rem !important; }
-    .text-base { font-size: 1.0625rem !important; }
-    .text-lg { font-size: 1.1875rem !important; }
-    .text-xl { font-size: 1.3125rem !important; }
-    .text-2xl { font-size: 1.5625rem !important; }
-    .text-3xl { font-size: 1.9375rem !important; }
-    .text-4xl { font-size: 2.3125rem !important; }
-    .text-5xl { font-size: 2.9375rem !important; }
-    .text-6xl { font-size: 3.5625rem !important; }
-    
-    /* Amélioration de la lisibilité avec espacement */
-    h1, h2, h3, h4, h5, h6 {
-      line-height: 1.3 !important;
-      margin-bottom: 0.75rem !important;
-    }
-    
-    p {
-      line-height: 1.6 !important;
-      margin-bottom: 1rem !important;
-    }
-    
-    /* Meilleurs espacements pour les cartes */
-    .glass-card, .premium-card {
-      padding: 1rem !important;
-      margin-bottom: 1rem !important;
-    }
-    
-    /* Boutons plus accessibles */
-    button, .btn {
-      min-height: 48px !important;
-      padding: 0.75rem 1.25rem !important;
-      font-size: 1rem !important;
-      border-radius: 0.5rem !important;
-    }
+    .text-xs { font-size: 1.125rem !important; }
+    .text-sm { font-size: 1.25rem !important; }
+    .text-base { font-size: 1.375rem !important; }
+    .text-lg { font-size: 1.5rem !important; }
+    .text-xl { font-size: 1.625rem !important; }
+    .text-2xl { font-size: 1.875rem !important; }
+    .text-3xl { font-size: 2.25rem !important; }
+    .text-4xl { font-size: 2.625rem !important; }
+    .text-5xl { font-size: 3.375rem !important; }
+    .text-6xl { font-size: 4.125rem !important; }
   }
 
   /* Responsive Breakpoints */
@@ -861,153 +828,4 @@ div:not(.scroll-area):not([data-radix-scroll-area-viewport]):not(.overflow-hidde
 
 .dark .bg-contrast {
   background-color: hsl(225 25% 5%);
-}
-
-/* Enhanced Mobile Responsivity */
-@media (max-width: 768px) {
-  /* Improved container spacing */
-  .container-responsive {
-    padding: 0 1rem;
-  }
-  
-  /* Better card spacing */
-  .glass-card {
-    margin: 0.75rem 0;
-    border-radius: 1rem;
-  }
-  
-  /* Enhanced button touch targets */
-  .premium-button, [role="button"] {
-    min-height: 48px;
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  
-  /* Better navigation spacing */
-  nav {
-    padding: 0.75rem 1rem;
-  }
-  
-  /* Improved form elements */
-  input, textarea, select {
-    min-height: 48px;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-  }
-  
-  /* Better grid gaps on mobile */
-  .grid {
-    gap: 1rem;
-  }
-  
-  .grid-cols-2 {
-    grid-template-columns: 1fr;
-  }
-  
-  .grid-cols-3 {
-    grid-template-columns: 1fr;
-  }
-  
-  .grid-cols-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Tablet responsive improvements */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    padding: 0 2rem;
-  }
-  
-  .text-4xl {
-    font-size: 2.25rem;
-  }
-  
-  .text-5xl {
-    font-size: 2.75rem;
-  }
-  
-  .grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .grid-cols-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Enhanced accessibility and contrast */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* High contrast mode improvements */
-@media (prefers-contrast: high) {
-  :root {
-    --primary: 220 100% 40%;
-    --border: 0 0% 20%;
-  }
-  
-  .dark {
-    --primary: 220 100% 70%;
-    --border: 0 0% 80%;
-  }
-  
-  .glass-card {
-    border-width: 2px;
-    background: var(--background);
-  }
-}
-
-/* Focus visible improvements for keyboard navigation */
-:focus-visible {
-  outline: 2px solid hsl(var(--primary));
-  outline-offset: 2px;
-  border-radius: 0.25rem;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  outline: 2px solid hsl(var(--primary));
-  outline-offset: 2px;
-}
-
-/* Print styles */
-@media print {
-  * {
-    background: white !important;
-    color: black !important;
-    box-shadow: none !important;
-  }
-  
-  .premium-navigation,
-  .floating-accessibility,
-  button {
-    display: none !important;
-  }
-}
-
-/* Large screens optimization */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1400px;
-  }
-  
-  .text-6xl {
-    font-size: 4.5rem;
-  }
-  
-  .premium-card {
-    padding: 2.5rem;
-  }
 }
