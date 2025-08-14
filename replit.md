@@ -15,6 +15,7 @@ Preferred communication style: Simple, everyday language.
 - **Fixed Scroll Issues**: Removed independent scroll effects from StatsSection by eliminating multiple ScrollReveal components that were causing conflicting scroll behaviors
 - **Component Fixes**: Corrected OrientationTest component props to prevent TypeScript errors
 - **Color Consistency**: Applied blue vibrant theme (#3B82F6) across all interactive elements and icons for unified user experience
+- **Mobile Font Size Optimization**: Reduced all font sizes by 2px (0.125rem) on mobile devices for better readability and responsiveness across all text classes, responsive utilities, and base font scaling
 
 # System Architecture
 
