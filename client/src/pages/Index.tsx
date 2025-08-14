@@ -16,7 +16,7 @@ import { AnimatedTextCycle } from "@/components/ui/animated-text-cycle"
 import { navigationLinks } from "@/lib/navigation"
 import { Link, useNavigate } from "react-router-dom"
 
-const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png"
+const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png" 
 
 const Index = () => {
   const navigate = useNavigate()
