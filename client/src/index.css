@@ -210,6 +210,21 @@
   display: none;
 }
 
+/* Scroll snap styles for better touch experience */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+/* Smooth scrolling for image galleries */
+.gallery-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* Enhanced Responsive Design */
 @layer utilities {
   /* Responsive text sizes that work with font size system - Réduction de 2px sur mobile */

@@ -64,45 +64,61 @@ export default function ProgramDetail() {
             </div>
           </div>
 
-          {/* Galerie d'images avec défilement horizontal */}
-          {program.gallery && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-center">Aperçu de la formation</h2>
-              <div className="relative">
-                {/* Container avec scroll horizontal */}
-                <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-                  {program.gallery.images.map((image, index) => (
-                    <div 
-                      key={index} 
-                      className="aspect-video w-80 flex-shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-orange-50 snap-center"
-                    >
-                      <LazyImage
-                        src={image}
-                        alt={`${program.name} - Image ${index + 1}`}
-                        className="w-full h-full object-cover transition-all duration-300 hover:scale-105 rounded-xl"
-                      />
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Indicateur de défilement */}
-                <div className="flex justify-center mt-4 gap-2">
-                  {program.gallery.images.map((_, index) => (
-                    <div 
-                      key={index} 
-                      className="w-2 h-2 rounded-full bg-muted-foreground/30"
+          {/* Galerie d'images avec défilement horizontal - amélioration */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">Aperçu de la formation</h2>
+            <div className="relative">
+              {/* Container avec scroll horizontal amélioré */}
+              <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide gallery-scroll">
+                {/* Images par défaut si pas de galerie spécifique */}
+                {program.gallery?.images ? program.gallery.images.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className="aspect-video w-80 flex-shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-orange-50 snap-center shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <LazyImage
+                      src={image}
+                      alt={`${program.name} - Image ${index + 1}`}
+                      className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
                     />
-                  ))}
-                </div>
+                  </div>
+                )) : [
+                  // Images par défaut basées sur la catégorie
+                  program.image || "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800",
+                  "https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=800",
+                  "https://images.pexels.com/photos/267507/pexels-photo-267507.jpeg?auto=compress&cs=tinysrgb&w=800",
+                  "https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800"
+                ].map((image, index) => (
+                  <div 
+                    key={index} 
+                    className="aspect-video w-80 flex-shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-orange-50 snap-center shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <LazyImage
+                      src={image}
+                      alt={`${program.name} - Image ${index + 1}`}
+                      className="w-full h-full object-cover transition-all duration-300 hover:scale-105"
+                    />
+                  </div>
+                ))}
               </div>
               
-              {program.gallery.description && (
-                <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">
-                  {program.gallery.description}
-                </p>
-              )}
+              {/* Indicateurs de défilement améliorés */}
+              <div className="flex justify-center mt-4 gap-2">
+                {(program.gallery?.images || [program.image, "", "", ""]).map((_, index) => (
+                  <div 
+                    key={index} 
+                    className="w-2 h-2 rounded-full bg-primary/30 hover:bg-primary/50 transition-colors cursor-pointer"
+                  />
+                ))}
+              </div>
             </div>
-          )}
+            
+            {program.gallery?.description && (
+              <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">
+                {program.gallery.description}
+              </p>
+            )}
+          </div>
 
           {/* Description détaillée */}
           <div className="mb-12">

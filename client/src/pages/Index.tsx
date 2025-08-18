@@ -191,10 +191,17 @@ const Index = () => {
               <p className="text-base text-gray-600 dark:text-gray-300 mb-4">
                 Rejoignez une communauté d'étudiants motivés et ambitieux
               </p>
-              <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
-                Rejoindre
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <a 
+                href="https://chat.whatsapp.com/FUpGT490JQ98CCidAHOLcw?mode=ac_t" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full"
+              >
+                <Button variant="outline" className="w-full border-blue-500 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950">
+                  Rejoindre
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>
