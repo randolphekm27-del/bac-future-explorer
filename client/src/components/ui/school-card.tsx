@@ -52,7 +52,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
       {/* Filières proposées */}
       <div className="mb-4 w-full">
         <h4 className="text-sm sm:text-base font-medium mb-2">Filières proposées:</h4>
-        <div className="flex flex-wrap gap-2 w-full ml-[10px] mr-[10px] mt-[15px] mb-[15px] pl-[10px] pr-[10px] pt-[12px] pb-[12px]">
+        <div className="flex flex-wrap gap-2 w-full">
           <TooltipProvider>
             {school.programs.map((program, i) => {
               const slug = createProgramSlug(program);
@@ -131,7 +131,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                 href={`https://${school.contact.website}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary break-all text-xs sm:text-sm ml-[10px] mr-[10px] mt-[15px] mb-[15px] pl-[10px] pr-[10px] pt-[15px] pb-[15px]"
+                className="hover:text-primary break-all text-xs sm:text-sm"
               >
                 {school.contact.website}
               </a>
