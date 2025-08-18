@@ -46,11 +46,9 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
           </Button>
         )}
       </div>
-
       <p className="text-sm sm:text-base text-muted-foreground mb-4 break-words leading-relaxed">
         {school.description}
       </p>
-
       {/* Filières proposées */}
       <div className="mb-4 w-full">
         <h4 className="text-sm sm:text-base font-medium mb-2">Filières proposées:</h4>
@@ -83,7 +81,6 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
           </TooltipProvider>
         </div>
       </div>
-
       {/* Conditions d'admission - toujours visibles */}
       <div className="mb-4">
         <h4 className="text-xs sm:text-sm font-medium mb-2">Conditions d'admission:</h4>
@@ -101,7 +98,6 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
           )}
         </ul>
       </div>
-
       {/* À savoir - section ajoutée */}
       <div className="mb-4">
         <h4 className="text-xs sm:text-sm font-medium mb-2 flex items-center gap-1">
@@ -112,7 +108,6 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
           {school.goodToKnow}
         </p>
       </div>
-
       {/* Contact - affiché selon l'état */}
       {isOpen && (
         <div className="pt-4 border-t w-full animate-fade-in">
@@ -124,7 +119,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                 {school.contact.email}
               </a>
             </div>
-            <div className="flex items-center flex-wrap gap-1">
+            <div className="flex items-center flex-wrap gap-1 ml-[10px] mr-[10px] mt-[20px] mb-[20px]">
               <Phone className="mr-2 h-4 w-4 text-primary" />
               <a href={`tel:${school.contact.phone}`} className="hover:text-primary break-all text-xs sm:text-sm">
                 {school.contact.phone}
