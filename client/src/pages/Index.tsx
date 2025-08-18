@@ -34,7 +34,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-hidden">
       <Navigation links={navigationLinks} />
-      <NewsletterPopup />
+      {/* Popup newsletter supprimé comme demandé */}
       
       {/* Hero Section */}
       <section className="relative gradient-hero pt-20 pb-16 sm:pb-24 md:pb-32">

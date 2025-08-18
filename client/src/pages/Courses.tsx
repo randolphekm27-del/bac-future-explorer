@@ -1,4 +1,4 @@
-import { PlayCircle, Search, Clock, Book, Check, Plus } from "lucide-react"
+import { PlayCircle, Search, Clock, Book, Check } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
@@ -7,7 +7,6 @@ import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ContactForm } from "@/components/ui/contact-form"
 
 const courses = [
   {
@@ -100,7 +99,7 @@ const courses = [
 export default function Courses() {
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
-  const [showContactForm, setShowContactForm] = useState(false)
+  // État showContactForm supprimé car la fonctionnalité a été retirée
 
   const categories = ["all", ...Array.from(new Set(courses.map((course) => course.category)))]
 
@@ -134,10 +133,7 @@ export default function Courses() {
               title="Formations Pratiques"
               description="Développez vos compétences avec nos formations en ligne de qualité."
             />
-            <Button onClick={() => setShowContactForm(true)} className="shrink-0">
-              <Plus className="mr-2 h-4 w-4" />
-              Proposer une formation
-            </Button>
+            {/* Fonction "Proposer une formation" supprimée comme demandé */}
           </div>
 
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
@@ -242,13 +238,7 @@ export default function Courses() {
             ))}
           </div>
 
-          <ContactForm
-            isOpen={showContactForm}
-            onClose={() => setShowContactForm(false)}
-            type="trainer"
-            title="Proposer une formation"
-            description="Rejoignez notre équipe de formateurs et proposez vos cours en ligne. Notre équipe vous contactera pour valider votre candidature."
-          />
+          {/* ContactForm supprimé avec la fonction "Proposer une formation" */}
         </div>
       </main>
 
