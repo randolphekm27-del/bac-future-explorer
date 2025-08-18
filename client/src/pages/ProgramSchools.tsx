@@ -183,7 +183,7 @@ export default function ProgramSchools() {
                         href={schoolData.contact.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs border border-primary text-primary px-3 py-1 rounded-full hover:bg-primary/10 transition-colors"
+                        className="border border-primary text-primary px-3 py-1 rounded-full hover:bg-primary/10 transition-colors pl-[10px] pr-[10px] pt-[20px] pb-[20px] font-bold text-[14px]"
                       >
                         Site web
                       </a>
