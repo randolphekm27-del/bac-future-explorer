@@ -26,7 +26,6 @@ export default function ProgramSchools() {
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
-
       <main className="flex-1 pt-24 pb-12 w-full">
         <div className="container mx-auto px-4 max-w-full">
           {/* Navigation de retour */}
@@ -175,7 +174,7 @@ export default function ProgramSchools() {
                   <div className="flex gap-2 mt-4">
                     <a
                       href={`/universities/${schoolData.universitySlug}`}
-                      className="text-xs bg-primary text-primary-foreground px-3 py-1 rounded-full hover:bg-primary/90 transition-colors"
+                      className="bg-primary text-primary-foreground px-3 py-1 rounded-full hover:bg-primary/90 transition-colors text-[13px] text-center ml-[2px] mr-[2px] mt-[2px] mb-[2px] pl-[5px] pr-[5px] pt-[5px] pb-[5px]"
                     >
                       Voir l'université
                     </a>
@@ -196,7 +195,6 @@ export default function ProgramSchools() {
           )}
         </div>
       </main>
-
       <Footer />
     </div>
   );
