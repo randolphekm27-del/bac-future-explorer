@@ -11,6 +11,7 @@ import UniversityDetail from "./pages/UniversityDetail";
 import UniversityGallery from "./pages/UniversityGallery";
 import Programs from "./pages/Programs";
 import ProgramSchools from "./pages/ProgramSchools";
+import ProgramDetail from "./pages/ProgramDetail";
 import Internships from "./pages/Internships";
 import Competitions from "./pages/Competitions";
 import Courses from "./pages/Courses";
@@ -32,7 +33,8 @@ const App = () => (
           <Route path="/universities/:slug" element={<UniversityDetail />} />
           <Route path="/universities/:slug/gallery" element={<UniversityGallery />} />
           <Route path="/programs" element={<Programs />} />
-          <Route path="/programs/:slug/schools" element={<ProgramSchools />} />
+          <Route path="/program-schools/:slug" element={<ProgramSchools />} />
+          <Route path="/program-detail/:slug" element={<ProgramDetail />} />
           <Route path="/internships" element={<Internships />} />
           <Route path="/competitions" element={<Competitions />} />
           <Route path="/courses" element={<Courses />} />

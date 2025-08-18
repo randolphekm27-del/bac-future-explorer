@@ -36,7 +36,7 @@ interface ProgramCardProps {
 }
 
 export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps) {
-  const schoolsCount = getSchoolsForProgram(program.slug).length;
+  const schoolsCount = program.schoolsCount || getSchoolsForProgram(program.slug).length;
 
   return (
     <div
@@ -104,15 +104,25 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
         
         <div className="mt-6 flex items-center justify-between">
           <div className="text-sm text-muted-foreground">
-            {schoolsCount} école{schoolsCount > 1 ? 's' : ''}
+            <Users className="inline mr-1 h-3 w-3" />
+            {program.schoolsCount || schoolsCount} école{(program.schoolsCount || schoolsCount) > 1 ? 's' : ''}
           </div>
         </div>
         
-        <Link to={`/programs/${program.slug}/schools`}>
-          <Button variant="outline" className="mt-4 w-full text-sm">
-            Où suivre cette filière ?
-          </Button>
-        </Link>
+        <div className="mt-4 flex gap-2 w-full">
+          <Link to={`/program-schools/${program.slug}`} className="flex-1">
+            <Button variant="outline" size="sm" className="w-full text-xs">
+              <GraduationCap className="mr-2 h-3 w-3" />
+              Où suivre cette filière
+            </Button>
+          </Link>
+          <Link to={`/program-detail/${program.slug}`} className="flex-1">
+            <Button size="sm" className="w-full text-xs bg-orange-500 hover:bg-orange-600 text-white">
+              <Briefcase className="mr-2 h-3 w-3" />
+              On devient quoi
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
