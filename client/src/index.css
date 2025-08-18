@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom button styling as requested */
-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  background-color: #1a66ffe6;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  margin: 0 auto;
-  cursor: pointer;
-}
-
 /* Premium Design System - Ultra High Quality */
 
 @layer base {
