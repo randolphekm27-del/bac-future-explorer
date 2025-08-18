@@ -86,12 +86,12 @@ export function UniversityCard({ university }: UniversityCardProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 px-2 text-xs hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-1"
+                className="h-8 px-3 text-xs hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 flex items-center gap-2"
                 onClick={(e) => handleContactClick(e, university.schools[0].contact.phone, 'phone')}
                 data-testid="button-phone"
               >
-                <Phone className="h-3 w-3" />
-                <span className="hidden sm:inline">Appeler</span>
+                <Phone className="h-3 w-3 flex-shrink-0" />
+                <span className="font-bold">Appeler</span>
               </Button>
             )}
             
@@ -99,12 +99,12 @@ export function UniversityCard({ university }: UniversityCardProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 px-2 text-xs hover:bg-green-50 hover:text-green-700 transition-all duration-200 flex items-center gap-1"
+                className="h-8 px-3 text-xs hover:bg-green-50 hover:text-green-700 transition-all duration-200 flex items-center gap-2"
                 onClick={(e) => handleContactClick(e, university.schools[0].contact.email, 'email')}
                 data-testid="button-email"
               >
-                <Mail className="h-3 w-3" />
-                <span className="hidden sm:inline">Email</span>
+                <Mail className="h-3 w-3 flex-shrink-0" />
+                <span className="font-bold">Email</span>
               </Button>
             )}
             
@@ -112,12 +112,12 @@ export function UniversityCard({ university }: UniversityCardProps) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 px-2 text-xs hover:bg-purple-50 hover:text-purple-700 transition-all duration-200 flex items-center gap-1"
+                className="h-8 px-3 text-xs hover:bg-purple-50 hover:text-purple-700 transition-all duration-200 flex items-center gap-2"
                 onClick={(e) => handleContactClick(e, university.schools[0].contact.website, 'website')}
                 data-testid="button-website"
               >
-                <Globe className="h-3 w-3" />
-                <span className="hidden sm:inline">Site web</span>
+                <Globe className="h-3 w-3 flex-shrink-0" />
+                <span className="font-bold">Site web</span>
               </Button>
             )}
           </div>

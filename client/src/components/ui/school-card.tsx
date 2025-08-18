@@ -112,26 +112,32 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
       {isOpen && (
         <div className="pt-4 border-t w-full animate-fade-in">
           <h4 className="text-xs sm:text-sm font-medium mb-2">Contact:</h4>
-          <div className="space-y-2 text-xs sm:text-sm text-muted-foreground w-full">
-            <div className="flex items-center flex-wrap gap-1">
-              <Mail className="mr-2 h-4 w-4 text-primary" />
-              <a href={`mailto:${school.contact.email}`} className="hover:text-primary break-all text-xs sm:text-sm">
+          <div className="space-y-3 text-xs sm:text-sm w-full">
+            <div className="flex items-center gap-3">
+              <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+              <a 
+                href={`mailto:${school.contact.email}`} 
+                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm"
+              >
                 {school.contact.email}
               </a>
             </div>
-            <div className="flex items-center flex-wrap gap-1 ml-[10px] mr-[10px] mt-[20px] mb-[20px]">
-              <Phone className="mr-2 h-4 w-4 text-primary" />
-              <a href={`tel:${school.contact.phone}`} className="hover:text-primary break-all text-xs sm:text-sm">
+            <div className="flex items-center gap-3">
+              <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+              <a 
+                href={`tel:${school.contact.phone}`} 
+                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm"
+              >
                 {school.contact.phone}
               </a>
             </div>
-            <div className="flex items-center flex-wrap gap-1">
-              <Globe className="mr-2 h-4 w-4 text-primary" />
+            <div className="flex items-center gap-3">
+              <Globe className="h-4 w-4 text-primary flex-shrink-0" />
               <a 
                 href={`https://${school.contact.website}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary break-all text-xs sm:text-sm"
+                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm"
               >
                 {school.contact.website}
               </a>
