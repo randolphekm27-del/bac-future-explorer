@@ -114,30 +114,30 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
           <h4 className="text-xs sm:text-sm font-medium mb-2">Contact:</h4>
           <div className="space-y-3 text-xs sm:text-sm w-full">
             <div className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+              <Mail className="h-4 w-4 text-primary flex-shrink-0 mt-0" />
               <a 
                 href={`mailto:${school.contact.email}`} 
-                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm"
+                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm leading-4 flex items-center"
               >
                 {school.contact.email}
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+              <Phone className="h-4 w-4 text-primary flex-shrink-0 mt-0" />
               <a 
                 href={`tel:${school.contact.phone}`} 
-                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm"
+                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm leading-4 flex items-center"
               >
                 {school.contact.phone}
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Globe className="h-4 w-4 text-primary flex-shrink-0" />
+              <Globe className="h-4 w-4 text-primary flex-shrink-0 mt-0" />
               <a 
                 href={`https://${school.contact.website}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm"
+                className="font-bold text-gray-700 dark:text-gray-200 hover:text-primary transition-colors duration-200 break-all text-xs sm:text-sm leading-4 flex items-center"
               >
                 {school.contact.website}
               </a>
