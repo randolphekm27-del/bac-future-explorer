@@ -81,27 +81,182 @@ const getCategoryForProgram = (name: string): string => {
   return 'Autres';
 };
 
-// Fonction pour obtenir les débouchés d'un programme
+// Fonction pour obtenir les débouchés d'un programme avec plus de spécificité
 const getCareersForProgram = (name: string): string[] => {
   const lowerName = name.toLowerCase();
   
-  if (lowerName.includes('informatique') || lowerName.includes('génie informatique')) {
-    return ['Développeur logiciel', 'Ingénieur informatique', 'Administrateur système', 'Chef de projet IT'];
+  // Informatique et Technologie
+  if (lowerName.includes('informatique') && lowerName.includes('télécom')) {
+    return ['Ingénieur télécom', 'Architecte réseaux', 'Ingénieur cybersécurité', 'Chef de projet IT'];
   }
-  if (lowerName.includes('médecine')) {
-    return ['Médecin généraliste', 'Médecin spécialiste', 'Chercheur médical', 'Chef de service hospitalier'];
+  if (lowerName.includes('génie informatique') || lowerName.includes('informatique')) {
+    return ['Développeur full-stack', 'Data scientist', 'Ingénieur DevOps', 'Consultant IT'];
   }
+  
+  // Santé et Médecine
+  if (lowerName.includes('médecine humaine')) {
+    return ['Médecin généraliste', 'Médecin spécialiste', 'Chef de service médical', 'Médecin humanitaire'];
+  }
+  if (lowerName.includes('soins infirmiers')) {
+    return ['Infirmier hospitalier', 'Infirmier libéral', 'Cadre de santé', 'Infirmier spécialisé'];
+  }
+  if (lowerName.includes('analyse biomédicale')) {
+    return ['Technicien de laboratoire', 'Biologiste médical', 'Chercheur biomédical', 'Responsable qualité labo'];
+  }
+  if (lowerName.includes('pharmacie') || lowerName.includes('biotechnologie pharmaceutique')) {
+    return ['Pharmacien hospitalier', 'Pharmacien d\'officine', 'Ingénieur pharmaceutique', 'Chercheur en pharmacologie'];
+  }
+  if (lowerName.includes('santé publique')) {
+    return ['Épidémiologiste', 'Chef de programme santé', 'Consultant OMS', 'Coordonnateur sanitaire'];
+  }
+  if (lowerName.includes('génie biomédical') || lowerName.includes('maintenance biomédicale')) {
+    return ['Technicien biomédical', 'Ingénieur équipements médicaux', 'Consultant biomédical', 'Chef de service technique'];
+  }
+  if (lowerName.includes('kinésithérapie') || lowerName.includes('physiothérapie')) {
+    return ['Kinésithérapeute', 'Rééducateur', 'Thérapeute sportif', 'Directeur de centre de rééducation'];
+  }
+  
+  // Génie Civil et Architecture
   if (lowerName.includes('génie civil')) {
-    return ['Ingénieur civil', 'Chef de chantier', 'Architecte', 'Consultant en BTP'];
+    return ['Ingénieur BTP', 'Chef de projet construction', 'Contrôleur technique', 'Entrepreneur du bâtiment'];
   }
-  if (lowerName.includes('agriculture') || lowerName.includes('agronomie')) {
-    return ['Ingénieur agronome', 'Conseiller agricole', 'Entrepreneur agricole', 'Chercheur en agronomie'];
+  if (lowerName.includes('architecture')) {
+    return ['Architecte', 'Urbaniste', 'Chef de projet architectural', 'Consultant en patrimoine'];
   }
+  if (lowerName.includes('travaux publics') || lowerName.includes('génie géomatique')) {
+    return ['Ingénieur travaux publics', 'Géomètre-expert', 'Topographe', 'Chef de chantier TP'];
+  }
+  if (lowerName.includes('hydraulique') || lowerName.includes('assainissement')) {
+    return ['Ingénieur hydraulique', 'Chef de projet eau', 'Consultant WASH', 'Gestionnaire de réseau'];
+  }
+  
+  // Agriculture et Environnement
+  if (lowerName.includes('production végétale') || lowerName.includes('sciences et techniques de production végétale')) {
+    return ['Ingénieur agronome', 'Conseiller agricole', 'Entrepreneur agricole', 'Responsable exploitation'];
+  }
+  if (lowerName.includes('production animale') || lowerName.includes('élevage')) {
+    return ['Zootechnicien', 'Vétérinaire', 'Chef d\'exploitation élevage', 'Consultant en élevage'];
+  }
+  if (lowerName.includes('aquaculture')) {
+    return ['Aquaculteur', 'Technicien piscicole', 'Gestionnaire de ferme aquacole', 'Consultant en pêche'];
+  }
+  if (lowerName.includes('horticulture') || lowerName.includes('espaces verts')) {
+    return ['Horticulteur', 'Paysagiste', 'Gestionnaire d\'espaces verts', 'Entrepreneur paysagiste'];
+  }
+  if (lowerName.includes('foresterie')) {
+    return ['Ingénieur forestier', 'Garde forestier', 'Consultant environnemental', 'Chef de projet reboisement'];
+  }
+  if (lowerName.includes('génie de l\'environnement')) {
+    return ['Ingénieur environnement', 'Consultant développement durable', 'Chef de projet écologique', 'Auditeur environnemental'];
+  }
+  if (lowerName.includes('agroéquipement') || lowerName.includes('machinisme agricole')) {
+    return ['Technicien machinisme', 'Vendeur équipements agricoles', 'Mécanicien agricole', 'Chef d\'atelier agricole'];
+  }
+  if (lowerName.includes('nutrition') || lowerName.includes('sciences agro-alimentaires')) {
+    return ['Nutritionniste', 'Ingénieur agroalimentaire', 'Diététicien', 'Contrôleur qualité alimentaire'];
+  }
+  
+  // Économie et Gestion
+  if (lowerName.includes('sciences économiques')) {
+    return ['Économiste', 'Analyste économique', 'Conseiller politique économique', 'Chercheur économique'];
+  }
+  if (lowerName.includes('gestion') || lowerName.includes('management')) {
+    return ['Manager', 'Consultant en gestion', 'Chef d\'entreprise', 'Contrôleur de gestion'];
+  }
+  if (lowerName.includes('comptable') || lowerName.includes('stcf')) {
+    return ['Expert-comptable', 'Auditeur', 'Contrôleur fiscal', 'Directeur financier'];
+  }
+  if (lowerName.includes('finance') || lowerName.includes('banque')) {
+    return ['Analyste financier', 'Banquier', 'Courtier', 'Gestionnaire de patrimoine'];
+  }
+  if (lowerName.includes('commerce international') || lowerName.includes('négoce')) {
+    return ['Commercial international', 'Import-export', 'Logisticien international', 'Négociant'];
+  }
+  if (lowerName.includes('marketing') || lowerName.includes('communication')) {
+    return ['Chef de produit', 'Responsable marketing', 'Consultant communication', 'Community manager'];
+  }
+  
+  // Droit et Sciences Politiques
   if (lowerName.includes('droit')) {
-    return ['Avocat', 'Magistrat', 'Juriste d\'entreprise', 'Conseiller juridique'];
+    return ['Avocat', 'Magistrat', 'Juriste d\'entreprise', 'Notaire'];
   }
-  if (lowerName.includes('économie') || lowerName.includes('gestion')) {
-    return ['Économiste', 'Gestionnaire', 'Analyste financier', 'Consultant en gestion'];
+  if (lowerName.includes('sciences politiques') || lowerName.includes('politique')) {
+    return ['Diplomate', 'Analyste politique', 'Chargé de mission', 'Conseiller politique'];
+  }
+  
+  // Langues et Communication
+  if (lowerName.includes('anglais')) {
+    return ['Professeur d\'anglais', 'Traducteur-interprète', 'Guide touristique', 'Attaché commercial international'];
+  }
+  if (lowerName.includes('français') || lowerName.includes('littérature')) {
+    return ['Professeur de français', 'Écrivain', 'Éditeur', 'Journaliste'];
+  }
+  if (lowerName.includes('allemand')) {
+    return ['Professeur d\'allemand', 'Traducteur allemand', 'Attaché culturel', 'Guide touristique spécialisé'];
+  }
+  if (lowerName.includes('espagnol')) {
+    return ['Professeur d\'espagnol', 'Traducteur espagnol', 'Conseiller en commerce hispanique', 'Attaché culturel'];
+  }
+  if (lowerName.includes('chinois') || lowerName.includes('didactique du chinois')) {
+    return ['Professeur de chinois', 'Traducteur sino-français', 'Conseiller commercial Chine', 'Attaché culturel Chine'];
+  }
+  
+  // Sciences Exactes
+  if (lowerName.includes('mathématiques') && lowerName.includes('informatique')) {
+    return ['Data analyst', 'Actuaire', 'Professeur de maths', 'Statisticien'];
+  }
+  if (lowerName.includes('physique') && lowerName.includes('chimie')) {
+    return ['Professeur de sciences', 'Ingénieur de laboratoire', 'Chercheur', 'Technicien de laboratoire'];
+  }
+  if (lowerName.includes('sciences de la vie') || lowerName.includes('biologie')) {
+    return ['Biologiste', 'Professeur de SVT', 'Chercheur en biologie', 'Technicien de laboratoire bio'];
+  }
+  
+  // Éducation et Formation
+  if (lowerName.includes('éducation physique') || lowerName.includes('sport')) {
+    return ['Professeur d\'EPS', 'Entraîneur sportif', 'Préparateur physique', 'Directeur de centre sportif'];
+  }
+  if (lowerName.includes('pédagogie') || lowerName.includes('enseignement')) {
+    return ['Enseignant', 'Conseiller pédagogique', 'Directeur d\'école', 'Formateur d\'adultes'];
+  }
+  if (lowerName.includes('philosophie')) {
+    return ['Professeur de philosophie', 'Écrivain', 'Journaliste', 'Conseiller éthique'];
+  }
+  if (lowerName.includes('histoire') || lowerName.includes('géographie')) {
+    return ['Professeur d\'histoire-géo', 'Guide touristique', 'Archéologue', 'Cartographe'];
+  }
+  
+  // Ingénierie et Technologie
+  if (lowerName.includes('génie électrique') || lowerName.includes('électrotechnique')) {
+    return ['Ingénieur électrique', 'Technicien électrotechnique', 'Chef de projet électrique', 'Consultant en énergie'];
+  }
+  if (lowerName.includes('génie mécanique') || lowerName.includes('maintenance industrielle')) {
+    return ['Ingénieur mécanicien', 'Technicien de maintenance', 'Chef d\'atelier', 'Consultant industriel'];
+  }
+  if (lowerName.includes('génie énergétique') || lowerName.includes('énergies renouvelables')) {
+    return ['Ingénieur énergéticien', 'Consultant énergie renouvelable', 'Technicien solaire', 'Chef de projet énergétique'];
+  }
+  if (lowerName.includes('froid') || lowerName.includes('climatisation')) {
+    return ['Frigoriste', 'Technicien climatisation', 'Installateur CVC', 'Dépanneur électroménager'];
+  }
+  if (lowerName.includes('génie chimique') || lowerName.includes('procédés')) {
+    return ['Ingénieur chimiste', 'Technicien de production', 'Responsable qualité industrielle', 'Consultant procédés'];
+  }
+  
+  // Autres domaines spécialisés
+  if (lowerName.includes('sociologie rurale') || lowerName.includes('vulgarisation')) {
+    return ['Sociologue rural', 'Agent de développement', 'Animateur rural', 'Consultant en développement'];
+  }
+  if (lowerName.includes('développement communautaire')) {
+    return ['Agent de développement', 'Coordinateur ONG', 'Animateur social', 'Chef de projet communautaire'];
+  }
+  if (lowerName.includes('population') || lowerName.includes('démographie')) {
+    return ['Démographe', 'Statisticien', 'Planificateur urbain', 'Analyste de population'];
+  }
+  
+  // Par défaut selon la catégorie
+  if (lowerName.includes('technique') || lowerName.includes('technologie')) {
+    return ['Technicien spécialisé', 'Chef d\'équipe technique', 'Formateur technique', 'Entrepreneur'];
   }
   
   return ['Spécialiste du domaine', 'Consultant', 'Formateur', 'Entrepreneur'];
@@ -187,7 +342,8 @@ export const programs: Program[] = extractProgramsFromUniversities();
 
 // Fonctions utilitaires
 export const getAllCategories = (): string[] => {
-  const categories = [...new Set(programs.map(p => p.category))];
+  const categoriesSet = new Set(programs.map(p => p.category));
+  const categories = Array.from(categoriesSet);
   return categories.sort();
 };
 

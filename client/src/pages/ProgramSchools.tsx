@@ -92,9 +92,9 @@ export default function ProgramSchools() {
                   <MapPin className="h-5 w-5 text-primary" />
                   <div className="text-center">
                     <div className="font-semibold">
-                      {new Set(schools.map(s => s.university.location)).size}
+                      {new Set(schools.map(s => s.universityName)).size}
                     </div>
-                    <div className="text-sm text-muted-foreground">Villes</div>
+                    <div className="text-sm text-muted-foreground">Universités</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
@@ -127,12 +127,70 @@ export default function ProgramSchools() {
             </div>
           ) : (
             <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 w-full">
-              {schools.map(({ school, university }) => (
-                <SchoolCard
-                  key={school.id}
-                  school={school}
-                  university={university}
-                />
+              {schools.map((schoolData, index) => (
+                <div
+                  key={schoolData.id || `school-${index}`}
+                  className="p-6 rounded-lg border bg-background hover:border-primary/50 transition-colors"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-semibold">{schoolData.name}</h3>
+                    <span className={`text-xs px-2 py-1 rounded-full ${
+                      schoolData.universityType === 'Public' 
+                        ? 'bg-blue-100 text-blue-800' 
+                        : 'bg-green-100 text-green-800'
+                    }`}>
+                      {schoolData.universityType}
+                    </span>
+                  </div>
+                  
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {schoolData.universityName}
+                  </p>
+                  
+                  {schoolData.location && (
+                    <p className="text-sm text-muted-foreground mb-3">
+                      📍 {schoolData.location}
+                    </p>
+                  )}
+                  
+                  {schoolData.description && (
+                    <p className="text-sm text-muted-foreground mb-4">
+                      {schoolData.description}
+                    </p>
+                  )}
+                  
+                  {schoolData.admissionRequirements && schoolData.admissionRequirements.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="text-sm font-medium mb-2">Conditions d'admission :</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {schoolData.admissionRequirements.map((req, i) => (
+                          <span key={i} className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
+                            {req}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="flex gap-2 mt-4">
+                    <a
+                      href={`/universities/${schoolData.universitySlug}`}
+                      className="text-xs bg-primary text-primary-foreground px-3 py-1 rounded-full hover:bg-primary/90 transition-colors"
+                    >
+                      Voir l'université
+                    </a>
+                    {schoolData.contact?.website && (
+                      <a
+                        href={schoolData.contact.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs border border-primary text-primary px-3 py-1 rounded-full hover:bg-primary/10 transition-colors"
+                      >
+                        Site web
+                      </a>
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
           )}
