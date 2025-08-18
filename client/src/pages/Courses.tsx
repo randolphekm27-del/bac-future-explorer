@@ -1,4 +1,4 @@
-import { PlayCircle, Search, Clock, Book, Check } from "lucide-react"
+import { PlayCircle, Search, Clock, Book, Check, Plus } from "lucide-react"
 import { useState, useEffect } from "react"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
@@ -7,6 +7,7 @@ import { SectionTitle } from "@/components/ui/section-title"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { WhatsAppContactForm } from "@/components/ui/whatsapp-contact-form"
 
 const courses = [
   {
@@ -99,7 +100,7 @@ const courses = [
 export default function Courses() {
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("all")
-  // État showContactForm supprimé car la fonctionnalité a été retirée
+  const [showContactForm, setShowContactForm] = useState(false)
 
   const categories = ["all", ...Array.from(new Set(courses.map((course) => course.category)))]
 
@@ -133,7 +134,14 @@ export default function Courses() {
               title="Formations Pratiques"
               description="Développez vos compétences avec nos formations en ligne de qualité."
             />
-            {/* Fonction "Proposer une formation" supprimée comme demandé */}
+            <Button 
+              onClick={() => setShowContactForm(true)}
+              className="bg-orange-600 hover:bg-orange-700 text-white"
+              data-testid="button-proposer-formation"
+            >
+              <Plus className="mr-2 h-4 w-4" />
+              Proposer une formation
+            </Button>
           </div>
 
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
@@ -238,11 +246,18 @@ export default function Courses() {
             ))}
           </div>
 
-          {/* ContactForm supprimé avec la fonction "Proposer une formation" */}
         </div>
       </main>
 
       <Footer />
+      
+      <WhatsAppContactForm
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+        title="Proposer une formation"
+        description="Remplissez ce formulaire pour nous présenter votre formation. Vos informations seront envoyées directement sur notre WhatsApp."
+        type="formation"
+      />
     </div>
   )
 }

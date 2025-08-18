@@ -76,14 +76,7 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
           </p>
         )}
         
-        {program.explanation && (
-          <div className="mt-4 p-3 bg-muted/30 rounded-lg border-l-4 border-primary/20">
-            <h4 className="text-sm sm:text-base font-medium mb-2 text-primary">À quoi ça mène ?</h4>
-            <p className="text-sm sm:text-base text-muted-foreground break-words leading-relaxed">
-              {program.explanation}
-            </p>
-          </div>
-        )}
+
         
         <div className="mt-6">
           <h4 className="text-sm sm:text-base font-medium mb-2">Débouchés:</h4>

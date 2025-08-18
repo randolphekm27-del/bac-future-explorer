@@ -64,23 +64,40 @@ export default function ProgramDetail() {
             </div>
           </div>
 
-          {/* Galerie d'images */}
+          {/* Galerie d'images avec défilement horizontal */}
           {program.gallery && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6 text-center">Aperçu de la formation</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {program.gallery.images.map((image, index) => (
-                  <div key={index} className="aspect-video overflow-hidden rounded-lg">
-                    <LazyImage
-                      src={image}
-                      alt={`${program.name} - Image ${index + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              <div className="relative">
+                {/* Container avec scroll horizontal */}
+                <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+                  {program.gallery.images.map((image, index) => (
+                    <div 
+                      key={index} 
+                      className="aspect-video w-80 flex-shrink-0 overflow-hidden rounded-xl bg-gradient-to-br from-blue-50 to-orange-50 snap-center"
+                    >
+                      <LazyImage
+                        src={image}
+                        alt={`${program.name} - Image ${index + 1}`}
+                        className="w-full h-full object-cover transition-all duration-300 hover:scale-105 rounded-xl"
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {/* Indicateur de défilement */}
+                <div className="flex justify-center mt-4 gap-2">
+                  {program.gallery.images.map((_, index) => (
+                    <div 
+                      key={index} 
+                      className="w-2 h-2 rounded-full bg-muted-foreground/30"
                     />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
+              
               {program.gallery.description && (
-                <p className="text-center text-muted-foreground mt-4">
+                <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">
                   {program.gallery.description}
                 </p>
               )}
@@ -102,22 +119,38 @@ export default function ProgramDetail() {
             </div>
           </div>
 
-          {/* Débouchés professionnels */}
+          {/* Débouchés professionnels - Design amélioré */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Débouchés professionnels</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-4 gradient-text">Débouchés professionnels</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Découvrez les nombreuses opportunités de carrière qui s'offrent à vous après cette formation
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {program.careers.map((career, index) => (
                 <div 
                   key={index} 
-                  className="p-6 rounded-lg border bg-background hover:border-primary/50 transition-colors"
+                  className="group p-6 rounded-2xl border bg-gradient-to-br from-white to-blue-50/30 dark:from-gray-900 dark:to-blue-950/20 hover:border-orange-400 hover:shadow-xl hover:shadow-orange-100/20 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  <div className="flex items-center mb-3">
-                    <Briefcase className="h-5 w-5 text-primary mr-2" />
-                    <h3 className="text-lg font-semibold">{career}</h3>
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 text-white mr-4">
+                      <Briefcase className="h-5 w-5" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white group-hover:text-orange-600 transition-colors">
+                      {career}
+                    </h3>
                   </div>
-                  <p className="text-muted-foreground">
+                  
+                  <p className="text-muted-foreground leading-relaxed mb-4">
                     Opportunités d'emploi dans le domaine de {career.toLowerCase()} avec des perspectives d'évolution intéressantes.
                   </p>
+                  
+                  <div className="flex items-center text-sm text-orange-600 font-medium">
+                    <span className="mr-2">→</span>
+                    Découvrir les postes
+                  </div>
                 </div>
               ))}
             </div>

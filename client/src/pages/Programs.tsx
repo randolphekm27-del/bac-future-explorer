@@ -72,16 +72,6 @@ export default function Programs() {
               <p className="text-muted-foreground text-lg">
                 Aucune filière trouvée pour votre recherche.
               </p>
-              <Button 
-                variant="outline" 
-                className="mt-4"
-                onClick={() => {
-                  setSearchTerm("");
-                  setCategoryFilter("all");
-                }}
-              >
-                Réinitialiser les filtres
-              </Button>
             </div>
           )}
         </div>

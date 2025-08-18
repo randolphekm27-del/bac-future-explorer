@@ -8,6 +8,16 @@ Preferred communication style: Simple, everyday language.
 
 # Recent Changes
 
+## Enhanced User Experience & WhatsApp Integration (August 18, 2025)
+- **Orange "On devient quoi" Button**: Made the career prospects button on program cards bright orange for better visibility
+- **Redesigned Program Detail Page**: Implemented horizontal image scrolling gallery with smooth snap behavior and visual indicators
+- **Improved Career Prospects Section**: Complete visual redesign with gradient cards, hover effects, and orange accent colors
+- **University Card Redesign**: Better organized contact information with dedicated buttons for phone, email, and website access
+- **WhatsApp Integration**: Added "Proposer une formation" button on Courses page and "Mettre en avant mon entreprise" button on Internships page
+- **Contact Form System**: Comprehensive WhatsApp contact forms that format messages and send directly to +22957703972
+- **Button Alignment Fixes**: Resolved text positioning issues in university and program cards for perfect alignment
+- **Enhanced Accessibility**: Added proper data-testid attributes and improved keyboard navigation
+
 ## Complete Programs System Implementation (August 18, 2025)
 - **Automatic Program Extraction**: Implemented comprehensive system to automatically extract all filières from universities data without exception
 - **Intelligent Program Fusion**: Created smart merging system that combines programs with exact name matches while preserving programs with slight differences
