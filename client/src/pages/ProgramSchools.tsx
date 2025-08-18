@@ -174,7 +174,7 @@ export default function ProgramSchools() {
                   <div className="flex gap-2 mt-4">
                     <a
                       href={`/universities/${schoolData.universitySlug}`}
-                      className="bg-primary text-primary-foreground px-3 py-1 rounded-full hover:bg-primary/90 transition-colors text-[13px] text-center ml-[2px] mr-[2px] mt-[2px] mb-[2px] pl-[5px] pr-[5px] pt-[5px] pb-[5px]"
+                      className="bg-primary text-primary-foreground px-3 py-1 rounded-full hover:bg-primary/90 transition-colors text-center pl-[10px] pr-[10px] pt-[20px] pb-[20px] ml-[0px] mr-[0px] mt-[0px] mb-[0px] text-[14px]"
                     >
                       Voir l'université
                     </a>
