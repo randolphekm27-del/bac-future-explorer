@@ -131,7 +131,7 @@ export function SchoolCard({ school, university, expandable = true }: SchoolCard
                 href={`https://${school.contact.website}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary break-all text-xs sm:text-sm"
+                className="hover:text-primary break-all text-xs sm:text-sm ml-[10px] mr-[10px] mt-[15px] mb-[15px] pl-[10px] pr-[10px] pt-[15px] pb-[15px]"
               >
                 {school.contact.website}
               </a>
