@@ -1,4 +1,5 @@
 import { universities } from "./universities";
+import { PROGRAM_DETAILS_DATABASE, getProgramDetailsById, type ProgramDetails } from "./program-details";
 
 export interface Program {
   id: string;
@@ -37,7 +38,17 @@ export interface Program {
     average: string;
     senior: string;
   };
+  // Référence vers les détails complets (si disponibles)
+  detailsId?: string;
 }
+
+// Mapping des filières vers leurs IDs de détails complets
+const PROGRAM_TO_DETAILS_MAPPING: Record<string, string> = {
+  "informatique-technologies": "PROG_001",
+  "droit-sciences-juridiques": "PROG_002", 
+  "genie-civil-architecture": "PROG_003",
+  // Ajouter ici d'autres mappings au fur et à mesure
+};
 
 // Fonction pour créer un slug à partir du nom de la filière
 export function createProgramSlug(name: string): string {
@@ -351,12 +362,41 @@ const detailedPrograms: Program[] = [
 function extractAllPrograms(): Program[] {
   const programMap = new Map<string, Program>();
   
-  // Ajouter d'abord les programmes détaillés
-  detailedPrograms.forEach(program => {
+  // Ajouter d'abord les programmes avec détails complets depuis la base de données centralisée
+  Object.values(PROGRAM_DETAILS_DATABASE).forEach(details => {
+    const program: Program = {
+      id: details.id,
+      name: details.name,
+      slug: details.slug,
+      category: details.category,
+      duration: details.duration,
+      level: details.level,
+      description: details.description,
+      detailedDescription: details.detailedDescription,
+      icon: details.icon,
+      image: details.image,
+      careers: details.careersSection.careers.map(career => career.title),
+      subjects: details.studiesSection.levels.flatMap(level => level.subjects).slice(0, 10), // Limiter à 10 matières
+      skills: {
+        hard: details.skillsSection.technical.skills.slice(0, 7), // Limiter à 7 compétences
+        soft: details.skillsSection.soft.skills.slice(0, 7)
+      },
+      degrees: details.studiesSection.levels.map(level => level.name),
+      admissionRequirements: details.admissionSection.requirements,
+      schoolsCount: details.schoolsCount || 0,
+      testimonials: details.testimonialsSection?.testimonials,
+      seo: {
+        title: `Études en ${details.name} au Bénin | Formations et Débouchés`,
+        description: details.description,
+        keywords: [details.name.toLowerCase(), "formation Bénin", details.category.toLowerCase()]
+      },
+      salary: details.salary,
+      detailsId: details.id
+    };
     programMap.set(program.slug, program);
   });
   
-  let programId = detailedPrograms.length + 1;
+  let programId = Object.keys(PROGRAM_DETAILS_DATABASE).length + 1;
 
   // Ajouter les autres programmes des universités
   universities.forEach(university => {
@@ -374,6 +414,7 @@ function extractAllPrograms(): Program[] {
           const careers = getCareersForProgram(programName, category);
           const icon = getIconForCategory(category);
           const image = getImageForCategory(category);
+          const detailsId = PROGRAM_TO_DETAILS_MAPPING[slug]; // Vérifier s'il y a des détails complets
           
           programMap.set(slug, {
             id: programId.toString(),
@@ -392,7 +433,8 @@ function extractAllPrograms(): Program[] {
             degrees: getDegreesForProgram(category),
             admissionRequirements: getAdmissionRequirementsForProgram(category),
             seo: getSEOForProgram(programName, category),
-            schoolsCount: 1
+            schoolsCount: 1,
+            detailsId // Référence vers les détails complets si disponible
           });
           programId++;
         }
@@ -715,9 +757,23 @@ export function getAllCategories(): string[] {
   return Array.from(categories).sort();
 }
 
-// Fonction pour obtenir les programmes en vedette (programmes détaillés)
+// Fonction pour obtenir les programmes en vedette (programmes avec détails complets)
 function getFeaturedPrograms(): Program[] {
-  return detailedPrograms;
+  return programs.filter(program => program.detailsId);
+}
+
+// Fonction pour récupérer les détails complets d'un programme
+export function getProgramFullDetails(slug: string): ProgramDetails | null {
+  const program = getProgramBySlug(slug);
+  if (!program || !program.detailsId) return null;
+  
+  return getProgramDetailsById(program.detailsId);
+}
+
+// Fonction pour vérifier si un programme a des détails complets
+export function programHasFullDetails(slug: string): boolean {
+  const program = getProgramBySlug(slug);
+  return !!(program && program.detailsId);
 }
 
 export { getFeaturedPrograms };

@@ -8,11 +8,11 @@ import { Navigation } from "./navigation";
 import { Footer } from "./footer";
 import { SectionTitle } from "./section-title";
 import { navigationLinks } from "@/lib/navigation";
-import type { ProgramPageContent } from "@/data/program-pages";
+import type { ProgramDetails } from "@/data/program-details";
 import { getSchoolsForProgram } from "@/data/programs";
 
 interface ProgramPageLayoutProps {
-  content: ProgramPageContent;
+  content: ProgramDetails;
 }
 
 export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {

@@ -1,6 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
-import { getProgramBySlug } from "@/data/programs";
-import { getProgramPageContent } from "@/data/program-pages";
+import { getProgramBySlug, getProgramFullDetails } from "@/data/programs";
 import { ProgramPageLayout } from "@/components/ui/program-page-layout";
 
 export default function ProgramDetail() {
@@ -16,14 +15,14 @@ export default function ProgramDetail() {
     return <Navigate to="/programs" replace />;
   }
 
-  // Obtenir le contenu spécifique uniquement
-  const pageContent = getProgramPageContent(slug);
+  // Obtenir les détails complets depuis la base de données centralisée
+  const programDetails = getProgramFullDetails(slug);
 
-  if (!pageContent) {
+  if (!programDetails) {
     return <Navigate to="/programs" replace />;
   }
 
   return (
-    <ProgramPageLayout content={pageContent} />
+    <ProgramPageLayout content={programDetails} />
   );
 }
