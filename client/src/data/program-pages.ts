@@ -494,6 +494,57 @@ export const programPagesContent: Record<string, ProgramPageContent> = {
         }
       ]
     },
+    studiesSection: {
+      title: "Un cursus juridique complet et exigeant",
+      duration: "4 à 8 ans selon la spécialisation",
+      levels: [
+        {
+          name: "Licence en Droit (Bac+3)",
+          duration: "3 ans",
+          description: "Formation fondamentale en droit béninois et international. Acquisition des bases juridiques essentielles et méthodologie du droit.",
+          subjects: [
+            "Droit civil général",
+            "Droit constitutionnel",
+            "Droit pénal général",
+            "Droit administratif",
+            "Histoire du droit",
+            "Introduction générale au droit",
+            "Méthodologie juridique",
+            "Institutions judiciaires"
+          ]
+        },
+        {
+          name: "Master 1 en Droit (Bac+4)",
+          duration: "1 an",
+          description: "Approfondissement des connaissances et première spécialisation selon les parcours : droit privé, droit public, droit des affaires.",
+          subjects: [
+            "Droit civil spécialisé",
+            "Procédure civile",
+            "Droit pénal spécial",
+            "Droit commercial",
+            "Droit international",
+            "Stage en cabinet ou tribunal",
+            "Mémoire de recherche",
+            "Clinique juridique"
+          ]
+        },
+        {
+          name: "Master 2 en Droit (Bac+5)",
+          duration: "1 an",
+          description: "Spécialisation poussée et préparation à l'entrée dans la vie professionnelle ou à la poursuite d'études doctorales.",
+          subjects: [
+            "Spécialisation choisie",
+            "Droit européen et international",
+            "Stage professionnel long",
+            "Mémoire de fin d'études",
+            "Séminaires de professionnels",
+            "Préparation aux concours",
+            "Déontologie juridique",
+            "Pratique professionnelle"
+          ]
+        }
+      ]
+    },
     resourcesSection: {
       title: "Ressources pour approfondir vos connaissances",
       resources: [
@@ -1139,10 +1190,29 @@ export function getProgramPageContent(slug: string): ProgramPageContent | null {
 }
 
 // Fonction pour générer du contenu par défaut pour les filières sans contenu spécifique
-export async function generateDefaultContent(program: Program): Promise<ProgramPageContent> {
+export function generateDefaultContent(program: Program): ProgramPageContent {
   // Utiliser le générateur de contenu intelligent
-  const { ProgramContentGenerator } = await import("./program-content-generator");
-  return ProgramContentGenerator.generateCompleteContent(program);
+  import("./program-content-generator").then(({ ProgramContentGenerator }) => {
+    return ProgramContentGenerator.generateCompleteContent(program);
+  });
+  
+  // Fallback temporaire - sera remplacé par le contenu généré
+  return {
+    slug: program.slug,
+    heroSection: {
+      title: program.name,
+      subtitle: program.description,
+      description: program.description,
+      backgroundImage: "/placeholder.svg",
+      highlights: []
+    },
+    aboutSection: { title: "", content: [], keyPoints: [] },
+    careersSection: { title: "", description: "", careers: [] },
+    studiesSection: { title: "", duration: "", levels: [] },
+    skillsSection: { title: "", technical: { title: "", skills: [] }, soft: { title: "", skills: [] } },
+    admissionSection: { title: "", requirements: [], process: [], tips: [] },
+    resourcesSection: { title: "", resources: [] }
+  };
 };
 
 // Fonction pour obtenir toutes les filières avec contenu
