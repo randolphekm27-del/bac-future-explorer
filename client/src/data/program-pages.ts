@@ -1181,6 +1181,388 @@ export const programPagesContent: Record<string, ProgramPageContent> = {
         }
       ]
     }
+  },
+
+  "administration-des-finances": {
+    slug: "administration-des-finances",
+    heroSection: {
+      title: "Administration des Finances",
+      subtitle: "Maîtrisez la gestion financière et budgétaire",
+      description: "Administration des Finances signifie la maîtrise et la gestion optimale des ressources financières, qu'elles soient publiques ou privées, afin d'assurer la stabilité économique et de permettre la réalisation de projets ambitieux.",
+      backgroundImage: "https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      highlights: [
+        "Secteur stratégique et stable",
+        "Responsabilités importantes et concrètes",
+        "Évolution rapide vers des postes de direction",
+        "Impact direct sur la performance organisationnelle"
+      ]
+    },
+    aboutSection: {
+      title: "Une formation d'excellence en gestion financière",
+      content: [
+        "Administration des Finances signifie la maîtrise et la gestion optimale des ressources financières, qu'elles soient publiques ou privées, afin d'assurer la stabilité économique et de permettre la réalisation de projets ambitieux.",
+        "Cette filière forme des professionnels capables d'analyser, planifier et contrôler les flux financiers dans tous types d'organisations. Elle couvre la comptabilité, la fiscalité, la gestion budgétaire, l'audit et la stratégie financière, tout en développant des compétences analytiques pour anticiper les risques et optimiser l'utilisation des ressources.",
+        "En choisissant cette filière, on se prépare à exercer un rôle central dans la gestion financière, avec des responsabilités réelles et une capacité d'influence directe sur les projets et les budgets, tout en garantissant transparence, efficacité et intégrité."
+      ],
+      keyPoints: [
+        "Formation complète en comptabilité et finance",
+        "Maîtrise des outils de gestion budgétaire",
+        "Développement d'un sens aigu de la responsabilité",
+        "Capacité de prise de décision stratégique",
+        "Formation aux standards internationaux",
+        "Préparation aux certifications professionnelles"
+      ]
+    },
+    careersSection: {
+      title: "Des carrières stratégiques et influentes",
+      description: "Les débouchés sont nombreux et stratégiques avec des responsabilités concrètes sur la performance financière des organisations.",
+      careers: [
+        {
+          title: "Contrôleur Financier",
+          description: "Supervisez la gestion financière de l'organisation en analysant les performances, contrôlant les budgets et optimisant les ressources. Vous exercez un rôle central dans la prise de décision stratégique.",
+          salary: "300 000 - 800 000 FCFA/mois",
+          requirements: ["Maîtrise des outils de contrôle de gestion", "Analyse financière avancée", "Connaissance des normes comptables", "Esprit analytique"],
+          growth: "Évolution vers Directeur Administratif et Financier ou expert en stratégie financière"
+        },
+        {
+          title: "Inspecteur des Finances",
+          description: "Contrôlez la régularité des opérations financières et la conformité aux réglementations. Vous jouez un rôle crucial dans la transparence et l'intégrité des finances publiques ou privées.",
+          salary: "250 000 - 600 000 FCFA/mois",
+          requirements: ["Connaissance approfondie de la réglementation", "Audit et contrôle interne", "Déontologie professionnelle", "Rigueur méthodologique"],
+          growth: "Évolution vers des postes de supervision dans les institutions de contrôle"
+        },
+        {
+          title: "Analyste Budgétaire",
+          description: "Élaborez et suivez les budgets organisationnels en analysant les écarts et proposant des optimisations. Votre expertise guide les décisions d'investissement et d'allocation des ressources.",
+          salary: "200 000 - 500 000 FCFA/mois",
+          requirements: ["Gestion budgétaire", "Outils de planification financière", "Analyse de données", "Communication des résultats"],
+          growth: "Évolution vers Responsable Budget ou Chef de service financier"
+        },
+        {
+          title: "Directeur Financier",
+          description: "Dirigez l'ensemble des fonctions financières de l'organisation en définissant la stratégie financière, supervisant les équipes et rendant compte aux instances dirigeantes.",
+          salary: "600 000 - 1 500 000+ FCFA/mois",
+          requirements: ["Leadership financier", "Vision stratégique", "Gestion d'équipes", "Relations avec les partenaires financiers"],
+          growth: "Poste de direction avec responsabilités stratégiques maximales"
+        }
+      ]
+    },
+    studiesSection: {
+      title: "Un parcours d'études structuré et progressif",
+      duration: "3 à 5 ans selon le niveau visé",
+      levels: [
+        {
+          name: "Licence en Administration des Finances (Bac+3)",
+          duration: "3 ans",
+          description: "Formation fondamentale couvrant les bases de la gestion financière et comptable. Acquisition des compétences essentielles pour débuter dans le secteur financier.",
+          subjects: [
+            "Comptabilité analytique et générale",
+            "Gestion budgétaire",
+            "Fiscalité des entreprises",
+            "Mathématiques financières",
+            "Économie publique",
+            "Droit des affaires",
+            "Audit interne",
+            "Contrôle de gestion"
+          ]
+        },
+        {
+          name: "Master en Finance et Contrôle (Bac+5)",
+          duration: "2 ans",
+          description: "Spécialisation avancée en finance d'entreprise, contrôle de gestion et stratégie financière. Préparation aux postes de responsabilité dans la gestion financière.",
+          subjects: [
+            "Finance d'entreprise avancée",
+            "Audit et contrôle interne",
+            "Gestion des risques financiers",
+            "Analyse financière approfondie",
+            "Stratégie et politique financière",
+            "Management des équipes finance",
+            "Normes comptables internationales",
+            "Stage professionnel et mémoire"
+          ]
+        }
+      ]
+    },
+    skillsSection: {
+      title: "Compétences développées pour l'excellence financière",
+      technical: {
+        title: "Compétences techniques spécialisées",
+        skills: [
+          "Maîtrise de la comptabilité analytique et générale",
+          "Gestion budgétaire et planification financière",
+          "Analyse des états financiers et reporting",
+          "Contrôle de gestion et audit interne",
+          "Fiscalité des entreprises et optimisation",
+          "Outils de gestion financière (ERP, tableurs avancés)",
+          "Évaluation et gestion des risques financiers",
+          "Conformité aux normes comptables internationales",
+          "Élaboration de tableaux de bord financiers",
+          "Négociation avec les partenaires financiers"
+        ]
+      },
+      soft: {
+        title: "Qualités humaines et professionnelles",
+        skills: [
+          "Sens aigu de la responsabilité et intégrité",
+          "Capacité d'analyse et esprit de synthèse",
+          "Rigueur méthodologique et attention aux détails",
+          "Leadership et encadrement d'équipes",
+          "Communication claire des enjeux financiers",
+          "Prise de décision sous pression",
+          "Vision stratégique et anticipation",
+          "Adaptabilité aux évolutions réglementaires",
+          "Négociation et relations partenariales",
+          "Éthique professionnelle irréprochable"
+        ]
+      }
+    },
+    admissionSection: {
+      title: "Intégrer cette formation d'excellence financière",
+      requirements: [
+        "Baccalauréat série C ou D avec de bons résultats en mathématiques",
+        "Capacités d'analyse et goût pour les chiffres",
+        "Intérêt pour l'économie et la gestion",
+        "Rigueur et sens des responsabilités",
+        "Projet professionnel cohérent dans la finance",
+        "Motivation pour les métiers à responsabilités"
+      ],
+      process: [
+        "Dépôt de candidature avec dossier académique complet",
+        "Test d'aptitude en mathématiques et logique financière",
+        "Entretien de motivation pour évaluer le projet professionnel",
+        "Évaluation des compétences analytiques",
+        "Classement selon les résultats globaux",
+        "Inscription après acceptation et validation du dossier"
+      ],
+      tips: [
+        "Développez votre culture économique et financière",
+        "Renforcez vos bases en mathématiques et statistiques",
+        "Suivez l'actualité économique et les marchés financiers",
+        "Effectuez des stages dans des services financiers",
+        "Montrez votre intérêt pour la gestion et l'analyse",
+        "Préparez-vous aux études exigeantes et rigoureuses"
+      ]
+    },
+    resourcesSection: {
+      title: "Ressources pour votre parcours en finance",
+      resources: [
+        {
+          title: "Écoles de gestion au Bénin",
+          description: "Guide des formations en finance et gestion",
+          link: "/universities?filter=finance",
+          type: "university"
+        },
+        {
+          title: "Stages en finance et comptabilité",
+          description: "Opportunités de stages dans le secteur financier",
+          link: "/internships?category=finance",
+          type: "career"
+        },
+        {
+          title: "Certifications professionnelles",
+          description: "Guide des certifications en finance et audit",
+          link: "#",
+          type: "guide"
+        },
+        {
+          title: "Ordre des Experts-Comptables du Bénin",
+          description: "Informations sur la profession et l'inscription",
+          link: "#",
+          type: "career"
+        }
+      ]
+    }
+  },
+
+  "electronique": {
+    slug: "electronique",
+    heroSection: {
+      title: "Électronique",
+      subtitle: "Concevez les technologies de demain",
+      description: "L'électronique est la science et la technique qui permettent de concevoir, contrôler et optimiser les systèmes utilisant des composants électroniques, qu'il s'agisse de circuits simples ou de systèmes complexes intégrés dans notre vie quotidienne.",
+      backgroundImage: "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      highlights: [
+        "Secteur d'avenir en pleine expansion",
+        "Technologies au cœur de l'innovation",
+        "Débouchés dans tous les secteurs industriels",
+        "Possibilités de spécialisation multiples"
+      ]
+    },
+    aboutSection: {
+      title: "Une formation technique d'excellence",
+      content: [
+        "L'électronique est la science et la technique qui permettent de concevoir, contrôler et optimiser les systèmes utilisant des composants électroniques, qu'il s'agisse de circuits simples ou de systèmes complexes intégrés dans notre vie quotidienne.",
+        "Cette filière forme des professionnels capables de concevoir des circuits, de développer des appareils connectés, d'optimiser les performances de systèmes électroniques et de résoudre des problèmes techniques complexes. Elle couvre la théorie des circuits, l'électronique analogique et numérique, les microcontrôleurs, l'informatique embarquée, ainsi que la conception de systèmes automatisés et communicants.",
+        "En choisissant cette filière, on se prépare à intervenir sur des projets concrets qui touchent directement la vie quotidienne, de la conception d'appareils intelligents à l'optimisation de systèmes industriels, tout en acquérant la capacité de résoudre des problèmes techniques avec précision, créativité et efficacité."
+      ],
+      keyPoints: [
+        "Formation théorique et pratique équilibrée",
+        "Accès aux laboratoires et équipements modernes",
+        "Projets concrets dès la première année",
+        "Partenariats avec l'industrie électronique",
+        "Veille technologique constante",
+        "Préparation aux métiers de l'innovation"
+      ]
+    },
+    careersSection: {
+      title: "Des métiers techniques et innovants",
+      description: "Les débouchés sont larges et stratégiques dans tous les secteurs utilisant des technologies électroniques modernes.",
+      careers: [
+        {
+          title: "Ingénieur Électronique",
+          description: "Concevez et développez des systèmes électroniques innovants pour diverses applications industrielles. Vous maîtrisez la chaîne complète de développement, de la conception à la mise en production.",
+          salary: "250 000 - 700 000 FCFA/mois",
+          requirements: ["Conception de circuits", "Programmation embarquée", "Simulation électronique", "Gestion de projets techniques"],
+          growth: "Évolution vers chef de projet R&D ou expert technique senior"
+        },
+        {
+          title: "Concepteur de Systèmes Embarqués",
+          description: "Développez des systèmes électroniques intégrés pour l'automobile, l'aéronautique ou les objets connectés. Vous combinez électronique et informatique pour créer des solutions intelligentes.",
+          salary: "300 000 - 800 000 FCFA/mois",
+          requirements: ["Microcontrôleurs et processeurs", "Programmation C/C++", "Systèmes temps réel", "Communication sans fil"],
+          growth: "Spécialisation dans des secteurs de pointe comme l'IoT ou l'automobile"
+        },
+        {
+          title: "Technicien en Maintenance Électronique",
+          description: "Diagnostiquez et réparez les équipements électroniques complexes dans les industries. Votre expertise technique assure le bon fonctionnement des systèmes de production.",
+          salary: "150 000 - 400 000 FCFA/mois",
+          requirements: ["Diagnostic électronique", "Lecture de schémas", "Utilisation d'instruments de mesure", "Maintenance préventive"],
+          growth: "Évolution vers responsable maintenance ou expert spécialisé"
+        },
+        {
+          title: "Expert en Automatisation Industrielle",
+          description: "Automatisez les processus industriels en concevant des systèmes de contrôle et de supervision. Vous optimisez la production grâce aux technologies électroniques avancées.",
+          salary: "350 000 - 900 000 FCFA/mois",
+          requirements: ["Automatismes industriels", "Programmation d'automates", "Supervision et contrôle", "Réseaux industriels"],
+          growth: "Évolution vers responsable d'ingénierie industrielle ou consultant"
+        }
+      ]
+    },
+    studiesSection: {
+      title: "Formation progressive en électronique",
+      duration: "3 à 5 ans selon la spécialisation",
+      levels: [
+        {
+          name: "Licence en Électronique (Bac+3)",
+          duration: "3 ans",
+          description: "Formation fondamentale couvrant les bases de l'électronique analogique et numérique. Acquisition des compétences techniques essentielles pour débuter dans le secteur.",
+          subjects: [
+            "Électronique analogique et numérique",
+            "Électromagnétisme et circuits",
+            "Programmation des microcontrôleurs",
+            "Théorie des circuits et signaux",
+            "Systèmes automatisés",
+            "Conception de circuits imprimés",
+            "Mesures et instrumentation",
+            "Projet technique de fin d'études"
+          ]
+        },
+        {
+          name: "Master en Systèmes Électroniques (Bac+5)",
+          duration: "2 ans",
+          description: "Spécialisation avancée en conception de systèmes électroniques complexes. Formation aux technologies de pointe et à la gestion de projets d'innovation.",
+          subjects: [
+            "Systèmes embarqués avancés",
+            "Robotique et intelligence artificielle",
+            "Communications sans fil",
+            "Traitement numérique du signal",
+            "Conception VLSI",
+            "Gestion de projets électroniques",
+            "Innovation et R&D",
+            "Stage industriel et mémoire"
+          ]
+        }
+      ]
+    },
+    skillsSection: {
+      title: "Compétences pour l'innovation électronique",
+      technical: {
+        title: "Compétences techniques spécialisées",
+        skills: [
+          "Conception et analyse de circuits électroniques",
+          "Programmation des microcontrôleurs et processeurs",
+          "Utilisation d'outils de simulation (SPICE, Proteus)",
+          "Conception de circuits imprimés (PCB)",
+          "Traitement numérique et analogique des signaux",
+          "Maîtrise des protocoles de communication",
+          "Robotique et systèmes automatisés",
+          "Instrumentation et métrologie",
+          "Maintenance et diagnostic électronique",
+          "Veille technologique et innovation"
+        ]
+      },
+      soft: {
+        title: "Qualités humaines et professionnelles",
+        skills: [
+          "Rigueur méthodologique et précision technique",
+          "Capacité de résolution de problèmes complexes",
+          "Créativité et esprit d'innovation",
+          "Travail en équipe multidisciplinaire",
+          "Communication technique claire",
+          "Adaptabilité aux évolutions technologiques",
+          "Gestion de projets techniques",
+          "Curiosité et apprentissage continu",
+          "Sens de l'analyse et de la synthèse",
+          "Patience et persévérance dans la recherche"
+        ]
+      }
+    },
+    admissionSection: {
+      title: "Intégrer la formation en électronique",
+      requirements: [
+        "Baccalauréat série C ou D avec de bons résultats en sciences",
+        "Solides bases en mathématiques et physique",
+        "Aptitudes pour la logique et l'abstraction",
+        "Intérêt pour les technologies et l'innovation",
+        "Curiosité scientifique et technique",
+        "Capacité de concentration et de précision"
+      ],
+      process: [
+        "Candidature avec dossier scolaire et motivation",
+        "Test d'aptitude en mathématiques et physique",
+        "Évaluation des capacités de logique technique",
+        "Entretien pour évaluer la passion pour l'électronique",
+        "Classement selon les résultats et places disponibles",
+        "Inscription après acceptation du dossier"
+      ],
+      tips: [
+        "Renforcez vos bases en mathématiques et physique",
+        "Familiarisez-vous avec l'électronique de base",
+        "Réalisez des projets personnels (Arduino, Raspberry Pi)",
+        "Suivez l'actualité des innovations électroniques",
+        "Visitez des entreprises du secteur technologique",
+        "Développez votre curiosité pour le fonctionnement des appareils"
+      ]
+    },
+    resourcesSection: {
+      title: "Ressources pour votre parcours en électronique",
+      resources: [
+        {
+          title: "Écoles d'ingénieurs au Bénin",
+          description: "Formations en électronique et génie électrique",
+          link: "/universities?filter=electronique",
+          type: "university"
+        },
+        {
+          title: "Stages en électronique industrielle",
+          description: "Opportunités dans les entreprises technologiques",
+          link: "/internships?category=electronique",
+          type: "career"
+        },
+        {
+          title: "Composants et outils électroniques",
+          description: "Guide des fournisseurs et technologies",
+          link: "#",
+          type: "guide"
+        },
+        {
+          title: "Communauté des électroniciens",
+          description: "Réseau professionnel et partage d'expériences",
+          link: "#",
+          type: "career"
+        }
+      ]
+    }
   }
 };
 
@@ -1189,13 +1571,11 @@ export function getProgramPageContent(slug: string): ProgramPageContent | null {
   return programPagesContent[slug] || null;
 }
 
-// Import du générateur de contenu intelligent
-import { ProgramContentGenerator } from "./program-content-generator";
-
 // Fonction pour générer du contenu par défaut pour les filières sans contenu spécifique
-export function generateDefaultContent(program: Program): ProgramPageContent {
-  // Utiliser le générateur de contenu intelligent pour créer du contenu spécifique
-  return ProgramContentGenerator.generateCompleteContent(program);
+export function generateDefaultContent(program: Program): ProgramPageContent | null {
+  // Plus de génération automatique - chaque filière doit avoir son contenu unique
+  console.warn(`Aucun contenu spécifique trouvé pour la filière: ${program.name} (${program.slug})`);
+  return null;
 };
 
 // Fonction pour obtenir toutes les filières avec contenu
