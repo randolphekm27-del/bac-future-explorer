@@ -5,22 +5,65 @@ import { Footer } from "@/components/ui/footer"
 import { TestimonialsCarousel } from "@/components/ui/testimonials-carousel"
 import { SmartSearch } from "@/components/ui/smart-search"
 import { StatsSection } from "@/components/ui/stats-section"
-import { AnimatedTextCycle } from "@/components/ui/animated-text-cycle"
 import { navigationLinks } from "@/lib/navigation"
 import { Link, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
 
 const logoImage = "/lovable-uploads/d0cefdb1-2000-4d82-9b38-0fa02b5f5d78.png" 
+
+// Nouveau composant d'animation de texte simple et fiable
+const TextAnimation = ({ texts }: { texts: string[] }) => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [displayedText, setDisplayedText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [typingSpeed, setTypingSpeed] = useState(100)
+
+  useEffect(() => {
+    const currentText = texts[currentIndex]
+    
+    const handleTyping = () => {
+      if (isDeleting) {
+        // Effacer le texte
+        setDisplayedText(currentText.substring(0, displayedText.length - 1))
+        setTypingSpeed(50)
+      } else {
+        // Écrire le texte
+        setDisplayedText(currentText.substring(0, displayedText.length + 1))
+        setTypingSpeed(100)
+      }
+
+      // Logique pour passer au texte suivant
+      if (!isDeleting && displayedText === currentText) {
+        // Pause à la fin de l'écriture
+        setTimeout(() => setIsDeleting(true), 1500)
+      } else if (isDeleting && displayedText === "") {
+        setIsDeleting(false)
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length)
+      }
+    }
+
+    const timer = setTimeout(handleTyping, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [displayedText, isDeleting, currentIndex, texts, typingSpeed])
+
+  return (
+    <div className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-gray-900 dark:text-white min-h-[120px] sm:min-h-[140px] md:min-h-[160px]">
+      {displayedText}
+      <span className="ml-1 inline-block w-1 h-8 bg-blue-600 animate-pulse"></span>
+    </div>
+  )
+}
 
 const Index = () => {
   const navigate = useNavigate()
 
   const animatedTexts = [
     "Bonjour,",
-    "tu viens d'obtenir ton bac ?",
-    "Alors Bravo et félicitation à toi...maintenant...",
+    "Tu viens d'obtenir ton bac ?",
+    "Alors Bravo et félicitations à toi...",
     "Quelle filière veux-tu vraiment faire ?",
-    "ou tu veux être accompagné pour faire le meilleur choix de ta vie !",
-    "Alors, sur ce site, tu verras tout ce qu'il te faut...",
+    "Tu veux être accompagné pour faire le meilleur choix ?",
+    "Sur ce site, tu trouveras tout ce qu'il te faut...",
     "Clique sur Commencer l'exploration."
   ]
 
@@ -34,10 +77,7 @@ const Index = () => {
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <div className="space-y-6 md:space-y-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight text-gray-900 dark:text-white">
-                <AnimatedTextCycle 
-                  texts={animatedTexts}
-                  className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px]"
-                />
+                <TextAnimation texts={animatedTexts} />
               </h1>
               
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed font-medium">
