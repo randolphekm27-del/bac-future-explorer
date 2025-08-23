@@ -162,7 +162,7 @@ export default function ProgramSchools() {
                     <div className="mb-4">
                       <h4 className="text-sm font-medium mb-2">Conditions d'admission :</h4>
                       <div className="flex flex-wrap gap-2">
-                        {schoolData.admissionRequirements.map((req, i) => (
+                        {schoolData.admissionRequirements.map((req: string, i: number) => (
                           <span key={i} className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
                             {req}
                           </span>

@@ -37,7 +37,8 @@ interface ProgramCardProps {
 
 export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps) {
   const schoolsCount = program.schoolsCount || getSchoolsForProgram(program.slug).length;
-  const hasFullDetails = programHasFullDetails(program.slug);
+  // Maintenant toutes les filières ont des détails grâce à la génération automatique
+  const hasFullDetails = true;
 
   return (
     <div

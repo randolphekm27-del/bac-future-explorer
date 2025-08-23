@@ -1,5 +1,5 @@
 import { universities } from "./universities";
-import { PROGRAM_DETAILS_DATABASE, getProgramDetailsById, type ProgramDetails } from "./program-details";
+import { PROGRAM_DETAILS_DATABASE, getProgramDetailsById, generateProgramDetails, type ProgramDetails } from "./program-details";
 
 export interface Program {
   id: string;
@@ -762,18 +762,25 @@ function getFeaturedPrograms(): Program[] {
   return programs.filter(program => program.detailsId);
 }
 
-// Fonction pour récupérer les détails complets d'un programme
+// Fonction pour récupérer les détails complets d'un programme (avec génération automatique)
 export function getProgramFullDetails(slug: string): ProgramDetails | null {
   const program = getProgramBySlug(slug);
-  if (!program || !program.detailsId) return null;
+  if (!program) return null;
   
-  return getProgramDetailsById(program.detailsId);
+  // Vérifier s'il existe des détails complets dans la base de données
+  if (program.detailsId) {
+    const existingDetails = getProgramDetailsById(program.detailsId);
+    if (existingDetails) return existingDetails;
+  }
+  
+  // Sinon, générer automatiquement des détails
+  return generateProgramDetails(program);
 }
 
-// Fonction pour vérifier si un programme a des détails complets
+// Fonction pour vérifier si un programme a des détails complets (maintenant toutes les filières en ont)
 export function programHasFullDetails(slug: string): boolean {
   const program = getProgramBySlug(slug);
-  return !!(program && program.detailsId);
+  return !!program; // Maintenant toutes les filières ont des détails grâce à la génération automatique
 }
 
 export { getFeaturedPrograms };
