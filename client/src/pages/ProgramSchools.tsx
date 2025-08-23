@@ -23,6 +23,10 @@ export default function ProgramSchools() {
     return <Navigate to="/programs" replace />;
   }
 
+  // Compter le nombre d'écoles distinctes
+  const distinctSchoolsCount = new Set(schools.map(school => school.school.id)).size;
+  const distinctUniversitiesCount = new Set(schools.map(school => school.university.id)).size;
+
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
@@ -83,16 +87,14 @@ export default function ProgramSchools() {
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
                   <Users className="h-5 w-5 text-primary" />
                   <div className="text-center">
-                    <div className="font-semibold">{schools.length}</div>
+                    <div className="font-semibold">{distinctSchoolsCount}</div>
                     <div className="text-sm text-muted-foreground">Écoles</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-center gap-2 p-4 rounded-lg bg-secondary/50">
                   <MapPin className="h-5 w-5 text-primary" />
                   <div className="text-center">
-                    <div className="font-semibold">
-                      {new Set(schools.map(s => s.universityName)).size}
-                    </div>
+                    <div className="font-semibold">{distinctUniversitiesCount}</div>
                     <div className="text-sm text-muted-foreground">Universités</div>
                   </div>
                 </div>
