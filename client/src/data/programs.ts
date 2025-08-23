@@ -1,5 +1,5 @@
 import { universities } from "./universities";
-import { PROGRAM_DETAILS_DATABASE, getProgramDetailsById, generateProgramDetails, type ProgramDetails } from "./program-details";
+import { PROGRAM_DETAILS_DATABASE, getProgramDetailsById, type ProgramDetails } from "./program-details";
 
 export interface Program {
   id: string;
@@ -761,6 +761,120 @@ function getFeaturedPrograms(): Program[] {
   return programs.filter(program => program.detailsId);
 }
 
+// Fonction pour générer des détails automatiquement à partir d'un programme
+function generateProgramDetailsFromProgram(program: Program): ProgramDetails {
+  return {
+    id: program.id,
+    name: program.name,
+    slug: program.slug,
+    category: program.category,
+    duration: program.duration,
+    level: program.level,
+    description: program.description,
+    detailedDescription: program.detailedDescription,
+    icon: program.icon,
+    image: program.image,
+    heroSection: {
+      title: program.name,
+      subtitle: `Découvrez les études en ${program.name.toLowerCase()}`,
+      description: program.detailedDescription,
+      backgroundImage: program.image,
+      highlights: [
+        "Formation reconnue au Bénin",
+        "Débouchés professionnels variés",
+        "Encadrement pédagogique de qualité",
+        "Stage pratique en entreprise"
+      ]
+    },
+    aboutSection: {
+      title: `Tout savoir sur les études en ${program.name}`,
+      content: [
+        program.detailedDescription,
+        "Cette formation vous prépare aux défis du marché du travail grâce à un curriculum actualisé et adapté aux besoins des entreprises béninoises et africaines."
+      ],
+      keyPoints: [
+        "Formation théorique et pratique",
+        "Corps enseignant qualifié",
+        "Équipements modernes",
+        "Partenariats avec les entreprises",
+        "Possibilités de stage",
+        "Accompagnement vers l'emploi"
+      ]
+    },
+    careersSection: {
+      title: "Débouchés et opportunités de carrière",
+      description: "Cette formation ouvre les portes de nombreuses carrières passionnantes.",
+      careers: program.careers.slice(0, 3).map(career => ({
+        title: career,
+        description: `Devenez ${career.toLowerCase()} et contribuez au développement de votre domaine.`,
+        salary: program.salary?.average || "Selon expérience",
+        requirements: program.skills.hard.slice(0, 3),
+        growth: "Évolution possible vers des postes d'encadrement"
+      }))
+    },
+    studiesSection: {
+      title: "Programme d'études",
+      duration: program.duration,
+      levels: program.degrees.map(degree => ({
+        name: degree,
+        duration: degree.includes("3") ? "3 ans" : degree.includes("5") ? "2 ans" : "Variable",
+        description: `Formation ${degree.toLowerCase()} avec spécialisation progressive.`,
+        subjects: program.subjects.slice(0, 6)
+      }))
+    },
+    skillsSection: {
+      title: "Compétences développées",
+      technical: {
+        title: "Compétences techniques",
+        skills: program.skills.hard
+      },
+      soft: {
+        title: "Compétences transversales",
+        skills: program.skills.soft
+      }
+    },
+    admissionSection: {
+      title: "Conditions d'admission",
+      requirements: program.admissionRequirements,
+      process: [
+        "Dépôt de candidature",
+        "Étude du dossier",
+        "Entretien si requis",
+        "Inscription après acceptation"
+      ],
+      tips: [
+        "Préparez un dossier complet",
+        "Respectez les délais",
+        "Informez-vous sur les prérequis",
+        "Contactez l'établissement pour plus d'infos"
+      ]
+    },
+    resourcesSection: {
+      title: "Ressources utiles",
+      resources: [
+        {
+          title: "Établissements proposant cette formation",
+          description: "Liste des universités et écoles",
+          link: `/programs/${program.slug}/schools`,
+          type: "university"
+        },
+        {
+          title: "Guide d'orientation",
+          description: "Conseils pour votre orientation",
+          link: "/conseils",
+          type: "guide"
+        }
+      ]
+    },
+    salary: program.salary,
+    schoolsCount: program.schoolsCount || 0,
+    testimonialsSection: program.testimonials ? {
+      title: "Témoignages d'étudiants",
+      testimonials: program.testimonials
+    } : undefined
+  };
+}
+
 // Fonction pour récupérer les détails complets d'un programme (avec génération automatique)
 export function getProgramFullDetails(slug: string): ProgramDetails | null {
   const program = getProgramBySlug(slug);
@@ -772,8 +886,8 @@ export function getProgramFullDetails(slug: string): ProgramDetails | null {
     if (existingDetails) return existingDetails;
   }
   
-  // Sinon, générer automatiquement des détails
-  return generateProgramDetails(program);
+  // Sinon, générer automatiquement des détails à partir du programme de base
+  return generateProgramDetailsFromProgram(program);
 }
 
 // Fonction pour vérifier si un programme a des détails complets (maintenant toutes les filières en ont)
