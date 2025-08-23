@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "./button"
 import { LazyImage } from "./lazy-image"
 import type { Program } from "@/data/programs"
-import { getSchoolsForProgram } from "@/data/programs"
+import { getSchoolsForProgram, programHasFullDetails } from "@/data/programs"
 
 // Fonction pour obtenir l'icône appropriée
 const getIcon = (iconName: string) => {
@@ -37,6 +37,7 @@ interface ProgramCardProps {
 
 export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps) {
   const schoolsCount = program.schoolsCount || getSchoolsForProgram(program.slug).length;
+  const hasFullDetails = programHasFullDetails(program.slug);
 
   return (
     <div
@@ -103,18 +104,20 @@ export function ProgramCard({ program, isHighlighted = false }: ProgramCardProps
         </div>
         
         <div className="mt-4 flex gap-2 w-full">
-          <Link to={`/program-schools/${program.slug}`} className="flex-1">
+          <Link to={`/program-schools/${program.slug}`} className={hasFullDetails ? "flex-1" : "w-full"}>
             <Button variant="outline" size="sm" className="w-full text-xs">
               <GraduationCap className="mr-2 h-3 w-3" />
               Où suivre cette filière
             </Button>
           </Link>
-          <Link to={`/program-detail/${program.slug}`} className="flex-1">
-            <Button size="sm" className="w-full text-xs bg-orange-500 hover:bg-orange-600 text-white">
-              <Briefcase className="mr-2 h-3 w-3" />
-              On devient quoi
-            </Button>
-          </Link>
+          {hasFullDetails && (
+            <Link to={`/program-detail/${program.slug}`} className="flex-1">
+              <Button size="sm" className="w-full text-xs bg-orange-500 hover:bg-orange-600 text-white">
+                <Briefcase className="mr-2 h-3 w-3" />
+                On devient quoi
+              </Button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
