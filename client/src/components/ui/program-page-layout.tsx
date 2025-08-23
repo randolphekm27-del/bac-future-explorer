@@ -35,46 +35,70 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
           </div>
 
           {/* Section Hero */}
-          <div className="mb-12 sm:mb-16 relative">
-            <div className="aspect-[2/1] sm:aspect-[3/1] w-full overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 relative">
-              <img 
-                src={content.heroSection.backgroundImage} 
-                alt={content.heroSection.title}
-                className="w-full h-full object-cover opacity-30"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-purple-600/80" />
-              <div className="absolute inset-0 flex items-center justify-center text-center text-white p-4 sm:p-6 lg:p-8">
-                <div className="max-w-4xl w-full">
-                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 leading-tight">
-                    {content.heroSection.title}
-                  </h1>
-                  
-                  <h2 className="text-lg sm:text-2xl md:text-3xl mb-4 sm:mb-6 text-white/90 leading-relaxed">
-                    {content.heroSection.subtitle}
-                  </h2>
-                  
-                  <p className="text-base sm:text-xl md:text-2xl mb-6 sm:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-                    {content.heroSection.description}
-                  </p>
+          <div className="mb-12 sm:mb-16">
+            {/* Titre et sous-titre au-dessus */}
+            <div className="text-center mb-6 sm:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white leading-tight">
+                {content.heroSection.title}
+              </h1>
+              <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
+                {content.heroSection.subtitle}
+              </h2>
+            </div>
 
-                  {/* Points forts */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                    {content.heroSection.highlights.map((highlight, index) => (
-                      <div key={index} className="bg-white/20 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/30">
-                        <p className="text-xs sm:text-sm font-medium leading-tight">{highlight}</p>
-                      </div>
-                    ))}
+            {/* Zone info violette */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl overflow-hidden">
+              {/* Image de fond */}
+              <div className="relative min-h-[400px] sm:min-h-[500px]">
+                <img 
+                  src={content.heroSection.backgroundImage} 
+                  alt={content.heroSection.title}
+                  className="absolute inset-0 w-full h-full object-cover opacity-20"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-purple-600/90" />
+                
+                {/* Contenu centré */}
+                <div className="relative z-10 flex flex-col justify-center items-center text-center text-white p-6 sm:p-8 lg:p-12 min-h-[400px] sm:min-h-[500px]">
+                  {/* Texte descriptif */}
+                  <div className="max-w-3xl mb-8 sm:mb-12">
+                    <p className="text-lg sm:text-xl md:text-2xl leading-relaxed mb-8 sm:mb-10">
+                      {content.heroSection.description}
+                    </p>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-                    <Link to={`/program-schools/${content.slug}`} className="w-full sm:w-auto">
-                      <Button size="lg" variant="secondary" className="w-full sm:w-auto bg-white text-blue-600 hover:bg-white/90 text-sm sm:text-base">
-                        <Users className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  {/* Points forts - 4 boutons */}
+                  <div className="w-full max-w-4xl mb-8 sm:mb-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                      {content.heroSection.highlights.map((highlight, index) => (
+                        <div 
+                          key={index} 
+                          className="bg-white/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/30 hover:bg-white/25 transition-all duration-300"
+                        >
+                          <p className="text-sm sm:text-base font-semibold leading-tight">
+                            {highlight}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Boutons d'action */}
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full max-w-md">
+                    <Link to={`/program-schools/${content.slug}`} className="flex-1">
+                      <Button 
+                        size="lg" 
+                        variant="secondary" 
+                        className="w-full bg-white text-blue-600 hover:bg-white/90 text-sm sm:text-base font-semibold py-3 sm:py-4"
+                      >
+                        <Users className="mr-2 h-5 w-5" />
                         Voir les écoles ({schools.length})
                       </Button>
                     </Link>
-                    <Button size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-sm sm:text-base">
-                      <BookOpen className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    <Button 
+                      size="lg" 
+                      className="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-sm sm:text-base font-semibold py-3 sm:py-4"
+                    >
+                      <BookOpen className="mr-2 h-5 w-5" />
                       Nous contacter
                     </Button>
                   </div>
