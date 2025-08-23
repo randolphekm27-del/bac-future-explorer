@@ -1139,7 +1139,7 @@ export function getProgramPageContent(slug: string): ProgramPageContent | null {
 }
 
 // Fonction pour générer du contenu par défaut pour les filières sans contenu spécifique
-export function generateDefaultContent(program: Program): ProgramPageContent {
+export async function generateDefaultContent(program: Program): Promise<ProgramPageContent> {
   // Utiliser le générateur de contenu intelligent
   const { ProgramContentGenerator } = await import("./program-content-generator");
   return ProgramContentGenerator.generateCompleteContent(program);
