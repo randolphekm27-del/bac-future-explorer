@@ -736,10 +736,9 @@ export function getSchoolsForProgram(programSlug: string): any[] {
     university.schools.forEach(school => {
       if (school.programs.some(programName => createProgramSlug(programName) === programSlug)) {
         schools.push({
-          ...school,
-          universityName: university.name,
-          universitySlug: university.slug,
-          universityType: university.type
+          id: school.id,
+          school: school,
+          university: university
         });
       }
     });

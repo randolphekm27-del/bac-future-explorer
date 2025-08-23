@@ -126,70 +126,13 @@ export default function ProgramSchools() {
             </div>
           ) : (
             <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 w-full">
-              {schools.map((schoolData, index) => (
-                <div
-                  key={schoolData.id || `school-${index}`}
-                  className="p-6 rounded-lg border bg-background hover:border-primary/50 transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold">{schoolData.name}</h3>
-                    <span className={`text-xs px-2 py-1 rounded-full ${
-                      schoolData.universityType === 'Public' 
-                        ? 'bg-blue-100 text-blue-800' 
-                        : 'bg-green-100 text-green-800'
-                    }`}>
-                      {schoolData.universityType}
-                    </span>
-                  </div>
-                  
-                  <p className="text-sm text-muted-foreground mb-3">
-                    {schoolData.universityName}
-                  </p>
-                  
-                  {schoolData.location && (
-                    <p className="text-sm text-muted-foreground mb-3">
-                      📍 {schoolData.location}
-                    </p>
-                  )}
-                  
-                  {schoolData.description && (
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {schoolData.description}
-                    </p>
-                  )}
-                  
-                  {schoolData.admissionRequirements && schoolData.admissionRequirements.length > 0 && (
-                    <div className="mb-4">
-                      <h4 className="text-sm font-medium mb-2">Conditions d'admission :</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {schoolData.admissionRequirements.map((req: string, i: number) => (
-                          <span key={i} className="text-xs px-2 py-1 rounded-full bg-secondary text-secondary-foreground">
-                            {req}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="flex gap-2 mt-4">
-                    <a
-                      href={`/universities/${schoolData.universitySlug}`}
-                      className="bg-primary text-primary-foreground px-3 py-1 rounded-full hover:bg-primary/90 transition-colors text-center pl-[10px] pr-[10px] pt-[20px] pb-[20px] ml-[0px] mr-[0px] mt-[0px] mb-[0px] text-[14px]"
-                    >
-                      Voir l'université
-                    </a>
-                    {schoolData.contact?.website && (
-                      <a
-                        href={schoolData.contact.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="border border-primary text-primary px-3 py-1 rounded-full hover:bg-primary/10 transition-colors pl-[10px] pr-[10px] pt-[20px] pb-[20px] font-bold text-[14px]"
-                      >
-                        Site web
-                      </a>
-                    )}
-                  </div>
-                </div>
+              {schools.map((schoolData) => (
+                <SchoolCard
+                  key={schoolData.id}
+                  school={schoolData.school}
+                  university={schoolData.university}
+                  expandable={true}
+                />
               ))}
             </div>
           )}
