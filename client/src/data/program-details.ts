@@ -1,5 +1,4 @@
 
-```typescript
 // Système centralisé des détails des filières
 // Chaque filière a un ID unique et ses informations complètes
 
@@ -749,4 +748,3 @@ export function getAllProgramSlugs(): string[] {
 export function hasProgramDetails(slug: string): boolean {
   return Object.values(PROGRAM_DETAILS_DATABASE).some(p => p.slug === slug);
 }
-```
