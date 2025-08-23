@@ -221,74 +221,77 @@ const Index = () => {
       </section>
 
       {/* Test d'Orientation CTA Section */}
-      <section className="py-24 relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="orientation-grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#orientation-grid)" />
-          </svg>
+<section className="py-20 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 relative overflow-hidden">
+  {/* Background Pattern Subtle */}
+  <div className="absolute inset-0 opacity-5">
+    <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dots-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="10" cy="10" r="1.5" fill="white" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots-pattern)" />
+    </svg>
+  </div>
+  
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-4xl mx-auto text-center">
+      <div className="space-y-10">
+        {/* Heading Section */}
+        <div className="space-y-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+            Trouvez votre voie idéale
+          </h2>
+          <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mx-auto">
+            Notre test d'orientation analyse vos centres d'intérêt, compétences et aspirations 
+            pour vous recommander les filières les plus adaptées à votre profil.
+          </p>
         </div>
         
-        {/* Glow Effects */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-400/15 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="animate-fade-in space-y-8">
-              <div className="space-y-6">
-                <h2 className="text-5xl md:text-6xl font-black bg-gradient-to-r from-white via-blue-100 to-orange-200 bg-clip-text text-transparent leading-tight">
-                  Trouvez votre voie idéale
-                </h2>
-                <p className="text-xl md:text-2xl text-blue-100 leading-relaxed max-w-3xl mx-auto font-medium">
-                  Notre test d'orientation intelligent analyse vos centres d'intérêt, compétences et aspirations pour vous recommander les filières les plus adaptées à votre profil unique.
-                </p>
+        {/* Stats and CTA */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 pt-6">
+          {/* Stats Cards */}
+          <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 max-w-md">
+            <div className="grid grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-white">50+</div>
+                <div className="text-blue-200 text-sm mt-1">Filières</div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8">
-                <div className="text-center animate-bounce">
-                  <OrientationTest onComplete={() => {}} />
-                </div>
-                
-                <div className="text-center space-y-4">
-                  <div className="glass-card rounded-2xl p-6 bg-white/10 backdrop-blur-sm border border-white/20 max-w-md">
-                    <div className="grid grid-cols-3 gap-4 text-center">
-                      <div>
-                        <div className="text-3xl font-bold text-white">50+</div>
-                        <div className="text-blue-200 text-sm">Filières</div>
-                      </div>
-                      <div>
-                        <div className="text-3xl font-bold text-white">15</div>
-                        <div className="text-blue-200 text-sm">Questions</div>
-                      </div>
-                      <div>
-                        <div className="text-3xl font-bold text-white">5min</div>
-                        <div className="text-blue-200 text-sm">Durée</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center justify-center space-x-2 text-blue-200">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-base font-medium">100% gratuit • Résultats instantanés</span>
-                  </div>
-                </div>
+              <div>
+                <div className="text-3xl font-bold text-white">15</div>
+                <div className="text-blue-200 text-sm mt-1">Questions</div>
               </div>
-              
-              <div className="pt-12">
-                <p className="text-blue-200/80 text-lg">
-                  Rejoignez plus de <span className="font-bold text-orange-300">1,000 étudiants</span> qui ont trouvé leur voie grâce à notre test
-                </p>
+              <div>
+                <div className="text-3xl font-bold text-white">5min</div>
+                <div className="text-blue-200 text-sm mt-1">Durée</div>
               </div>
             </div>
+            
+            <div className="flex items-center justify-center mt-6 space-x-2 text-blue-200">
+              <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+              <span className="text-sm font-medium">100% gratuit • Résultats instantanés</span>
+            </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="text-center">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-10 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              Commencer le test
+            </button>
           </div>
         </div>
-      </section>
+        
+        {/* Social Proof */}
+        <div className="pt-10">
+          <p className="text-blue-200">
+            Rejoignez plus de <span className="font-semibold text-orange-300">1,000 étudiants</span> 
+            qui ont trouvé leur voie grâce à notre test
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <Footer />
     </div>
