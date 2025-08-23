@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FloatingAccessibility } from "@/components/ui/floating-accessibility";
 import { AccessibilityProvider } from "@/contexts/AccessibilityContext";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import Universities from "./pages/Universities";
 import UniversityDetail from "./pages/UniversityDetail";
@@ -22,11 +23,12 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AccessibilityProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
+    <HelmetProvider>
+      <AccessibilityProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/universities" element={<Universities />} />
@@ -42,10 +44,11 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <FloatingAccessibility />
-      </BrowserRouter>
-      </TooltipProvider>
-    </AccessibilityProvider>
+          <FloatingAccessibility />
+        </BrowserRouter>
+        </TooltipProvider>
+      </AccessibilityProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 

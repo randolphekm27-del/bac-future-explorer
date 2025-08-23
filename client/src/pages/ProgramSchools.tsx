@@ -67,7 +67,7 @@ export default function ProgramSchools() {
                   Débouchés professionnels
                 </h3>
                 <div className="flex flex-wrap gap-2 justify-center w-full">
-                  {program.careers.map((career, i) => (
+                  {program.careers.map((career: string, i: number) => (
                     <span
                       key={i}
                       className="text-sm px-3 py-1 rounded-full bg-primary/10 text-primary break-words"
