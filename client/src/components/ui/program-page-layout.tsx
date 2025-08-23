@@ -22,59 +22,59 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navigation links={navigationLinks} />
       
-      <main className="flex-1 pt-24 pb-12 w-full">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <main className="flex-1 pt-20 sm:pt-24 pb-8 sm:pb-12 w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           {/* Navigation de retour */}
-          <div className="mb-8">
+          <div className="mb-6 sm:mb-8">
             <Link to="/programs">
-              <Button variant="ghost" className="mb-4 hover:bg-blue-50 dark:hover:bg-blue-950">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+              <Button variant="ghost" className="mb-2 sm:mb-4 hover:bg-blue-50 dark:hover:bg-blue-950 text-sm sm:text-base">
+                <ArrowLeft className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 Retour aux filières
               </Button>
             </Link>
           </div>
 
           {/* Section Hero */}
-          <div className="mb-16 relative">
-            <div className="aspect-[3/1] w-full overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 relative">
+          <div className="mb-12 sm:mb-16 relative">
+            <div className="aspect-[2/1] sm:aspect-[3/1] w-full overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 relative">
               <img 
                 src={content.heroSection.backgroundImage} 
                 alt={content.heroSection.title}
                 className="w-full h-full object-cover opacity-30"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-purple-600/80" />
-              <div className="absolute inset-0 flex items-center justify-center text-center text-white p-8">
-                <div className="max-w-4xl">
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <div className="absolute inset-0 flex items-center justify-center text-center text-white p-4 sm:p-6 lg:p-8">
+                <div className="max-w-4xl w-full">
+                  <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-6 leading-tight">
                     {content.heroSection.title}
                   </h1>
                   
-                  <h2 className="text-2xl md:text-3xl mb-6 text-white/90">
+                  <h2 className="text-lg sm:text-2xl md:text-3xl mb-4 sm:mb-6 text-white/90 leading-relaxed">
                     {content.heroSection.subtitle}
                   </h2>
                   
-                  <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
+                  <p className="text-base sm:text-xl md:text-2xl mb-6 sm:mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
                     {content.heroSection.description}
                   </p>
 
                   {/* Points forts */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
                     {content.heroSection.highlights.map((highlight, index) => (
-                      <div key={index} className="bg-white/20 backdrop-blur-sm rounded-lg p-4 border border-white/30">
-                        <p className="text-sm font-medium">{highlight}</p>
+                      <div key={index} className="bg-white/20 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-white/30">
+                        <p className="text-xs sm:text-sm font-medium leading-tight">{highlight}</p>
                       </div>
                     ))}
                   </div>
 
-                  <div className="flex gap-4 justify-center flex-wrap">
-                    <Link to={`/program-schools/${content.slug}`}>
-                      <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-white/90">
-                        <Users className="mr-2 h-5 w-5" />
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                    <Link to={`/program-schools/${content.slug}`} className="w-full sm:w-auto">
+                      <Button size="lg" variant="secondary" className="w-full sm:w-auto bg-white text-blue-600 hover:bg-white/90 text-sm sm:text-base">
+                        <Users className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                         Voir les écoles ({schools.length})
                       </Button>
                     </Link>
-                    <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-                      <BookOpen className="mr-2 h-5 w-5" />
+                    <Button size="lg" className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white text-sm sm:text-base">
+                      <BookOpen className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                       Nous contacter
                     </Button>
                   </div>
@@ -90,10 +90,10 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Découvrez en détail cette formation d'excellence"
             />
             
-            <div className="grid lg:grid-cols-3 gap-8 mt-8">
+            <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
               <div className="lg:col-span-2">
                 <Card>
-                  <CardContent className="p-8">
+                  <CardContent className="p-4 sm:p-6 lg:p-8">
                     <div className="space-y-6">
                       {content.aboutSection.content.map((paragraph, index) => (
                         <p key={index} className="text-lg leading-relaxed text-muted-foreground">
@@ -134,7 +134,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description={content.careersSection.description}
             />
             
-            <div className="grid gap-8 md:grid-cols-2 mt-8">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 mt-6 sm:mt-8">
               {content.careersSection.careers.map((career, index) => (
                 <Card key={index} className="hover:shadow-lg transition-all duration-300 group">
                   <CardHeader>
@@ -227,7 +227,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Les savoir-faire techniques et qualités humaines que vous développerez"
             />
             
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-6 sm:mt-8">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
@@ -275,7 +275,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Tout ce qu'il faut savoir pour intégrer cette formation"
             />
             
-            <div className="grid lg:grid-cols-3 gap-8 mt-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
               <Card className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
                 <CardHeader>
                   <CardTitle className="text-blue-800 dark:text-blue-200">
@@ -342,7 +342,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                 description="Découvrez les parcours de ceux qui ont réussi dans cette filière"
               />
               
-              <div className="grid gap-8 md:grid-cols-2 mt-8">
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 mt-6 sm:mt-8">
                 {content.testimonialsSection.testimonials.map((testimonial, index) => (
                   <Card key={index} className="relative">
                     <CardContent className="p-8">
@@ -374,7 +374,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Liens utiles pour approfondir vos connaissances"
             />
             
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6 sm:mt-8">
               {content.resourcesSection.resources.map((resource, index) => (
                 <Card key={index} className="hover:shadow-lg transition-all duration-300 group">
                   <CardContent className="p-6">
@@ -404,23 +404,23 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
 
           {/* Call to action final */}
           <Card className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0">
-            <CardContent className="p-12">
-              <h2 className="text-3xl font-bold mb-4">
+            <CardContent className="p-6 sm:p-8 lg:p-12">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                 Prêt à commencer votre parcours ?
               </h2>
-              <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl mb-6 sm:mb-8 text-white/90 max-w-2xl mx-auto leading-relaxed">
                 Découvrez où vous pouvez suivre cette formation et lancez-vous dans cette aventure académique passionnante.
               </p>
-              <div className="flex gap-4 justify-center flex-wrap">
-                <Link to={`/program-schools/${content.slug}`}>
-                  <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-white/90">
-                    <Users className="mr-2 h-5 w-5" />
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                <Link to={`/program-schools/${content.slug}`} className="w-full sm:w-auto">
+                  <Button size="lg" variant="secondary" className="w-full sm:w-auto bg-white text-blue-600 hover:bg-white/90 text-sm sm:text-base">
+                    <Users className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Voir les écoles
                   </Button>
                 </Link>
-                <Link to="/conseils">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                    <BookOpen className="mr-2 h-5 w-5" />
+                <Link to="/conseils" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white/10 text-sm sm:text-base">
+                    <BookOpen className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                     Conseils d'orientation
                   </Button>
                 </Link>
