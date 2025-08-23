@@ -158,50 +158,39 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description={content.careersSection.description}
             />
             
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 mt-6 sm:mt-8">
+            <div className="prose prose-lg max-w-none mt-8 space-y-8">
               {content.careersSection.careers.map((career, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 group">
-                  <CardHeader>
-                    <CardTitle className="flex items-center text-xl">
-                      <div className="p-2 rounded-full bg-orange-100 dark:bg-orange-900/30 mr-3 group-hover:bg-orange-200 dark:group-hover:bg-orange-900/50 transition-colors">
-                        <TrendingUp className="h-5 w-5 text-orange-600 dark:text-orange-400" />
-                      </div>
-                      {career.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground leading-relaxed">
+                <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 sm:p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
+                    <TrendingUp className="h-6 w-6 text-orange-600 dark:text-orange-400 mr-3" />
+                    {career.title}
+                  </h3>
+                  
+                  <div className="space-y-4 text-gray-700 dark:text-gray-300">
+                    <p className="text-lg leading-relaxed">
                       {career.description}
                     </p>
                     
-                    <div className="grid grid-cols-1 gap-4">
-                      <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                        <p className="text-sm font-medium text-green-800 dark:text-green-200 mb-1">
-                          💰 Rémunération
-                        </p>
-                        <p className="text-sm text-green-700 dark:text-green-300">{career.salary}</p>
-                      </div>
-                      
-                      <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                        <p className="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
-                          🎯 Évolution
-                        </p>
-                        <p className="text-sm text-blue-700 dark:text-blue-300">{career.growth}</p>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-medium mb-2">Compétences requises :</p>
-                      <div className="flex flex-wrap gap-2">
-                        {career.requirements.map((req, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">
-                            {req}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    <p className="leading-relaxed">
+                      <span className="font-semibold text-green-700 dark:text-green-400">En termes de rémunération</span>, 
+                      cette profession offre des salaires compétitifs allant de {career.salary}. 
+                      Les revenus évoluent généralement en fonction de l'expérience acquise et de la spécialisation choisie.
+                    </p>
+                    
+                    <p className="leading-relaxed">
+                      <span className="font-semibold text-blue-700 dark:text-blue-400">Concernant les perspectives d'évolution</span>, 
+                      {career.growth}. Cette progression permet d'accéder à des postes à responsabilités et d'élargir 
+                      son champ d'expertise au fil des années.
+                    </p>
+                    
+                    <p className="leading-relaxed">
+                      <span className="font-semibold text-purple-700 dark:text-purple-400">Les compétences essentielles</span> 
+                      pour réussir dans ce domaine incluent notamment : {career.requirements.join(', ')}. 
+                      Ces aptitudes sont développées progressivement au cours de la formation et perfectionnées 
+                      grâce à l'expérience professionnelle.
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -213,33 +202,43 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description={`Durée totale : ${content.studiesSection.duration}`}
             />
             
-            <div className="space-y-6 mt-8">
+            <div className="prose prose-lg max-w-none mt-8 space-y-8">
               {content.studiesSection.levels.map((level, index) => (
-                <Card key={index} className="border-l-4 border-l-blue-500">
-                  <CardHeader>
-                    <CardTitle className="flex items-center justify-between">
-                      <span>{level.name}</span>
-                      <Badge variant="secondary">
-                        <Clock className="mr-1 h-3 w-3" />
-                        {level.duration}
-                      </Badge>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">{level.description}</p>
-                    <div>
-                      <h4 className="font-semibold mb-3">Matières principales :</h4>
-                      <div className="grid md:grid-cols-2 gap-2">
-                        {level.subjects.map((subject, i) => (
-                          <div key={i} className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-blue-500 flex-shrink-0" />
-                            <span className="text-sm">{subject}</span>
-                          </div>
-                        ))}
-                      </div>
+                <div key={index} className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8 border-l-4 border-l-blue-500">
+                  <div className="flex items-center justify-between mb-6">
+                    <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200">{level.name}</h3>
+                    <div className="flex items-center bg-blue-200 dark:bg-blue-800 rounded-full px-3 py-1">
+                      <Clock className="mr-1 h-4 w-4 text-blue-700 dark:text-blue-300" />
+                      <span className="text-sm font-medium text-blue-700 dark:text-blue-300">{level.duration}</span>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                  
+                  <div className="space-y-4 text-blue-800 dark:text-blue-200">
+                    <p className="text-lg leading-relaxed">
+                      {level.description}
+                    </p>
+                    
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">Le programme pédagogique</span> de ce niveau couvre des matières 
+                      fondamentales qui constituent le socle de connaissances nécessaire pour la suite du parcours. 
+                      Les enseignements comprennent : {level.subjects.slice(0, 3).join(', ')}.
+                    </p>
+                    
+                    {level.subjects.length > 3 && (
+                      <p className="leading-relaxed">
+                        <span className="font-semibold">Les matières complémentaires</span> incluent également : 
+                        {level.subjects.slice(3).join(', ')}. Ces disciplines permettent d'acquérir une vision 
+                        globale et approfondie du domaine d'études.
+                      </p>
+                    )}
+                    
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">L'approche pédagogique</span> combine cours théoriques, travaux dirigés 
+                      et projets pratiques pour garantir une assimilation optimale des concepts enseignés. 
+                      Cette méthode favorise le développement de l'autonomie et de l'esprit critique des étudiants.
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -251,44 +250,69 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Les savoir-faire techniques et qualités humaines que vous développerez"
             />
             
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-6 sm:mt-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Brain className="mr-2 h-5 w-5 text-blue-500" />
-                    {content.skillsSection.technical.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {content.skillsSection.technical.skills.map((skill, index) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <Target className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm">{skill}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className="prose prose-lg max-w-none mt-8 space-y-8">
+              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8">
+                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-6 flex items-center">
+                  <Brain className="mr-3 h-6 w-6 text-blue-500" />
+                  {content.skillsSection.technical.title}
+                </h3>
+                
+                <div className="space-y-4 text-blue-800 dark:text-blue-200">
+                  <p className="text-lg leading-relaxed">
+                    <span className="font-semibold">Cette formation développe</span> un ensemble de compétences techniques 
+                    spécialisées qui constituent le cœur de votre expertise professionnelle. 
+                    {content.skillsSection.technical.skills.slice(0, 3).join(', ')} font partie des aptitudes fondamentales 
+                    que vous maîtriserez progressivement.
+                  </p>
+                  
+                  {content.skillsSection.technical.skills.length > 3 && (
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">Votre formation technique</span> s'enrichit également de compétences 
+                      avancées telles que : {content.skillsSection.technical.skills.slice(3).join(', ')}. 
+                      Ces savoir-faire techniques vous permettront d'évoluer dans un environnement professionnel 
+                      exigeant et en constante évolution.
+                    </p>
+                  )}
+                  
+                  <p className="leading-relaxed">
+                    <span className="font-semibold">L'acquisition de ces compétences</span> se fait de manière progressive 
+                    à travers des projets pratiques, des stages en entreprise et des travaux de recherche appliquée. 
+                    Cette approche garantit une maîtrise opérationnelle des outils et méthodes du secteur.
+                  </p>
+                </div>
+              </div>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Heart className="mr-2 h-5 w-5 text-pink-500" />
-                    {content.skillsSection.soft.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {content.skillsSection.soft.skills.map((skill, index) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <Star className="h-4 w-4 text-pink-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm">{skill}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-6 sm:p-8">
+                <h3 className="text-2xl font-bold text-pink-900 dark:text-pink-200 mb-6 flex items-center">
+                  <Heart className="mr-3 h-6 w-6 text-pink-500" />
+                  {content.skillsSection.soft.title}
+                </h3>
+                
+                <div className="space-y-4 text-pink-800 dark:text-pink-200">
+                  <p className="text-lg leading-relaxed">
+                    <span className="font-semibold">Au-delà des aspects techniques</span>, cette formation cultive 
+                    des qualités humaines essentielles pour votre réussite professionnelle. 
+                    {content.skillsSection.soft.skills.slice(0, 3).join(', ')} sont des aptitudes que vous développerez 
+                    tout au long de votre parcours.
+                  </p>
+                  
+                  {content.skillsSection.soft.skills.length > 3 && (
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">Votre développement personnel</span> inclut également : 
+                      {content.skillsSection.soft.skills.slice(3).join(', ')}. 
+                      Ces qualités interpersonnelles sont aujourd'hui indispensables pour s'épanouir 
+                      dans le monde professionnel moderne.
+                    </p>
+                  )}
+                  
+                  <p className="leading-relaxed">
+                    <span className="font-semibold">Ces compétences transversales</span> se développent naturellement 
+                    à travers le travail en équipe, les présentations orales, les projets collaboratifs et 
+                    les interactions avec les professionnels du secteur. Elles constituent un véritable 
+                    atout différenciant sur le marché de l'emploi.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -299,62 +323,89 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Tout ce qu'il faut savoir pour intégrer cette formation"
             />
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
-              <Card className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
-                <CardHeader>
-                  <CardTitle className="text-blue-800 dark:text-blue-200">
-                    Prérequis
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {content.admissionSection.requirements.map((req, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <CheckCircle className="h-4 w-4 text-blue-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm text-blue-700 dark:text-blue-300">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+            <div className="prose prose-lg max-w-none mt-8 space-y-8">
+              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8">
+                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-6">
+                  Conditions d'admission et prérequis
+                </h3>
+                
+                <div className="space-y-4 text-blue-800 dark:text-blue-200">
+                  <p className="text-lg leading-relaxed">
+                    <span className="font-semibold">Pour intégrer cette formation</span>, plusieurs conditions doivent être remplies. 
+                    {content.admissionSection.requirements.slice(0, 2).join(' et ')} constituent les exigences de base 
+                    pour postuler à ce programme d'études.
+                  </p>
+                  
+                  {content.admissionSection.requirements.length > 2 && (
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">Les critères complémentaires</span> incluent : 
+                      {content.admissionSection.requirements.slice(2).join(', ')}. 
+                      Ces éléments permettent d'évaluer votre motivation et votre aptitude à suivre 
+                      cette formation avec succès.
+                    </p>
+                  )}
+                </div>
+              </div>
 
-              <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
-                <CardHeader>
-                  <CardTitle className="text-green-800 dark:text-green-200">
-                    Processus d'admission
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ol className="space-y-2">
-                    {content.admissionSection.process.map((step, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs font-bold mt-0.5 flex-shrink-0">
-                          {index + 1}
-                        </div>
-                        <span className="text-sm text-green-700 dark:text-green-300">{step}</span>
-                      </li>
-                    ))}
-                  </ol>
-                </CardContent>
-              </Card>
+              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 sm:p-8">
+                <h3 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-6">
+                  Démarches et processus de candidature
+                </h3>
+                
+                <div className="space-y-4 text-green-800 dark:text-green-200">
+                  <p className="text-lg leading-relaxed">
+                    <span className="font-semibold">Le processus d'admission</span> se déroule en plusieurs étapes bien définies. 
+                    Premièrement, {content.admissionSection.process[0]?.toLowerCase()}, puis 
+                    {content.admissionSection.process[1]?.toLowerCase()}. Cette procédure garantit 
+                    un traitement équitable de toutes les candidatures.
+                  </p>
+                  
+                  {content.admissionSection.process.length > 2 && (
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">Les étapes suivantes</span> comprennent : 
+                      {content.admissionSection.process.slice(2).map(step => step.toLowerCase()).join(', ')}. 
+                      Chaque étape est importante et contribue à l'évaluation globale de votre dossier 
+                      de candidature.
+                    </p>
+                  )}
+                  
+                  <p className="leading-relaxed">
+                    <span className="font-semibold">Il est essentiel</span> de respecter les délais indiqués 
+                    et de fournir tous les documents demandés dans les formes requises. 
+                    Une candidature complète et soignée augmente significativement vos chances d'admission.
+                  </p>
+                </div>
+              </div>
 
-              <Card className="bg-orange-50 dark:bg-orange-900/20 border-orange-200 dark:border-orange-800">
-                <CardHeader>
-                  <CardTitle className="text-orange-800 dark:text-orange-200">
-                    Conseils pratiques
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {content.admissionSection.tips.map((tip, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <Star className="h-4 w-4 text-orange-500 mt-1 flex-shrink-0" />
-                        <span className="text-sm text-orange-700 dark:text-orange-300">{tip}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6 sm:p-8">
+                <h3 className="text-2xl font-bold text-orange-900 dark:text-orange-200 mb-6">
+                  Conseils pour optimiser votre candidature
+                </h3>
+                
+                <div className="space-y-4 text-orange-800 dark:text-orange-200">
+                  <p className="text-lg leading-relaxed">
+                    <span className="font-semibold">Pour maximiser vos chances de réussite</span>, 
+                    il est recommandé de {content.admissionSection.tips[0]?.toLowerCase()} et de 
+                    {content.admissionSection.tips[1]?.toLowerCase()}. Ces démarches témoignent 
+                    de votre sérieux et de votre engagement.
+                  </p>
+                  
+                  {content.admissionSection.tips.length > 2 && (
+                    <p className="leading-relaxed">
+                      <span className="font-semibold">D'autres stratégies efficaces</span> incluent : 
+                      {content.admissionSection.tips.slice(2).map(tip => tip.toLowerCase()).join(', ')}. 
+                      Ces actions concrètes démontrent votre motivation et votre préparation à intégrer 
+                      cette formation exigeante.
+                    </p>
+                  )}
+                  
+                  <p className="leading-relaxed">
+                    <span className="font-semibold">N'hésitez pas</span> à contacter les équipes pédagogiques 
+                    pour obtenir des informations complémentaires sur le contenu de la formation 
+                    et les perspectives d'avenir qu'elle offre. Cette démarche proactive est toujours appréciée.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -366,26 +417,36 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                 description="Découvrez les parcours de ceux qui ont réussi dans cette filière"
               />
               
-              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 mt-6 sm:mt-8">
+              <div className="prose prose-lg max-w-none mt-8 space-y-8">
                 {content.testimonialsSection.testimonials.map((testimonial, index) => (
-                  <Card key={index} className="relative">
-                    <CardContent className="p-8">
-                      <Quote className="h-8 w-8 text-blue-500 mb-4" />
-                      <blockquote className="text-muted-foreground mb-6 italic leading-relaxed">
-                        "{testimonial.quote}"
-                      </blockquote>
-                      <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                          {testimonial.name.charAt(0)}
-                        </div>
-                        <div>
-                          <p className="font-semibold">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                          <p className="text-xs text-muted-foreground">{testimonial.company}</p>
-                        </div>
+                  <div key={index} className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-6 sm:p-8">
+                    <div className="flex items-start space-x-4 mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                        {testimonial.name.charAt(0)}
                       </div>
-                    </CardContent>
-                  </Card>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{testimonial.name}</h3>
+                        <p className="text-lg text-blue-600 dark:text-blue-400 font-medium">{testimonial.role}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.company}</p>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-4 text-gray-700 dark:text-gray-300">
+                      <Quote className="h-8 w-8 text-blue-500 mb-4" />
+                      
+                      <p className="text-lg leading-relaxed italic">
+                        <span className="font-semibold">"{testimonial.name} témoigne : "</span>
+                        {testimonial.quote}"
+                      </p>
+                      
+                      <p className="leading-relaxed">
+                        <span className="font-semibold">Ce témoignage illustre parfaitement</span> les opportunités 
+                        qu'offre cette formation. L'expérience de {testimonial.name} démontre comment 
+                        les compétences acquises durant les études se transforment en réussite professionnelle concrète. 
+                        Son parcours chez {testimonial.company} est un exemple inspirant pour les futurs diplômés.
+                      </p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -398,31 +459,57 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               description="Liens utiles pour approfondir vos connaissances"
             />
             
-            <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 mt-6 sm:mt-8">
-              {content.resourcesSection.resources.map((resource, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 group">
-                  <CardContent className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-semibold text-lg group-hover:text-blue-600 transition-colors">
-                        {resource.title}
-                      </h3>
-                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-blue-600 transition-colors" />
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                      {resource.description}
-                    </p>
-                    <Button size="sm" variant="outline" className="w-full" asChild>
-                      <a 
-                        href={resource.link} 
-                        target={resource.link.startsWith('http') ? '_blank' : '_self'}
-                        rel={resource.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      >
-                        Accéder
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="prose prose-lg max-w-none mt-8">
+              <div className="bg-gradient-to-r from-indigo-50 to-cyan-50 dark:from-indigo-900/20 dark:to-cyan-900/20 rounded-lg p-6 sm:p-8">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  Ressources complémentaires pour votre parcours
+                </h3>
+                
+                <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                  <p className="text-lg leading-relaxed">
+                    <span className="font-semibold">Pour enrichir votre parcours</span> et approfondir vos connaissances 
+                    dans ce domaine, plusieurs ressources de qualité sont à votre disposition. Ces outils pédagogiques 
+                    et informatifs vous accompagneront tout au long de votre formation et au-delà.
+                  </p>
+                  
+                  <div className="space-y-4">
+                    {content.resourcesSection.resources.map((resource, index) => (
+                      <div key={index} className="bg-white/70 dark:bg-gray-800/50 rounded-lg p-4 border-l-4 border-l-blue-500">
+                        <div className="flex items-start justify-between mb-2">
+                          <h4 className="text-xl font-semibold text-blue-900 dark:text-blue-200 flex items-center">
+                            {resource.title}
+                            <ExternalLink className="ml-2 h-4 w-4 text-blue-600" />
+                          </h4>
+                        </div>
+                        
+                        <p className="leading-relaxed mb-3">
+                          <span className="font-semibold">Cette ressource</span> vous permettra de {resource.description.toLowerCase()}. 
+                          Elle constitue un complément précieux à votre formation et vous aidera à 
+                          développer une expertise approfondie dans le domaine.
+                        </p>
+                        
+                        <div className="mt-4">
+                          <a 
+                            href={resource.link} 
+                            target={resource.link.startsWith('http') ? '_blank' : '_self'}
+                            rel={resource.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+                          >
+                            Accéder à la ressource
+                            <ExternalLink className="ml-2 h-4 w-4" />
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <p className="leading-relaxed">
+                    <span className="font-semibold">N'hésitez pas à consulter régulièrement</span> ces ressources 
+                    tout au long de votre parcours. Elles sont régulièrement mises à jour et constituent 
+                    une source d'information fiable pour rester à la pointe des évolutions du secteur.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
