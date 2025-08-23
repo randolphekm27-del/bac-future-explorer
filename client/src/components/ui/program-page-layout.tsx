@@ -46,8 +46,8 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               </h2>
             </div>
 
-            {/* Zone info violette */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl overflow-hidden">
+            {/* Zone hero */}
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl overflow-hidden">
               {/* Image de fond */}
               <div className="relative min-h-[400px] sm:min-h-[500px]">
                 <img 
@@ -55,7 +55,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                   alt={content.heroSection.title}
                   className="absolute inset-0 w-full h-full object-cover opacity-20"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-purple-600/90" />
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-700/90" />
                 
                 {/* Contenu centré */}
                 <div className="relative z-10 flex flex-col justify-center items-center text-center text-white p-6 sm:p-8 lg:p-12 min-h-[400px] sm:min-h-[500px]">
@@ -130,9 +130,9 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               </div>
               
               <div>
-                <Card className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+                <Card className="bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700">
                   <CardHeader>
-                    <CardTitle className="text-blue-800 dark:text-blue-200">
+                    <CardTitle className="text-gray-900 dark:text-white">
                       Points clés de la formation
                     </CardTitle>
                   </CardHeader>
@@ -140,8 +140,8 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                     <ul className="space-y-3">
                       {content.aboutSection.keyPoints.map((point, index) => (
                         <li key={index} className="flex items-start space-x-3">
-                          <CheckCircle className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
-                          <span className="text-sm text-blue-700 dark:text-blue-300">{point}</span>
+                          <CheckCircle className="h-5 w-5 text-blue-600 dark:text-blue-400 mt-1 flex-shrink-0" />
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -160,9 +160,9 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
             
             <div className="prose prose-lg max-w-none mt-8 space-y-8">
               {content.careersSection.careers.map((career, index) => (
-                <div key={index} className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 sm:p-8">
+                <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <TrendingUp className="h-6 w-6 text-orange-600 dark:text-orange-400 mr-3" />
+                    <TrendingUp className="h-6 w-6 text-orange-500 dark:text-orange-400 mr-3" />
                     {career.title}
                   </h3>
                   
@@ -172,19 +172,19 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                     </p>
                     
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-green-700 dark:text-green-400">En termes de rémunération</span>, 
+                      <span className="font-semibold text-gray-900 dark:text-white">En termes de rémunération</span>, 
                       cette profession offre des salaires compétitifs allant de {career.salary}. 
                       Les revenus évoluent généralement en fonction de l'expérience acquise et de la spécialisation choisie.
                     </p>
                     
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-blue-700 dark:text-blue-400">Concernant les perspectives d'évolution</span>, 
+                      <span className="font-semibold text-gray-900 dark:text-white">Concernant les perspectives d'évolution</span>, 
                       {career.growth}. Cette progression permet d'accéder à des postes à responsabilités et d'élargir 
                       son champ d'expertise au fil des années.
                     </p>
                     
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-purple-700 dark:text-purple-400">Les compétences essentielles</span> 
+                      <span className="font-semibold text-gray-900 dark:text-white">Les compétences essentielles</span> 
                       pour réussir dans ce domaine incluent notamment : {career.requirements.join(', ')}. 
                       Ces aptitudes sont développées progressivement au cours de la formation et perfectionnées 
                       grâce à l'expérience professionnelle.
@@ -204,16 +204,16 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
             
             <div className="prose prose-lg max-w-none mt-8 space-y-8">
               {content.studiesSection.levels.map((level, index) => (
-                <div key={index} className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8 border-l-4 border-l-blue-500">
+                <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700 border-l-4 border-l-blue-600">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200">{level.name}</h3>
-                    <div className="flex items-center bg-blue-200 dark:bg-blue-800 rounded-full px-3 py-1">
-                      <Clock className="mr-1 h-4 w-4 text-blue-700 dark:text-blue-300" />
-                      <span className="text-sm font-medium text-blue-700 dark:text-blue-300">{level.duration}</span>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{level.name}</h3>
+                    <div className="flex items-center bg-gray-100 dark:bg-gray-700 rounded-full px-3 py-1">
+                      <Clock className="mr-1 h-4 w-4 text-blue-600 dark:text-blue-400" />
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{level.duration}</span>
                     </div>
                   </div>
                   
-                  <div className="space-y-4 text-blue-800 dark:text-blue-200">
+                  <div className="space-y-4 text-gray-700 dark:text-gray-300">
                     <p className="text-lg leading-relaxed">
                       {level.description}
                     </p>
@@ -251,13 +251,13 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
             />
             
             <div className="prose prose-lg max-w-none mt-8 space-y-8">
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-6 flex items-center">
-                  <Brain className="mr-3 h-6 w-6 text-blue-500" />
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                  <Brain className="mr-3 h-6 w-6 text-blue-600 dark:text-blue-400" />
                   {content.skillsSection.technical.title}
                 </h3>
                 
-                <div className="space-y-4 text-blue-800 dark:text-blue-200">
+                <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="text-lg leading-relaxed">
                     <span className="font-semibold">Cette formation développe</span> un ensemble de compétences techniques 
                     spécialisées qui constituent le cœur de votre expertise professionnelle. 
@@ -282,13 +282,13 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                 </div>
               </div>
 
-              <div className="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-6 sm:p-8">
-                <h3 className="text-2xl font-bold text-pink-900 dark:text-pink-200 mb-6 flex items-center">
-                  <Heart className="mr-3 h-6 w-6 text-pink-500" />
+              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+                  <Heart className="mr-3 h-6 w-6 text-orange-500 dark:text-orange-400" />
                   {content.skillsSection.soft.title}
                 </h3>
                 
-                <div className="space-y-4 text-pink-800 dark:text-pink-200">
+                <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="text-lg leading-relaxed">
                     <span className="font-semibold">Au-delà des aspects techniques</span>, cette formation cultive 
                     des qualités humaines essentielles pour votre réussite professionnelle. 
@@ -324,12 +324,12 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
             />
             
             <div className="prose prose-lg max-w-none mt-8 space-y-8">
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 sm:p-8">
-                <h3 className="text-2xl font-bold text-blue-900 dark:text-blue-200 mb-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Conditions d'admission et prérequis
                 </h3>
                 
-                <div className="space-y-4 text-blue-800 dark:text-blue-200">
+                <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="text-lg leading-relaxed">
                     <span className="font-semibold">Pour intégrer cette formation</span>, plusieurs conditions doivent être remplies. 
                     {content.admissionSection.requirements.slice(0, 2).join(' et ')} constituent les exigences de base 
@@ -347,12 +347,12 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                 </div>
               </div>
 
-              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 sm:p-8">
-                <h3 className="text-2xl font-bold text-green-900 dark:text-green-200 mb-6">
+              <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Démarches et processus de candidature
                 </h3>
                 
-                <div className="space-y-4 text-green-800 dark:text-green-200">
+                <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="text-lg leading-relaxed">
                     <span className="font-semibold">Le processus d'admission</span> se déroule en plusieurs étapes bien définies. 
                     Premièrement, {content.admissionSection.process[0]?.toLowerCase()}, puis 
@@ -377,12 +377,12 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                 </div>
               </div>
 
-              <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6 sm:p-8">
-                <h3 className="text-2xl font-bold text-orange-900 dark:text-orange-200 mb-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Conseils pour optimiser votre candidature
                 </h3>
                 
-                <div className="space-y-4 text-orange-800 dark:text-orange-200">
+                <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="text-lg leading-relaxed">
                     <span className="font-semibold">Pour maximiser vos chances de réussite</span>, 
                     il est recommandé de {content.admissionSection.tips[0]?.toLowerCase()} et de 
@@ -419,9 +419,9 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
               
               <div className="prose prose-lg max-w-none mt-8 space-y-8">
                 {content.testimonialsSection.testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-6 sm:p-8">
+                  <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-6 sm:p-8 border border-gray-200 dark:border-gray-700">
                     <div className="flex items-start space-x-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
                         {testimonial.name.charAt(0)}
                       </div>
                       <div>
@@ -432,7 +432,7 @@ export function ProgramPageLayout({ content }: ProgramPageLayoutProps) {
                     </div>
                     
                     <div className="space-y-4 text-gray-700 dark:text-gray-300">
-                      <Quote className="h-8 w-8 text-blue-500 mb-4" />
+                      <Quote className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
                       
                       <p className="text-lg leading-relaxed italic">
                         <span className="font-semibold">"{testimonial.name} témoigne : "</span>
