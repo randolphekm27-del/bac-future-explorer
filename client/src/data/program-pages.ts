@@ -1189,30 +1189,13 @@ export function getProgramPageContent(slug: string): ProgramPageContent | null {
   return programPagesContent[slug] || null;
 }
 
+// Import du générateur de contenu intelligent
+import { ProgramContentGenerator } from "./program-content-generator";
+
 // Fonction pour générer du contenu par défaut pour les filières sans contenu spécifique
 export function generateDefaultContent(program: Program): ProgramPageContent {
-  // Utiliser le générateur de contenu intelligent
-  import("./program-content-generator").then(({ ProgramContentGenerator }) => {
-    return ProgramContentGenerator.generateCompleteContent(program);
-  });
-  
-  // Fallback temporaire - sera remplacé par le contenu généré
-  return {
-    slug: program.slug,
-    heroSection: {
-      title: program.name,
-      subtitle: program.description,
-      description: program.description,
-      backgroundImage: "/placeholder.svg",
-      highlights: []
-    },
-    aboutSection: { title: "", content: [], keyPoints: [] },
-    careersSection: { title: "", description: "", careers: [] },
-    studiesSection: { title: "", duration: "", levels: [] },
-    skillsSection: { title: "", technical: { title: "", skills: [] }, soft: { title: "", skills: [] } },
-    admissionSection: { title: "", requirements: [], process: [], tips: [] },
-    resourcesSection: { title: "", resources: [] }
-  };
+  // Utiliser le générateur de contenu intelligent pour créer du contenu spécifique
+  return ProgramContentGenerator.generateCompleteContent(program);
 };
 
 // Fonction pour obtenir toutes les filières avec contenu
