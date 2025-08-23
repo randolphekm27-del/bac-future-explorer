@@ -1,4 +1,4 @@
-import { Search, MapPin, Filter, Grid, List } from "lucide-react"
+import { Search, MapPin, Grid, List } from "lucide-react"
 import { useState } from "react"
 import { Navigation } from "@/components/ui/navigation"
 import { Footer } from "@/components/ui/footer"
@@ -11,24 +11,13 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 
 export default function Universities() {
   const [searchTerm, setSearchTerm] = useState("")
-  const [selectedType, setSelectedType] = useState<string>("all")
-  const [selectedLocation, setSelectedLocation] = useState<string>("all")
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
   
   useScrollAnimation();
 
-  // Extraire les types et localisations uniques
-  const universityTypes = Array.from(new Set(universities.map(u => u.type)))
-  const universityLocations = Array.from(new Set(universities.map(u => u.location)))
-
   const filteredUniversities = universities.filter((university) => {
-    const matchesSearch = university.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         university.location.toLowerCase().includes(searchTerm.toLowerCase())
-    
-    const matchesType = selectedType === "all" || university.type === selectedType
-    const matchesLocation = selectedLocation === "all" || university.location === selectedLocation
-
-    return matchesSearch && matchesType && matchesLocation
+    return university.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+           university.location.toLowerCase().includes(searchTerm.toLowerCase())
   })
 
   return (
@@ -47,7 +36,7 @@ export default function Universities() {
             </p>
           </div>
 
-          {/* Search and Filter Section */}
+          {/* Search Section */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg mb-8">
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
               {/* Search Input */}
@@ -78,56 +67,6 @@ export default function Universities() {
                   className="h-10 w-10"
                 >
                   <List className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Filters */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Type d'établissement
-                </label>
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                >
-                  <option value="all">Tous les types</option>
-                  {universityTypes.map((type) => (
-                    <option key={type} value={type}>{type}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Localisation
-                </label>
-                <select
-                  value={selectedLocation}
-                  onChange={(e) => setSelectedLocation(e.target.value)}
-                  className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                >
-                  <option value="all">Toutes les villes</option>
-                  {universityLocations.map((location) => (
-                    <option key={location} value={location}>{location}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="flex items-end">
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setSearchTerm("")
-                    setSelectedType("all")
-                    setSelectedLocation("all")
-                  }}
-                  className="w-full"
-                >
-                  <Filter className="h-4 w-4 mr-2" />
-                  Réinitialiser
                 </Button>
               </div>
             </div>
@@ -172,14 +111,10 @@ export default function Universities() {
                   Aucun résultat trouvé
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
-                  Aucune université ne correspond à vos critères de recherche. Essayez d'ajuster vos filtres.
+                  Aucune université ne correspond à vos critères de recherche. Essayez d'ajuster votre recherche.
                 </p>
                 <Button
-                  onClick={() => {
-                    setSearchTerm("")
-                    setSelectedType("all")
-                    setSelectedLocation("all")
-                  }}
+                  onClick={() => setSearchTerm("")}
                   className="bg-blue-600 hover:bg-blue-700"
                 >
                   Réinitialiser la recherche
